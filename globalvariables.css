@@ -1,0 +1,28 @@
+:root {
+	/* basic white and black colours */
+	--white: #ffffff;
+	--black: #000000;
+
+	/* typography is usually white - also with a dulled (dk), a filler text (dkr) and an opposite contrast (black on white) variant  */
+	--clr-text: var(--white);
+	--clr-text-dk: #D3F0FD;
+	--clr-text-dkr: #8CA7B2;
+	--clr-text-opposite: var(--clr-background-lt);
+
+	/* background colour - deep navy */
+	--clr-background: #000B0E;
+	--clr-background-lt: #00151C;
+
+	/* brand accent colour - light aqua */
+	--clr-accent: #92FFFF;
+	
+	/* gradient colours (underwater colours, aquas and cyans) */
+	--clr-gradients-green: #56B454;
+	--clr-gradients-aqua-lt: #4295B0;
+	--clr-gradients-aqua-dk: #115271;
+	--clr-gradients-cyan-lt: #47B8B1;
+	--clr-gradients-cyan-dk: #194444;
+
+	/* star rating colour - yellow */
+	--clr-rating: #E2BC36;
+}
