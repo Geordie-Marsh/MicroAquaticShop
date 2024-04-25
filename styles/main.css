@@ -1,0 +1,11 @@
+@import url(colours.css);
+
+:root {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
