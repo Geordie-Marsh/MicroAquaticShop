@@ -1,0 +1,25 @@
+:root {
+	/* The space unit used - adjusting this one value will adjust all the others accordingly */
+	--sizing-factor: 1rem;
+
+	/* Double extra small spacing */
+	--spacing-2xs: calc( 0.25 * var(--sizing-factor) );
+	/* Extra small spacing */
+	--spacing-xs: calc( 0.5 * var(--sizing-factor) );
+	/* Small spacing */
+	--spacing-sm: calc( 0.75 * var(--sizing-factor) );
+	/* Normal (medium) spacing */
+	--spacing-md: calc( 1 * var(--sizing-factor) );
+	/* Large spacing */
+	--spacing-lg: calc( 1.5 * var(--sizing-factor) );
+	/* Extra large spacing */
+	--spacing-xl: calc( 2 * var(--sizing-factor) );
+	/* Double extra large spacing */
+	--spacing-2xl: calc( 3 * var(--sizing-factor) );
+	/* Triple extra large spacing */
+	--spacing-3xl: calc( 4 * var(--sizing-factor) );
+	/* Quadruple extra large spacing */
+	--spacing-4xl: calc( 6 * var(--sizing-factor) );
+	/* Quintuple extra large spacing */
+	--spacing-5xl: calc( 8 * var(--sizing-factor) );
+}
