@@ -1,0 +1,72 @@
+/* Importing the brand font, Fieldwork */
+@import url(/fonts/fieldwork-100-hair.otf);
+@import url(/fonts/fieldwork-100-hair-italic.otf);
+@import url(/fonts/fieldwork-200-thin.otf);
+@import url(/fonts/fieldwork-200-thin-italic.otf);
+@import url(/fonts/fieldwork-300-light.otf);
+@import url(/fonts/fieldwork-300-light-italic.otf);
+@import url(/fonts/fieldwork-400-regular.otf);
+@import url(/fonts/fieldwork-400-regular-italic.otf);
+@import url(/fonts/fieldwork-600-demibold.otf);
+@import url(/fonts/fieldwork-600-demibold-italic.otf);
+@import url(/fonts/fieldwork-700-bold.otf);
+@import url(/fonts/fieldwork-700-bold-italic.otf);
+@import url(/fonts/fieldwork-800-black.otf);
+@import url(/fonts/fieldwork-800-black-italic.otf);
+@import url(/fonts/fieldwork-900-fat.otf);
+@import url(/fonts/fieldwork-900-fat-italic.otf);
+
+/* Importing the font, Poppins, as a back-up */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+	/* Defining the typography variables */
+
+	/* The sizing factor for all the font sizes */
+	--font-size-factor: 1.25rem;
+
+	/* Normal text font-weight */
+	--font-weight-normal: 300;
+	/* Bold text font-weight */
+	--font-weight-bold: 700;
+	/* Black text font-weight */
+	--font-weight-black: 900;
+
+
+	/* Defining the default font */
+	font-family: "Fieldwork Geo", "Poppins", sans-serif;
+}
+
+
+/* Defining text styles */
+
+h1 {
+	/* Used for titles, like at the top of pages - uses the heaviest font weight */
+	font-size: calc( 8 * var(--font-size-factor) );
+	font-weight: var(--font-weight-black);
+}
+
+h2 {
+	/* Used for section headings */
+	font-size: calc( 1.5 * var(--font-size-factor) );
+	font-weight: var(--font-weight-bold);
+	margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+	/* Used for minor headings */
+	font-size: calc( 1.25 * var(--font-size-factor) );
+	font-weight: var(--font-weight-bold);
+}
+
+p,
+.bullets-list > li {
+	/* Normal text */
+	font-size: calc( 1 * var(--font-size-factor) );
+	font-weight: var(--font-weight-normal);
+}
+strong {
+	font-size: calc( 1 * var(--font-size-factor) );
+	font-weight: var(--font-weight-bold);
+}
