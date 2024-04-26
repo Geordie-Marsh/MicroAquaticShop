@@ -11,7 +11,7 @@
 <body>
 
 	<!-- The hero introductory section of the homepage -- GRADIENT section -->
-	<header class="hero highlighted-background">
+	<header class="hero section--highlighted">
 		<!-- The navbar on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
 		<nav>
 			<!-- POPULATED BY JAVASCRIPT -->
@@ -46,10 +46,11 @@
 			<!-- The section title -->
 			<h2>Featured Products</h2>
 			<!-- The horizontal list that contains all the featured products -->
-			<ul class="featured-products__list">
+			<div class="featured-products__list">
 				<!-- (HORIZONTAL) FLEXBOX LAYOUT -->
 				<!-- POPULATED BY JAVASCRIPT -->
-			</ul>
+				<!-- TODO: use <article> tags -->
+			</div>
 		</section>
 
 		<!-- The 'Shop by category' section -->
@@ -87,35 +88,35 @@
 			<!-- The brand selling points are flexbox wrapped in this div -->
 			<div class="selling-point-cont panel panel--highlighted-section">
 				<!-- GRID LAYOUT -->
-				<!-- Each selling point is wrapped in a flexbox div -->
-				<div class="selling-point">
+				<!-- Each selling point is wrapped in a GRID div -->
+				<article class="selling-point">
 					<img src="" alt="Smiling face">
 					<div class="selling-point__text-cont">
 						<h3>70K+ Happy Customers</h3>
 						<p>For more than 8 years</p>
 					</div>
-				</div>
-				<div class="selling-point">
+				</article>
+				<article class="selling-point">
 					<img src="" alt="Lightning bolt">
 					<div class="selling-point__text-cont">
 						<h3>Express Delivery</h3>
 						<p>1-2 Business days</p>
 					</div>
-				</div>
-				<div class="selling-point">
+				</article>
+				<article class="selling-point">
 					<img src="" alt="30 minutes">
 					<div class="selling-point__text-cont">
 						<h3>Local Pickup from Shop</h3>
 						<p>Available in 30 mins</p>
 					</div>
-				</div>
-				<div class="selling-point">
+				</article>
+				<article class="selling-point">
 					<img src="" alt="Hand holding a love heart">
 					<div class="selling-point__text-cont">
 						<h3>Excellent Support</h3>
 						<p>Call/Message available 24/7</p>
 					</div>
-				</div>
+				</article>
 			</div>
 
 			<h2>Our Story</h2>
@@ -145,23 +146,93 @@
 
 		<!-- The shop images slideshow -->
 		<figure class="slideshow">
-
+			<!-- These images move horizontally from right to left and are looped-->
+			<img src="" alt="">
+			<img src="" alt="">
+			<img src="" alt="">
 		</figure>
 
 		<!-- The customer reviews section -->
 		<section class="reviews">
-
+			<h2>What Our Customers Say</h2>
+			<!-- The div containing the reviews -->
+			<div class="reviews__reviews-cont">
+				<!-- POPULATED BY JAVASCRIPT -->
+				<!-- 4x divs each containing 2x vertically-stacked review cards (<article>s) -->
+			</div>
 		</section>
 
 		<!-- The GRADIENT section containing the brand's services and common questions -->
-		<section class="services">
-
+		<section class="services section--highlighted">
+			<!-- GRID LAYOUT -->
+			<!-- 1-on-1 support service -->
+			<article class="service panel panel--highlighted-section">
+				<img src="" alt="">
+				<h3>1-on-1 Aquarium Support Service</h3>
+				<p>Stuck with a cloudy tank or stressed fish? Micro Aquatic Shop offers personalised 1-on-1 consultations to diagnose aquarium issues and get your underwater world thriving again.</p>
+				<p>We offer:</p>
+				<ul>
+					<li>Online aquarium maintenance</li>
+					<li>Setup and design assistance</li>
+					<li>20+ years of knowledge</li>
+					<li>General assistance</li>
+					<li>Aquarium troubleshoot</li>
+					<li>Breeding issue troubleshooting</li>
+					<li>Fixing algae issues</li>
+				</ul>
+				<!-- TODO: Add button -->
+			</article>
+			<!-- Tips -->
+			<article class="service panel panel--highlighted-section">
+				<img src="" alt="">
+				<h3>Some Tips from Us</h3>
+				<p>Micro Aquatic Shop has some bite-sized wisdom to keep your tank sparkling clean and your finned friends happy.</p>
+				<div>
+					<!-- TODO: Add tips -->
+				</div>
+				<!-- TODO: Add button -->
+			</article>
+			<!-- Small panels, used for links -->
+			<!-- FAQs -->
+			<article class="service panel panel--highlighted-section">
+				<img src="" alt="">
+				<h3>FAQs</h3>
+				<!-- TODO: Add button -->
+			</article>
+			<!-- Directions -->
+			<article class="service panel panel--highlighted-section">
+				<img src="" alt="">
+				<h3>Visit Us</h3>
+				<!-- TODO: Add button -->
+			</article>
+			<!-- Shipping policy -->
+			<article class="service panel panel--highlighted-section">
+				<img src="" alt="">
+				<h3>Our Shipping Policy</h3>
+				<!-- TODO: Add button -->
+			</article>
+			<!-- Affiliate program -->
+			<article class="service panel panel--highlighted-section">
+				<img src="" alt="">
+				<h3>Our Affiliate Program</h3>
+				<!-- TODO: Add button -->
+			</article>
+			<!-- Blog -->
+			<article class="service panel panel--highlighted-section">
+				<img src="" alt="">
+				<h3>Keep up to date with our Blog</h3>
+				<p>Our blog splashes with tips, tricks, and all the latest news for creating thriving underwater wonders on a small scale.</p>
+				<div>
+					<!-- TODO: Add blog posts -->
+				</div>
+				<!-- TODO: Add button -->
+			</article>
 		</section>
 	</main>
 
 	<!-- The footer -->
 	<footer>
-
+		<!-- POPULATED BY JAVASCRIPT -->
 	</footer>
 
 
