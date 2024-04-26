@@ -14,7 +14,7 @@
 	<header class="hero special-background">
 		<!-- The navbar on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
 		<nav>
-
+			<!-- POPULATED BY JAVASCRIPT -->
 		</nav>
 
 		<!-- The textual and CTA content of the hero page -- GLASS section -->
@@ -27,15 +27,15 @@
 				<h1 class="page-title__title">Micro Aquatics</h1>
 			</div>
 			<p>Dive into an enchanting small-scale underwater world at the Micro Aquatic Shop, where tiny treasures await.</p>
-			<div class="btn btn--cta">
-				<h2 class="btn__label btn__label--with-action-symbol">Let's shop</h2>
-				<img class="btn__action-symbol" />
-			</div>
+			<button onclick="location.href='#shop-by-category'" class="button--cta" aria-label="Let's shop">
+				<span class="button__label button__label--with-action-symbol">Let's shop</span>
+				<img class="button__action-symbol" alt="Right Arrow Icon">
+			</button>
 		</div>
 
 		<!-- The image on the hero page (this overlaps with the content div) -->
 		<figure class="hero-image">
-			<img />
+			<img>
 		</figure>
 	</header>
 
@@ -43,12 +43,62 @@
 	<main>
 		<!-- The 'Featured products' section -->
 		<section class="featured-products">
+			<!-- The section title -->
+			<h2>Featured Products</h2>
+			<!-- The horizontal list that contains all the featured products -->
+			<ul class="featured-products__list">
+				<!-- POPULATED BY JAVASCRIPT -->
+				<!-- Sample product: 
+					<li class="card">
+						<img>
 
+						<p class="bold">Product title</p>
+
+						<h3>Price</h3>
+
+						<div>
+							<div class="button button--cta">
+								<h2 class="button__label button__label--with-action-symbol">View</h2>
+								<img class="button__action-symbol">
+							</div>
+
+							<div class="button button--cta">
+								<img class="button__icon">
+							</div>
+						</div>
+
+						<div class="button button--cta">
+							<h2 class="button__label button__label--with-action-symbol">Add to Cart</h2>
+							<img class="button__action-symbol">
+						</div>
+					</li> 
+				-->
+			</ul>
 		</section>
 
 		<!-- The 'Shop by category' section -->
-		<section class="shop-by-category">
-
+		<section class="shop-by-category" id="shop-by-category">
+			<!-- The section title -->
+			<h2>Shop by Category</h2>
+			<!-- The div that holds the 3 category cards -->
+			<div class="shop-by-category__categories">
+				<!-- The 3 categories, each is a div -->
+				<div class="shop-by-category__categories__category-card card">
+					<h3>Animals</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+					<!-- 4x buttons -->
+				</div>
+				<div class="shop-by-category__categories__category-card card">
+					<h3>Aquascaping</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+					<!-- 4x buttons -->
+				</div>
+				<div class="shop-by-category__categories__category-card card">
+					<h3>Supplies</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+					<!-- 4x buttons -->
+				</div>
+			</div>
 		</section>
 
 		<!-- The GRADIENT section containing the brand info -->
