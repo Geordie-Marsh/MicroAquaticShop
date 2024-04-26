@@ -11,14 +11,14 @@
 <body>
 
 	<!-- The hero introductory section of the homepage -- GRADIENT section -->
-	<header class="hero special-background">
+	<header class="hero highlighted-background">
 		<!-- The navbar on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
 		<nav>
 			<!-- POPULATED BY JAVASCRIPT -->
 		</nav>
 
 		<!-- The textual and CTA content of the hero page -- GLASS section -->
-		<div class="hero-content card">
+		<div class="hero-content panel panel--hero">
 			<!-- The div that holds the title -->
 			<div class="page-title">
 				<!-- There is a bit of text above the main part of the title which is smaller -->
@@ -27,9 +27,9 @@
 				<h1 class="page-title__title">Micro Aquatics</h1>
 			</div>
 			<p>Dive into an enchanting small-scale underwater world at the Micro Aquatic Shop, where tiny treasures await.</p>
-			<button onclick="location.href='#shop-by-category'" class="button--cta" aria-label="Let's shop">
+			<button onclick="location.href='#shop-by-category'" class="button--cta" aria-label="let's shop">
 				<span class="button__label button__label--with-action-symbol">Let's shop</span>
-				<img class="button__action-symbol" alt="Right Arrow Icon">
+				<img class="button__action-symbol" alt="Right arrow icon">
 			</button>
 		</div>
 
@@ -47,32 +47,8 @@
 			<h2>Featured Products</h2>
 			<!-- The horizontal list that contains all the featured products -->
 			<ul class="featured-products__list">
+				<!-- (HORIZONTAL) FLEXBOX LAYOUT -->
 				<!-- POPULATED BY JAVASCRIPT -->
-				<!-- Sample product: 
-					<li class="card">
-						<img>
-
-						<p class="bold">Product title</p>
-
-						<h3>Price</h3>
-
-						<div>
-							<div class="button button--cta">
-								<h2 class="button__label button__label--with-action-symbol">View</h2>
-								<img class="button__action-symbol">
-							</div>
-
-							<div class="button button--cta">
-								<img class="button__icon">
-							</div>
-						</div>
-
-						<div class="button button--cta">
-							<h2 class="button__label button__label--with-action-symbol">Add to Cart</h2>
-							<img class="button__action-symbol">
-						</div>
-					</li> 
-				-->
 			</ul>
 		</section>
 
@@ -80,20 +56,24 @@
 		<section class="shop-by-category" id="shop-by-category">
 			<!-- The section title -->
 			<h2>Shop by Category</h2>
-			<!-- The div that holds the 3 category cards -->
-			<div class="shop-by-category__categories">
-				<!-- The 3 categories, each is a div -->
-				<div class="shop-by-category__categories__category-card card">
+			<!-- The div that holds the 3 category panels -->
+			<div class="shop-by-category__categories-cont">
+				<!-- GRID LAYOUT -->
+				<!-- The 3 categories, each is a div with a title and 4x categories (buttons) -->
+				<div class="panel">
+					<!-- BLOCK LAYOUT -->
 					<h3>Animals</h3>
 					<!-- POPULATED BY JAVASCRIPT -->
 					<!-- 4x buttons -->
 				</div>
-				<div class="shop-by-category__categories__category-card card">
+				<div class="panel">
+					<!-- BLOCK LAYOUT -->
 					<h3>Aquascaping</h3>
 					<!-- POPULATED BY JAVASCRIPT -->
 					<!-- 4x buttons -->
 				</div>
-				<div class="shop-by-category__categories__category-card card">
+				<div class="panel">
+					<!-- BLOCK LAYOUT -->
 					<h3>Supplies</h3>
 					<!-- POPULATED BY JAVASCRIPT -->
 					<!-- 4x buttons -->
@@ -103,15 +83,64 @@
 
 		<!-- The GRADIENT section containing the brand info -->
 		<section class="brand-info">
-			<!-- The 'Why choose us' section -->
-			<section class="why-choose-us">
+			<h2>Why Choose Us?</h2>
+			<!-- The brand selling points are flexbox wrapped in this div -->
+			<div class="selling-point-cont panel panel--highlighted-section">
+				<!-- GRID LAYOUT -->
+				<!-- Each selling point is wrapped in a flexbox div -->
+				<div class="selling-point">
+					<img src="" alt="Smiling face">
+					<div class="selling-point__text-cont">
+						<h3>70K+ Happy Customers</h3>
+						<p>For more than 8 years</p>
+					</div>
+				</div>
+				<div class="selling-point">
+					<img src="" alt="Lightning bolt">
+					<div class="selling-point__text-cont">
+						<h3>Express Delivery</h3>
+						<p>1-2 Business days</p>
+					</div>
+				</div>
+				<div class="selling-point">
+					<img src="" alt="30 minutes">
+					<div class="selling-point__text-cont">
+						<h3>Local Pickup from Shop</h3>
+						<p>Available in 30 mins</p>
+					</div>
+				</div>
+				<div class="selling-point">
+					<img src="" alt="Hand holding a love heart">
+					<div class="selling-point__text-cont">
+						<h3>Excellent Support</h3>
+						<p>Call/Message available 24/7</p>
+					</div>
+				</div>
+			</div>
 
-			</section>
+			<h2>Our Story</h2>
+			<!-- The panel containing the brief about us info -->
+			<div class="panel panel--highlighted-section">
+				<!-- A picture of the shop owners -->
+				<img src="" alt="A picture of the shop owners in front of some fish tanks">
+				<!-- The textual information -->
+				<div>
+					<!-- BLOCK LAYOUT -->
+					<h3>Micro Aquatic Shop: Your Thriving Underwater World</h3>
+					<strong>Over 8 years & 70,000 happy customers trust us!</strong>
+					<p>We specialize in everything you need for a beautiful freshwater aquarium, especially vibrant shrimp.</p>
+					<strong>Discover:</strong>
+					<ul class="bullets-list">
+						<li>Healthy fish, shrimp & snails</li>
+						<li>Stunning aquatic plants</li>
+						<li>Unique bonsai driftwood</li>
+						<li>Complete aquarium setups & accessories</li>
+					</ul>
+					<p><strong>Join our thriving community! </strong>Share your passion & learn from fellow aquarists. Bring some nature to your home.</p>
 
-			<!-- The 'Our story' section -->
-			<section class="our-story">
-
-			</section>
+					<!-- TODO: Add "more about us" button -->
+				</div>
+			</div>
 		</section>
 
 		<!-- The shop images slideshow -->
