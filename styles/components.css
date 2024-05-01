@@ -1,0 +1,57 @@
+/* HEADER */
+header {
+	width: 100%;
+	height: var(--spacing-xl);
+}
+
+
+header img {
+	height: var(--spacing-xl);
+	aspect-ratio: 1 / 1;
+}
+
+header > * {
+	height: 100%;
+	align-items: center;
+}
+
+/* The icon */
+.icon {
+	grid-template-columns: auto auto;
+	column-gap: var(--spacing-s);
+}
+.icon h3 {
+	margin: 0;
+	height: auto;
+	margin-top: 6px;
+}
+
+
+/* The navbar */
+.navbar {
+	column-gap: var(--spacing-m);
+}
+.navbar a {
+	margin-top: 3px;
+}
+.header-divider {
+	height: 80%;
+	width: 1px;
+	background-color: var(--black);
+	border-radius: 0.5px;
+	-webkit-border-radius: 0.5px;
+	-moz-border-radius: 0.5px;
+	-ms-border-radius: 0.5px;
+	-o-border-radius: 0.5px;
+	margin: auto var(--spacing-2xs);
+}
+.navbar__drop-down {
+	column-gap: var(--spacing-xs);
+}
+.navbar__drop-down__arrow {
+	height: var(--spacing-s);
+	margin-top: 3px;
+}
+.navbar__purchasing-icons {
+	column-gap: var(--spacing-xs);
+}

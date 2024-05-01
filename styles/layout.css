@@ -3,23 +3,24 @@
 	--sizing-factor: 1rem;
 
 	/* Double extra small spacing */
-	--spacing-2xs: calc( 0.25 * var(--sizing-factor) );
+	--spacing-2xs: calc( 0.25 * var(--sizing-factor) ) /* 4px */;
 	/* Extra small spacing */
-	--spacing-xs: calc( 0.5 * var(--sizing-factor) );
+	--spacing-xs: calc( 0.5 * var(--sizing-factor) ) /* 8px */;
 	/* Small spacing */
-	--spacing-sm: calc( 0.75 * var(--sizing-factor) );
+	--spacing-s: calc( 0.75 * var(--sizing-factor) ) /* 12px */;
 	/* Normal (medium) spacing */
-	--spacing-md: calc( 1 * var(--sizing-factor) );
+	/* ? equivalent to 16px */
+	--spacing-m: calc( 1 * var(--sizing-factor) ) /* 16px */; 
 	/* Large spacing */
-	--spacing-lg: calc( 1.5 * var(--sizing-factor) );
+	--spacing-l: calc( 1.5 * var(--sizing-factor) ) /* 24px */;
 	/* Extra large spacing */
-	--spacing-xl: calc( 2 * var(--sizing-factor) );
+	--spacing-xl: calc( 2 * var(--sizing-factor) ) /* 32px */;
 	/* Double extra large spacing */
-	--spacing-2xl: calc( 3 * var(--sizing-factor) );
+	--spacing-2xl: calc( 3 * var(--sizing-factor) ) /* 48px */;
 	/* Triple extra large spacing */
-	--spacing-3xl: calc( 4 * var(--sizing-factor) );
+	--spacing-3xl: calc( 4 * var(--sizing-factor) ) /* 64px */;
 	/* Quadruple extra large spacing */
-	--spacing-4xl: calc( 6 * var(--sizing-factor) );
+	--spacing-4xl: calc( 6 * var(--sizing-factor) ) /* 96px */;
 	/* Quintuple extra large spacing */
-	--spacing-5xl: calc( 8 * var(--sizing-factor) );
+	--spacing-5xl: calc( 8 * var(--sizing-factor) ) /* 128px */;
 }

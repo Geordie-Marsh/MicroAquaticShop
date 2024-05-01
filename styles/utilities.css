@@ -1,0 +1,16 @@
+.flex {
+	display: flex;
+}
+
+.flex--horizontal {
+	flex-direction: row;
+}
+
+.flex--justify-between {
+	justify-content: space-between;
+}
+
+
+.grid {
+	display: grid;
+}
