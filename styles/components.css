@@ -37,7 +37,7 @@ header > * {
 .header-divider {
 	height: 80%;
 	width: 1px;
-	background-color: var(--black);
+	background-color: var(--white);
 	border-radius: 0.5px;
 	-webkit-border-radius: 0.5px;
 	-moz-border-radius: 0.5px;

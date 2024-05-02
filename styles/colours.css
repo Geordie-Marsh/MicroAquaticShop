@@ -1,28 +1,36 @@
 :root {
-	/* basic white and black colours */
+	/* Basic white and black colours */
 	--white: #ffffff;
 	--black: #000000;
 
-	/* typography is usually white - also with a dulled (dk), a filler text (dkr) and an opposite contrast (black on white) variant  */
+	/* Typography is usually white - also with a dulled (dk), a filler text (dkr) and an opposite contrast (black on white) variant  */
 	--clr-text: var(--white);
 	--clr-text-dk: #D3F0FD;
 	--clr-text-dkr: #8CA7B2;
 	--clr-text-opposite: var(--clr-background-lt);
 
-	/* background colour - deep navy */
+	/* Background colour - deep navy */
 	--clr-background: #000B0E;
 	--clr-background-lt: #00151C;
 
-	/* brand accent colour - light aqua */
+	/* Brand accent colour - light aqua */
 	--clr-accent: #92FFFF;
 	
-	/* gradient colours (underwater colours, aquas and cyans) */
+	/* Gradient colours (underwater colours, aquas and cyans) */
 	--clr-gradients-green: #56B454;
 	--clr-gradients-aqua-lt: #4295B0;
 	--clr-gradients-aqua-dk: #115271;
 	--clr-gradients-cyan-lt: #47B8B1;
 	--clr-gradients-cyan-dk: #194444;
 
-	/* star rating colour - yellow */
+	/* Star rating colour - yellow */
 	--clr-rating: #E2BC36;
+
+	/* Colours for glass elements (panels) */
+	--clr-glass-stroke: #00000040;
+	--clr-glass-gradient: linear-gradient(to bottom right, #4DA5C380, #153F4D40);
+
+	/* Gradients for buttons */
+	--clr-button-gradient: linear-gradient(to bottom right, #ffffff00, #00000033), var(--clr-text-dk);
+	--clr-button-gradient--cta: linear-gradient(to bottom right, #ffffff00, #00000033), var(--clr-accent);
 }

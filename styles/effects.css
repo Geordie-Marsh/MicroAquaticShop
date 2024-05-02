@@ -1,0 +1,5 @@
+:root {
+	/* The effects that go on all highlighted section panels */
+	--effect-highlighted-panel-shadow: 0px 8px 13px 0px #0000001a;
+	--effect-highlighted-panel-blur: 100px;
+}

@@ -2,6 +2,7 @@
 @import url(animations.css);
 @import url(colours.css);
 @import url(components.css);
+@import url(effects.css);
 @import url(layout.css);
 @import url(typography.css);
 @import url(utilities.css);
@@ -17,13 +18,140 @@
 	box-sizing: inherit;
 }
 
+/* Making the webpage not scroll horizontally */
+html {
+	overflow-x: hidden;
+}
+
 /* Making the body not have a margin by default */
 body {
 	margin: 0;
+	background-color: var(--clr-background);
 }
 
 /* Removing the default stylings of links */
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+/* Universal styles for buttons */
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--spacing-s);
+	-webkit-border-radius: var(--spacing-s);
+	-moz-border-radius: var(--spacing-s);
+	-ms-border-radius: var(--spacing-s);
+	-o-border-radius: var(--spacing-s);
+	background: var(--clr-button-gradient);
+	border: none;
+	color: var(--clr-text-opposite);
+	font-family: inherit;
+	padding: var(--spacing-m) var(--spacing-l);
+	gap: var(--spacing-xs);
+	background-blend-mode: luminosity, normal;
+}
+button:hover {
+	cursor: pointer;
+}
+.button--cta {
+	background: var(--clr-button-gradient--cta);
+}
+.button__label {
+	margin-top: 3px;
+}
+.button__action-symbol {
+	height: var(--spacing-m);
+}
+
+/* Universal styles for sections */
+section,
+main {
+	display: flex;
+	flex-direction: column;
+	padding: var(--spacing-2xl);
+	align-items: flex-start;
+	gap: var(--spacing-2xl);
+}
+.section--highlighted {
+	background-color: var(--clr-gradients-aqua-dk);
+	box-shadow: var(--effect-highlighted-panel-shadow);
+	backdrop-filter: blur(var(--effect-highlighted-panel-blur));
+	border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
+	-webkit-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
+	-moz-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
+	-ms-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
+	-o-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
+}
+
+/* Universal styles for panels */
+.panel {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: var(--spacing-s);
+	gap: var(--spacing-xs);
+	border-radius: var(--spacing-m);
+	border: 0.6px solid var(--clr-glass-stroke);
+	background: var(--clr-glass-gradient);
+	box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
+	-webkit-border-radius: var(--spacing-m);
+	-moz-border-radius: var(--spacing-m);
+	-ms-border-radius: var(--spacing-m);
+	-o-border-radius: var(--spacing-m);
+	padding: var(--spacing-m);
+}
+.panel--hero {
+	padding: var(--spacing-xl);
+	border-radius: var(--spacing-xl);
+	-webkit-border-radius: var(--spacing-xl);
+	-moz-border-radius: var(--spacing-xl);
+	-ms-border-radius: var(--spacing-xl);
+	-o-border-radius: var(--spacing-xl);
+}
+
+
+/* Hero section */
+.hero-content {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: var(--spacing-s);
+	width: 100%;
+	align-items: center;
+	overflow: visible;
+}
+.hero-content__info {
+	grid-column: 1 / 8;
+	grid-row: 1 / 2;
+}
+/* .hero-content__image {
+	grid-column: 7 / -1;
+	grid-row: 1 / 2;
+	margin: 0;
+}
+.hero-content__image img {
+	width: 100%;
+	transform: translateY(-25%);
+	-webkit-transform: translateY(-25%);
+	-moz-transform: translateY(-25%);
+	-ms-transform: translateY(-25%);
+	-o-transform: translateY(-25%);
+} */
+.hero-content__image {
+	position: absolute;
+	margin: 0;
+	width: 44%;
+	right: var(--spacing-2xl);
+	
+}
+.hero-content__image img {
+	width: 100%;
+	rotate: 22deg;
+}
+.hero-title-A-kerning {
+	letter-spacing: -0.325rem;
 }

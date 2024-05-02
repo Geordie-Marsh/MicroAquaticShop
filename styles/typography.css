@@ -28,15 +28,18 @@
 	--font-size-factor: 1.25rem;
 
 	/* Normal text font-weight */
-	--font-weight-normal: 300;
+	--font-weight-normal: 200;
 	/* Bold text font-weight */
-	--font-weight-bold: 700;
+	--font-weight-bold: 600;
 	/* Black text font-weight */
 	--font-weight-black: 900;
 
 
 	/* Defining the default font */
 	font-family: "Fieldwork Geo", "Poppins", sans-serif;
+
+	/* Defining the default font colour */
+	color: var(--white);
 }
 
 
@@ -46,16 +49,21 @@ h1 {
 	/* Used for titles, like at the top of pages - uses the heaviest font weight */
 	font-size: calc( 8 * var(--font-size-factor) );
 	font-weight: var(--font-weight-black);
+	margin-top: var(--spacing-l);
+	margin-bottom: 0;
+	line-height: 83%;
 }
 
 h2 {
 	/* Used for section headings */
 	font-size: calc( 1.5 * var(--font-size-factor) );
 	font-weight: var(--font-weight-bold);
+	margin-top: 0;
 	margin-bottom: var(--spacing-lg);
 }
 
-h3 {
+h3, 
+.button__label {
 	/* Used for minor headings */
 	font-size: calc( 1.25 * var(--font-size-factor) );
 	font-weight: var(--font-weight-bold);
@@ -66,6 +74,7 @@ p,
 	/* Normal text */
 	font-size: calc( 1 * var(--font-size-factor) );
 	font-weight: var(--font-weight-normal);
+	line-height: 1.3;
 }
 strong {
 	font-size: calc( 1 * var(--font-size-factor) );
