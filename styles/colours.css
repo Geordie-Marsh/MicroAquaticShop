@@ -27,7 +27,7 @@
 	--clr-rating: #E2BC36;
 
 	/* Colours for glass elements (panels) */
-	--clr-glass-stroke: #00000040;
+	--clr-glass-stroke: linear-gradient(to bottom right, #87b6cb, #00151C);
 	--clr-glass-gradient: linear-gradient(to bottom right, #4DA5C380, #153F4D40);
 
 	/* Gradients for buttons */

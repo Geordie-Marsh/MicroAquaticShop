@@ -1,6 +1,6 @@
 // This is the array used to generate the featured products list (would be generated from a proper database in the real website)
 // Each element in the outer array is a product, and the inner array has the name, the price and the product image's filename in that order
-let featuredProducts = [
+const featuredProducts = [
 	[
 		"Tangerine Tiger Shrimp", 
 		"$6.99",
@@ -51,4 +51,70 @@ let featuredProducts = [
 		"$19.99",
 		"shrimp-crazy-blue"
 	]	
+];
+
+
+// This is the array used to generate the shop by category buttons
+// Each element in the outer array is a category, and the inner array has the product type (animals, aquascaping or supplies), the category name and the logo's filename in that order
+const shoppingCategories = [
+	[
+		"animals",
+		"Shrimp",
+		"category-shrimp"
+	],
+	[
+		"animals",
+		"Fish",
+		"category-fish"
+	],
+	[
+		"animals",
+		"Snails",
+		"category-snail"
+	],
+	[
+		"animals",
+		"Algae Eaters",
+		"category-algae"
+	],
+	[
+		"aquascaping",
+		"Plants",
+		"category-grass"
+	],
+	[
+		"aquascaping",
+		"Bonsai",
+		"category-bonsai"
+	],
+	[
+		"aquascaping",
+		"Décor",
+		"category-treasure"
+	],
+	[
+		"aquascaping",
+		"Flooring",
+		"category-flooring"
+	],
+	[
+		"supplies",
+		"Tanks",
+		"category-tanks"
+	],
+	[
+		"supplies",
+		"Accessories",
+		"category-accessories"
+	],
+	[
+		"supplies",
+		"Tools",
+		"category-tools"
+	],
+	[
+		"supplies",
+		"Food",
+		"category-food"
+	]
 ];

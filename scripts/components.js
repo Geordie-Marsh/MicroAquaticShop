@@ -60,7 +60,7 @@ fetch("/components/header.html")
 
 
 // Including the featured products
-	// Fetching the HTML for each featured product from the local component
+	// Fetching the HTML for each element from the local component
 	fetch("/components/featured-product.html")
 		.then(response => {
 			// Checking if the request was successful
@@ -71,7 +71,7 @@ fetch("/components/header.html")
 			return response.text();
 		})
 		.then(html => {
-			// If successful, sending this HTML content to the function that creates each featured product
+			// If successful, sending this HTML content to the function that creates each element
 			includeFeaturedProducts(html);
 		})
 		.catch(error => {
@@ -79,9 +79,9 @@ fetch("/components/header.html")
 			log("There was a problem with the fetch operation: ", error);
 		});
 
-	// The function for creating each featured product and adding it into the DOM
+	// The function for creating each element and adding it into the DOM
 	function includeFeaturedProducts(html) {
-		// Creating a new a card for each featured product, using the data from the featuredProducts array
+		// Creating a new a card for each element, using the data from the featuredProducts array
 		for (let i = 0; i < featuredProducts.length; i++) {
 			// Creating a container element
 			const container = document.createElement("article");
@@ -97,7 +97,7 @@ fetch("/components/header.html")
 			classAdd(container, "flex--justify-between");
 			classAdd(container, "gap--standard");
 
-			// Replacing the default data for the featured product with that specific to the product in question
+			// Replacing the default data of the element with that specific to the product in question
 			const title = container.querySelector(".featured-product__title"); // Editing the title
 			title.textContent = featuredProducts[i][0];
 			const price = container.querySelector(".featured-product__price"); // Editing the price
@@ -107,6 +107,53 @@ fetch("/components/header.html")
 
 			// Appending the content of the container to the featured products div
 			$$(".featured-products__list").appendChild(container);
-			// const clone = document.importNode(code, true);
+		}
+	}
+
+
+
+
+
+// Including the shop by category buttons
+	// Fetching the HTML for each element from the local component
+	fetch("/components/shop-category.html")
+		.then(response => {
+			// Checking if the request was successful
+			if (!response.ok) {
+				throw new Error("Couldn't retrieve HTML data");
+			}
+			// Returning the HTML content as text
+			return response.text();
+		})
+		.then(html => {
+			// If successful, sending this HTML content to the function that creates each element
+			includeShoppingCategories(html);
+		})
+		.catch(error => {
+			// Logging any errors to the console
+			log("There was a problem with the fetch operation: ", error);
+		});
+
+	// The function for creating each element and adding it into the DOM
+	function includeShoppingCategories(html) {
+		// Creating a new a card for each element, using the data from the shoppingCategories array
+		for (let i = 0; i < shoppingCategories.length; i++) {
+			// Creating a button element
+			const button = document.createElement("button");
+
+			// Setting the innerHTML of the button to the fetched HTML
+			button.innerHTML = html;
+
+			// Giving the container classes
+			classAdd(button, "shopping-category");
+
+			// Replacing the default data of the element with that specific to the category in question
+			const category = button.querySelector(".button__label"); // Editing the category
+			category.textContent = shoppingCategories[i][1];
+			const img = button.querySelector(".button__logo"); // Editing the logo
+			img.setAttribute("src", "/assets/icons/" + shoppingCategories[i][2] + ".png");
+
+			// Appending the content of the button to the div of the product type the category falls under
+			$$(".category-type--" + shoppingCategories[i][0]).appendChild(button);
 		}
 	}
