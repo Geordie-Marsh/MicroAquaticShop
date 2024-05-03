@@ -35,7 +35,7 @@
 fetch("/components/header.html")
 	.then(response => response.text())
 	.then(data => {
-		$$(".header-placeholder").forEach(el => {
+		$$all(".header-placeholder").forEach(el => {
 			el.innerHTML = data;
 		})
 	});
