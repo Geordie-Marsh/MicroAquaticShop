@@ -67,9 +67,11 @@ h3,
 	/* Used for minor headings */
 	font-size: calc( 1.25 * var(--font-size-factor) );
 	font-weight: var(--font-weight-bold);
+	line-height: 1.3;
 }
 
 p,
+strong,
 .bullets-list > li {
 	/* Normal text */
 	font-size: calc( 1 * var(--font-size-factor) );
@@ -77,6 +79,5 @@ p,
 	line-height: 1.3;
 }
 strong {
-	font-size: calc( 1 * var(--font-size-factor) );
 	font-weight: var(--font-weight-bold);
 }

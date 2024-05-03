@@ -2,4 +2,7 @@
 	/* The effects that go on all highlighted section panels */
 	--effect-highlighted-panel-shadow: 0px 8px 13px 0px #0000001a;
 	--effect-highlighted-panel-blur: 100px;
+
+	/* The standard drop-shadow placed on individual elements */
+	--effect-shadow: 1px 1px 8px 0px #00000026;
 }

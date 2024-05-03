@@ -6,6 +6,10 @@
 	flex-direction: row;
 }
 
+.flex--vertical {
+	flex-direction: column;
+}
+
 .flex--justify-between {
 	justify-content: space-between;
 }
@@ -13,4 +17,13 @@
 
 .grid {
 	display: grid;
+}
+
+.gap--standard {
+	gap: var(--spacing-s);
+}
+
+
+.no-padding{
+	padding: 0;
 }
