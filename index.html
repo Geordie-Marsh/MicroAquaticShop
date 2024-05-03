@@ -18,7 +18,7 @@
 		</header>
 
 		<!-- The div containing the content and image of the hero page -->
-		<div class="hero-content">
+		<div class="hero-content grid">
 			<!-- The textual and CTA content of the hero page-->
 			<div class="hero-content__info panel panel--hero">
 				<!-- The div that holds the title -->
@@ -47,14 +47,24 @@
 	<!-- Contains all the sections of the homepage except the hero and footer -->
 	<main>
 		<!-- The 'Featured products' section -->
-		<section class="featured-products">
+		<section class="featured-products inner-section no-padding">
 			<!-- The section title -->
 			<h2>Featured Products</h2>
 			<!-- The horizontal list that contains all the featured products -->
-			<div class="featured-products__list">
-				<!-- (HORIZONTAL) FLEXBOX LAYOUT -->
-				<!-- POPULATED BY JAVASCRIPT -->
-				<!-- TODO: use <article> tags -->
+			<div class="featured-products-content">
+				<div class="featured-products__list flex flex--horizontal flex--justify-between gap--standard">
+					<!-- POPULATED BY JAVASCRIPT -->
+				</div>
+				<div class="carousel-button carousel-button--left">
+					<button class="button--scroll" aria-label="Left">
+						<img src="assets/icons/arrow-left.svg" class="button__scroll-arrow">
+					</button>
+				</div>
+				<div class="carousel-button carousel-button--right">
+					<button class="button--scroll" aria-label="Right">
+						<img src="assets/icons/arrow-right.svg" class="button__scroll-arrow">
+					</button>
+				</div>
 			</div>
 		</section>
 
@@ -88,7 +98,7 @@
 		</section>
 
 		<!-- The GRADIENT section containing the brand info -->
-		<section class="brand-info">
+		<section class="brand-info section--highlighted">
 			<h2>Why Choose Us?</h2>
 			<!-- The brand selling points are flexbox wrapped in this div -->
 			<div class="selling-point-cont panel panel--highlighted-section">
@@ -324,6 +334,7 @@
 
 	<!-- Scripts -->
 	<script src="/scripts/script.js"></script>
+	<script src="/scripts/variables.js"></script>
 	<script src="/scripts/definitions.js"></script>
 	<script src="/scripts/components.js"></script>
 </body>

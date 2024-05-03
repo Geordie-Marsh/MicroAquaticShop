@@ -1,8 +1,17 @@
 // Shortcut to call upon a DOM object (the first object with this CSS selector) by a CSS selector (e.g., h1, #ID, .class, etc.)
-let $ = (CSSSelector) => document.querySelector(CSSSelector); 
+const $$ = (CSSSelector) => document.querySelector(CSSSelector); 
 // Shortcut to call upon multiple DOM objects by a CSS selector (e.g., h1, .class, etc.)
-let $$ = (CSSSelector) => document.querySelectorAll(CSSSelector);
-// Shortcut for changing the style of all elements assigned to a CSS selector
-let $$style = (CSSSelector, styleName, styleValue) => $$(CSSSelector).forEach(el => {
-	el.style[styleName] = styleValue;
-});
+const $$all = (CSSSelector) => document.querySelectorAll(CSSSelector);
+
+// Shortcut for adding CSS classes
+const classAdd = (element, className) => element.classList.add(className);
+// Shortcut for removing CSS classes
+const classRemove = (element, className) => element.classList.remove(className);
+// Shortcut for toggling CSS classes - i.e., if the element doesn't have this class it'll be given it, and if it already does it'll be removed from it
+const classToggle = (element, className) => element.classList.toggle(className);
+
+// Shortcut for adding event listeners
+const on = (element, event, callback) => element.addEventListener(event, callback);
+
+// Shortcut for console.log
+const log = console.log;

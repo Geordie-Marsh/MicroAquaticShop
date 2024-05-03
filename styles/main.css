@@ -16,6 +16,7 @@
 *::before,
 *::after {
 	box-sizing: inherit;
+	-webkit-user-drag: none;
 }
 
 /* Making the webpage not scroll horizontally */
@@ -37,9 +38,7 @@ a {
 
 /* Universal styles for buttons */
 button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	padding: var(--spacing-m) var(--spacing-l);
 	border-radius: var(--spacing-s);
 	-webkit-border-radius: var(--spacing-s);
 	-moz-border-radius: var(--spacing-s);
@@ -47,11 +46,14 @@ button {
 	-o-border-radius: var(--spacing-s);
 	background: var(--clr-button-gradient);
 	border: none;
-	color: var(--clr-text-opposite);
 	font-family: inherit;
-	padding: var(--spacing-m) var(--spacing-l);
+	color: var(--clr-text-opposite);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	gap: var(--spacing-xs);
 	background-blend-mode: luminosity, normal;
+	box-shadow: var(--effect-shadow);
 }
 button:hover {
 	cursor: pointer;
@@ -59,51 +61,74 @@ button:hover {
 .button--cta {
 	background: var(--clr-button-gradient--cta);
 }
+.button--scroll {
+	padding: var(--spacing-s);
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+}
 .button__label {
-	margin-top: 3px;
+	margin-top: 2px;
 }
 .button__action-symbol {
 	height: var(--spacing-m);
+}
+.button__scroll-arrow {
+	height: var(--spacing-l);
+	aspect-ratio: 1 / 1;
 }
 
 /* Universal styles for sections */
 section,
 main {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: var(--spacing-2xl);
 	align-items: flex-start;
+}
+section {
+	padding: 0 var(--spacing-2xl);
+	gap: var(--spacing-l);
+}
+main {
+	margin: var(--spacing-2xl) 0;
 	gap: var(--spacing-2xl);
 }
 .section--highlighted {
-	background-color: var(--clr-gradients-aqua-dk);
-	box-shadow: var(--effect-highlighted-panel-shadow);
-	backdrop-filter: blur(var(--effect-highlighted-panel-blur));
+	padding: var(--spacing-2xl);
 	border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
 	-webkit-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
 	-moz-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
 	-ms-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
 	-o-border-radius: 0 0 var(--spacing-3xl) var(--spacing-3xl);
+	background-color: var(--clr-gradients-aqua-dk);
+	box-shadow: var(--effect-highlighted-panel-shadow);
+	backdrop-filter: blur(var(--effect-highlighted-panel-blur));
 }
+section > h2 {
+	width: 100%;
+	text-align: center;
+}
+
 
 /* Universal styles for panels */
 .panel {
-	display: flex;
-	flex-wrap: nowrap;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-between;
 	padding: var(--spacing-s);
-	gap: var(--spacing-xs);
 	border-radius: var(--spacing-m);
-	border: 0.6px solid var(--clr-glass-stroke);
-	background: var(--clr-glass-gradient);
-	box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
 	-webkit-border-radius: var(--spacing-m);
 	-moz-border-radius: var(--spacing-m);
 	-ms-border-radius: var(--spacing-m);
 	-o-border-radius: var(--spacing-m);
-	padding: var(--spacing-m);
+	background: var(--clr-glass-gradient);
+	box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
+	border: 0.6px solid var(--clr-glass-stroke);
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 .panel--hero {
 	padding: var(--spacing-xl);
@@ -117,12 +142,11 @@ main {
 
 /* Hero section */
 .hero-content {
-	display: grid;
+	width: 100%;
+	overflow: visible;
+	align-items: center;
 	grid-template-columns: repeat(12, 1fr);
 	gap: var(--spacing-s);
-	width: 100%;
-	align-items: center;
-	overflow: visible;
 }
 .hero-content__info {
 	grid-column: 1 / 8;
@@ -143,9 +167,9 @@ main {
 } */
 .hero-content__image {
 	position: absolute;
-	margin: 0;
 	width: 44%;
 	right: var(--spacing-2xl);
+	margin: 0;
 	
 }
 .hero-content__image img {
@@ -154,4 +178,39 @@ main {
 }
 .hero-title-A-kerning {
 	letter-spacing: -0.325rem;
+}
+
+
+/* Featured produccts section */
+.featured-products-content {
+	position: relative;
+	width: 100%;
+}
+.featured-products__list {
+	gap: var(--spacing-s);
+	overflow-x: scroll;
+	width: 100%;
+	padding: 0 var(--spacing-2xl);
+	scrollbar-width: none;
+	scroll-snap-type: x mandatory;
+	flex-wrap: nowrap;
+}
+.featured-products__list > * {
+	scroll-snap-align: center;
+}
+.carousel-button {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.carousel-button--left {
+	left: var(--spacing-2xl);
+}
+.carousel-button--right {
+	right: var(--spacing-2xl);
+}
+.featured-products__list .button--scroll {
+	
 }
