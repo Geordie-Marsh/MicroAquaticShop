@@ -47,7 +47,8 @@
 
 h1 {
 	/* Used for titles, like at the top of pages - uses the heaviest font weight */
-	font-size: calc( 8 * var(--font-size-factor) );
+	/* font-size: calc( 8 * var(--font-size-factor) ); */
+	font-size: clamp(calc(7.5 * var(--sizing-factor)), 12vw, calc(10.85 * var(--sizing-factor)));
 	font-weight: var(--font-weight-black);
 	margin-top: var(--spacing-l);
 	margin-bottom: 0;
