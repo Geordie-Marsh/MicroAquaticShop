@@ -27,3 +27,7 @@
 .no-padding{
 	padding: 0;
 }
+.no-padding--horizontal {
+	padding-left: 0;
+	padding-right: 0;
+}

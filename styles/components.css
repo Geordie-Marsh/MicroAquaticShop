@@ -55,11 +55,14 @@ header > * {
 
 
 /* Featured products */
+.featured-product {
+	scroll-snap-align: center;
+}
 .featured-product * {
 	margin: 0;
 }
 .featured-product__img {
-	width: calc(15 * var(--sizing-factor));
+	width: calc(11 * var(--sizing-factor));
 	object-fit: cover;
 	aspect-ratio: 1 / 1;
 	border-radius: var(--spacing-xs);
@@ -78,7 +81,6 @@ header > * {
 	width: 100%;
 }
 .featured-product__buttons_heart {
-
 	aspect-ratio: 1 / 1;
 	height: 100%;
 	padding: var(--spacing-m);

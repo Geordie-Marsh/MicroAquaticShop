@@ -139,6 +139,14 @@ section > h2 {
 	-ms-border-radius: var(--spacing-xl);
 	-o-border-radius: var(--spacing-xl);
 }
+.panel--highlighted-section {
+	padding: var(--spacing-l);
+	border-radius: var(--spacing-xl);
+	-webkit-border-radius: var(--spacing-xl);
+	-moz-border-radius: var(--spacing-xl);
+	-ms-border-radius: var(--spacing-xl);
+	-o-border-radius: var(--spacing-xl);
+}
 
 
 /* Hero section */
@@ -196,9 +204,6 @@ section > h2 {
 	scroll-snap-type: x mandatory;
 	flex-wrap: nowrap;
 }
-.featured-products__list > * {
-	scroll-snap-align: center;
-}
 .carousel-button {
 	position: absolute;
 	top: 0;
@@ -241,4 +246,37 @@ section > h2 {
 }
 .button__logo {
 	height: var(--spacing-xl);
+}
+
+
+/* Brand selling points section */
+.selling-point-cont {
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	width: 100%;
+}
+.selling-point {
+	display: grid;
+	column-gap: var(--spacing-s);
+	grid-template-columns: auto 1fr;
+	grid-template-rows: repeat(2, auto);
+}
+.selling-point__logo {
+	grid-column: 1 / 2;
+	grid-row: 1 / -1;
+	/* height: var(--spacing-3xl); */
+	height: 100%;
+}
+.selling-point__title {
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	margin: 0;
+	margin-top: 3px;
+	width: 100%;
+}
+.selling-point__detail {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	margin: 0;
+	width: 100%;
 }
