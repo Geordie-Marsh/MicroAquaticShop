@@ -11,16 +11,16 @@
 <body>
 
 	<!-- The hero introductory section of the homepage -- GRADIENT section -->
-	<section class="hero section--highlighted">
+	<section class="hero section--highlighted section--hero">
 		<!-- The navbar header on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
 		<header class="header-placeholder">
 			<!-- WEB COMPONENT INCLUDE -->
 		</header>
 
 		<!-- The div containing the content and image of the hero page -->
-		<div class="hero-content grid">
+		<div class="hero-content">
 			<!-- The textual and CTA content of the hero page-->
-			<div class="hero-content__info panel panel--hero">
+			<div class="hero-content__info panel panel--highlighted-section">
 				<!-- The div that holds the title -->
 				<div class="page-title">
 					<!-- There is a bit of text above the main part of the title which is smaller -->
@@ -32,13 +32,13 @@
 				<p>Dive into an enchanting small-scale underwater world at the Micro Aquatic Shop, where tiny treasures await.</p>
 				<!-- The 'let's shop' button -->
 				<button onclick="location.href='#shop-by-category'" class="button--cta" aria-label="let's shop">
-					<span class="button__label">Let's shop</span>
+					<span class="button__label--cta">Let's shop</span>
 					<img src="assets/icons/arrow-right.svg" class="button__action-symbol" alt="Right arrow icon">
 				</button>
 			</div>
 
 			<!-- The image on the hero page (this overlaps with the content div) -->
-			<figure class="hero-content__image">
+			<figure class="hero-content__image flex--vertical">
 				<img src="/assets/images/hero-betta-fish.png" alt="A white, green and blue betta fish">
 			</figure>
 		</div>
@@ -52,9 +52,10 @@
 			<h2>Featured Products</h2>
 			<!-- The horizontal list that contains all the featured products -->
 			<div class="featured-products-content">
-				<div class="featured-products__list flex flex--horizontal flex--justify-between gap--standard">
+				<div class="featured-products__list flex--horizontal standard-spacing">
 					<!-- POPULATED BY JAVASCRIPT -->
 				</div>
+				<!-- TODO Make these buttons functional -->
 				<div class="carousel-button carousel-button--left">
 					<button class="button--scroll" aria-label="Left">
 						<img src="assets/icons/arrow-left.svg" class="button__scroll-arrow">
@@ -73,22 +74,22 @@
 			<!-- The section title -->
 			<h2>Shop by Category</h2>
 			<!-- The div that holds the 3 category panels -->
-			<div class="shop-by-category__categories-cont flex flex--horizontal flex--justify-between">
+			<div class="shop-by-category__categories-cont flex--horizontal standard-spacing">
 				<!-- GRID LAYOUT -->
 				<!-- The 3 categories, each is a div with a title and 4x categories (buttons) -->
-				<div class="panel category-type category-type--animals flex flex--vertical flex--justify-between gap--standard">
+				<div class="panel category-type category-type--animals standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h3>Animals</h3>
 					<!-- POPULATED BY JAVASCRIPT -->
 					<!-- 4x buttons -->
 				</div>
-				<div class="panel category-type category-type--aquascaping flex flex--vertical flex--justify-between gap--standard">
+				<div class="panel category-type category-type--aquascaping standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h3>Aquascaping</h3>
 					<!-- POPULATED BY JAVASCRIPT -->
 					<!-- 4x buttons -->
 				</div>
-				<div class="panel category-type category-type--supplies flex flex--vertical flex--justify-between gap--standard">
+				<div class="panel category-type category-type--supplies standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h3>Supplies</h3>
 					<!-- POPULATED BY JAVASCRIPT -->
@@ -101,7 +102,7 @@
 		<section class="brand-info section--highlighted">
 			<h2>Why Choose Us?</h2>
 			<!-- The brand selling points are flexbox wrapped in this div -->
-			<div class="selling-point-cont panel panel--highlighted-section">
+			<div class="selling-point-cont panel panel--highlighted-section standard-spacing">
 				<!-- GRID LAYOUT -->
 				<!-- Each selling point is wrapped in a GRID div -->
 				<article class="selling-point">
@@ -115,14 +116,14 @@
 					<p class="selling-point__detail">1-2 Business days</p>
 				</article>
 				<article class="selling-point">
-					<img class="selling-point__logo" src="/assets/icons/brand-stopwatch.svg" alt="30 minutes">
-					<h3 class="selling-point__title">Local Pickup from Shop</h3>
-					<p class="selling-point__detail">Available in 30 mins</p>
-				</article>
-				<article class="selling-point">
 					<img class="selling-point__logo" src="/assets/icons/brand-support.svg" alt="Hand holding a love heart">
 					<h3 class="selling-point__title">Excellent Support</h3>
 					<p class="selling-point__detail">Call/Message available 24/7</p>
+				</article>
+				<article class="selling-point">
+					<img class="selling-point__logo" src="/assets/icons/brand-stopwatch.svg" alt="30 minutes">
+					<h3 class="selling-point__title">Local Shop Pickup</h3>
+					<p class="selling-point__detail">Available in 30 mins</p>
 				</article>
 			</div>
 

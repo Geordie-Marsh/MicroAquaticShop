@@ -92,10 +92,8 @@ fetch("/components/header.html")
 			// Giving the container classes
 			classAdd(container, "featured-product");
 			classAdd(container, "panel");
-			classAdd(container, "flex");
 			classAdd(container, "flex--vertical");
-			classAdd(container, "flex--justify-between");
-			classAdd(container, "gap--standard");
+			classAdd(container, "standard-spacing");
 
 			// Replacing the default data of the element with that specific to the product in question
 			const title = container.querySelector(".featured-product__title"); // Editing the title

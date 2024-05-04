@@ -1,16 +1,12 @@
-.flex {
-	display: flex;
-}
-
 .flex--horizontal {
+	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 
 .flex--vertical {
+	display: flex;
 	flex-direction: column;
-}
-
-.flex--justify-between {
 	justify-content: space-between;
 }
 
@@ -19,7 +15,7 @@
 	display: grid;
 }
 
-.gap--standard {
+.standard-spacing {
 	gap: var(--spacing-s);
 }
 

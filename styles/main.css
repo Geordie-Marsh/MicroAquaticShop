@@ -22,6 +22,7 @@
 /* Making the webpage not scroll horizontally */
 html {
 	overflow-x: hidden;
+	width: 100vw;
 }
 
 /* Making the body not have a margin by default */
@@ -30,22 +31,12 @@ body {
 	background-color: var(--clr-background);
 }
 
-/* Removing the default stylings of links */
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
 /* Universal styles for buttons */
 button {
-	padding: var(--spacing-m) var(--spacing-l);
+	padding: var(--spacing-s) var(--spacing-m);
 	border-radius: var(--spacing-s);
-	-webkit-border-radius: var(--spacing-s);
-	-moz-border-radius: var(--spacing-s);
-	-ms-border-radius: var(--spacing-s);
-	-o-border-radius: var(--spacing-s);
 	background: var(--clr-button-gradient);
-	border: none;
+	border: none;	/*Disabling the default styling*/
 	font-family: inherit;
 	color: var(--clr-text-opposite);
 	display: flex;
@@ -54,9 +45,26 @@ button {
 	gap: var(--spacing-xs);
 	background-blend-mode: luminosity, normal;
 	box-shadow: var(--effect-shadow);
+	transition: var(--effect-transition-duration);
+	-webkit-transition: var(--effect-transition-duration);
+	-moz-transition: var(--effect-transition-duration);
+	-ms-transition: var(--effect-transition-duration);
+	-o-transition: var(--effect-transition-duration);
 }
 button:hover {
 	cursor: pointer;
+	filter:brightness(0.8);
+	-webkit-filter:brightness(0.8);
+}
+button:active {
+	cursor: pointer;
+	filter: brightness(0.8);
+	transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	-moz-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	-o-transform: scale(0.95);
+	-webkit-filter: brightness(0.8);
 }
 .button--cta {
 	background: var(--clr-button-gradient--cta);
@@ -69,7 +77,8 @@ button:hover {
 	-ms-border-radius: 100%;
 	-o-border-radius: 100%;
 }
-.button__label {
+.button__label, 
+.button__label--cta {
 	margin-top: 2px;
 }
 .button__action-symbol {
@@ -86,7 +95,6 @@ main {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
 }
 section {
 	padding: 0 var(--spacing-2xl);
@@ -103,7 +111,7 @@ main {
 	-moz-border-radius: var(--spacing-3xl);
 	-ms-border-radius: var(--spacing-3xl);
 	-o-border-radius: var(--spacing-3xl);
-	background-color: var(--clr-gradients-aqua-dk);
+	background-color: var(--clr-gradients-aqua-dk); /* TODO make gradients */
 	box-shadow: var(--effect-highlighted-panel-shadow);
 	backdrop-filter: blur(var(--effect-highlighted-panel-blur));
 }
@@ -120,10 +128,6 @@ section > h2 {
 .panel {
 	padding: var(--spacing-s);
 	border-radius: var(--spacing-m);
-	-webkit-border-radius: var(--spacing-m);
-	-moz-border-radius: var(--spacing-m);
-	-ms-border-radius: var(--spacing-m);
-	-o-border-radius: var(--spacing-m);
 	background: var(--clr-glass-gradient);
 	box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
 	border: 0.6px solid #00000040;
@@ -132,23 +136,19 @@ section > h2 {
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: flex-start;
-	background-clip: padding-box;
+	background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
 }
 .panel--highlighted-section {
 	padding: var(--spacing-xl);
 	border-radius: var(--spacing-xl);
-	-webkit-border-radius: var(--spacing-xl);
-	-moz-border-radius: var(--spacing-xl);
-	-ms-border-radius: var(--spacing-xl);
-	-o-border-radius: var(--spacing-xl);
 }
 
 
 /* Hero section */
 .hero-content {
+	position: relative;
 	width: 100%;
 	overflow: visible;
-	position: relative;
 }
 .hero-content__info {
 	width: clamp(calc(34.5 * var(--sizing-factor)), 60%, calc(50 * var(--sizing-factor)));
@@ -157,11 +157,10 @@ section > h2 {
 .hero-content__image {
 	position: absolute;
 	width: 44%;
-	/* right: var(--spacing-2xl); */
+	height: 100%;
+	top: 0;
 	right: 0;
 	margin: 0;
-	top: 0;
-	height: 100%;
 }
 .hero-content__image img {
 	width: 100%;
@@ -183,14 +182,14 @@ section > h2 {
 	overflow-x: scroll;
 	width: 100%;
 	padding: 0 var(--spacing-2xl);
-	scrollbar-width: none;
-	scroll-snap-type: x mandatory;
+	scrollbar-width: none; /* Hiding the scrollbar */
+	scroll-snap-type: x mandatory; /* Making the scrolling snappy */
 	flex-wrap: nowrap;
 }
 .carousel-button {
 	position: absolute;
-	top: 0;
 	height: 100%;
+	top: 0;
 	display: flex;
 	align-items: center;
 }
@@ -205,7 +204,6 @@ section > h2 {
 /* Shop by category section */
 .shop-by-category__categories-cont {
 	width: 100%;
-	gap: var(--spacing-l);
 }
 .category-type {
 	width: 100%;
@@ -225,7 +223,7 @@ section > h2 {
 	text-align: left;
 }
 .shopping-category .button__action-symbol {
-	height: var(--spacing-l);
+	height: var(--spacing-m);
 }
 .button__logo {
 	height: var(--spacing-xl);
@@ -240,7 +238,7 @@ section > h2 {
 }
 .selling-point {
 	display: grid;
-	column-gap: var(--spacing-s);
+	column-gap: var(--spacing-m);
 	grid-template-columns: auto 1fr;
 	grid-template-rows: repeat(2, auto);
 }
@@ -248,18 +246,16 @@ section > h2 {
 	grid-column: 1 / 2;
 	grid-row: 1 / -1;
 	/* height: var(--spacing-3xl); */
-	height: 100%;
+	height: var(--spacing-2xl);
 }
 .selling-point__title {
 	grid-column: 2 / 3;
 	grid-row: 1 / 2;
 	margin: 0;
 	margin-top: 3px;
-	width: 100%;
 }
 .selling-point__detail {
 	grid-column: 2 / 3;
 	grid-row: 2 / 3;
 	margin: 0;
-	width: 100%;
 }
