@@ -1,58 +1,28 @@
-// Including buttons
-	// fetch("/components/button.html")
-	// 	.then(response => response.text())
-	// 	.then(data => {
-	// 		$$(".placeholder--button").forEach(el => {
-	// 			el.innerHTML = data;
-	// 		})
-	// 	});
-
-// customElements.define(
-// 	"component-button",
-// 	class extends HTMLElement {
-// 		constructor() {
-// 			super();
-// 			const shadowRoot = this.attachShadow({ mode: "open" });
-			
-// 			// Fetching the component from a local file
-// 			fetch("/components/button.html")
-// 				.then(response => response.text())
-// 				.then(templateString => {
-// 					const parser = new DOMParser();
-// 					const template = parser.parseFromString(templateString, "text/html");
-// 					shadowRoot.appendChild(template.querySelector("template").content.cloneNode(true));
-// 				})
-// 				.catch(error => {
-// 					console.error("Error fetching template:", error);
-// 				});
-// 		}
-// 	},
-// 	);
-// TODO Remove this if not used
-
-
 // Including the header
-fetch("/components/header.html")
-	.then(response => response.text())
-	.then(data => {
-		$$all(".header-placeholder").forEach(el => {
-			el.innerHTML = data;
+	// Fetching the HTML for each element from the local component
+	fetch("/components/header.html")
+		.then(response => {
+			// Checking if the request was successful
+			if (!response.ok) {
+				throw new Error("Couldn't retrieve HTML data");
+			}
+			// Returning the HTML content as text
+			return response.text();
 		})
-	});
+		.then(html => {
+			// If successful, sending this HTML content to the function that creates each element
+			includeHeader(html);
+		})
+		.catch(error => {
+			// Logging any errors to the console
+			log("There was a problem with the fetch operation: ", error);
+		});
 
-    // log(template);
-    // // Clone the product element content
-    // const clone = document.importNode(template.content, true);
-    
-    // Modify the cloned content
-    // const title = clone.querySelector('.product-template__title');
-    // title.textContent = "test"; // Change the content
-    // nameSpan.setAttribute("class", "custom-class"); 
-	// Change the class attribute
-    
-    // Append the modified content to the document
-    // document.body.appendChild(template.querySelector("article").content.cloneNode(true));
-
+	// The function for creating the header and adding it into the DOM
+	function includeHeader(html) {
+		// Setting the innerHTML of the container to the fetched HTML
+		$$(".page-header").innerHTML = html;
+	}
 
 
 
