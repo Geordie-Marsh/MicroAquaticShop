@@ -1,14 +1,10 @@
 /* HEADER */
-	header {
+	.page-header {
 		width: 100%;
 		height: var(--spacing-xl);
 		z-index: 100;
 	}
-	header img {
-		height: var(--spacing-xl);
-		aspect-ratio: 1 / 1;
-	}
-	header > * {
+	.page-header > * {
 		height: 100%;
 		align-items: center;
 	}
@@ -31,6 +27,10 @@
 	}
 	.navbar {
 		gap: var(--spacing-m); /* The navbar has larger spacing than most flexboxes */
+	}
+	.navbar__icon {
+		height: var(--spacing-xl);
+		aspect-ratio: 1 / 1;
 	}
 	.navbar__drop-down {
 		column-gap: var(--spacing-xs);
