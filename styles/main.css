@@ -91,10 +91,13 @@ button:active {
 
 /* Universal styles for sections */
 section,
-main {
+main,
+figure {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	overflow: visible;
+	margin: 0;
 }
 section {
 	padding: 0 var(--spacing-2xl);
@@ -178,7 +181,6 @@ section > h2 {
 	width: 100%;
 }
 .featured-products__list {
-	gap: var(--spacing-s);
 	overflow-x: scroll;
 	width: 100%;
 	padding: 0 var(--spacing-2xl);
@@ -280,4 +282,20 @@ section > h2 {
 .about-us__text {
 	align-items: flex-start;
 	justify-content: space-between; 
+}
+
+
+/* Slideshow */
+.slideshow {
+	overflow-x: scroll;
+	width: 100%;
+	padding: 0 var(--spacing-2xl);
+	scrollbar-width: none; /* Hiding the scrollbar */
+	scroll-snap-type: x mandatory; /* Making the scrolling snappy */
+	flex-wrap: nowrap;
+}
+.slideshow__img {
+	scroll-snap-align: center;
+	border-radius: var(--spacing-s);
+	height: 80vh;
 }
