@@ -91,7 +91,7 @@ button:active {
 
 /* Universal styles for sections */
 section,
-main,
+body > main,
 figure {
 	width: 100%;
 	display: flex;
@@ -103,7 +103,7 @@ section {
 	padding: 0 var(--spacing-2xl);
 	gap: var(--spacing-l);
 }
-main {
+body > main {
 	margin: var(--spacing-2xl) 0;
 	gap: var(--spacing-2xl);
 }
@@ -322,4 +322,86 @@ section > h2 {
 .homepage-review__text {
 	margin: 0;
 	height: 100%;
+}
+
+
+/* Homepage services */
+.services {
+	grid-template-areas: 
+		"services-support services-support services-tips services-tips"
+		"services-faqs services-directions services-shipping services-affiliate"
+		"services-blog services-blog services-blog services-blog"
+	;
+	grid-template-columns: repeat(4, 1fr);
+}
+.services__service {
+	align-items: center;
+	gap: var(--spacing-l);
+}
+.services__service__icon {
+	width: var(--spacing-2xl);
+	margin-bottom: var(--spacing-s);
+}
+.services__service__header {
+	align-items: center;
+}
+.services__service__header > *,
+.services__service__content > * {
+	margin: 0;
+}
+.services__service__content {
+	width: 100%;
+	/* margin: var(--spacing-s) 0; */
+}
+.services__service__icon {
+	width: var(--spacing-2xl);
+	margin-bottom: var(--spacing-s);
+}
+
+.services__service--support {
+	grid-area: services-support;
+}
+.services__service--tips {
+	grid-area: services-tips;
+}
+.services__service--faqs {
+	grid-area: services-faqs;
+}
+.services__service--direction {
+	grid-area: services-direction;
+}
+.services__service--shipping {
+	grid-area: services-shipping;
+}
+.services__service--affiliate {
+	grid-area: services-affiliate;
+}
+.services__service--blog {
+	grid-area: services-blog;
+}
+
+.services__service--support .bullets-list {
+	columns: 2;
+}
+.button--service {
+	color: var(--clr-text);
+	padding: var(--spacing-m);
+	background: var(--clr-glass-gradient--button);
+	border: 0.6px solid #00000040;
+	justify-content: space-between;
+	text-align: left;
+	width: 100%;
+}
+.button--service .button__logo {
+	margin-right: var(--spacing-2xs);
+}
+.button--service .button__label {
+	width: 100%;	
+}
+.button__label--stacked {
+	margin: var(--spacing-xs) 0;
+	margin-left: var(--spacing-s);
+}
+.button__label--major {
+	line-height: 1.8;
 }

@@ -78,7 +78,8 @@ h3,
 p,
 strong,
 a,
-.bullets-list > li {
+.bullets-list > li,
+.button__label--minor {
 	/* Normal text */
 	font-size: calc( 1 * var(--font-size-factor) );
 	font-weight: var(--font-weight-normal);
