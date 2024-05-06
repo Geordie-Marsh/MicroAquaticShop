@@ -22,7 +22,6 @@
 /* Making the webpage not scroll horizontally */
 html {
 	overflow-x: hidden;
-	width: 100vw;
 }
 
 /* Making the body not have a margin by default */
