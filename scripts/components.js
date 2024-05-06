@@ -155,3 +155,59 @@ fetch("/components/header.html")
 			$$(".category-type--" + shoppingCategories[i][0]).appendChild(button);
 		}
 	}
+
+
+
+
+
+// Including the homepage reviews
+	// Fetching the HTML for each element from the local component
+	fetch("/components/homepage-review.html")
+		.then(response => {
+			// Checking if the request was successful
+			if (!response.ok) {
+				throw new Error("Couldn't retrieve HTML data");
+			}
+			// Returning the HTML content as text
+			return response.text();
+		})
+		.then(html => {
+			// If successful, sending this HTML content to the function that creates each element
+			includeHomepageReviews(html);
+		})
+		.catch(error => {
+			// Logging any errors to the console
+			log("There was a problem with the fetch operation: ", error);
+		});
+
+	// The function for creating each element and adding it into the DOM
+	function includeHomepageReviews(html) {
+		// Creating a new a card for each element, using the data from the homepageReviews array
+		for (let i = 0; i < homepageReviews.length; i++) {
+			// Creating a review element
+			const review = document.createElement("article");
+
+			// Setting the innerHTML of the review to the fetched HTML
+			review.innerHTML = html;
+
+			// Giving the container classes
+			classAdd(review, "homepage-review");
+			classAdd(review, "panel");
+			classAdd(review, "flex--vertical");
+			classAdd(review, "standard-spacing");
+			// The bottom review in the 1st and 3rd columns should stretch vertically to fill the space
+			
+
+			// Replacing the default data of the element with that specific to the category in question
+			const name = review.querySelector(".homepage-review__name"); // Editing the name
+			name.textContent = homepageReviews[i][0];
+			const text = review.querySelector(".homepage-review__text"); // Editing the review text
+			text.textContent = homepageReviews[i][1];
+
+			// Determining which column to put the review into (2 reviews per column)
+			let columnNo = roundUp((i + 1) / 2);
+
+			// Appending the content of the review to the div of the product type the category falls under
+			$$(".reviews__reviews-cont__column" + columnNo).appendChild(review);
+		}
+	}

@@ -118,3 +118,42 @@ const shoppingCategories = [
 		"category-food"
 	]
 ];
+
+
+
+// This is the array used to generate the homepage reviews
+// Each element in the outer array is a revoew, and the inner array has the reviewer's name and the review in that order
+const homepageReviews = [
+	[
+		"Cady Heron",
+		"My fish were exactly the size mentioned and were delivered on time and healthy. Would highly recommend this shop!"
+	],
+	[
+		"Aaron Samuels",
+		"Great service, I love my new little shrimp!"
+	],
+	[
+		"Regina George",
+		"These little fish are like TO. DIE. FOR!!!"
+	],
+	[
+		"Gretchen Wieners",
+		"I love the bonsai it was really well constructed and fit into my aquarium perfectly! so fetch"
+	],
+	[
+		"Karen Smith",
+		"I got the mixed cherry shrimp and they're so cuteeeeee I love them so much and they're all really healthy and pretty colours"
+	],
+	[
+		"Janis Ian",
+		"Staff were really helpful and friendly."
+	],
+	[
+		"Shane Omens",
+		"These fish are great! They match my fish costume exactly!"
+	],
+	[
+		"Glen Coco",
+		"Got my daughter a batch of 1000 FAB little shrimpies for her new aquarium installation... she actually likes them! Great gift!!! "
+	]
+]

@@ -299,3 +299,27 @@ section > h2 {
 	border-radius: var(--spacing-s);
 	height: 80vh;
 }
+
+
+/* Homepage reviews */
+.homepage-reviews__reviews-cont {
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+}
+.homepage-review {
+	flex-grow: 1;
+}
+.homepage-review__name {
+	margin-bottom: -10px;
+}
+.homepage-review__stars-cont {
+	justify-content: flex-start;
+	gap: var(--spacing-2xs);
+}
+.homepage-review__stars-cont__star {
+	width: var(--spacing-l);
+}
+.homepage-review__text {
+	margin: 0;
+	height: 100%;
+}

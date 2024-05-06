@@ -15,3 +15,11 @@ const on = (element, event, callback) => element.addEventListener(event, callbac
 
 // Shortcut for console.log
 const log = console.log;
+
+// Math shortcuts
+// Min and max
+const min = (number) => Math.min(number);
+const max = (number) => Math.max(number);
+// Round up and down
+const roundUp = (number) => Math.ceil(number);
+const roundDown = (number) => Math.floor(number);
