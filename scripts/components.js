@@ -113,6 +113,7 @@
 			button.innerHTML = html;
 
 			// Giving the container classes
+			classAdd(button, "button");
 			classAdd(button, "shopping-category");
 
 			// Replacing the default data of the element with that specific to the category in question

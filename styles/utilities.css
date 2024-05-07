@@ -29,7 +29,7 @@
 
 
 /* Universal styles for buttons */
-button {
+.button {
 	padding: var(--spacing-03) var(--spacing-05);
 	border-radius: var(--spacing-03);
 	background: var(--clr-button-gradient);
@@ -48,12 +48,12 @@ button {
 	-ms-transition: var(--effect-transition-duration);
 	-o-transition: var(--effect-transition-duration);
 }
-button:hover {
+.button:hover {
 	cursor: pointer;
 	filter:brightness(0.8);
 	-webkit-filter:brightness(0.8);
 }
-button:active {
+.button:active {
 	cursor: pointer;
 	filter: brightness(0.8);
 	transform: scale(0.95);
