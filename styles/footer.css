@@ -44,8 +44,4 @@
 }
 .footer-copyright-bar__cards {
 	flex-wrap: wrap;
-
-	& > img:hover {
-		cursor: pointer;
-	}
 }

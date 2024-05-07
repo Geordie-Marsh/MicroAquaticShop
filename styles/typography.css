@@ -76,7 +76,7 @@ p,
 strong,
 a,
 .bullets-list > li,
-.button__label--minor {
+.button__label--text {
 	/* Normal text */
 	font-size: calc( 1 * var(--font-size-factor) );
 	font-weight: var(--font-weight-normal);

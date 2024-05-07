@@ -1,12 +1,14 @@
 /* Importing the other CSS files */
-/* Note: the components stylesheet is included at the end of this stylesheet so the component styles have higher hierarchy than those in this stylesheet */
-@import url(animations.css);
+/* Basic definitions files */
+@import url(layout.css);
 @import url(colours.css);
 @import url(effects.css);
-@import url(layout.css);
 @import url(typography.css);
-@import url(utilities.css);
+@import url(animations.css);
+/* Reusable components and elements */
 @import url(components.css);
+@import url(utilities.css);
+/* Component-specific stylesheets */
 @import url(header.css);
 @import url(footer.css);
 @import url(featured-product.css);
@@ -33,9 +35,3 @@ body {
 	margin: 0;
 	background-color: var(--clr-background-lt);
 }
-
-
-
-
-
-

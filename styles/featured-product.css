@@ -11,21 +11,8 @@
 .featured-product__title {
 	height: 100%;
 }
-.featured-product__buttons {
-	width: 100%;
-}
-.featured-product__buttons_view {
-	width: 100%;
-}
-.featured-product__buttons_heart {
-	aspect-ratio: 1 / 1;
-	height: 100%;
-	padding: var(--spacing-03);
-}
-.featured-product__buttons_heart img {
-
-	height: 100%;
-}
-.featured-product__cart-button {
+.featured-product__buttons,
+.featured-product__button--view,
+.featured-product__button--cart {
 	width: 100%;
 }
