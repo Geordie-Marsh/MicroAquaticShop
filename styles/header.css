@@ -1,10 +1,12 @@
 .page-header {
+	/* The whole header */
 	width: 100%;
 	height: var(--spacing-06);
 	z-index: 100;
 	justify-content: space-between;
 }
 .page-header > * {
+	/* Making all the header's items the same height */
 	height: 100%;
 	align-items: center;
 }
@@ -17,11 +19,13 @@
 	width: var(--spacing-06);
 }
 .logo h3 {
+	/* Vertically aligning the logo's text to the icon */
 	margin-top: 6px;
 }
 
 /* The navbar */
 .header-divider {
+	/* The small vertical lines separating the different sections of the navbar */
 	height: 80%;
 	width: 1px;
 	background-color: var(--clr-text);
@@ -29,16 +33,19 @@
 	margin: auto var(--spacing-01); /* Making the divider vertically centred */
 }
 .navbar {
-	gap: var(--spacing-04); /* The navbar has larger spacing than most flexboxes */
+	gap: var(--spacing-05); /* The navbar has larger spacing than most flexboxes */
 }
 .navbar__icon {
+	/* THe icons in the navbar */
 	height: var(--spacing-05);
 	aspect-ratio: 1 / 1;
 }
 .navbar__drop-down {
+	/* The page headings that have dropdown menus */
 	column-gap: var(--spacing-02);
 }
 .navbar__drop-down__arrow {
+	/* The arrows next to the headings to indicate drop down menus */
 	height: var(--spacing-03);
 	margin-top: 3px;
 }

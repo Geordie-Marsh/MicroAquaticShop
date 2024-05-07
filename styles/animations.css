@@ -1,0 +1,4 @@
+:root {
+	/* The standard transition duration */
+	--effect-transition-duration: 0.2s;
+}

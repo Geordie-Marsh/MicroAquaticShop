@@ -1,181 +1,201 @@
 /* Featured products section (not the featured products cards themselves as they're components) */
-.featured-products-content {
-	position: relative;
-	width: 100%;
-}
-.featured-products__list {
-	overflow-x: scroll;
-	width: 100%;
-	padding: 0 var(--layout-04);
-	scrollbar-width: none; /* Hiding the scrollbar */
-	scroll-snap-type: x mandatory; /* Making the scrolling snappy */
-	flex-wrap: nowrap;
-}
+	.featured-products-content {
+		/* This includes the scrolling list as well as the buttons */
+		position: relative;
+		width: 100%;
+	}
+	.featured-products__list {
+		/* This is the scrolling list */
+		overflow-x: scroll;
+		width: 100%;
+		padding: 0 var(--layout-04);
+		scrollbar-width: none; /* Hiding the scrollbar */
+		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
+		flex-wrap: nowrap;
+	}
 
 
 /* Shop by category section */
-.shop-by-category__categories-cont {
-	width: 100%;
-}
-.category-type {
-	width: 100%;
-}
-.category-type h3 {
-	text-align: center;
-	width: 100%;
-	margin: var(--spacing-02) 0;
-}
-.shopping-category {
-	width: 100%;
-}
-.shopping-category .button__label {
-	width: 100%;
-	text-align: left;
-}
+	.category-type {
+		/* This is the panel for each group of 4 categories, e.g., "Animals" */
+		width: 100%;
+	}
+	.category-type h3 {
+		/* This is the title for each category type panel */
+		text-align: center;
+		width: 100%;
+		margin: var(--spacing-02) 0;
+	}
+	.shopping-category {
+		/* This is each individual category button */
+		width: 100%;
+	}
+	.shopping-category .button__label {
+		/* This is the label of the category */
+		width: 100%;
+		text-align: left;
+	}
 
 
 /* Brand selling points section */
-.selling-point-cont {
-	display: grid;
-	grid-template-columns: repeat(4, auto);
-	width: 100%;
-}
-.selling-point {
-	display: grid;
-	column-gap: var(--spacing-04);
-	grid-template-columns: auto 1fr;
-	grid-template-rows: repeat(2, auto);
-}
-.selling-point__logo {
-	grid-column: 1 / 2;
-	grid-row: 1 / -1;
-	height: var(--spacing-07);
-}
-.selling-point__title {
-	grid-column: 2 / 3;
-	grid-row: 1 / 2;
-	margin: 0;
-	margin-top: 3px;
-}
-.selling-point__detail {
-	grid-column: 2 / 3;
-	grid-row: 2 / 3;
-	margin: 0;
-}
+	.selling-point-cont {
+		/* This is the panel containing the 4 selling points */
+		grid-template-columns: repeat(4, auto);
+		width: 100%;
+	}
+	.selling-point {
+		/* This is the selling point itself */
+		display: grid;
+		column-gap: var(--spacing-04);
+		grid-template-columns: auto 1fr;
+		grid-template-areas: 
+			"selling-point__logo selling-point__title"
+			"selling-point__logo selling-point__detail"
+		;
+	}
+	.selling-point__logo {
+		grid-area: selling-point__logo;
+		height: var(--spacing-07);
+	}
+	.selling-point__title {
+		grid-area: selling-point__title;
+		margin: 0;
+		margin-top: 3px;
+	}
+	.selling-point__detail {
+		grid-area: selling-point__detail;
+		margin: 0;
+	}
 
 
 /* About us section */
-.about-us-header {
-	margin-top: var(--spacing-04);
-}
-.about-us-cont {
-	gap: var(--spacing-06);
-	align-items: stretch;
-}
-.about-us__image {
-	width: clamp(calc(22 * var(--sizing-factor--spacing)), 45%, calc(50 * var(--sizing-factor--spacing)));
-	border-radius: var(--spacing-03);
-	box-shadow: var(--effect-shadow);
-	height: calc(28 * var(--sizing-factor--spacing));
-	object-fit: cover;
-	object-position: 50% 75%;
-}
-.about-us__text {
-	align-items: flex-start;
-	justify-content: space-between; 
-}
+	.about-us-heading {
+		/* This is the heading above the about us panel - this is just to give it some whitespace above it */
+		margin-top: var(--spacing-04);
+	}
+	.about-us-cont {
+		/* This is the panel containing all the about us info */
+		gap: var(--spacing-06);
+		align-items: stretch;
+	}
+	.about-us__image {
+		/* This is the image for the about us section. It scales horizontally depending on the viewport width but its height is consistent */
+		width: clamp(calc(22 * var(--sizing-factor--spacing)), 45%, calc(50 * var(--sizing-factor--spacing)));
+		border-radius: var(--spacing-03);
+		box-shadow: var(--effect-shadow);
+		height: calc(28 * var(--sizing-factor--spacing));
+		object-fit: cover;
+		object-position: 50% 75%;
+	}
+	.about-us__text {
+		/* This is the about us text */
+		align-items: flex-start;
+		justify-content: space-between; 
+	}
 
 
 /* Slideshow */
-.slideshow {
-	overflow-x: scroll;
-	width: 100%;
-	padding: 0 var(--layout-04);
-	scrollbar-width: none; /* Hiding the scrollbar */
-	scroll-snap-type: x mandatory; /* Making the scrolling snappy */
-	flex-wrap: nowrap;
-}
-.slideshow__img {
-	scroll-snap-align: center;
-	border-radius: var(--spacing-04);
-	height: 80vh;
-}
+	.slideshow {
+		/* This is the slideshow of the featured photos of the shop */
+		overflow-x: scroll;
+		width: 100%;
+		padding: 0 var(--layout-04);
+		scrollbar-width: none; /* Hiding the scrollbar */
+		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
+		flex-wrap: nowrap;
+	}
+	.slideshow__img {
+		/* These are the individual images in the slideshow */
+		scroll-snap-align: center;
+		border-radius: var(--spacing-04);
+		height: 60vh;
+	}
 
 
 /* Homepage reviews */
-.homepage-reviews__reviews-cont {
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: auto;
-}
-.homepage-review {
-	flex-grow: 1;
-}
-.homepage-review__name {
-	margin-bottom: -10px;
-}
-.homepage-review__stars-cont {
-	justify-content: flex-start;
-	gap: var(--spacing-01);
-}
-.homepage-review__stars-cont__star {
-	width: var(--spacing-05);
-}
-.homepage-review__text {
-	margin: 0;
-	height: 100%;
-}
+	.homepage-reviews__reviews-cont {
+		/* This is the container for the 4 review columns */
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.homepage-review {
+		/* This is the individual review panel itself */
+		flex-grow: 1;
+	}
+	.homepage-review__name {
+		/* This is the review's author's name */
+		margin-bottom: -10px;
+	}
+	.homepage-review__stars-cont {
+		/* This is the container for the stars in the review */
+		justify-content: flex-start;
+		gap: var(--spacing-01);
+	}
+	.homepage-review__stars-cont__star {
+		/* This is the individual star */
+		width: var(--spacing-05);
+	}
+	.homepage-review__text {
+		/* This is the review text */
+		margin: 0;
+		height: 100%;
+	}
 
 
 /* Homepage services */
-.services {
-	grid-template-areas: 
-		"services-support services-support services-tips services-tips"
-		"services-faqs services-directions services-shipping services-affiliate"
-		"services-blog services-blog services-blog services-blog"
-	;
-	grid-template-columns: repeat(4, 1fr);
-}
-.services__service {
-	align-items: center;
-	gap: var(--spacing-05);
-}
-.services__service__header {
-	align-items: center;
-}
-.services__service__header > *,
-.services__service__content > * {
-	margin: 0;
-}
-.services__service__content {
-	width: 100%;
-}
-.services__service__icon {
-	width: var(--spacing-07);
-	margin-bottom: var(--spacing-03);
-}
-
-.services__service--support {
-	grid-area: services-support;
-}
-.services__service--tips {
-	grid-area: services-tips;
-}
-.services__service--faqs {
-	grid-area: services-faqs;
-}
-.services__service--direction {
-	grid-area: services-direction;
-}
-.services__service--shipping {
-	grid-area: services-shipping;
-}
-.services__service--affiliate {
-	grid-area: services-affiliate;
-}
-.services__service--blog {
-	grid-area: services-blog;
-}
-
-.services__service--support .bullets-list {
-	columns: 2;
-}
+	.services {
+		/* This is the container for all the services, laid out by a grid */
+		grid-template-areas: 
+			"services-support services-support services-tips services-tips"
+			"services-faqs services-directions services-shipping services-affiliate"
+			"services-blog services-blog services-blog services-blog"
+		;
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.services__service {
+		/* This is the individual service panel itself */
+		align-items: center;
+		gap: var(--spacing-05);
+	}
+	.services__service__header {
+		/* This contains the service's icon, title, and tagline text (if it contains one) */
+		align-items: center;
+	}
+	.services__service__header > *,
+	.services__service__content > * {
+		margin: 0;
+	}
+	.services__service__content {
+		/* This is the content of the service (doesn't include the tagline text or the button) */
+		width: 100%;
+	}
+	.services__service__icon {
+		/* This is the icon of the service (this is placed after after the rule giving all descendents of the header no margin so that this will override that rule) */
+		width: var(--spacing-07);
+		margin-bottom: var(--spacing-03);
+	}
+	/* These define which service is in which grid area */
+		.services__service--support {
+			grid-area: services-support;
+		}
+		.services__service--tips {
+			grid-area: services-tips;
+		}
+		.services__service--faqs {
+			grid-area: services-faqs;
+		}
+		.services__service--direction {
+			grid-area: services-direction;
+		}
+		.services__service--shipping {
+			grid-area: services-shipping;
+		}
+		.services__service--affiliate {
+			grid-area: services-affiliate;
+		}
+		.services__service--blog {
+			grid-area: services-blog;
+		}
+	.services__service--support .bullets-list {
+		/* This splits the bullet points in the support service into 2 columns */
+		columns: 2;
+	}

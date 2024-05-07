@@ -17,7 +17,6 @@
 		--spacing-05: calc( 1.5   * var(--sizing-factor--spacing) ) /* 24px */;
 		--spacing-06: calc( 2     * var(--sizing-factor--spacing) ) /* 32px */;
 		--spacing-07: calc( 3     * var(--sizing-factor--spacing) ) /* 48px */;
-
 		
 	/* LAYOUT SCALE */
 		--layout-01: calc( 1    * var(--sizing-factor--layout) ) /* 16px */;
@@ -32,7 +31,7 @@
 
 /* Universal styles for sections */
 	section,
-	body > main,
+	body > main, /* There are some <main> tags which are within other sections, so they shouldn't necessarily adhere to these styles, hence body > main */
 	figure {
 		width: 100%;
 		display: flex;
@@ -45,6 +44,7 @@
 		gap: var(--layout-02);
 	}
 	body > main {
+		/* There are some <main> tags which are within other sections, so they shouldn't necessarily adhere to these styles, hence body > main */
 		margin-bottom: var(--layout-04);
 		gap: var(--layout-04);
 		background-color: var(--clr-background);
@@ -59,6 +59,7 @@
 		
 	}
 	.section--hero {
+		/* This is the section at the very top of the page */
 		border-radius: 0 0 var(--layout-05) var(--layout-05);
 	}
 	section > h2 {
@@ -74,14 +75,16 @@
 		overflow: visible;
 	}
 	.hero-content__info {
+		/* The hero section's panel's width is relative to the viewport width */
 		width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
 		height: clamp(calc(30 * var(--sizing-factor--spacing)), 46vw, calc(34 * var(--sizing-factor--spacing)));
 	}
 	.hero-content__image {
+		/* The hero image has special positioning in relation to the panel as it slightly overlaps */
 		position: absolute;
 		width: 44%;
 		height: 100%;
-		top: 0;
+		top: calc(-1 * var(--layout-02));
 		right: 0;
 		margin: 0;
 	}

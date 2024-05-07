@@ -5,8 +5,4 @@
 
 	/* The standard drop-shadow placed on individual elements */
 	--effect-shadow: 1px 1px 8px 0px #00000026;
-
-
-	/* The standard transition duration */
-	--effect-transition-duration: 0.2s;
 }

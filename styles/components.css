@@ -1,6 +1,6 @@
 /* Universal styles for buttons */
-	/* Default button component */
 	.button {
+		/* Default button component */
 		padding: var(--spacing-03) var(--spacing-05);
 		border-radius: var(--spacing-03);
 		background: var(--clr-button-gradient);
@@ -20,9 +20,16 @@
 		-o-transition: var(--effect-transition-duration);
 		
 		.button__label {
+			/* The label inside a button - due to the font, by default it appears slightly vertically misaligned, so this fixes that by offsetting it down */
 			margin-top: 2.5px;
 		}
 
+		&:focus,
+		&:focus-visible {
+			outline: none;
+			box-shadow: 0px 0px 10px 10px var(--clr-gradients-aqua-lt);
+		}
+		
 		&:hover {
 			cursor: pointer;
 			filter:brightness(0.8);
@@ -116,10 +123,12 @@
 
 	
 	.button__action-symbol {
+		/* This is the icon that appears on the right side of the button, usually to aid in legibility and user flow, such as a right arrow */
 		height: var(--spacing-04);
 		margin-right: -4px;
 	}
 
+	/* Carousel buttons (left and right buttons for horizontal scrolling) */
 	.carousel-button-cont {
 		position: absolute;
 		height: 100%;
@@ -154,6 +163,7 @@
 		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
 	}
 	.panel--highlighted-section {
+		/* This is a panel which appears in/on a highlighted section */
 		padding: var(--spacing-06);
 		border-radius: var(--spacing-06);
 	}
