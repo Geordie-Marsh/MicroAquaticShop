@@ -3,23 +3,23 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #fff;
-        stroke-width: 0px;
-      }
-
-      .cls-2 {
         fill: none;
         stroke: #fff;
         stroke-linecap: round;
         stroke-linejoin: round;
         stroke-width: 45px;
       }
+
+      .cls-2 {
+        fill: #fff;
+        stroke-width: 0px;
+      }
     </style>
   </defs>
-  <polyline class="cls-2" points="24.541 256 24.541 24.541 256 24.541"/>
-  <polyline class="cls-2" points="487.459 256 487.459 487.459 256 487.459"/>
+  <polyline class="cls-1" points="24.541 256 24.541 24.541 256 24.541"/>
+  <polyline class="cls-1" points="487.459 256 487.459 487.459 256 487.459"/>
   <g>
-    <path class="cls-2" d="M313.492,176.576c-104.543,0-225.052,158.746-225.052,158.746v-158.746s102.509,158.746,225.052,158.746c105.182,0,114.306-79.424,114.306-79.424,0,0-31.831-79.424-114.306-79.424v.102Z"/>
-    <circle class="cls-1" cx="349.537" cy="251.989" r="26.396"/>
+    <path class="cls-1" d="M312.456,183.85c-112.243-.093-196.456,144.189-196.456,144.189v-144.189s89.484,144.189,196.456,144.189c91.817,0,99.782-72.141,99.782-72.141,0,0-17.469-72.141-99.782-72.141v.093Z"/>
+    <ellipse class="cls-2" cx="335.921" cy="252.347" rx="23.042" ry="23.975"/>
   </g>
 </svg>

@@ -1,5 +1,5 @@
 // Including the header
-	// Fetching the HTML for each element from the local component
+	// Fetching the HTML for the header from the local component
 	fetch("/components/header.html")
 		.then(response => {
 			// Checking if the request was successful
@@ -10,7 +10,7 @@
 			return response.text();
 		})
 		.then(html => {
-			// If successful, sending this HTML content to the function that creates each element
+			// If successful, sending this HTML content to the function that creates the header
 			includeHeader(html);
 		})
 		.catch(error => {
@@ -20,7 +20,7 @@
 
 	// The function for creating the header and adding it into the DOM
 	function includeHeader(html) {
-		// Setting the innerHTML of the container to the fetched HTML
+		// Setting the innerHTML of the existing header tag to the fetched HTML
 		$$(".page-header").innerHTML = html;
 	}
 
@@ -180,4 +180,33 @@
 			// Appending the content of the review to the div of the product type the category falls under
 			$$(".reviews__reviews-cont__column" + columnNo).appendChild(review);
 		}
+	}
+
+
+
+
+// Including the footer
+	// Fetching the HTML for the footer from the local component
+	fetch("/components/footer.html")
+		.then(response => {
+			// Checking if the request was successful
+			if (!response.ok) {
+				throw new Error("Couldn't retrieve HTML data");
+			}
+			// Returning the HTML content as text
+			return response.text();
+		})
+		.then(html => {
+			// If successful, sending this HTML content to the function that creates the footer
+			includeFooter(html);
+		})
+		.catch(error => {
+			// Logging any errors to the console
+			log("There was a problem with the fetch operation: ", error);
+		});
+
+	// The function for creating the footer and adding it into the DOM
+	function includeFooter(html) {
+		// Setting the innerHTML of the existing footer tag to the fetched HTML
+		$$(".page-footer").innerHTML = html;
 	}
