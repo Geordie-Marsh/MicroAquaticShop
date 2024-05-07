@@ -28,7 +28,7 @@ html {
 /* Making the body not have a margin by default */
 body {
 	margin: 0;
-	background-color: var(--clr-background);
+	background-color: var(--clr-background-lt);
 }
 
 
@@ -47,8 +47,10 @@ section {
 	gap: var(--layout-02);
 }
 body > main {
-	margin: var(--layout-04) 0;
+	margin-bottom: var(--layout-04);
 	gap: var(--layout-04);
+	background-color: var(--clr-background);
+	border-radius: 0 0 var(--layout-05) var(--layout-05);
 }
 .section--highlighted {
 	padding: var(--layout-04);
