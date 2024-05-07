@@ -1,0 +1,51 @@
+.page-footer {
+	display: grid;
+	grid-template-areas: 
+		"footer-logo footer-logo footer-logo"
+		"footer-policies footer-links footer-contact"
+		"footer-copyright footer-copyright footer-copyright"
+	;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--layout-04);
+	margin: var(--layout-02);
+}
+
+.logo--footer {
+	grid-area: footer-logo;
+	margin: 0 auto;
+}
+.footer-list--policies {
+	grid-area: footer-policies;
+}
+.footer-list--links {
+	grid-area: footer-links;
+}
+.footer-list--contact {
+	grid-area: footer-contact;
+}
+.footer-copyright-bar {
+	grid-area: footer-copyright;
+	flex-direction: row; /* This is specified here (instead of using a utility class) since this changes depending on resolution */
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-05);
+}
+
+.footer-list {
+	align-items: center;
+	gap: var(--spacing-02);
+}
+.footer-list * {
+	text-align: center;
+	margin: 0;
+}
+.footer-copyright-bar__copyright {
+	font-size: calc(0.8 * var(--font-size-factor));
+}
+.footer-copyright-bar__cards {
+	flex-wrap: wrap;
+
+	& > img:hover {
+		cursor: pointer;
+	}
+}

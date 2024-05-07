@@ -27,3 +27,69 @@
 		--layout-05: calc( 4    * var(--sizing-factor--layout) ) /* 64px */;
 		--layout-06: calc( 6    * var(--sizing-factor--layout) ) /* 96px */;
 }
+
+
+
+/* Universal styles for sections */
+	section,
+	body > main,
+	figure {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		overflow: visible;
+		margin: 0;
+	}
+	section {
+		padding: 0 var(--layout-04);
+		gap: var(--layout-02);
+	}
+	body > main {
+		margin-bottom: var(--layout-04);
+		gap: var(--layout-04);
+		background-color: var(--clr-background);
+		border-radius: 0 0 var(--layout-05) var(--layout-05);
+	}
+	.section--highlighted {
+		padding: var(--layout-04);
+		border-radius: var(--layout-05);
+		background-color: var(--clr-gradients-aqua-dk); /* TODO make gradients */
+		box-shadow: var(--effect-highlighted-panel-shadow);
+		backdrop-filter: blur(var(--effect-highlighted-panel-blur));
+		
+	}
+	.section--hero {
+		border-radius: 0 0 var(--layout-05) var(--layout-05);
+	}
+	section > h2 {
+		width: 100%;
+		text-align: center;
+	}
+
+
+/* Hero section */
+	.hero-content {
+		position: relative;
+		width: 100%;
+		overflow: visible;
+	}
+	.hero-content__info {
+		width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
+		height: clamp(calc(30 * var(--sizing-factor--spacing)), 46vw, calc(34 * var(--sizing-factor--spacing)));
+	}
+	.hero-content__image {
+		position: absolute;
+		width: 44%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		margin: 0;
+	}
+	.hero-content__image img {
+		width: 100%;
+		rotate: 22deg;
+		margin: auto;
+	}
+	.hero-title-A-kerning {
+		letter-spacing: -0.325rem;
+	}

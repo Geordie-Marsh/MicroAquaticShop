@@ -1,0 +1,44 @@
+.page-header {
+	width: 100%;
+	height: var(--spacing-06);
+	z-index: 100;
+	justify-content: space-between;
+}
+.page-header > * {
+	height: 100%;
+	align-items: center;
+}
+
+/* The brand logo */
+.logo {
+	grid-template-columns: auto 1fr;
+}
+.logo img {
+	width: var(--spacing-06);
+}
+.logo h3 {
+	margin-top: 6px;
+}
+
+/* The navbar */
+.header-divider {
+	height: 80%;
+	width: 1px;
+	background-color: var(--clr-text);
+	border-radius: 0.5px;
+	margin: auto var(--spacing-01); /* Making the divider vertically centred */
+}
+.navbar {
+	gap: var(--spacing-04); /* The navbar has larger spacing than most flexboxes */
+}
+.navbar__icon {
+	height: var(--spacing-05);
+	aspect-ratio: 1 / 1;
+}
+.navbar__drop-down {
+	column-gap: var(--spacing-02);
+}
+.navbar__drop-down__arrow {
+	height: var(--spacing-03);
+	margin-top: 3px;
+}

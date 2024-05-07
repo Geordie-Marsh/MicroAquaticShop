@@ -55,7 +55,7 @@ h1 {
 }
 
 h2,
-.button__label--cta {
+.button--cta .button__label {
 	/* Used for section headings */
 	font-size: calc( 1.5 * var(--font-size-factor) );
 	font-weight: var(--font-weight-bold);
@@ -91,10 +91,14 @@ strong {
 a {
 	color: inherit;
 	text-decoration: none;
+
+	&:hover, 
+	&:active {
+		cursor: pointer;
+	}
 }
 /* Feedback when hovering or clicking on an a link */
-a:hover,
-a:active {
-	cursor: pointer;
+a.link:hover,
+a.link:active {
 	text-decoration: underline;
 }

@@ -1,0 +1,31 @@
+.featured-product {
+	scroll-snap-align: center; /* Making the featured products have snapped scrolling */
+}
+.featured-product__img {
+	width: calc(11 * var(--sizing-factor));
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
+	border-radius: var(--spacing-02);
+	box-shadow: var(--effect-shadow);
+}
+.featured-product__title {
+	height: 100%;
+}
+.featured-product__buttons {
+	width: 100%;
+}
+.featured-product__buttons_view {
+	width: 100%;
+}
+.featured-product__buttons_heart {
+	aspect-ratio: 1 / 1;
+	height: 100%;
+	padding: var(--spacing-03);
+}
+.featured-product__buttons_heart img {
+
+	height: 100%;
+}
+.featured-product__cart-button {
+	width: 100%;
+}
