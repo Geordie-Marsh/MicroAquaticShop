@@ -2,25 +2,28 @@
 	/* The space unit used - adjusting this one value will adjust all the others accordingly */
 	--sizing-factor: 1rem;
 
-	/* Double extra small spacing */
-	--spacing-2xs: calc( 0.25 * var(--sizing-factor) ) /* 4px */;
-	/* Extra small spacing */
-	--spacing-xs: calc( 0.5 * var(--sizing-factor) ) /* 8px */;
-	/* Small spacing */
-	--spacing-s: calc( 0.75 * var(--sizing-factor) ) /* 12px */;
-	/* Normal (medium) spacing */
-	/* ? equivalent to 16px */
-	--spacing-m: calc( 1 * var(--sizing-factor) ) /* 16px */; 
-	/* Large spacing */
-	--spacing-l: calc( 1.5 * var(--sizing-factor) ) /* 24px */;
-	/* Extra large spacing */
-	--spacing-xl: calc( 2 * var(--sizing-factor) ) /* 32px */;
-	/* Double extra large spacing */
-	--spacing-2xl: calc( 3 * var(--sizing-factor) ) /* 48px */;
-	/* Triple extra large spacing */
-	--spacing-3xl: calc( 4 * var(--sizing-factor) ) /* 64px */;
-	/* Quadruple extra large spacing */
-	--spacing-4xl: calc( 6 * var(--sizing-factor) ) /* 96px */;
-	/* Quintuple extra large spacing */
-	--spacing-5xl: calc( 8 * var(--sizing-factor) ) /* 128px */;
+	/* The website uses two scales: 
+		a spacing scale, used for smaller and more refined spacing, particularly within components;
+		and a layout scale, used for larger spacing, particularly positioning components on a page */
+	/* The space units for each scale are different so that they can be independently adjusted if needed */
+	--sizing-factor--spacing: var(--sizing-factor);
+	--sizing-factor--layout:  var(--sizing-factor);
+
+	/* SPACING SCALE */		
+		--spacing-01: calc( 0.25  * var(--sizing-factor--spacing) ) /* 4px */;
+		--spacing-02: calc( 0.5   * var(--sizing-factor--spacing) ) /* 8px */;
+		--spacing-03: calc( 0.75  * var(--sizing-factor--spacing) ) /* 12px */;
+		--spacing-04: calc( 1     * var(--sizing-factor--spacing) ) /* 16px */; 
+		--spacing-05: calc( 1.5   * var(--sizing-factor--spacing) ) /* 24px */;
+		--spacing-06: calc( 2     * var(--sizing-factor--spacing) ) /* 32px */;
+		--spacing-07: calc( 3     * var(--sizing-factor--spacing) ) /* 48px */;
+
+		
+	/* LAYOUT SCALE */
+		--layout-01: calc( 1    * var(--sizing-factor--layout) ) /* 16px */;
+		--layout-02: calc( 1.5  * var(--sizing-factor--layout) ) /* 24px */;
+		--layout-03: calc( 2    * var(--sizing-factor--layout) ) /* 32px */;
+		--layout-04: calc( 3    * var(--sizing-factor--layout) ) /* 48px */; 
+		--layout-05: calc( 4    * var(--sizing-factor--layout) ) /* 64px */;
+		--layout-06: calc( 6    * var(--sizing-factor--layout) ) /* 96px */;
 }

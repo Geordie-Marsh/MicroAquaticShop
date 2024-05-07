@@ -1,13 +1,11 @@
 .flex--horizontal {
 	display: flex;
 	flex-direction: row !important;
-	justify-content: space-between;
 }
 
 .flex--vertical {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	flex-direction: column !important;
 }
 
 
@@ -16,7 +14,7 @@
 }
 
 .standard-spacing {
-	gap: var(--spacing-s);
+	gap: var(--spacing-03);
 }
 
 
@@ -27,3 +25,86 @@
 	padding-left: 0;
 	padding-right: 0;
 }
+
+
+
+/* Universal styles for buttons */
+button {
+	padding: var(--spacing-03) var(--spacing-05);
+	border-radius: var(--spacing-03);
+	background: var(--clr-button-gradient);
+	border: none;	/*Disabling the default styling*/
+	font-family: inherit;
+	color: var(--clr-text-opposite);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-02);
+	background-blend-mode: luminosity, normal;
+	box-shadow: var(--effect-shadow);
+	transition: var(--effect-transition-duration);
+	-webkit-transition: var(--effect-transition-duration);
+	-moz-transition: var(--effect-transition-duration);
+	-ms-transition: var(--effect-transition-duration);
+	-o-transition: var(--effect-transition-duration);
+}
+button:hover {
+	cursor: pointer;
+	filter:brightness(0.8);
+	-webkit-filter:brightness(0.8);
+}
+button:active {
+	cursor: pointer;
+	filter: brightness(0.8);
+	transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	-moz-transform: scale(0.95);
+	-ms-transform: scale(0.95);
+	-o-transform: scale(0.95);
+	-webkit-filter: brightness(0.8);
+}
+.button--cta {
+	background: var(--clr-button-gradient--cta);
+}
+.button--scroll {
+	padding: var(--spacing-03);
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+}
+.button__label, 
+.button__label--cta {
+	margin-top: 2px;
+}
+.button__action-symbol {
+	height: var(--spacing-04);
+}
+.button__scroll-arrow {
+	height: var(--spacing-05);
+	aspect-ratio: 1 / 1;
+}
+
+
+
+
+/* Universal styles for panels */
+.panel {
+	padding: var(--spacing-03);
+	border-radius: var(--spacing-04);
+	background: var(--clr-glass-gradient);
+	box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
+	border: 0.6px solid #00000040;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+}
+.panel--highlighted-section {
+	padding: var(--spacing-06);
+	border-radius: var(--spacing-06);
+}
+
