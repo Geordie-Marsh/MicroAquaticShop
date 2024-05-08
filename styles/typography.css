@@ -46,7 +46,7 @@
 h1 {
 	/* Used for titles, like at the top of pages - uses the heaviest font weight */
 	/* This font adapts to the size of the container it's in, specifically relative to the hero panel */
-	font-size: clamp(calc(7.5 * var(--sizing-factor)), 12vw, calc(10.85 * var(--sizing-factor)));
+	font-size: clamp(calc(6.4 * var(--sizing-factor)), 10vw, calc(9 * var(--sizing-factor)));
 	font-weight: var(--font-weight-black);
 	margin-top: var(--spacing-05);
 	margin-bottom: 0;

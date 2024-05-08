@@ -1,6 +1,6 @@
 // Including the header
 	// Fetching the HTML for the header from the local component
-	fetch("/components/header.html")
+	fetch("../components/header.html")
 		.then(response => {
 			// Checking if the request was successful
 			if (!response.ok) {
@@ -31,7 +31,7 @@
 
 // Including the featured products
 	// Fetching the HTML for each element from the local component
-	fetch("/components/featured-product.html")
+	fetch("components/featured-product.html")
 		.then(response => {
 			// Checking if the request was successful
 			if (!response.ok) {
@@ -71,7 +71,7 @@
 			const price = container.querySelector(".featured-product__price"); // Editing the price
 			price.textContent = featuredProducts[i][1];
 			const img = container.querySelector(".featured-product__img"); // Editing the image
-			img.setAttribute("src", "/assets/images/" + featuredProducts[i][2] + ".jpg");
+			img.setAttribute("src", "assets/images/" + featuredProducts[i][2] + ".jpg");
 
 			// Appending the content of the container to the featured products div
 			$$(".featured-products__list").appendChild(container);
@@ -84,7 +84,7 @@
 
 // Including the shop by category buttons
 	// Fetching the HTML for each element from the local component
-	fetch("/components/shop-category.html")
+	fetch("./components/shop-category.html")
 		.then(response => {
 			// Checking if the request was successful
 			if (!response.ok) {
@@ -121,7 +121,7 @@
 			const category = button.querySelector(".button__label"); // Editing the category
 			category.textContent = shoppingCategories[i][1];
 			const img = button.querySelector(".button__logo"); // Editing the logo
-			img.setAttribute("src", "/assets/icons/" + shoppingCategories[i][2] + ".png");
+			img.setAttribute("src", "assets/icons/" + shoppingCategories[i][2] + ".png");
 
 			// Appending the content of the button to the div of the product type the category falls under
 			$$(".category-type--" + shoppingCategories[i][0]).appendChild(button);
@@ -134,7 +134,7 @@
 
 // Including the homepage reviews
 	// Fetching the HTML for each element from the local component
-	fetch("/components/homepage-review.html")
+	fetch("components/homepage-review.html")
 		.then(response => {
 			// Checking if the request was successful
 			if (!response.ok) {
@@ -189,7 +189,7 @@
 
 // Including the footer
 	// Fetching the HTML for the footer from the local component
-	fetch("/components/footer.html")
+	fetch("components/footer.html")
 		.then(response => {
 			// Checking if the request was successful
 			if (!response.ok) {

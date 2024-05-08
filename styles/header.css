@@ -4,6 +4,7 @@
 	height: var(--spacing-06);
 	z-index: 100;
 	justify-content: space-between;
+	position: relative;
 }
 .page-header > * {
 	/* Making all the header's items the same height */
@@ -39,13 +40,56 @@
 	/* THe icons in the navbar */
 	height: var(--spacing-05);
 	aspect-ratio: 1 / 1;
+
+	&:hover,
+	&:active {
+		cursor: pointer;
+	}
 }
 .navbar__drop-down {
 	/* The page headings that have dropdown menus */
 	column-gap: var(--spacing-02);
+	padding: var(--spacing-02) 0;
+
+	&:hover .header__dropdown-menu {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 .navbar__drop-down__arrow {
 	/* The arrows next to the headings to indicate drop down menus */
 	height: var(--spacing-03);
 	margin-top: 3px;
+}
+
+
+/* The dropdown menu */
+.header__dropdown-menu {
+	/* This is the  */
+	position: absolute;
+	background: var(--clr-glass-dk);
+	background-clip: padding-box;
+	transform: translate(-45%);
+	/* right: var(--layout-06); */
+	top: var(--layout-03);
+	height: auto;
+	gap: var(--spacing-07);
+	padding: var(--spacing-06);
+	width: auto;
+	box-shadow: var(--effect-shadow-lg);
+	transition: opacity var(--effect-transition-duration), visibility var(--effect-transition-duration) cubic-bezier(1,.01,1,-0.1); /* This makes the fade-in and -out work  */
+	opacity: 0;
+	
+	&:hover {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+.header__dropdown-menu__list {
+	gap: var(--spacing-04);
+	
+	* {
+		white-space: nowrap;
+		margin-bottom: -6px;
+	}
 }
