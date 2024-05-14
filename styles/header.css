@@ -79,6 +79,7 @@
 	box-shadow: var(--effect-shadow-lg);
 	transition: opacity var(--effect-transition-duration), visibility var(--effect-transition-duration) cubic-bezier(1,.01,1,-0.1); /* This makes the fade-in and -out work  */
 	opacity: 0;
+	z-index: 1000;
 	
 	&:hover {
 		visibility: visible;

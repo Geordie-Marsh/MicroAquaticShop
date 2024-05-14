@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Micro Aquatic Shop</title>
+	<base href="../">
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="shop/shop.css">
+</head>
+<body>
+	<!-- Contains all the sections of the homepage except the footer -->
+	<main>
+		<!-- The hero introductory section of the homepage -- GRADIENT section -->
+		<section class="hero section--highlighted section--hero">
+			<!-- The navbar header on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
+			<header class="page-header flex--horizontal standard-spacing">
+				<!-- WEB COMPONENT INCLUDE -->
+			</header>
+
+			<!-- The textual content of the hero page -->
+			<div class="hero-content__info panel panel--highlighted-section">
+				<!-- The div that holds the title -->
+				<div class="page-title">
+					<!-- The main, large part of the title -->
+					<h1 class="page-title__title">Shop by Category</h1>
+				</div>
+				<!-- The small textline on the hero section which sells the basic premise of the brand -->
+				<p>Find your favourite product by exploring its category page</p>
+			</div>
+		</section>
+
+		<!-- The 'Shop by category' section -->
+		<section class="shop-by-category" id="shop-by-category">
+			<!-- The div that holds the 3 category panels -->
+			<div class="shop-by-category__categories-cont flex--horizontal standard-spacing">
+				<!-- GRID LAYOUT -->
+				<!-- The 3 categories, each is a div with a title and 4x categories (buttons) -->
+				<div class="panel category-type category-type--animals standard-spacing">
+					<!-- BLOCK LAYOUT -->
+					<h3>Animals</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+					<!-- 4x buttons -->
+				</div>
+				<div class="panel category-type category-type--aquascaping standard-spacing">
+					<!-- BLOCK LAYOUT -->
+					<h3>Aquascaping</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+					<!-- 4x buttons -->
+				</div>
+				<div class="panel category-type category-type--supplies standard-spacing">
+					<!-- BLOCK LAYOUT -->
+					<h3>Supplies</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+					<!-- 4x buttons -->
+				</div>
+			</div>
+		</section>
+
+		<!-- The 'Featured products' section -->
+		<section class="featured-products inner-section no-padding">
+			<!-- The section title -->
+			<h2>Featured Products</h2>
+			<!-- The horizontal list that contains all the featured products -->
+			<div class="featured-products-content">
+				<div class="featured-products__list flex--horizontal standard-spacing">
+					<!-- POPULATED BY JAVASCRIPT -->
+				</div>
+				<!-- TODO Make these buttons functional -->
+				<div class="carousel-button-cont carousel-button-cont--left">
+					<button class="button button--tertiary button--icon-only" aria-label="Left">
+						<img class="button__icon" src="assets/icons/arrow-left.svg">
+					</button>
+				</div>
+				<div class="carousel-button-cont carousel-button-cont--right">
+					<button class="button button--tertiary button--icon-only" aria-label="Right">
+						<img class="button__icon" src="assets/icons/arrow-right.svg">
+					</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- The footer -->
+	<footer class="page-footer">
+		<!-- WEB COMPONENT INCLUDE -->
+	</footer>
+
+
+	<!-- Scripts -->
+	<script src="scripts/script.js"></script>
+	<script src="scripts/variables.js"></script>
+	<script src="scripts/definitions.js"></script>
+	<script src="scripts/components.js"></script>
+</body>
+</html>

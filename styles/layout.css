@@ -76,15 +76,10 @@
 		width: 100%;
 		overflow: visible;
 	}
-	.hero-content__info {
-		/* The hero section's panel's width is relative to the viewport width */
-		width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
-		height: clamp(calc(30 * var(--sizing-factor--spacing)), 46vw, calc(34 * var(--sizing-factor--spacing)));
-	}
 	.hero-content__image {
 		/* The hero image has special positioning in relation to the panel as it slightly overlaps */
 		position: absolute;
-		width: clamp(calc(24.9 * var(--sizing-factor)), 44%, calc(37.25 * var(--sizing-factor)));
+		width: 44%;
 		height: 100%;
 		top: calc(-1 * var(--layout-02));
 		right: 0;
@@ -92,9 +87,5 @@
 	}
 	.hero-content__image img {
 		width: 100%;
-		rotate: 22deg;
 		margin: auto;
-	}
-	.hero-title-A-kerning {
-		letter-spacing: -0.325rem;
 	}

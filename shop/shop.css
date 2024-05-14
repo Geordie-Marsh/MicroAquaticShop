@@ -1,0 +1,14 @@
+/* Adding padding to the bottom of the main section */
+	main {
+		padding-bottom: var(--layout-05);
+	}
+
+
+/* Hero section */
+	.hero-content__info {
+		gap: var(--layout-03);
+
+		p {
+			margin: 0;
+		}
+	}
