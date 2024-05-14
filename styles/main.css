@@ -7,6 +7,7 @@
 @import url(animations.css);
 /* Reusable components and elements */
 @import url(components.css);
+@import url(buttons.css);
 @import url(utilities.css);
 /* Component-specific stylesheets */
 @import url(header.css);
