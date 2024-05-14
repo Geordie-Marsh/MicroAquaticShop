@@ -55,12 +55,13 @@ const featuredProducts = [
 
 
 // This is the array used to generate the shop by category buttons
-// Each element in the outer array is a category, and the inner array has the product type (animals, aquascaping or supplies), the category name and the logo's filename in that order
+// Each element in the outer array is a category, and the inner array has the product type (animals, aquascaping or supplies), the category name, the logo's filename and (optional) the name of the category page in that order
 const shoppingCategories = [
 	[
 		"animals",
 		"Shrimp",
-		"category-shrimp"
+		"category-shrimp",
+		"shrimp"
 	],
 	[
 		"animals",

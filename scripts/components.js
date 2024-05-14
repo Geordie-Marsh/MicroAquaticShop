@@ -107,7 +107,7 @@
 		// Creating a new a card for each element, using the data from the shoppingCategories array
 		for (let i = 0; i < shoppingCategories.length; i++) {
 			// Creating a button element
-			const button = document.createElement("button");
+			const button = document.createElement("a");
 
 			// Setting the innerHTML of the button to the fetched HTML
 			button.innerHTML = html;
@@ -122,6 +122,9 @@
 			category.textContent = shoppingCategories[i][1];
 			const img = button.querySelector(".button__logo"); // Editing the logo
 			img.setAttribute("src", "assets/icons/" + shoppingCategories[i][2] + ".png");
+
+			// Setting the href of the button if the category has a page
+			shoppingCategories[i][3] ? button.setAttribute("href", "/categories/" + shoppingCategories[i][3]) : null ;
 
 			// Appending the content of the button to the div of the product type the category falls under
 			$$(".category-type--" + shoppingCategories[i][0]).appendChild(button);

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Micro Aquatic Shop</title>
+	<base href="../../">
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="categories/styles/categories-subpage.css">
+</head>
+<body>
+	<!-- Contains all the sections of the homepage except the footer -->
+	<main>
+		<!-- The hero introductory section of the homepage -- GRADIENT section -->
+		<section class="hero section--highlighted section--hero">
+			<!-- The navbar header on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
+			<header class="page-header flex--horizontal standard-spacing">
+				<!-- WEB COMPONENT INCLUDE -->
+			</header>
+
+			<!-- The div containing the content and image of the hero page -->
+			<div class="hero-content">
+				<!-- The textual and CTA content of the hero page-->
+				<div class="hero-content__info panel panel--highlighted-section">
+					<!-- The div that holds the title -->
+					<div class="page-title">
+						<!-- There is a bit of text above the main part of the title which is smaller -->
+						<h2 class="page-title__pre-title">Welcome to</h2>
+						<!-- The main, large part of the title -->
+						<h1 class="page-title__title">Micro <span class="hero-title-A-kerning">A</span>quatics</h1>
+					</div>
+					<!-- The small textline on the hero section which sells the basic premise of the brand -->
+					<p>Dive into an enchanting small-scale underwater world at the Micro Aquatic Shop, where tiny treasures await.</p>
+					<!-- The 'let's shop' button -->
+					<a class="button button--cta" onclick="location.href='#shop-by-category'" aria-label="let's shop">
+						<span class="button__label">Let's shop</span>
+						<img class="button__action-symbol" src="assets/icons/arrow-right.svg" alt="Right arrow icon">
+					</a>
+				</div>
+
+				<!-- The image on the hero page (this overlaps with the content div) -->
+				<figure class="hero-content__image flex--vertical">
+					<img src="assets/images/hero-shrimp.png" alt="A white, green and blue betta fish">
+				</figure>
+			</div>
+		</section>
+
+
+	</main>
+
+	<!-- Scripts -->
+	<script src="scripts/script.js"></script>
+	<script src="scripts/variables.js"></script>
+	<script src="scripts/definitions.js"></script>
+	<script src="scripts/components.js"></script>
+</body>
+</html>
