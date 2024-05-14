@@ -27,17 +27,12 @@
 					<!-- The div that holds the title -->
 					<div class="page-title">
 						<!-- There is a bit of text above the main part of the title which is smaller -->
-						<h2 class="page-title__pre-title">Welcome to</h2>
+						<h2 class="page-title__pre-title">Let's Shop</h2>
 						<!-- The main, large part of the title -->
-						<h1 class="page-title__title">Micro <span class="hero-title-A-kerning">A</span>quatics</h1>
+						<h1 class="page-title__title">Shrimp</h1>
 					</div>
 					<!-- The small textline on the hero section which sells the basic premise of the brand -->
-					<p>Dive into an enchanting small-scale underwater world at the Micro Aquatic Shop, where tiny treasures await.</p>
-					<!-- The 'let's shop' button -->
-					<a class="button button--cta" onclick="location.href='#shop-by-category'" aria-label="let's shop">
-						<span class="button__label">Let's shop</span>
-						<img class="button__action-symbol" src="assets/icons/arrow-right.svg" alt="Right arrow icon">
-					</a>
+					<p>Explore our large range of freshwater - their hardiness and stunning bright colours make these essential for your aquarium.</p>
 				</div>
 
 				<!-- The image on the hero page (this overlaps with the content div) -->
@@ -47,13 +42,65 @@
 			</div>
 		</section>
 
+		<!-- Contains everything to do with finding the product -->
+		<section class="products-finder-cont grid">
+			<!-- Contains the filters -->
+			<div class="product-filters flex--vertical">
+				<!-- The title for the filters div -->
+				<h2>Filters</h2>
 
+				<!-- The sub-category filters -->
+				<article class="product-filters__filter-type flex--horizontal standard-spacing" id="product-filters__filter-type--sub-category">
+					<h3>Sub-category</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+				</article>
+				<!-- The price filters -->
+				<article class="product-filters__filter-type flex--horizontal standard-spacing" id="product-filters__filter-type--price">
+					<h3>Price range</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+				</article>
+				<!-- The availability filters -->
+				<article class="product-filters__filter-type flex--horizontal standard-spacing" id="product-filters__filter-type--availability">
+					<h3>Availability</h3>
+					<!-- POPULATED BY JAVASCRIPT -->
+				</article>
+
+				<!-- The button to clear all filters -->
+				<button class="button button--secondary" aria-label="Clear all filters">
+					<span class="button__label">Clear all filters</span>
+				</button>
+			</div>
+
+			<!-- Contains the product display buttons (ie, sort, grid, etc.) -->
+			<div class="product-display-buttons flex--horizontal standard-spacing">
+				<!-- The button to change the layout (grid vs list) -->
+				<button class="button button--tertiary button--icon-only" aria-label="Left">
+					<img class="button__icon" src="assets/icons/grid-2x2.svg">
+				</button>
+				<!-- The button to change the sorting -->
+				<button class="button button--tertiary button--icon-only" aria-label="Left">
+					<img class="button__icon" src="assets/icons/sort.svg">
+				</button>
+			</div>
+
+			<!-- Contains all the products -->
+			<div class="product-listing grid standard-spacing">
+				<!-- POPULATED BY JAVASCRIPT -->
+			</div>
+		</section>
 	</main>
+
+	
+	<!-- The footer -->
+	<footer class="page-footer">
+		<!-- WEB COMPONENT INCLUDE -->
+	</footer>
 
 	<!-- Scripts -->
 	<script src="scripts/script.js"></script>
 	<script src="scripts/variables.js"></script>
 	<script src="scripts/definitions.js"></script>
 	<script src="scripts/components.js"></script>
+	<script src="/categories/scripts/components.js"></script>
 </body>
 </html>

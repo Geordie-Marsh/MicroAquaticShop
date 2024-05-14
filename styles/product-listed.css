@@ -1,0 +1,17 @@
+.product--listed__img {
+	/* The product's image */
+	width: 100%; /* This image defines the width of the entire panel */
+	object-fit: cover;
+	aspect-ratio: 1 / 1;
+	border-radius: var(--spacing-02);
+	box-shadow: var(--effect-shadow);
+}
+.product--listed__title {
+	/* The product's name */
+	height: 100%;
+}
+.product--listed__buttons,
+.product--listed__button--view,
+.product--listed__button--cart {
+	width: 100%;
+}

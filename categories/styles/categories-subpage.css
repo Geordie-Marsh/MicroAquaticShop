@@ -1,0 +1,52 @@
+/* Hero content */
+	.hero-content__info {
+		/* The hero section's panel's width is relative to the viewport width */
+		width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
+	}
+	.hero-content__image {
+		/* The hero image has special positioning in relation to the panel as it slightly overlaps */
+		width: clamp(calc(24.9 * var(--sizing-factor)), 48%, calc(39 * var(--sizing-factor)));
+		top: var(--layout-02);
+	}
+	.hero-content__info {
+		gap: var(--layout-03);
+
+		p {
+			margin: 0;
+		}
+	}
+
+
+
+/* Main content */
+	.products-finder-cont {
+		/* The section that contains all the stuff for finding products, including the filters and products listing */
+		grid-template-columns: auto 1fr;
+		grid-template-rows: repeat(2, auto);
+		grid-template-areas: 
+			"product-filters product-display-buttons"
+			"product-filters product-listing"
+		;
+		padding-bottom: var(--layout-04);
+	}
+	.product-filters {
+		grid-area: product-filters;
+		width: calc(22 * var(--sizing-factor));
+		gap: var(--spacing-06);
+		text-align: center;
+		
+		h3 {
+			width: 100%;
+		}
+	}
+	.product-filters__filter-type {
+		flex-wrap: wrap;
+	}
+	.product-display-buttons {
+		grid-area: product-display-buttons;
+		justify-content: right;
+	}
+	.product-listing {
+		grid-area: product-listing;
+		grid-template-columns: repeat(4, auto);
+	}

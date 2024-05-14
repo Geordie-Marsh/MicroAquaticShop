@@ -35,4 +35,5 @@
 	/* Gradients for buttons */
 	--clr-button-gradient: linear-gradient(to bottom right, #ffffff00, #00000033), var(--clr-text-dk);
 	--clr-button-gradient--accent: linear-gradient(to bottom right, #ffffff00, #00000033), var(--clr-accent);
+	--clr-button-gradient--glass: linear-gradient(to bottom right, #4da6c3a8, #154a5c98);
 }

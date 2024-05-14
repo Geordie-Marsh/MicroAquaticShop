@@ -157,4 +157,79 @@ const homepageReviews = [
 		"Glen Coco",
 		"Got my daughter a batch of 1000 FAB little shrimpies for her new aquarium installation... she actually likes them! Great gift!!! "
 	]
-]
+];
+
+
+
+
+// This is the array used to generate the products list in the shrimp category page (would be generated from a proper database in the real website)
+// Each element in the outer array is a product, and the inner array has the name, the price, the product image's filename and the colour in that order
+const listedProductsShrimp = [
+	[
+		"Cherry Shrimp", 
+		"$3.49",
+		"shrimp-cherry-red",
+		"red"
+	],
+	[
+		"Tangerine Tiger Shrimp", 
+		"$6.99",
+		"shrimp-tangerine-tiger",
+		"orange"
+	],
+	[
+		"Ghost Shrimp", 
+		"$4.49",
+		"shrimp-ghost",
+		"translucent"
+	],
+	[
+		"Tiger Shrimp", 
+		"$17.99",
+		"shrimp-tiger",
+		"red"
+	]
+];
+
+
+
+// These is the arrays used to generate the category page filters
+// Each element in the outer array is a filter, and the inner array has the filter name and the back-end filter variable
+const filterSubcategoryShrimp = [
+	[
+		"Bundles",
+		"bundles"
+	],
+	[
+		"Cherry shrimp",
+		"shrimp-cherry"
+	],
+	[
+		"Rili shrimp",
+		"shrimp-rili"
+	],
+	[
+		"Bee shrimp",
+		"shrimp-bee"
+	],
+	[
+		"Crystal shrimp",
+		"shrimp-crystal"
+	],
+	[
+		"Ghost shrimp",
+		"shrimp-ghost"
+	],
+	[
+		"Tiger shrimp",
+		"shrimp-tiger"
+	],
+	[
+		"Caridina shrimp",
+		"shrimp-caridina"
+	],
+	[
+		"Neocaridina shrimp",
+		"shrimp-neocaridina"
+	]
+];

@@ -23,3 +23,20 @@ const max = (number) => Math.max(number);
 // Round up and down
 const roundUp = (number) => Math.ceil(number);
 const roundDown = (number) => Math.floor(number);
+
+// Shortcut for changing a string into start case (This Is Start Case)
+function toStartCase(str) {
+	// Creating an array of each word in the sentence
+	let splitStr = str.toLowerCase().split(' ');
+
+	for (var i = 0; i < splitStr.length; i++) {
+       // Capitalising the first letter of each word in the string
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+	}
+
+	// Rejoining the words together back into one string
+	let newStr = splitStr.join(" ")
+
+	// Returning the joined string
+	return newStr; 
+}

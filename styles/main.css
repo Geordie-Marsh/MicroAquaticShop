@@ -13,6 +13,7 @@
 @import url(header.css);
 @import url(footer.css);
 @import url(featured-product.css);
+@import url(product-listed.css);
 
 /* Making the site use border-box sizing by default */
 :root {
