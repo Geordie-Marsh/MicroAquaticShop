@@ -22,7 +22,7 @@
 	.products-finder-cont {
 		/* The section that contains all the stuff for finding products, including the filters and products listing */
 		grid-template-columns: auto 1fr;
-		grid-template-rows: repeat(2, auto);
+		grid-template-rows: auto 1fr;
 		grid-template-areas: 
 			"product-filters product-display-buttons"
 			"product-filters product-listing"
@@ -31,8 +31,8 @@
 	}
 	.product-filters {
 		grid-area: product-filters;
-		width: calc(22 * var(--sizing-factor));
-		gap: var(--spacing-06);
+		width: calc(23 * var(--sizing-factor));
+		gap: var(--spacing-05);
 		text-align: center;
 		
 		h3 {
@@ -48,5 +48,5 @@
 	}
 	.product-listing {
 		grid-area: product-listing;
-		grid-template-columns: repeat(4, auto);
+		grid-template-columns: repeat(4, 1fr);
 	}

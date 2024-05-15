@@ -45,7 +45,16 @@
 				img.setAttribute("src", "assets/images/" + listedProductsShrimp[i][2] + ".jpg");
 
 				const colourName = container.querySelector(".product--listed__colour__name"); // Editing the colour name
-				colourName.textContent = toStartCase(listedProductsShrimp[i][3]);
+				colourName.textContent = listedProductsShrimp[i][3][0];
+				const colourSwatch = container.querySelector(".product--listed__colour__swatch"); // Editing the colour name
+				colourSwatch.style.background = "var(--clr-primitive-" + listedProductsShrimp[i][3][1] + ")";
+
+				// If this product has a page to direct to, make the view button direct to this
+				if(listedProductsShrimp[i][4]) {
+					const viewButton = container.querySelector(".product--listed__button--view");
+					viewButton.setAttribute("href", "products/" + listedProductsShrimp[i][4] + "/");
+				}
+
 
 			// Appending the content of the container to the featured products div
 			$$(".product-listing").appendChild(container);
@@ -76,26 +85,47 @@
 	// The function for creating each element and adding it into the DOM
 	function includeFilters(html) {
 		// Creating a new a button for each element, using the data from the filterSubcategoryShrimp array
-		for (let i = 0; i < filterSubcategoryShrimp.length; i++) {
-			// Creating a button element
-			const button = document.createElement("button");
+		includeThisFilterList(filterSubcategoryShrimp);
+		includeThisFilterList(filterPrice);
+		includeThisFilterList(filterAvailability);
+		includeThisFilterList(filterColour);
 
-			// Setting the innerHTML of the button to the fetched HTML
-			button.innerHTML = html;
+		function includeThisFilterList(filterList) {
+			for (let i = 0; i < filterList.length; i++) {
+				// Creating a button element
+				const button = document.createElement("button");
 
-			// Giving the button classes
-			classAdd(button, "button");
-			classAdd(button, "button--tertiary");
-			classAdd(button, "button--glass");
-			// classAdd(container, "panel");
-			// classAdd(container, "flex--vertical");
-			// classAdd(container, "standard-spacing");
+				// Setting the innerHTML of the button to the fetched HTML
+				button.innerHTML = html;
 
-			// Replacing the default data of the element with that specific to the product in question
-				const label = button.querySelector(".button__label--text"); // Editing the title
-				label.textContent = filterSubcategoryShrimp[i][0];
+				// Giving the button classes
+				classAdd(button, "button");
+				classAdd(button, "button--tertiary");
+				classAdd(button, "button--glass");
 
-			// Appending the content of the button to the featured products div
-			$$("#product-filters__filter-type--sub-category").appendChild(button);
+				// Replacing the default data of the element with that specific to the product in question
+					const label = button.querySelector(".button__label--text"); // Editing the title
+					label.textContent = filterList[i][0];
+					// Removing the colour swatch if it's not a colour filter
+					const colourSwatch = button.querySelector(".colour-swatch");
+					filterList !== filterColour
+						? colourSwatch.remove()
+						: changeColourFilterSwatch() ;
+				
+				// If it's a colour filter, change the colour swatch to the right colour
+				function changeColourFilterSwatch() {
+					colourSwatch.style.background = "var(--clr-primitive-" + filterList[i][1] + ")";
+				}
+
+				// Appending the content of the button to the div
+					// Getting the ID specifier for the category div
+					let filterDivID = 
+						filterList == filterSubcategoryShrimp ? "sub-category" 
+							: filterList == filterPrice ? "price"
+							: filterList == filterAvailability ? "availability"
+							: "colour";
+					// Appending the content to the div this has just specified
+					$$("#product-filters__filter-type--" + filterDivID).appendChild(button);
+			}
 		}
 	}

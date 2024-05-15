@@ -1,3 +1,7 @@
+.product--listed {
+	/* The panel itself */
+	align-items: center;
+}
 .product--listed__img {
 	/* The product's image */
 	width: 100%; /* This image defines the width of the entire panel */
@@ -9,9 +13,17 @@
 .product--listed__title {
 	/* The product's name */
 	height: 100%;
+	text-align: center;
 }
 .product--listed__buttons,
 .product--listed__button--view,
 .product--listed__button--cart {
 	width: 100%;
+}
+.product--listed__colour {
+	align-items: center;
+}
+.product--listed__colour__name {
+	margin: 0;
+	margin-top: 3px;
 }

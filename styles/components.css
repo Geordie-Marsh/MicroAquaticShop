@@ -23,39 +23,48 @@
 
 
 /* Featured products section (not the featured products cards themselves as they're components) */
-.featured-products-content {
-	/* This includes the scrolling list as well as the buttons */
-	position: relative;
-	width: 100%;
-}
-.featured-products__list {
-	/* This is the scrolling list */
-	overflow-x: scroll;
-	width: 100%;
-	padding: 0 var(--layout-04);
-	scrollbar-width: none; /* Hiding the scrollbar */
-	scroll-snap-type: x mandatory; /* Making the scrolling snappy */
-	flex-wrap: nowrap;
-}
+	.featured-products-content {
+		/* This includes the scrolling list as well as the buttons */
+		position: relative;
+		width: 100%;
+	}
+	.featured-products__list {
+		/* This is the scrolling list */
+		overflow-x: scroll;
+		width: 100%;
+		padding: 0 var(--layout-04);
+		scrollbar-width: none; /* Hiding the scrollbar */
+		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
+		flex-wrap: nowrap;
+	}
 
 
 /* Shop by category section */
-.category-type {
-	/* This is the panel for each group of 4 categories, e.g., "Animals" */
-	width: 100%;
+	.category-type {
+		/* This is the panel for each group of 4 categories, e.g., "Animals" */
+		width: 100%;
+	}
+	.category-type h3 {
+		/* This is the title for each category type panel */
+		text-align: center;
+		width: 100%;
+		margin: var(--spacing-02) 0;
+	}
+	.shopping-category {
+		/* This is each individual category button */
+		width: 100%;
+	}
+	.shopping-category .button__label {
+		/* This is the label of the category */
+		width: 100%;
+		text-align: left;
 }
-.category-type h3 {
-	/* This is the title for each category type panel */
-	text-align: center;
-	width: 100%;
-	margin: var(--spacing-02) 0;
-}
-.shopping-category {
-	/* This is each individual category button */
-	width: 100%;
-}
-.shopping-category .button__label {
-	/* This is the label of the category */
-	width: 100%;
-	text-align: left;
-}
+
+
+/* Colour swatch */
+	.colour-swatch {
+		aspect-ratio: 1 / 1;
+		width: var(--spacing-05);
+		border-radius: 100%;
+		box-shadow: var(--effect-shadow);
+	}

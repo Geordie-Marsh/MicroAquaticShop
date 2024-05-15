@@ -87,6 +87,12 @@
 		height: var(--spacing-05);
 		aspect-ratio: 1 / 1;
 	}
+
+	.button__icon--colour {
+		width: var(--spacing-05);
+		aspect-ratio: 1 / 1;
+		margin-left: calc(-1 * var(--spacing-03));
+	}
 }
 
 /* Buttons with glass styling */

@@ -162,32 +162,140 @@ const homepageReviews = [
 
 
 
+// This is thea array used for the colour swatches
+// Each element in the outer array is a colour, and the inner array has the colour's name and the back-end colour variable name
+const colourSwatches = [
+	[
+		"Red",
+		"red"
+	],
+	[
+		"Orange",
+		"orange"
+	],
+	[
+		"Yellow",
+		"yellow"
+	],
+	[
+		"Green",
+		"green"
+	],
+	[
+		"Blue",
+		"blue"
+	],
+	[
+		"Purple",
+		"purple"
+	],
+	[
+		"Pink",
+		"pink"
+	],
+	[
+		"White",
+		"white"
+	],
+	[
+		"Grey",
+		"grey"
+	],
+	[
+		"Black",
+		"black"
+	],
+	[
+		"Brown",
+		"brown"
+	],
+	[
+		"Multicolour",
+		"multi"
+	],
+	[
+		"Translucent",
+		"translucent"
+	]
+];
+
+
+
 // This is the array used to generate the products list in the shrimp category page (would be generated from a proper database in the real website)
-// Each element in the outer array is a product, and the inner array has the name, the price, the product image's filename and the colour in that order
+// Each element in the outer array is a product, and the inner array has the name, the price, the product image's filename, the colour, and the product page it directs to (optional) in that order
 const listedProductsShrimp = [
 	[
 		"Cherry Shrimp", 
 		"$3.49",
 		"shrimp-cherry-red",
-		"red"
+		colourSwatches[0]
 	],
 	[
 		"Tangerine Tiger Shrimp", 
 		"$6.99",
 		"shrimp-tangerine-tiger",
-		"orange"
+		colourSwatches[1],
+		"tangerine-tiger-shrimp"
 	],
 	[
 		"Ghost Shrimp", 
 		"$4.49",
 		"shrimp-ghost",
-		"translucent"
+		colourSwatches[12]
+	],
+	[
+		"Cherry Shrimp", 
+		"$6.99",
+		"shrimp-cherry-yellow",
+		colourSwatches[2]
+	],
+	[
+		"King Kong Shrimp", 
+		"$17.99",
+		"shrimp-king-kong-red",
+		colourSwatches[0]
+	],
+	[
+		"Medium-High Grade Rili Shrimp", 
+		"$6.99",
+		"shrimp-rili-red-high-grade",
+		colourSwatches[0]
+	],
+	[
+		"Yellow Devil's Shrimp", 
+		"$17.99",
+		"shrimp-yellow-devil",
+		colourSwatches[2]
+	],
+	[
+		"Bundle - Mixed Cherry Shrimp", 
+		"From $6.99ea",
+		"shrimp-cherry-mixed",
+		colourSwatches[11]
+	],
+	[
+		"Cherry Shrimp", 
+		"$9.99",
+		"shrimp-cherry-blue",
+		colourSwatches[4]
+	],
+	[
+		"Wild Form Cherry Shrimp", 
+		"$9.99",
+		"shrimp-cherry-wild",
+		colourSwatches[12]
+	],
+	[
+		"Crazy Blue Shrimp", 
+		"$19.99",
+		"shrimp-crazy-blue",
+		colourSwatches[4]
 	],
 	[
 		"Tiger Shrimp", 
 		"$17.99",
 		"shrimp-tiger",
-		"red"
+		colourSwatches[0]
 	]
 ];
 
@@ -231,5 +339,95 @@ const filterSubcategoryShrimp = [
 	[
 		"Neocaridina shrimp",
 		"shrimp-neocaridina"
+	]
+];
+const filterPrice = [
+	[
+		"<$10",
+		"0-10"
+	],
+	[
+		"$10-$20",
+		"10-20"
+	],
+	[
+		"$20-$40",
+		"20-40"
+	],
+	[
+		"$40-$60",
+		"40-60"
+	],
+	[
+		"$60-$100",
+		"60-100"
+	],
+	[
+		">$100",
+		"100-Infinity"
+	]
+];
+const filterAvailability = [
+	[
+		"In stock",
+		true
+	],
+	[
+		"Coming soon",
+		false
+	]
+];
+const filterColour = [
+	[
+		"Red",
+		"red"
+	],
+	[
+		"Orange",
+		"orange"
+	],
+	[
+		"Yellow",
+		"yellow"
+	],
+	[
+		"Green",
+		"green"
+	],
+	[
+		"Blue",
+		"blue"
+	],
+	[
+		"Purple",
+		"purple"
+	],
+	[
+		"Pink",
+		"pink"
+	],
+	[
+		"White",
+		"white"
+	],
+	[
+		"Grey",
+		"grey"
+	],
+	[
+		"Black",
+		"black"
+	],
+	[
+		"Brown",
+		"brown"
+	],
+	[
+		"Multicolour",
+		"multi"
+	],
+	[
+		"Translucent",
+		"translucent"
 	]
 ];

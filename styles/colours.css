@@ -4,9 +4,9 @@
 	--black: #000000;
 
 	/* Typography is usually white - also with a dulled (dk), a filler text (dkr) and an opposite contrast (black on white) variant  */
-	--clr-text: var(--white);
-	--clr-text-dk: #D3F0FD;
-	--clr-text-dkr: #8CA7B2;
+	--clr-text:          var(--white);
+	--clr-text-dk:       #D3F0FD;
+	--clr-text-dkr:      #8CA7B2;
 	--clr-text-opposite: var(--clr-background-lt);
 
 	/* Background colour - deep navy */
@@ -17,7 +17,7 @@
 	--clr-accent: #92FFFF;
 	
 	/* Gradient colours (underwater colours, aquas and cyans) */
-	--clr-gradients-green: #56B454;
+	--clr-gradients-green:   #56B454;
 	--clr-gradients-aqua-lt: #4295B0;
 	--clr-gradients-aqua-dk: #115271;
 	--clr-gradients-cyan-lt: #47B8B1;
@@ -25,6 +25,21 @@
 
 	/* Star rating colour - yellow */
 	--clr-rating: #E2BC36;
+
+	/* Primitives - the colours used for swatches (and other uses of a specific colour) */
+	--clr-primitive-red:         #D6593E;
+	--clr-primitive-orange:      #D6903E;
+	--clr-primitive-yellow:      #D6B53E;
+	--clr-primitive-green:       #91C74C;
+	--clr-primitive-blue:        #3671E3;
+	--clr-primitive-purple:      #4B248A;
+	--clr-primitive-pink:        #EF7EE4;
+	--clr-primitive-white:       #DEDEDE;
+	--clr-primitive-grey:        #848484;
+	--clr-primitive-black:       #1F1F1F;
+	--clr-primitive-brown:       #96644F;
+	--clr-primitive-multi:       linear-gradient(135deg, #C0EB7B 2%, #115271 98%);
+	--clr-primitive-translucent: #C1C1C1;
 
 	/* Colours for glass elements (panels) */
 	--clr-glass-stroke: linear-gradient(to bottom right, #87b6cb, #00151C);
