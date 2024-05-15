@@ -18,6 +18,12 @@
 		padding: var(--spacing-06);
 		border-radius: var(--spacing-06);
 	}
+	.panel--big-rounding {
+		border-radius: var(--spacing-06);
+	}
+	.panel--big-padding {
+		padding: var(--spacing-05);
+	}
 
 
 
@@ -67,4 +73,11 @@
 		width: var(--spacing-05);
 		border-radius: 100%;
 		box-shadow: var(--effect-shadow);
+	}
+	.colour-swatch--orange {
+		background: var(--clr-primitive-orange);
+	}
+	.colour-name {
+		margin: 0;
+		margin-top: 3px;
 	}
