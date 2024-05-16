@@ -79,15 +79,17 @@
 				<section class="product-quantity panel panel--big-rounding panel--big-padding">
 					<h3>Quantity and Bulk-Buy</h3>
 					<div class="quantity-input flex--horizontal">
-						<button class="button button--icon-only button--tertiary quantity-input__segment quantity-input__segment--minus">
+						<div class="quantity-input__segment quantity-input__segment--minus flex--vertical">
 							<img src="assets/icons/minus.svg" alt="">
-						</button>
-						<form class="quantity-input__segment quantity-input__segment--number button button--only-styling" action="">
-							<input type="number" min="1" max="1000" value="1">
-						</form>
-						<button class="button button--icon-only button--tertiary quantity-input__segment quantity-input__segment--plus">
+						</div>
+						<div class="quantity-input__segment quantity-input__segment--number flex--vertical">
+							<form action="">
+								<input type="number" min="1" max="1000" value="1">
+							</form>
+						</div>
+						<div class="quantity-input__segment quantity-input__segment--plus flex--vertical">
 							<img src="assets/icons/plus.svg" alt="">
-						</button>
+						</div>
 					</div>
 					<table class="product-bulk-buy-table">
 						<tr>

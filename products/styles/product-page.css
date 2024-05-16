@@ -69,35 +69,36 @@
 	}
 
 	.quantity-input__segment {
-		
+		padding: var(--spacing-03);
+		background: var(--clr-glass-gradient);
+		border: 0.3px solid #00000040;
+		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+		backdrop-filter: blur(30px);
+		align-items: center;
 
 		img {
 			width: var(--spacing-05);
 		}
 	}
 	.quantity-input__segment--minus {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
+		border-radius: var(--spacing-07) 0 0 var(--spacing-07);
+		padding-left: var(--spacing-04);
 	}
 	.quantity-input__segment--plus {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
+		border-radius: 0 var(--spacing-07) var(--spacing-07) 0;
+		padding-right: var(--spacing-04);
 	}
-	.quantity-input__segment--number {
-		border-radius: 0;
-		background: var(--clr-button-gradient--glass);
-	}
-	.quantity-input__segment--number input {
+	.quantity-input__segment--number form input {
 		outline: none;
 		background: none;
 		border: none;
+		width: var(--spacing-06);
 		text-align: center;
 		font-family: inherit;
 		font-size: calc( 1.25 * var(--font-size-factor) );
 		padding: 0;
-		margin-top: 2px;
-		width: var(--spacing-05);
-		height: 100%;
+		margin-top: 5.5px;
+		color: var(--white);
 
 		/* Hiding the default number input arrows */
 			/* Chrome, Safari, Edge, Opera */
