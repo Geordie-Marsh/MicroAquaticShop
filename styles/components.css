@@ -13,15 +13,12 @@
 		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
 		backdrop-filter: blur(30px);
 	}
+	.panel--big-rounding,
 	.panel--highlighted-section {
-		/* This is a panel which appears in/on a highlighted section */
-		padding: var(--spacing-06);
 		border-radius: var(--spacing-06);
 	}
-	.panel--big-rounding {
-		border-radius: var(--spacing-06);
-	}
-	.panel--big-padding {
+	.panel--big-padding,
+	.panel--highlighted-section {
 		padding: var(--spacing-05);
 	}
 
