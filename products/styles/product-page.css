@@ -1,7 +1,4 @@
 /* Product Showcase */
-	.product-showcase {
-		
-	}
 	.product-images {
 		/* The container for the product images and the slideshow controls */
 		border-radius: var(--spacing-06);
@@ -134,4 +131,22 @@
 	}
 	.product-user-actions__cart {
 		width: 100%;
+	}
+
+	.quick-facts {
+		grid-template-columns: repeat(6, 1fr);
+	}
+	.quick-facts__factoid {
+		padding: var(--spacing-03) var(--spacing-04);
+		justify-content: space-between;
+		align-items: center;
+	}
+	.quick-facts__factoid__text {
+		margin: 0;
+		margin-top: 5px;
+		text-align: center;
+	}
+	.quick-facts__factoid__info {
+		width: var(--spacing-05);
+		aspect-ratio: 1 / 1;
 	}
