@@ -22,115 +22,117 @@
 		</section>
 
 		<!-- The topmost section containing the product image, basic info and buying elements -->
-		<section class="product-showcase grid">
+		<section class="product-showcase flex--horizontal">
 			<!-- The div containing the images slideshow -->
-			<div class="product-images">
+			<div class="product-images flex--horizontal">
 				<img src="assets/images/shrimp-tangerine-tiger.jpg" alt="A side shot of the tangerine tiger shrimp">
 			</div>
 
-			<!-- The section containing the product info summary (like the title, desc, price, etc.) -->
-			<section class="product-summary panel panel--big-rounding panel--big-padding standard-spacing">
-				<!-- The div containing the titles -->
-				<div class="product-summary__titles-cont flex--vertical">
-					<!-- The product name -->
-					<h3 class="product-summary__title">Tangerine Tiger Shrimp</h3>
+			<div class="product-showcase__info flex--vertical">
+				<!-- The section containing the product info summary (like the title, desc, price, etc.) -->
+				<section class="product-summary panel panel--big-rounding panel--big-padding standard-spacing">
+					<!-- The div containing the titles -->
+					<div class="product-summary__titles-cont flex--vertical">
+						<!-- The product name -->
+						<h3 class="product-summary__title">Tangerine Tiger Shrimp</h3>
 
-					<!-- The scientific name or other names of the product -->
-					<strong class="product-summary__subtitle"><i>Caridina serrata</i></strong>
-				</div>
-				
-
-				<!-- The div containing the rating -->
-				<div class="product-summary__rating-cont flex--horizontal">
-					<!-- The div containing the stars -->
-					<div class="product-summary__rating-cont__stars-cont stars-cont flex--horizontal">
-						<img src="assets/icons/star.svg" class="product-page__star">
-						<img src="assets/icons/star.svg" class="product-page__star">
-						<img src="assets/icons/star.svg" class="product-page__star">
-						<img src="assets/icons/star-empty.svg" class="product-page__star">
-						<img src="assets/icons/star-empty.svg" class="product-page__star">
+						<!-- The scientific name or other names of the product -->
+						<strong class="product-summary__subtitle"><i>Caridina serrata</i></strong>
 					</div>
-					<p class="product-summary__rating-cont__no-of-reviews">(32 reviews)</p>
-				</div>
+					
 
-				<!-- The basic desc of the product -->
-				<p class="product-summary__desc">Tangerine tigers look fantastic and are easy to keep. They are a brilliant orange colour with thin black stripes.</p>
-
-				<!-- The colour -->
-				<div class="product-summary__colour flex--horizontal standard-spacing">
-					<div class="colour-swatch colour-swatch--orange"></div>
-					<p class="colour-name">Orange</p>
-				</div>
-
-				<!-- The price of the product -->
-				<h2 class="product-summary__price">$6.99</h2>
-			</section>
-
-			<!-- The section containing the other varieties of the product -->
-			<section class="product-varieties panel panel--big-rounding panel--big-padding">
-				<div class="product-varieties__title flex--horizontal">
-					<h3>Other Varieties</h3>
-					<img src="assets/icons/arrow-down.svg" alt="Expand or collapse section">
-				</div>
-			</section>
-
-			<!-- The section containing the quantity and bulk buy info -->
-			<section class="product-quantity panel panel--big-rounding panel--big-padding">
-				<h3>Quantity and Bulk-Buy</h3>
-				<div class="quantity-input flex--horizontal">
-					<div class="quantity-input__segment quantity-input__segment--minus">
-						<img src="assets/icons/minus.svg" alt="">
+					<!-- The div containing the rating -->
+					<div class="product-summary__rating-cont flex--horizontal">
+						<!-- The div containing the stars -->
+						<div class="product-summary__rating-cont__stars-cont stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="product-page__star">
+							<img src="assets/icons/star.svg" class="product-page__star">
+							<img src="assets/icons/star.svg" class="product-page__star">
+							<img src="assets/icons/star-empty.svg" class="product-page__star">
+							<img src="assets/icons/star-empty.svg" class="product-page__star">
+						</div>
+						<p class="product-summary__rating-cont__no-of-reviews">(32 reviews)</p>
 					</div>
-					<div class="quantity-input__segment quantity-input__segment--number">
-						<form action="">
-							<input type="number" min="1" max="1000" value="1">
-						</form>
-					</div>
-					<div class="quantity-input__segment quantity-input__segment--plus">
-						<img src="assets/icons/plus.svg" alt="">
-					</div>
-				</div>
-				<table class="product-bulk-buy-table">
-					<tr>
-						<th>Quantity</th>
-						<th>Price</th>
-						<th>Discount</th>
-					</tr>
-					<tr>
-						<td>10+</td>
-						<td>$6.29ea</td>
-						<td>10%</td>
-					</tr>
-					<tr>
-						<td>20+</td>
-						<td>$5.59ea</td>
-						<td>20%</td>
-					</tr>
-					<tr>
-						<td>50+</td>
-						<td>$4.89ea</td>
-						<td>30%</td>
-					</tr>
-					<tr>
-						<td>100+</td>
-						<td>$4.19ea</td>
-						<td>40%</td>
-					</tr>
-				</table>
-			</section>
 
-			<!-- The section containing the user actions, like adding to cart, wishlist and sharing -->
-			<section class="product-user-actions panel panel--big-rounding panel--big-padding flex--horizontal standard-spacing">
-				<button class="product-user-actions__cart button button--cta" aria-label="Add to cart">
-					<span class="button__label">Add to Cart</span>
-				</button>
-				<button class="product-user-actions__wishlist button button--secondary button--icon-only" aria-label="Wishlist">
-					<img class="button__icon" src="assets/icons/heart--dark.svg">
-				</button>
-				<button class="product-user-actions__share button button--secondary button--icon-only" aria-label="Share">
-					<img class="button__icon" src="assets/icons/share.svg">
-				</button>
-			</section>
+					<!-- The basic desc of the product -->
+					<p class="product-summary__desc">Tangerine tigers look fantastic and are easy to keep. They are a brilliant orange colour with thin black stripes.</p>
+
+					<!-- The colour -->
+					<div class="product-summary__colour flex--horizontal standard-spacing">
+						<div class="colour-swatch colour-swatch--orange"></div>
+						<p class="colour-name">Orange</p>
+					</div>
+
+					<!-- The price of the product -->
+					<h2 class="product-summary__price">$6.99</h2>
+				</section>
+
+				<!-- The section containing the other varieties of the product -->
+				<section class="product-varieties panel panel--big-rounding panel--big-padding">
+					<div class="product-varieties__title flex--horizontal">
+						<h3>Other Varieties</h3>
+						<img src="assets/icons/arrow-down.svg" alt="Expand or collapse section">
+					</div>
+				</section>
+
+				<!-- The section containing the quantity and bulk buy info -->
+				<section class="product-quantity panel panel--big-rounding panel--big-padding">
+					<h3>Quantity and Bulk-Buy</h3>
+					<div class="quantity-input flex--horizontal">
+						<div class="quantity-input__segment quantity-input__segment--minus flex--vertical">
+							<img src="assets/icons/minus.svg" alt="">
+						</div>
+						<div class="quantity-input__segment quantity-input__segment--number flex--vertical">
+							<form action="">
+								<input type="number" min="1" max="1000" value="1">
+							</form>
+						</div>
+						<div class="quantity-input__segment quantity-input__segment--plus flex--vertical">
+							<img src="assets/icons/plus.svg" alt="">
+						</div>
+					</div>
+					<table class="product-bulk-buy-table">
+						<tr>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Discount</th>
+						</tr>
+						<tr>
+							<td>10+</td>
+							<td>$6.29ea</td>
+							<td>10%</td>
+						</tr>
+						<tr>
+							<td>20+</td>
+							<td>$5.59ea</td>
+							<td>20%</td>
+						</tr>
+						<tr>
+							<td>50+</td>
+							<td>$4.89ea</td>
+							<td>30%</td>
+						</tr>
+						<tr>
+							<td>100+</td>
+							<td>$4.19ea</td>
+							<td>40%</td>
+						</tr>
+					</table>
+				</section>
+
+				<!-- The section containing the user actions, like adding to cart, wishlist and sharing -->
+				<section class="product-user-actions panel panel--big-rounding panel--big-padding flex--horizontal standard-spacing">
+					<button class="product-user-actions__cart button button--cta" aria-label="Add to cart">
+						<span class="button__label">Add to Cart</span>
+					</button>
+					<button class="product-user-actions__wishlist button button--secondary button--icon-only" aria-label="Wishlist">
+						<img class="button__icon" src="assets/icons/heart--dark.svg">
+					</button>
+					<button class="product-user-actions__share button button--secondary button--icon-only" aria-label="Share">
+						<img class="button__icon" src="assets/icons/share.svg">
+					</button>
+				</section>
+			</div>
 		</section>
 
 		<!-- The highlighted section containing more detailed info about the product -->

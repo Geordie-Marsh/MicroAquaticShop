@@ -1,32 +1,35 @@
 /* Product Showcase */
 	.product-showcase {
-		grid-template-columns: 11fr 9fr;
-		grid-template-rows: repeat(3, auto) 1fr;
-		grid-template-areas: 
-			"product-images product-summary"
-			"product-images product-varieties"
-			"product-images product-quantity"
-			"product-images product-user-actions"
-		;
+		
 	}
 	.product-images {
 		/* The container for the product images and the slideshow controls */
-		grid-area: product-images;
-		border-radius: var(--spacing-04);
+		border-radius: var(--spacing-06);
 		box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
 		border: 0.3px solid #00000040;
 		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
 		overflow: hidden;
+		margin: 0;
+		width: 95vh;
+		height: 95vh;
+		position: sticky;
+		position: -webkit-sticky;
+		top: 2.5vh;
 
 		img {
 			/* The images themselves within the div */
-			width: 100%;
+			
 			aspect-ratio: 1 / 1;
 		}
 	}
+
+	.product-showcase__info {
+		gap: var(--layout-02);
+		flex-shrink: 1000;
+	}
+
 	.product-summary {
 		/* The container for the product summary info */
-		grid-area: product-summary;
 		text-align: center;
 		padding: var(--spacing-05);
 		align-items: center;
@@ -56,9 +59,6 @@
 		margin: 0;
 	}
 
-	.product-varieties {
-		grid-area: product-varieties;
-	}
 	.product-varieties__title {
 		width: 100%;
 		justify-content: space-between;
@@ -68,15 +68,13 @@
 		}
 	}
 
-	.product-quantity {
-		grid-area: product-quantity;
-	}
 	.quantity-input__segment {
 		padding: var(--spacing-03);
 		background: var(--clr-glass-gradient);
 		border: 0.3px solid #00000040;
 		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
 		backdrop-filter: blur(30px);
+		align-items: center;
 
 		img {
 			width: var(--spacing-05);
@@ -84,9 +82,11 @@
 	}
 	.quantity-input__segment--minus {
 		border-radius: var(--spacing-07) 0 0 var(--spacing-07);
+		padding-left: var(--spacing-04);
 	}
 	.quantity-input__segment--plus {
 		border-radius: 0 var(--spacing-07) var(--spacing-07) 0;
+		padding-right: var(--spacing-04);
 	}
 	.quantity-input__segment--number form input {
 		outline: none;
@@ -126,7 +126,7 @@
 	}
 
 	.product-user-actions {
-		grid-area: product-user-actions;
+		
 		
 		button {
 			height: 100%;
