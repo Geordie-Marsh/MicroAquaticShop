@@ -1,7 +1,7 @@
 /* Product Showcase */
 	.product-images {
 		/* The container for the product images and the slideshow controls */
-		border-radius: var(--spacing-06);
+		border-radius: var(--spacing-07);
 		box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
 		border: 0.3px solid #00000040;
 		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
@@ -28,7 +28,7 @@
 	.product-summary {
 		/* The container for the product summary info */
 		text-align: center;
-		padding: var(--spacing-05);
+		padding: var(--spacing-06);
 		align-items: center;
 		gap: var(--spacing-04);
 	}
@@ -46,7 +46,7 @@
 		gap: var(--spacing-01);
 	}
 	.product-page__star {
-		width: var(--spacing-05);
+		width: var(--spacing-06);
 	}
 	.product-summary__rating-cont__no-of-reviews {
 		margin: 0;
@@ -61,7 +61,7 @@
 		justify-content: space-between;
 
 		img {
-			width: var(--spacing-05);
+			width: var(--spacing-06);
 		}
 	}
 
@@ -74,22 +74,22 @@
 		align-items: center;
 
 		img {
-			width: var(--spacing-05);
+			width: var(--spacing-06);
 		}
 	}
 	.quantity-input__segment--minus {
-		border-radius: var(--spacing-07) 0 0 var(--spacing-07);
+		border-radius: var(--spacing-08) 0 0 var(--spacing-08);
 		padding-left: var(--spacing-04);
 	}
 	.quantity-input__segment--plus {
-		border-radius: 0 var(--spacing-07) var(--spacing-07) 0;
+		border-radius: 0 var(--spacing-08) var(--spacing-08) 0;
 		padding-right: var(--spacing-04);
 	}
 	.quantity-input__segment--number form input {
 		outline: none;
 		background: none;
 		border: none;
-		width: var(--spacing-06);
+		width: var(--spacing-07);
 		text-align: center;
 		font-family: inherit;
 		font-size: calc( 1.25 * var(--font-size-factor) );
@@ -137,7 +137,7 @@
 		grid-template-columns: repeat(6, 1fr);
 	}
 	.quick-facts__factoid {
-		padding: var(--spacing-03) var(--spacing-04);
+		padding: var(--spacing-03) var(--spacing-04) var(--spacing-03) var(--spacing-06);
 		justify-content: space-between;
 		align-items: center;
 	}

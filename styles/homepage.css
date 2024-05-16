@@ -35,7 +35,7 @@
 	}
 	.selling-point__logo {
 		grid-area: selling-point__logo;
-		height: var(--spacing-07);
+		height: var(--spacing-08);
 	}
 	.selling-point__title {
 		grid-area: selling-point__title;
@@ -55,7 +55,7 @@
 	}
 	.about-us-cont {
 		/* This is the panel containing all the about us info */
-		gap: var(--spacing-06);
+		gap: var(--spacing-07);
 		align-items: stretch;
 	}
 	.about-us__image {
@@ -112,7 +112,7 @@
 	}
 	.homepage-review__stars-cont__star {
 		/* This is the individual star */
-		width: var(--spacing-05);
+		width: var(--spacing-06);
 	}
 	.homepage-review__text {
 		/* This is the review text */
@@ -134,7 +134,7 @@
 	.services__service {
 		/* This is the individual service panel itself */
 		align-items: center;
-		gap: var(--spacing-05);
+		gap: var(--spacing-06);
 	}
 	.services__service__header {
 		/* This contains the service's icon, title, and tagline text (if it contains one) */
@@ -150,7 +150,7 @@
 	}
 	.services__service__icon {
 		/* This is the icon of the service (this is placed after after the rule giving all descendents of the header no margin so that this will override that rule) */
-		width: var(--spacing-07);
+		width: var(--spacing-08);
 		margin-bottom: var(--spacing-03);
 	}
 	/* These define which service is in which grid area */

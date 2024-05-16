@@ -41,7 +41,7 @@
 	flex-direction: row; /* This is specified here (instead of using a utility class) since this changes depending on resolution */
 	align-items: center;
 	justify-content: center;
-	gap: var(--spacing-05);
+	gap: var(--spacing-06);
 	padding: var(--spacing-03);
 }
 .footer-copyright-bar__copyright {

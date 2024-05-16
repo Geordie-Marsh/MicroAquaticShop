@@ -1,7 +1,7 @@
 /* Universal styles for buttons */
 .button {
 	/* Default button component */
-	padding: var(--spacing-03) var(--spacing-05);
+	padding: var(--spacing-03) var(--spacing-06);
 	border-radius: var(--spacing-03);
 	background: var(--clr-button-gradient);
 	border: none;	/*Disabling the default styling*/
@@ -73,7 +73,7 @@
 	}
 
 	.button__logo {
-		height: var(--spacing-06);
+		height: var(--spacing-07);
 		margin-left: calc(-1 * var(--spacing-03));
 		margin-right: var(--spacing-01);
 	}
@@ -82,15 +82,15 @@
 /* Tertiary buttons */
 .button--tertiary {
 	background: var(--clr-button-gradient); /* Same as default background */
-	border-radius: var(--spacing-07);
+	border-radius: var(--spacing-08);
 	
 	.button__icon {
-		height: var(--spacing-05);
+		height: var(--spacing-06);
 		aspect-ratio: 1 / 1;
 	}
 
 	.button__icon--colour {
-		width: var(--spacing-05);
+		width: var(--spacing-06);
 		aspect-ratio: 1 / 1;
 		margin-left: calc(-1 * var(--spacing-03));
 	}
@@ -129,7 +129,7 @@
 	}
 
 	.button__logo {
-		height: var(--spacing-06);
+		height: var(--spacing-07);
 		aspect-ratio: 1 / 1;
 		margin-right: var(--spacing-01);
 	}

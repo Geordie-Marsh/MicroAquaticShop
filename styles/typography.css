@@ -48,7 +48,7 @@ h1 {
 	/* This font adapts to the size of the container it's in, specifically relative to the hero panel */
 	font-size: clamp(calc(6.4 * var(--sizing-factor)), 10vw, calc(9 * var(--sizing-factor)));
 	font-weight: var(--font-weight-black);
-	margin-top: var(--spacing-05);
+	margin-top: var(--spacing-06);
 	margin-bottom: 0;
 	line-height: 83%;
 }

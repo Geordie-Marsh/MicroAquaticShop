@@ -32,7 +32,7 @@
 	.product-filters {
 		grid-area: product-filters;
 		width: calc(23 * var(--sizing-factor));
-		gap: var(--spacing-05);
+		gap: var(--spacing-06);
 		text-align: center;
 		
 		h3 {

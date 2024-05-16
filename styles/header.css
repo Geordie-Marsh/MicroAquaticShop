@@ -1,7 +1,7 @@
 .page-header {
 	/* The whole header */
 	width: 100%;
-	height: var(--spacing-06);
+	height: var(--spacing-07);
 	z-index: 100;
 	justify-content: space-between;
 	position: relative;
@@ -17,7 +17,7 @@
 	grid-template-columns: auto 1fr;
 }
 .logo img {
-	width: var(--spacing-06);
+	width: var(--spacing-07);
 }
 .logo h3 {
 	/* Vertically aligning the logo's text to the icon */
@@ -34,11 +34,11 @@
 	margin: auto var(--spacing-01); /* Making the divider vertically centred */
 }
 .navbar {
-	gap: var(--spacing-05); /* The navbar has larger spacing than most flexboxes */
+	gap: var(--spacing-06); /* The navbar has larger spacing than most flexboxes */
 }
 .navbar__icon {
 	/* THe icons in the navbar */
-	height: var(--spacing-05);
+	height: var(--spacing-06);
 	aspect-ratio: 1 / 1;
 
 	&:hover,
@@ -73,8 +73,8 @@
 	/* right: var(--layout-06); */
 	top: var(--layout-03);
 	height: auto;
-	gap: var(--spacing-07);
-	padding: var(--spacing-06);
+	gap: var(--spacing-08);
+	padding: var(--spacing-07);
 	width: auto;
 	box-shadow: var(--effect-shadow-lg);
 	transition: opacity var(--effect-transition-duration), visibility var(--effect-transition-duration) cubic-bezier(1,.01,1,-0.1); /* This makes the fade-in and -out work  */

@@ -14,9 +14,10 @@
 		--spacing-02: calc( 0.5   * var(--sizing-factor--spacing) ) /* 8px */;
 		--spacing-03: calc( 0.75  * var(--sizing-factor--spacing) ) /* 12px */;
 		--spacing-04: calc( 1     * var(--sizing-factor--spacing) ) /* 16px */; 
-		--spacing-05: calc( 1.5   * var(--sizing-factor--spacing) ) /* 24px */;
-		--spacing-06: calc( 2     * var(--sizing-factor--spacing) ) /* 32px */;
-		--spacing-07: calc( 3     * var(--sizing-factor--spacing) ) /* 48px */;
+		--spacing-05: calc( 1.25  * var(--sizing-factor--spacing) ) /* 16px */; 
+		--spacing-06: calc( 1.5   * var(--sizing-factor--spacing) ) /* 24px */;
+		--spacing-07: calc( 2     * var(--sizing-factor--spacing) ) /* 32px */;
+		--spacing-08: calc( 3     * var(--sizing-factor--spacing) ) /* 48px */;
 		
 	/* LAYOUT SCALE */
 		--layout-01: calc( 1    * var(--sizing-factor--layout) ) /* 16px */;
