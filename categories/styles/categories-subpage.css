@@ -42,6 +42,9 @@
 	.product-filters__filter-type {
 		flex-wrap: wrap;
 	}
+	.product-filters__button {
+		margin-top: var(--layout-03);
+	}
 	.product-display-buttons {
 		grid-area: product-display-buttons;
 		justify-content: right;
