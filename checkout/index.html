@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Micro Aquatic Shop</title>
+	<base href="../">
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="checkout/styles/checkout.css">
+</head>
+<body>
+	<!-- Contains all the sections of the homepage except the footer -->
+	<main>
+		<!-- The hero introductory section of the homepage -- GRADIENT section -->
+		<section class="hero section--highlighted section--hero">
+			<!-- The navbar header on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
+			<header class="page-header flex--horizontal standard-spacing">
+				<!-- WEB COMPONENT INCLUDE -->
+			</header>
+		</section>
+
+		<!-- The 'Shopping Cart' section -->
+		<section class="checkout-cont grid">
+			<!-- The payment details column -->
+			<div class="payment-details-cont flex--vertical standard-spacing">
+				<!-- The title -->
+				<h3 class="payment-details__title">Payment</h3>
+
+				<!-- The express checkout panel -->
+				<div class="express-checkout panel panel--highlighted-section standard-spacing">
+					<h4 class="panel__title">Express checkout</h4>
+					<div class="express-checkout__services grid standard-spacing">
+						<a class="express-checkout__services__button express-checkout__services__button--shop button">
+							<img src="assets/icons/express-shop.svg" alt="Pay with Shop">
+						</a>
+						<a class="express-checkout__services__button express-checkout__services__button--paypal button">
+							<img src="assets/icons/express-paypal.svg" alt="Pay with PayPal">
+						</a>
+						<a class="express-checkout__services__button express-checkout__services__button--google-pay button">
+							<img src="assets/icons/express-google-pay.svg" alt="Pay with Shop">
+						</a>
+						<a class="express-checkout__services__button express-checkout__services__button--apple-pay button">
+							<img src="assets/icons/express-apple-pay.svg" alt="Pay with Shop">
+						</a>
+					</div>
+				</div>
+
+				<!-- The 'or' dividing header -->
+				<h4 class="payment-details__divider">Or</h4>
+
+				<!-- The delivery panel -->
+				<div class="delivery-details panel"></div>
+
+				<!-- The card details panel -->
+				<div class="card-details panel"></div>
+
+				<!-- The remember me panel -->
+				<div class="remember-me panel"></div>
+			</div>
+
+			<!-- The order details column -->
+			<div class="order-details-cont flex--vertical">
+				<!-- The title -->
+				<h3 class="order-details__cont">Order Summary</h3>
+
+				<!-- The items being checked out -->
+				<div class="order-details__items-list"></div>
+
+				<!-- The order summary panel -->
+				<div class="order-summary panel standard-spacing"></div>
+			</div>
+		</section>
+	</main>
+
+	
+	<!-- The footer -->
+	<footer class="page-footer">
+		<!-- WEB COMPONENT INCLUDE -->
+	</footer>
+
+	<!-- Scripts -->
+	<script src="scripts/script.js"></script>
+	<script src="scripts/variables.js"></script>
+	<script src="scripts/definitions.js"></script>
+	<script src="scripts/components.js"></script>
+</body>
+</html>

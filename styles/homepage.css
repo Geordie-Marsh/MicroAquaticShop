@@ -4,6 +4,9 @@
 		width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
 		height: clamp(calc(30 * var(--sizing-factor--spacing)), 46vw, calc(34 * var(--sizing-factor--spacing)));
 	}
+	.page-title__title {
+		line-height: 83%;
+	}
 	.hero-content__image {
 		/* The hero image has special positioning in relation to the panel as it slightly overlaps */
 		width: clamp(calc(24.9 * var(--sizing-factor)), 44%, calc(37.25 * var(--sizing-factor)));

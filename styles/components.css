@@ -21,6 +21,10 @@
 	.panel--highlighted-section {
 		padding: var(--spacing-06);
 	}
+	.panel__title {
+		width: 100%;
+		text-align: center;
+	}
 
 
 
@@ -47,7 +51,7 @@
 		/* This is the panel for each group of 4 categories, e.g., "Animals" */
 		width: 100%;
 	}
-	.category-type h3 {
+	.category-type h4 {
 		/* This is the title for each category type panel */
 		text-align: center;
 		width: 100%;

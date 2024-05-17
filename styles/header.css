@@ -19,7 +19,7 @@
 .logo img {
 	width: var(--spacing-07);
 }
-.logo h3 {
+.logo h4 {
 	/* Vertically aligning the logo's text to the icon */
 	margin-top: 6px;
 }

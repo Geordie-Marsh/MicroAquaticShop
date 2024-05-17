@@ -1,0 +1,24 @@
+/* The shopping cart section */
+	.shopping-cart {
+		padding: 0 var(--layout-04) var(--layout-02);
+	}
+	.shopping-cart__cont {
+		grid-template-columns: repeat(2, auto);
+	}
+	
+	.cart-items__empty-cart-message {
+		width: 100%;
+		padding: var(--spacing-06);
+
+		* {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.cart-summary__subtotal {
+		align-items: center;
+	}
+	.cart-summary__checkout .button {
+		width: 100%;
+	}

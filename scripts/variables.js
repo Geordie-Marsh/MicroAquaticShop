@@ -39,7 +39,7 @@ const featuredProducts = [
 	[
 		"Wild Form Cherry Shrimp", 
 		"$9.99",
-		"shrimp-wild-form-cherry"
+		"shrimp-cherry-wild"
 	],
 	[
 		"Floating Crystalwort", 

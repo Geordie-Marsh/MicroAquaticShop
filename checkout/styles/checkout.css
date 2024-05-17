@@ -1,0 +1,28 @@
+.checkout-cont {
+	grid-template-columns: 7fr 5fr;
+}
+
+/* The payment details column */
+	/* Express checkout */
+		.express-checkout__services {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+			width: 100%;
+		}
+		.express-checkout__services__button {
+			width: 100%;
+		}
+		.express-checkout__services__button img {
+			height: var(--spacing-07);
+		}
+		.express-checkout__services__button--shop {
+			background: #5A31F4;
+		}
+		.express-checkout__services__button--paypal {
+			background: #ffd140;
+		}
+		.express-checkout__services__button--google-pay,
+		.express-checkout__services__button--apple-pay {
+			background: #ffffff;
+		}
+		

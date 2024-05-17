@@ -13,6 +13,8 @@
 <body>
 	<!-- Contains all the sections of the homepage except the footer -->
 	<main>
+		<!-- This contains any elements which may appear absolutely positioned, such as dropdown menus in the header -->
+
 		<!-- The hero introductory section of the homepage -- GRADIENT section -->
 		<section class="hero section--highlighted section--hero">
 			<!-- The navbar header on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
@@ -34,7 +36,7 @@
 					<!-- The div containing the titles -->
 					<div class="product-summary__titles-cont flex--vertical">
 						<!-- The product name -->
-						<h3 class="product-summary__title">Tangerine Tiger Shrimp</h3>
+						<h4 class="product-summary__title">Tangerine Tiger Shrimp</h4>
 
 						<!-- The scientific name or other names of the product -->
 						<strong class="product-summary__subtitle"><i>Caridina serrata</i></strong>
@@ -64,20 +66,20 @@
 					</div>
 
 					<!-- The price of the product -->
-					<h2 class="product-summary__price">$6.99</h2>
+					<h3 class="product-summary__price">$6.99</h3>
 				</section>
 
 				<!-- The section containing the other varieties of the product -->
-				<section class="product-varieties panel panel--big-rounding panel--big-padding">
-					<div class="product-varieties__title flex--horizontal">
-						<h3>Other Varieties</h3>
+				<section class="product-varieties collapsible-section panel panel--big-rounding panel--big-padding">
+					<div class="collapsible-section__title flex--horizontal">
+						<h4>Other Varieties</h4>
 						<img src="assets/icons/arrow-down.svg" alt="Expand or collapse section">
 					</div>
 				</section>
 
 				<!-- The section containing the quantity and bulk buy info -->
 				<section class="product-quantity panel panel--big-rounding panel--big-padding">
-					<h3>Quantity and Bulk-Buy</h3>
+					<h4>Quantity and Bulk-Buy</h4>
 					<div class="quantity-input flex--horizontal">
 						<div class="quantity-input__segment quantity-input__segment--minus flex--vertical">
 							<img src="assets/icons/minus.svg" alt="">
@@ -137,7 +139,7 @@
 
 		<!-- The highlighted section containing more detailed info about the product -->
 		<section class="product-detail section--highlighted">
-			<h2>About the product</h2>
+			<h3>About the product</h3>
 			<!-- Quick factoids about the product -->
 			<div class="quick-facts standard-spacing grid">
 				<article class="quick-facts__factoid panel panel--big-rounding flex--horizontal standard-spacing">
@@ -164,6 +166,225 @@
 					<p class="quick-facts__factoid__text">0.8 &ndash; 1&nbsp;cm</p>
 					<img class="quick-facts__factoid__info" src="assets/icons/question-mark.svg" alt="What does this mean?">
 				</article>
+			</div>
+
+			<!-- The section containing the full description of the product -->
+			<section class="product-full-desc panel collapsible-section panel--big-rounding panel--big-padding">
+				<div class="collapsible-section__title flex--horizontal">
+					<h4>Description</h4>
+					<img src="assets/icons/arrow-down.svg" alt="Expand or collapse section">
+				</div>
+			</section>
+
+			<!-- The section containing the shipping info -->
+			<section class="product-shipping panel collapsible-section panel--big-rounding panel--big-padding">
+				<div class="collapsible-section__title flex--horizontal">
+					<h4>Shipping Info</h4>
+					<img src="assets/icons/arrow-down.svg" alt="Expand or collapse section">
+				</div>
+			</section>
+
+
+			<h3 class="reviews-heading">Reviews</h3>
+			<div class="reviews-cont grid standard-spacing">
+				<div class="review-panel panel panel--highlighted-section">
+					<div class="review-panel__total-rating flex--vertical standard-spacing">
+						<div class="review__stars-cont review__stars-cont--lg flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+						</div>
+						<p class="review-panel__no-of-reviews">Based on 32 reviews</p>
+					</div>
+					<div class="review-panel__breakdown grid">
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+						</div>
+						<h4>16</h4>
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+						</div>
+						<h4>4</h4>
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+						</div>
+						<h4>1</h4>
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+						</div>
+						<h4>1</h4>
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+						</div>
+						<h4>10</h4>
+					</div>
+					<button class="button button--secondary" aria-label="Leave a review">
+						<span class="button__label">Leave a review</span>
+						<img src="assets/icons/arrow-right.svg" class="button__action-symbol" alt="Right arrow icon">
+					</button>
+				</div>
+				<div class="review-column flex--vertical">
+					<div class="review panel panel--highlighted-section standard-spacing">
+						<h4 class="review__name">Eleanor Shellstrop</h4>
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+						</div>
+						<p class="review__text">Five stars for the tangerine tiger shrimp! They arrived healthy and active, with beautiful bright orange colouring and crisp black stripes. They've already settled into my tank and seem happy exploring. Great addition to my aquarium!</p>
+						<div class="review__images flex--horizontal standard-spacing">
+							<img class="review__images__image" src="assets/images/shrimp-tangerine-tiger-review001.jpg">
+							<img class="review__images__image" src="assets/images/shrimp-tangerine-tiger-review002.jpg">
+							<img class="review__images__image" src="assets/images/shrimp-tangerine-tiger-review003.jpg">
+						</div>
+					</div>
+					<div class="review panel panel--highlighted-section standard-spacing">
+						<h4 class="review__name">Chidi Anagonye</h4>
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+						</div>
+						<p class="review__text">omg these tangerine tiger shrimp are the best!! so tiny and cute  they came in super healthy and the orange colour is amazing  def recommend for anyone looking for some awesome shrimp for their tank!!</p>
+					</div>
+				</div>
+				<div class="review-column flex--vertical">
+					<div class="review-row flex--horizontal">
+						<div class="review-column flex--vertical">
+							<div class="review panel panel--highlighted-section standard-spacing">
+								<h4 class="review__name">Jason Mendoza</h4>
+								<div class="review__stars-cont flex--horizontal">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+								</div>
+								<p class="review__text">Died after a few days and it definitely wasn't my fault.</p>
+							</div>
+							<div class="review panel panel--highlighted-section standard-spacing">
+								<h4 class="review__name">Tahani Al-Jamil</h4>
+								<div class="review__stars-cont flex--horizontal">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+								</div>
+								<p class="review__text">Arrived DEAD!! Very disappointing. I expected a lot more given the dead on arrival policy the site keep touting but APPARENTLY NOT! DO NOT BUY FROM THIS STORE</p>
+							</div>
+						</div>
+						<div class="review-column flex--vertical">
+							<div class="review panel panel--highlighted-section standard-spacing">
+								<h4 class="review__name">Michael</h4>
+								<div class="review__stars-cont flex--horizontal">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+								</div>
+							</div>
+							<div class="review panel panel--highlighted-section standard-spacing">
+								<h4 class="review__name">Mindy St. Claire</h4>
+								<div class="review__stars-cont flex--horizontal">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
+								</div>
+							</div>
+							<div class="review panel panel--highlighted-section standard-spacing">
+								<h4 class="review__name">Janet</h4>
+								<div class="review__stars-cont flex--horizontal">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+									<img src="assets/icons/star.svg" class="review__stars-cont__star">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="review panel panel--highlighted-section standard-spacing">
+						<h4 class="review__name">Brett</h4>
+						<div class="review__stars-cont flex--horizontal">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+							<img src="assets/icons/star.svg" class="review__stars-cont__star">
+						</div>
+						<p class="review__text">LOVE these little shrimp they fit perfectly into my already huge aquarium and they seem to get along with the other fish</p>
+					</div>
+				</div>
+
+				<div class="reviews-page-selector flex--horizontal standard-spacing">
+					<button class="button button--tertiary button--icon-only">
+						<img class="button__icon" src="assets/icons/arrow-left.svg" alt="Previous page">
+					</button>
+					<div class="reviews-page-selector__numbers button button--tertiary button--only-styling">
+						<a class="reviews-page-selector__numbers__1">1</>
+						<a>2</a>
+						<a>3</a>
+						<a>4</a>
+					</div>
+					<button class="button button--tertiary button--icon-only">
+						<img class="button__icon" src="assets/icons/arrow-right.svg" alt="Next page">
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- TODO Add in recently viewed -->
+		
+		<!-- The 'Featured products' section -->
+		<section class="featured-products inner-section no-padding">
+			<!-- The section title -->
+			<h3>Featured Products</h3>
+			<!-- The horizontal list that contains all the featured products -->
+			<div class="featured-products-content">
+				<div class="featured-products__list flex--horizontal standard-spacing">
+					<!-- POPULATED BY JAVASCRIPT -->
+				</div>
+				<!-- TODO Make these buttons functional -->
+				<div class="carousel-button-cont carousel-button-cont--left">
+					<button class="button button--tertiary button--icon-only" aria-label="Left">
+						<img class="button__icon" src="assets/icons/arrow-left.svg">
+					</button>
+				</div>
+				<div class="carousel-button-cont carousel-button-cont--right">
+					<button class="button button--tertiary button--icon-only" aria-label="Right">
+						<img class="button__icon" src="assets/icons/arrow-right.svg">
+					</button>
+				</div>
 			</div>
 		</section>
 	</main>
