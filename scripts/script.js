@@ -46,3 +46,13 @@ function textFormClicked(clickedElement, clickedElementType) {
 	});
 }
 
+// When the user changes which country in the checkout
+function countryChanged(country) {
+	if (country == "australia") {
+		classRemove($$(".text-form--region--australia"), "display-none");
+		classAdd($$(".text-form--region--new-zealand"), "display-none");
+	} else {
+		classAdd($$(".text-form--region--australia"), "display-none");
+		classRemove($$(".text-form--region--new-zealand"), "display-none");
+	}
+}

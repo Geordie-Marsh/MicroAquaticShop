@@ -52,7 +52,10 @@
 
 				<!-- The delivery panel -->
 				<div class="delivery-details panel panel--highlighted-section standard-spacing">
+					<!-- The title -->
 					<h3 class="panel__title">Delivery</h3>
+
+					<!-- The delivery info collected -->
 					<form class="flex--vertical standard-spacing">
 						<!-- EMAIL -->
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
@@ -94,19 +97,161 @@
 						<div class="text-form text-form--select" onclick="textFormClicked(this, 'div');">
 							<label class="text-form--select input--not-blank" for="checkout__country">Country</label>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><select class="input--not-blank" name="checkout__country" id="checkout__country" onfocus="textFormClicked(this, 'select')" value="australia">
-								<option value="australia">Australia</option>
+							<div><select class="input--not-blank" name="checkout__country" id="checkout__country" onfocus="textFormClicked(this, 'select')" value="australia" onchange="countryChanged(this.value);">
+								<option value="australia" selected>Australia</option>
 								<option value="new-zealand">New Zealand</option>
+							</select>
 							</div>
+						</div>
+
+						<!-- ADDRESS -->
+						<div class="text-form" onclick="textFormClicked(this, 'div');">
+							<label for="checkout__address">Address</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="checkout__address" id="checkout__address" onfocus="textFormClicked(this, 'input')"></div>
+						</div>
+
+						<!-- APARTMENT -->
+						<div class="text-form" onclick="textFormClicked(this, 'div');">
+							<label for="checkout__apartment">Apartment, suice, etc. (optional)</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="checkout__apartment" id="checkout__apartment" onfocus="textFormClicked(this, 'input')"></div>
+						</div>
+
+						<!-- Extra address details -->
+						<div class="horizontal-text-forms flex--horizontal standard-spacing">
+							<!-- CITY -->
+							<div class="text-form text-form--city" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__city">City</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="text" name="checkout__city" id="checkout__city" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+
+							<!-- REGION - AUSTRALIAN VERSION -->
+							<div class="text-form text-form--select text-form--region text-form--region--australia" onclick="textFormClicked(this, 'div');">
+								<label class="text-form--select input--not-blank" for="checkout__region">State/Territory</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><select class="input--not-blank" name="checkout__region" id="checkout__region" onfocus="textFormClicked(this, 'select')">
+									<option hidden disabled selected>select an option</option>
+									<option value="act">Australian Capital Territory</option>
+									<option value="nsw">New South Wales</option>
+									<option value="nt">Northern Territory</option>
+									<option value="qld">Queensland</option>
+									<option value="sa">South Australia</option>
+									<option value="tas">Tasmania</option>
+									<option value="vic">Victoria</option>
+									<option value="wa">Western Australia</option>
+								</select>
+								</div>
+							</div>
+
+							<!-- REGION - KIWI VERSION -->
+							<div class="text-form text-form--select text-form--region text-form--region--new-zealand display-none" onclick="textFormClicked(this, 'div');">
+								<label class="text-form--select input--not-blank" for="checkout__region">Region</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><select class="input--not-blank" name="checkout__region" id="checkout__region" onfocus="textFormClicked(this, 'select')">
+									<option hidden disabled selected>select an option</option>
+									<option value="auckland">Auckland</option>
+									<option value="bay-of-plenty">Bay of Plenty</option>
+									<option value="canterbury">Canterbury</option>
+									<option value="gisborne">Gisborne</option>
+									<option value="hawkes-bay">Hawke's Bay</option>
+									<option value="manawatu-whanganui">Manawatū-Whanganui</option>
+									<option value="marlborough">Marlborough</option>
+									<option value="nelson">Nelson</option>
+									<option value="northland">Northland</option>
+									<option value="otago">Otago</option>
+									<option value="southland">Southland</option>
+									<option value="taranaki">Taranaki</option>
+									<option value="tasman">Tasman</option>
+									<option value="walkato">Walkato</option>
+									<option value="wellington">Wellington</option>
+									<option value="west-coast">West Coast</option>
+								</select>
+								</div>
+							</div>
+
+							<!-- POSTCODE -->
+							<div class="text-form text-form--postcode" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__postcode">Postcode</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="text" name="checkout__postcode" id="checkout__postcode" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+						</div>
+					</form>
+
+					<!-- Shipping total -->
+					<div class="delivery-details__shipping-total flex--horizontal">
+						<h3>Shipping total:</h3>
+						<h2 class="delivery-details__shipping-total__cost p">Enter shipping address</h2>
+					</div>
+				</div>
+
+				<!-- The card details panel -->
+				<div class="card-details panel panel--highlighted-section standard-spacing">
+					<!-- The title -->
+					<h3 class="panel__title">Payment</h3>
+
+					<!-- The delivery info collected -->
+					<form class="flex--vertical standard-spacing">
+						<!-- CARD NUMBER -->
+						<div class="text-form" onclick="textFormClicked(this, 'div');">
+							<label for="checkout__card-no">Card number</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="checkout__card-no" id="checkout__card-no" onfocus="textFormClicked(this, 'input')"></div>
+						</div>
+
+						<!-- Card security -->
+						<div class="horizontal-text-forms flex--horizontal standard-spacing">
+							<!-- CARD MONTH -->
+							<div class="text-form" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__card-month">MM</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="number" name="checkout__card-month" id="checkout__card-month" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+							<!-- CARD YEAR -->
+							<div class="text-form" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__card-year">YY</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="number" name="checkout__card-year" id="checkout__card-year" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+							<!-- FAMILY NAME -->
+							<div class="text-form" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__family-name">Security Code</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="number" name="checkout__family-name" id="checkout__family-name" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+						</div>
+
+						<!-- CARD NAME -->
+						<div class="text-form" onclick="textFormClicked(this, 'div');">
+							<label for="checkout__card-name">Name on card</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="checkout__card-name" id="checkout__card-name" onfocus="textFormClicked(this, 'input')"></div>
+						</div>
+
+						<!-- BILLING ADDRESS CHECKBOX -->
+						<div class="checkbox-form">
+							<input type="checkbox" name="checkout__billing-address" id="checkout__billing-address" checked="true">
+							<label for="checkout__billing-address">Use shipping address as billing address</label>
 						</div>
 					</form>
 				</div>
 
-				<!-- The card details panel -->
-				<div class="card-details panel"></div>
-
 				<!-- The remember me panel -->
-				<div class="remember-me panel"></div>
+				<div class="remember-me panel panel--highlighted-section standard-spacing">
+					<!-- The title -->
+					<h3 class="panel__title">Remember me</h3>
+
+					<!-- The delivery info collected -->
+					<form class="flex--vertical standard-spacing">
+						<!-- REMEMBER ME CHECKBOX -->
+						<div class="checkbox-form">
+							<input type="checkbox" name="checkout__remember" id="checkout__remember" checked="true">
+							<label for="checkout__remember">Save my information for a faster checkout next time</label>
+						</div>
+					</form>
+				</div>
 			</section>
 
 			<!-- The order details column -->
@@ -130,9 +275,9 @@
 	</footer>
 
 	<!-- Scripts -->
-	<script src="scripts/script.js"></script>
-	<script src="scripts/variables.js"></script>
 	<script src="scripts/definitions.js"></script>
+	<script src="scripts/variables.js"></script>
 	<script src="scripts/components.js"></script>
+	<script src="scripts/script.js"></script>
 </body>
 </html>

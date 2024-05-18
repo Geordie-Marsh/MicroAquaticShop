@@ -30,4 +30,23 @@
 			background: #ffffff;
 		}
 		
-		
+		.horizontal-text-forms {
+			width: 100%;
+		}
+		.text-form--city {
+			flex: 2;
+		}
+		.text-form--region {
+			flex: 3;
+		}
+		.text-form--postcode {
+			flex: 2;
+		}
+
+		.delivery-details__shipping-total {
+			width: 100%;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: var(--layout-01);
+			padding: 0 var(--spacing-02);
+		}

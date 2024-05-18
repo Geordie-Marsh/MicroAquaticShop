@@ -35,6 +35,9 @@
 .visibility-none {
 	visibility: hidden;
 }
+.display-none {
+	display: none;
+}
 
 
 
