@@ -82,3 +82,69 @@
 		margin: 0;
 		margin-top: 3px;
 	}
+	
+
+/* Fillable text forms */ 
+	form {
+		width: 100%;
+	}
+	.text-form {
+		background: var(--clr-glass-gradient--button);
+		border-radius: var(--spacing-04);
+		padding: var(--spacing-04);
+		box-shadow: var(--effect-shadow);
+		height: var(--layout-05);
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		
+		&:hover {
+			cursor: text;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		label {
+			display: block;
+			width: 100%;
+			color: var(--clr-text-dk);
+			margin-top: 10px;
+			box-sizing: border-box;
+			transition: all var(--effect-transition-duration) ease-in-out;
+
+			&:hover {
+				cursor: text;
+			}
+		}
+
+		input {
+			display: block;
+			position: relative;
+			width: 100%;
+			outline: none;
+			background: none;
+			border: none;
+			padding-block: 0;
+			padding-inline: 0;
+			font-family: inherit;
+			font-size: calc(1 * var(--font-size-factor));
+			font-weight: var(--font-weight-normal);
+			padding: 0;
+			color: var(--white);
+			line-height: 1.3;
+			/* margin-top: 10px; */
+			transition: transform var(--effect-transition-duration) ease-in-out;
+			transform: scaleY(0) translateY(100%);
+		}
+	}
+	label.input--not-blank {
+		font-size: calc(0.7 * var(--font-size-factor));
+		margin-top: 0px;
+	}
+	input.input--not-blank {
+		/* Used for when an input is currently focussed or has text in it */
+		transform: scaleY(1) translateY(0);
+	}

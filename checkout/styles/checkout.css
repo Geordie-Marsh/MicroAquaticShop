@@ -1,9 +1,13 @@
 .checkout-cont {
 	grid-template-columns: 7fr 5fr;
+	padding-bottom: var(--layout-04);
 }
 
 /* The payment details column */
 	/* Express checkout */
+		.payment-details-cont {
+			gap: var(--layout-02);
+		}
 		.express-checkout__services {
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(2, 1fr);
@@ -25,4 +29,5 @@
 		.express-checkout__services__button--apple-pay {
 			background: #ffffff;
 		}
+		
 		

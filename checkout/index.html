@@ -24,7 +24,7 @@
 		<!-- The 'Shopping Cart' section -->
 		<section class="checkout-cont grid">
 			<!-- The payment details column -->
-			<div class="payment-details-cont flex--vertical standard-spacing">
+			<section class="payment-details-cont flex--vertical no-padding">
 				<!-- The title -->
 				<h2 class="payment-details__title">Payment</h2>
 
@@ -51,17 +51,26 @@
 				<h3 class="payment-details__divider">Or</h3>
 
 				<!-- The delivery panel -->
-				<div class="delivery-details panel"></div>
+				<div class="delivery-details panel panel--highlighted-section standard-spacing">
+					<h3 class="panel__title">Delivery</h3>
+					<form action="">
+						<div class="text-form" tabindex="0" onclick="textFormClicked(this);" onfocus="textFormClicked(this);">
+							<label for="email">Email</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="email" id="email"></div>
+						</div>
+					</form>
+				</div>
 
 				<!-- The card details panel -->
 				<div class="card-details panel"></div>
 
 				<!-- The remember me panel -->
 				<div class="remember-me panel"></div>
-			</div>
+			</section>
 
 			<!-- The order details column -->
-			<div class="order-details-cont flex--vertical">
+			<section class="order-details-cont flex--vertical no-padding">
 				<!-- The title -->
 				<h2 class="order-details__cont">Order Summary</h2>
 
@@ -70,7 +79,7 @@
 
 				<!-- The order summary panel -->
 				<div class="order-summary panel standard-spacing"></div>
-			</div>
+			</section>
 		</section>
 	</main>
 
