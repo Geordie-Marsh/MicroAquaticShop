@@ -89,26 +89,28 @@
 		width: 100%;
 	}
 	.text-form {
+		/* The container of a fillable text field */
 		background: var(--clr-glass-gradient--button);
 		border-radius: var(--spacing-04);
 		padding: var(--spacing-04);
 		box-shadow: var(--effect-shadow);
 		height: var(--layout-05);
-		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		
 		&:hover {
+			/* Making it so that wherever you hover over a text field div, the cursor will appear as a text cursor. This is important since the JavaScript allows you to click anywhere on the div and it'll put the user's focus and cursor into the input */
 			cursor: text;
 		}
 
 		&:focus {
+			/* Removing the default styling */
 			outline: none;
 		}
 
 		label {
-			display: block;
+			/* The label - when there's no text in the input, this occupies the whole space, but when there is text or the user is typing, this goes up to the top of the div to make room */
 			width: 100%;
 			color: var(--clr-text-dk);
 			margin-top: 10px;
@@ -121,21 +123,19 @@
 		}
 
 		input {
-			display: block;
-			position: relative;
+			/* The input - this is hidden by default and becomes visible when in focus or there is text in it */
 			width: 100%;
 			outline: none;
 			background: none;
 			border: none;
 			padding-block: 0;
 			padding-inline: 0;
+			padding: 0;
 			font-family: inherit;
 			font-size: calc(1 * var(--font-size-factor));
 			font-weight: var(--font-weight-normal);
-			padding: 0;
 			color: var(--white);
 			line-height: 1.3;
-			/* margin-top: 10px; */
 			transition: transform var(--effect-transition-duration) ease-in-out;
 			transform: scaleY(0) translateY(100%);
 		}
@@ -147,4 +147,44 @@
 	input.input--not-blank {
 		/* Used for when an input is currently focussed or has text in it */
 		transform: scaleY(1) translateY(0);
+	}
+
+	.checkbox-form {
+		height: var(--spacing-05);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: calc( 0.4 * var(--sizing-factor));
+
+		input {
+			width:  var(--spacing-04);
+			height: var(--spacing-04);
+			margin: 0;
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-o-appearance: none;
+			border: 2px solid var(--white);
+			border-radius: var(--spacing-01);
+			outline: none;
+			background: none;
+			cursor: pointer;
+
+			/* &:checked::after {
+				content: "\2713";
+				display: block;
+				text-align: center;
+				margin-top: -3px;
+				color: white;
+			} */
+			&:checked {
+				background-image: url(/assets/icons/tick.svg);
+			}
+		}
+
+		label {
+			font-weight: var(--font-weight-normal);
+			margin-left: var(--spacing-01);
+			margin-top: 4px;
+		}
 	}

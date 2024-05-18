@@ -53,11 +53,18 @@
 				<!-- The delivery panel -->
 				<div class="delivery-details panel panel--highlighted-section standard-spacing">
 					<h3 class="panel__title">Delivery</h3>
-					<form action="">
+					<form>
+						<!-- EMAIL -->
 						<div class="text-form" tabindex="0" onclick="textFormClicked(this);" onfocus="textFormClicked(this);">
-							<label for="email">Email</label>
+							<label for="checkout__email">Email</label>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="email" id="email"></div>
+							<div><input type="text" name="checkout__email" id="checkout__email"></div>
+						</div>
+
+						<!-- NEWSLETTER CHECKBOX -->
+						<div class="checkbox-form">
+							<input type="checkbox" name="checkout__newsletter" id="checkout__newsletter">
+							<label for="checkout__newsletter">Email me with news and offers</label>
 						</div>
 					</form>
 				</div>
