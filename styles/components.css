@@ -98,10 +98,14 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		width: 100%;
 		
 		&:hover {
 			/* Making it so that wherever you hover over a text field div, the cursor will appear as a text cursor. This is important since the JavaScript allows you to click anywhere on the div and it'll put the user's focus and cursor into the input */
 			cursor: text;
+		}
+		&:hover.text-form--select {
+			cursor: pointer;
 		}
 
 		&:focus {
@@ -120,9 +124,13 @@
 			&:hover {
 				cursor: text;
 			}
+			&:hover.text-form--select {
+				cursor: pointer;
+			}
 		}
 
-		input {
+		input,
+		select {
 			/* The input - this is hidden by default and becomes visible when in focus or there is text in it */
 			width: 100%;
 			outline: none;
@@ -131,6 +139,7 @@
 			padding-block: 0;
 			padding-inline: 0;
 			padding: 0;
+			appearance: none;
 			font-family: inherit;
 			font-size: calc(1 * var(--font-size-factor));
 			font-weight: var(--font-weight-normal);
@@ -139,12 +148,30 @@
 			transition: transform var(--effect-transition-duration) ease-in-out;
 			transform: scaleY(0) translateY(100%);
 		}
+
+		select {
+			cursor: pointer;
+
+			option {
+				color: var(--clr-text-opposite);
+				font-family: "Poppins", sans-serif;
+
+				&:checked {
+					font-weight: var(--font-weight-bold);
+				}
+			}
+		}
+
+		select:focus-visible {
+			text-decoration: underline;
+		}
 	}
 	label.input--not-blank {
 		font-size: calc(0.7 * var(--font-size-factor));
 		margin-top: 0px;
 	}
-	input.input--not-blank {
+	input.input--not-blank,
+	select.input--not-blank {
 		/* Used for when an input is currently focussed or has text in it */
 		transform: scaleY(1) translateY(0);
 	}
@@ -155,6 +182,7 @@
 		flex-direction: row;
 		align-items: center;
 		gap: calc( 0.4 * var(--sizing-factor));
+		margin: var(--spacing-01) 0 var(--spacing-01) var(--spacing-02);
 
 		input {
 			width:  var(--spacing-04);
@@ -170,13 +198,10 @@
 			background: none;
 			cursor: pointer;
 
-			/* &:checked::after {
-				content: "\2713";
-				display: block;
-				text-align: center;
-				margin-top: -3px;
-				color: white;
-			} */
+			&:focus-visible {
+				background: var(--clr-gradients-aqua-lt)	;
+			}
+			
 			&:checked {
 				background-image: url(/assets/icons/tick.svg);
 			}
@@ -187,4 +212,8 @@
 			margin-left: var(--spacing-01);
 			margin-top: 4px;
 		}
+	}
+
+	.horizontal-text-forms {
+		width: 100%;
 	}

@@ -53,18 +53,51 @@
 				<!-- The delivery panel -->
 				<div class="delivery-details panel panel--highlighted-section standard-spacing">
 					<h3 class="panel__title">Delivery</h3>
-					<form>
+					<form class="flex--vertical standard-spacing">
 						<!-- EMAIL -->
-						<div class="text-form" tabindex="0" onclick="textFormClicked(this);" onfocus="textFormClicked(this);">
+						<div class="text-form" onclick="textFormClicked(this, 'div');">
 							<label for="checkout__email">Email</label>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__email" id="checkout__email"></div>
+							<div><input type="text" name="checkout__email" id="checkout__email" onfocus="textFormClicked(this, 'input')"></div>
 						</div>
 
 						<!-- NEWSLETTER CHECKBOX -->
 						<div class="checkbox-form">
 							<input type="checkbox" name="checkout__newsletter" id="checkout__newsletter">
 							<label for="checkout__newsletter">Email me with news and offers</label>
+						</div>
+
+						<!-- The name -->
+						<div class="horizontal-text-forms flex--horizontal standard-spacing">
+							<!-- GIVEN NAME -->
+							<div class="text-form" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__given-name">Given name</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="text" name="checkout__given-name" id="checkout__given-name" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+							<!-- FAMILY NAME -->
+							<div class="text-form" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__family-name">Family name</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="text" name="checkout__family-name" id="checkout__family-name" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+						</div>
+
+						<!-- PHONE -->
+						<div class="text-form" onclick="textFormClicked(this, 'div');">
+							<label for="checkout__phone">Phone number</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="checkout__phone" id="checkout__phone" onfocus="textFormClicked(this, 'input')"></div>
+						</div>
+
+						<!-- COUNTRY -->
+						<div class="text-form text-form--select" onclick="textFormClicked(this, 'div');">
+							<label class="text-form--select input--not-blank" for="checkout__country">Country</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><select class="input--not-blank" name="checkout__country" id="checkout__country" onfocus="textFormClicked(this, 'select')" value="australia">
+								<option value="australia">Australia</option>
+								<option value="new-zealand">New Zealand</option>
+							</div>
 						</div>
 					</form>
 				</div>
