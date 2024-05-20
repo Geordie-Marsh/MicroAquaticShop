@@ -1,0 +1,45 @@
+/* Hero */
+	.hero-content {
+		gap: var(--layout-02);
+		grid-template-columns: 1fr auto;
+	}
+
+	.hero-content__info {
+		align-items: center;
+		gap: var(--layout-01);
+		grid-column: 1 / 3;
+	}
+	.hero-title-y-kerning {
+		letter-spacing: -0.36rem;
+	}
+	
+	.hero-content__order-info {
+		width: 100%;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--spacing-03) var(--spacing-08);
+	}
+	.hero-content__order-info__factoid {
+		width: 100%;
+		justify-content: space-between;
+		
+		* {
+			margin: 0;
+		}
+	}
+
+	.hero-content__sign-up {
+		gap: var(--spacing-03);
+		justify-content: space-between;
+	}
+	.hero-content__sign-up__form {
+		width: 100%;
+
+		form {
+			min-width: calc( 20 * var(--sizing-factor) );
+		}
+
+		button {
+			border-radius: var(--spacing-04);
+			min-width: calc( 10 * var(--sizing-factor) );
+		}
+	}

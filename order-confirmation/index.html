@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Micro Aquatic Shop</title>
+	<base href="../">
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="order-confirmation/styles/order-confirmation.css">
+</head>
+<body>
+	<!-- Contains all the sections of the homepage except the footer -->
+	<main>
+		<!-- The hero introductory section of the homepage -- GRADIENT section -->
+		<section class="hero section--highlighted section--hero">
+			<!-- The navbar header on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
+			<header class="page-header flex--horizontal standard-spacing">
+				<!-- WEB COMPONENT INCLUDE -->
+			</header>
+
+			<!-- The div containing the content and image of the hero page -->
+			<div class="hero-content grid">
+				<!-- The textual and CTA content of the hero page-->
+				<div class="hero-content__info panel panel--highlighted-section">
+					<!-- The main, large part of the title -->
+					<h1 class="page-title__title">Thank <span class="hero-title-y-kerning">y</span>ou!</h1>
+					<!-- The small textline on the hero section which sells the basic premise of the brand -->
+					<h4>A confirmation will be sent to <span class="confirmation-page__unfilled__email">your email address</span> shortly.</h4>
+				</div>
+				
+				<!-- The div containing the order info confirmation -->
+				<div class="hero-content__order-info panel panel--highlighted-section grid">
+					<div class="hero-content__order-info__factoid">
+						<strong>Order number:</strong>
+						<p>#4382250</p>
+					</div>
+					<div class="hero-content__order-info__factoid">
+						<strong>Order total:</strong>
+						<p>Loading total...</p>
+					</div>
+					<div class="hero-content__order-info__factoid">
+						<strong>Delivery address:</strong>
+						<p>Loading address...</p>
+					</div>
+					<div class="hero-content__order-info__factoid">
+						<strong>Expected delivery date:</strong>
+						<p>Loading date...</p>
+					</div>
+				</div>
+
+				<!-- The div containing the prompt to sign up -->
+				<div class="hero-content__sign-up panel panel--highlighted-section">
+					<h4>While you're here, join our list for discounts!</h4>
+					<div class="hero-content__sign-up__form flex--horizontal standard-spacing">
+						<form class="flex--vertical standard-spacing">
+							<!-- DISCOUNT CODE -->
+							<div class="text-form" onclick="textFormClicked(this, 'div');">
+								<label for="hero__sign-up">Email address</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="text" name="hero__sign-up" id="hero__sign-up" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+						</form>
+						<button class="button button--secondary">
+							<span class="button__label">Sign me up!</span>
+						</button>
+					</div>
+				</div>
+				<!-- <div class="hero-content__order-info panel panel--highlighted-section">
+					<div class="hero-content__order-info__factoid">
+						<strong>Order number:</strong>
+						<p>#4382250</p>
+					</div>
+					<div class="hero-content__order-info__factoid">
+						<strong>Order total:</strong>
+						<p>Loading total...</p>
+					</div>
+					<div class="hero-content__order-info__factoid">
+						<strong>Delivery address:</strong>
+						<p>Loading address...</p>
+					</div>
+					<div class="hero-content__order-info__factoid">
+						<strong>Expected delivery date:</strong>
+						<p>Loading date...</p>
+					</div>
+				</div> -->
+			</div>
+		</section>
+
+		
+	</main>
+
+	
+	<!-- The footer -->
+	<footer class="page-footer">
+		<!-- WEB COMPONENT INCLUDE -->
+	</footer>
+
+	<!-- Scripts -->
+	<script src="scripts/definitions.js"></script>
+	<script src="scripts/variables.js"></script>
+	<script src="scripts/components.js"></script>
+	<script src="scripts/script.js"></script>
+</body>
+</html>
