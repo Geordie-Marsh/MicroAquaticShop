@@ -16,7 +16,7 @@
 	.hero-content__order-info {
 		width: 100%;
 		grid-template-columns: repeat(2, 1fr);
-		gap: var(--spacing-03) var(--spacing-08);
+		gap: var(--spacing-03) var(--spacing-09);
 	}
 	.hero-content__order-info__factoid {
 		width: 100%;

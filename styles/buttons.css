@@ -82,7 +82,7 @@
 /* Tertiary buttons */
 .button--tertiary {
 	background: var(--clr-button-gradient); /* Same as default background */
-	border-radius: var(--spacing-08);
+	border-radius: var(--spacing-09);
 	
 	.button__icon {
 		height: var(--spacing-06);
@@ -156,8 +156,8 @@
 	align-items: center;
 }
 .carousel-button-cont--left {
-	left: var(--layout-04);
+	left: var(--layout-05);
 }
 .carousel-button-cont--right {
-	right: var(--layout-04);
+	right: var(--layout-05);
 }

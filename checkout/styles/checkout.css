@@ -1,6 +1,6 @@
 .checkout-cont {
 	grid-template-columns: 7fr 5fr;
-	padding-bottom: var(--layout-04);
+	padding-bottom: var(--layout-05);
 	align-items: end;
 }
 
@@ -73,7 +73,7 @@
 
 		.order-details-cont {
 			position: sticky;
-			bottom: var(--layout-04);
+			bottom: var(--layout-05);
 		}
 		.order-summary__discount {
 			width: 100%;

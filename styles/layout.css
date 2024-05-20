@@ -17,15 +17,17 @@
 		--spacing-05: calc( 1.25  * var(--sizing-factor--spacing) ) /* 16px */; 
 		--spacing-06: calc( 1.5   * var(--sizing-factor--spacing) ) /* 24px */;
 		--spacing-07: calc( 2     * var(--sizing-factor--spacing) ) /* 32px */;
-		--spacing-08: calc( 3     * var(--sizing-factor--spacing) ) /* 48px */;
+		--spacing-08: calc( 2.5   * var(--sizing-factor--spacing) ) /* 32px */;
+		--spacing-09: calc( 3     * var(--sizing-factor--spacing) ) /* 48px */;
 		
 	/* LAYOUT SCALE */
 		--layout-01: calc( 1    * var(--sizing-factor--layout) ) /* 16px */;
 		--layout-02: calc( 1.5  * var(--sizing-factor--layout) ) /* 24px */;
 		--layout-03: calc( 2    * var(--sizing-factor--layout) ) /* 32px */;
-		--layout-04: calc( 3    * var(--sizing-factor--layout) ) /* 48px */; 
-		--layout-05: calc( 4    * var(--sizing-factor--layout) ) /* 64px */;
-		--layout-06: calc( 6    * var(--sizing-factor--layout) ) /* 96px */;
+		--layout-04: calc( 2.5  * var(--sizing-factor--layout) ) /* 32px */;
+		--layout-05: calc( 3    * var(--sizing-factor--layout) ) /* 48px */; 
+		--layout-06: calc( 4    * var(--sizing-factor--layout) ) /* 64px */;
+		--layout-07: calc( 6    * var(--sizing-factor--layout) ) /* 96px */;
 }
 
 
@@ -41,29 +43,38 @@
 		margin: 0;
 	}
 	section {
-		padding: 0 var(--layout-04);
+		padding: var(--spacing-03);
 		gap: var(--layout-02);
+
+		@media only screen and (min-width: 1024px) {
+			padding: var(--layout-05);
+		}
 	}
 	body > main {
 		/* There are some <main> tags which are within other sections, so they shouldn't necessarily adhere to these styles, hence body > main */
-		margin-bottom: var(--layout-04);
-		gap: var(--layout-04);
+		margin-bottom: var(--layout-05);
+		gap: var(--layout-05);
 		background-color: var(--clr-background);
-		border-radius: 0 0 var(--layout-05) var(--layout-05);
+		border-radius: 0 0 var(--layout-06) var(--layout-06);
 	}
 	.section--highlighted {
-		padding: var(--layout-04);
-		border-radius: var(--layout-05);
+		padding: var(--spacing-03);
+		border-radius: var(--layout-04);
 		/* background-color: var(--clr-gradients-aqua-dk); */ /* TODO make gradients */
 		background: url(/assets/backgrounds/gradient-background-desktop.svg);
 		background-size: cover;
 		box-shadow: var(--effect-highlighted-panel-shadow);
 		backdrop-filter: blur(var(--effect-highlighted-panel-blur));
-		
+
+		@media only screen and (min-width: 1024px) {
+			padding: var(--layout-05);
+			border-radius: var(--layout-06);
+		}
 	}
 	.section--hero {
-		/* This is the section at the very top of the page */
-		border-radius: 0 0 var(--layout-05) var(--layout-05);
+		/* This is the section at the very top of the page, so the two top corner aren't rounded */
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 	}
 	section > h3,
 	section > h2 {
@@ -83,13 +94,21 @@
 		overflow: visible;
 	}
 	.hero-content__image {
-		/* The hero image has special positioning in relation to the panel as it slightly overlaps */
-		position: absolute;
-		width: 44%;
-		height: 100%;
-		top: calc(-1 * var(--layout-02));
-		right: 0;
-		margin: 0;
+		position: relative;
+		width: 95%;
+		margin: 0 auto calc( -2.75 * var(--sizing-factor));
+		z-index: 99999;
+		
+		@media only screen and (min-width: 1024px) {
+			/* The hero image has special positioning in relation to the panel as it slightly overlaps in desktop resolution */
+			position: absolute;
+			width: 44%;
+			height: 100%;
+			top: calc(-1 * var(--layout-02));
+			right: 0;
+			margin: 0;
+			margin-bottom: 0;
+		}
 	}
 	.hero-content__image img {
 		width: 100%;

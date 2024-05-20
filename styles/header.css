@@ -5,6 +5,13 @@
 	z-index: 100;
 	justify-content: space-between;
 	position: relative;
+	padding: 0 var(--spacing-02);
+	margin: var(--spacing-02) 0;
+
+	@media only screen and (min-width: 1024px) {
+		padding: 0;
+		margin: 0;
+	}
 }
 .page-header > * {
 	/* Making all the header's items the same height */
@@ -12,9 +19,14 @@
 	align-items: center;
 }
 
+
 /* The brand logo */
 .logo {
 	grid-template-columns: auto 1fr;
+
+	@media only screen and (max-width: 480px) {
+		gap: 0;
+	}
 }
 .logo img {
 	width: var(--spacing-07);
@@ -22,6 +34,10 @@
 .logo h4 {
 	/* Vertically aligning the logo's text to the icon */
 	margin-top: 6px;
+
+	@media only screen and (max-width: 480px) {
+		display: none;
+	}
 }
 
 /* The navbar */
@@ -33,17 +49,34 @@
 	border-radius: 0.5px;
 	margin: auto var(--spacing-01); /* Making the divider vertically centred */
 }
+/* The icons that only appear on smaller resolutions (collapsed navbar) are in .collapsed-navbar, and the fully expanded navbar is .navbar */
 .navbar {
 	gap: var(--spacing-06); /* The navbar has larger spacing than most flexboxes */
 }
+.collapsed-navbar {
+	gap: var(--spacing-03);
+	display: none;
+
+	@media only screen and (max-width: 1024px) {
+		display: inherit;
+	}
+}
+.collapsed-navbar__icon,
 .navbar__icon {
-	/* THe icons in the navbar */
+	/* The icons in the navbar */
 	height: var(--spacing-06);
 	aspect-ratio: 1 / 1;
 
 	&:hover,
 	&:active {
 		cursor: pointer;
+	}
+}
+.navbar > *:not(.navbar__purchasing-icons) {
+	display: none;
+
+	@media only screen and (min-width: 1024px) {
+		display: inherit;
 	}
 }
 .navbar__drop-down {
@@ -70,10 +103,10 @@
 	background: var(--clr-glass-dk);
 	background-clip: padding-box;
 	transform: translate(-45%);
-	/* right: var(--layout-06); */
+	/* right: var(--layout-07); */
 	top: var(--layout-03);
 	height: auto;
-	gap: var(--spacing-08);
+	gap: var(--spacing-09);
 	padding: var(--spacing-07);
 	width: auto;
 	box-shadow: var(--effect-shadow-lg);

@@ -1,19 +1,24 @@
 /* Hero content */
 	.hero-content__info {
-		/* The hero section's panel's width is relative to the viewport width */
-		width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
-		height: clamp(calc(30 * var(--sizing-factor--spacing)), 46vw, calc(34 * var(--sizing-factor--spacing)));
+		width: 100%;
+
+		@media only screen and (min-width: 1024px) {
+			/* The hero section's panel's width is relative to the viewport width */
+			width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
+			height: clamp(calc(30 * var(--sizing-factor--spacing)), 46vw, calc(34 * var(--sizing-factor--spacing)));
+		}
+	}
+	.page-title {
+		gap: var(--spacing-06);
 	}
 	.page-title__title {
+		margin: 0;
 		line-height: 83%;
 	}
-	.hero-content__image {
-		/* The hero image has special positioning in relation to the panel as it slightly overlaps */
-		width: clamp(calc(24.9 * var(--sizing-factor)), 44%, calc(37.25 * var(--sizing-factor)));
-		top: calc(-1 * var(--layout-02));
-	}
 	.hero-content__image img {
-		rotate: 22deg;
+		@media only screen and (min-width: 1024px) {
+			rotate: 22deg;
+		}
 	}
 	.hero-title-A-kerning {
 		letter-spacing: -0.325rem;
@@ -38,7 +43,7 @@
 	}
 	.selling-point__logo {
 		grid-area: selling-point__logo;
-		height: var(--spacing-08);
+		height: var(--spacing-09);
 	}
 	.selling-point__title {
 		grid-area: selling-point__title;
@@ -48,6 +53,9 @@
 	.selling-point__detail {
 		grid-area: selling-point__detail;
 		margin: 0;
+		@media only screen and (min-width: 1024px) {
+		
+		}
 	}
 
 
@@ -82,7 +90,7 @@
 		/* This is the slideshow of the featured photos of the shop */
 		overflow-x: scroll;
 		width: 100%;
-		padding: 0 var(--layout-04);
+		padding: 0 var(--layout-05);
 		scrollbar-width: none; /* Hiding the scrollbar */
 		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
 		flex-wrap: nowrap;
@@ -153,7 +161,7 @@
 	}
 	.services__service__icon {
 		/* This is the icon of the service (this is placed after after the rule giving all descendents of the header no margin so that this will override that rule) */
-		width: var(--spacing-08);
+		width: var(--spacing-09);
 		margin-bottom: var(--spacing-03);
 	}
 	/* These define which service is in which grid area */

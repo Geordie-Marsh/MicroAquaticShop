@@ -1,6 +1,6 @@
 /* The shopping cart section */
 	.shopping-cart {
-		padding: 0 var(--layout-04) var(--layout-02);
+		padding: 0 var(--layout-05) var(--layout-02);
 	}
 	.shopping-cart__cont {
 		grid-template-columns: repeat(2, auto);
@@ -19,7 +19,7 @@
 
 	.cart-summary {
 		position: sticky;
-		top: var(--layout-04);
+		top: var(--layout-05);
 	}
 	.cart-summary__subtotal {
 		align-items: center;

@@ -27,7 +27,7 @@
 			"product-filters product-display-buttons"
 			"product-filters product-listing"
 		;
-		padding-bottom: var(--layout-04);
+		padding-bottom: var(--layout-05);
 	}
 	.product-filters {
 		grid-area: product-filters;

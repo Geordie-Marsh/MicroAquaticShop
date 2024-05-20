@@ -1,5 +1,6 @@
 /* Importing the other CSS files */
 /* Basic definitions files */
+@import url(breakpoints.css);
 @import url(layout.css);
 @import url(colours.css);
 @import url(effects.css);
