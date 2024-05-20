@@ -24,8 +24,8 @@
 		grid-template-columns: auto 1fr;
 		grid-template-rows: auto 1fr;
 		grid-template-areas: 
-			"product-filters product-display-buttons"
-			"product-filters product-listing"
+			" product-filters  product-display-buttons "
+			" product-filters  product-listing         "
 		;
 		padding-bottom: var(--layout-05);
 	}

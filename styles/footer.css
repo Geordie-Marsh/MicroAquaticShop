@@ -2,9 +2,9 @@
 	/* The entire footer itself */
 	display: grid;
 	grid-template-areas: 
-		"footer-logo footer-logo footer-logo"
-		"footer-policies footer-links footer-contact"
-		"footer-copyright footer-copyright footer-copyright"
+		" footer-logo       footer-logo       footer-logo      "
+		" footer-policies   footer-links      footer-contact   "
+		" footer-copyright  footer-copyright  footer-copyright "
 	;
 	grid-template-columns: repeat(3, 1fr);
 	gap: var(--layout-05);

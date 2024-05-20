@@ -41,10 +41,21 @@
 
 
 /* Brand selling points section */
+	.selling-point-heading {
+		@media only screen and (max-width: 1024px) {
+			/* This is the heading above the about us panel - this is just to give it some whitespace above it in resolutions smaller than desktop */
+			margin-top: var(--spacing-04);
+		}
+	}
 	.selling-point-cont {
 		/* This is the panel containing the 4 selling points */
 		grid-template-columns: repeat(4, auto);
 		width: 100%;
+		row-gap: var(--spacing-05);
+
+		@media only screen and (max-width: 480px) {
+			grid-template: repeat(4, auto) / 1fr;
+		}
 	}
 	.selling-point {
 		/* This is the selling point itself */
@@ -52,8 +63,8 @@
 		column-gap: var(--spacing-04);
 		grid-template-columns: auto 1fr;
 		grid-template-areas: 
-			"selling-point__logo selling-point__title"
-			"selling-point__logo selling-point__detail"
+			" selling-point__logo  selling-point__title  "
+			" selling-point__logo  selling-point__detail "
 		;
 	}
 	.selling-point__logo {
@@ -83,20 +94,50 @@
 		/* This is the panel containing all the about us info */
 		gap: var(--spacing-07);
 		align-items: stretch;
+		flex-direction: row;
+
+		@media only screen and (max-width: 480px) {
+			gap: var(--layout-02);
+			flex-direction: column;
+		}
 	}
 	.about-us__image {
 		/* This is the image for the about us section. It scales horizontally depending on the viewport width but its height is consistent */
 		width: clamp(calc(22 * var(--sizing-factor--spacing)), 45%, calc(50 * var(--sizing-factor--spacing)));
+		height: calc(28 * var(--sizing-factor--spacing));
 		border-radius: var(--spacing-03);
 		box-shadow: var(--effect-shadow);
-		height: calc(28 * var(--sizing-factor--spacing));
 		object-fit: cover;
 		object-position: 50% 75%;
+
+		@media only screen and (max-width: 480px) {
+			width: 100%;
+			height: calc(17 * var(--sizing-factor));
+		}
 	}
 	.about-us__text {
 		/* This is the about us text */
 		align-items: flex-start;
 		justify-content: space-between; 
+
+		@media only screen and (max-width: 480px) {
+			align-items: center;
+			text-align: center;
+			gap: var(--spacing-02);
+
+			* {
+				margin: 0;
+			}
+
+			a {
+				margin-top: var(--spacing-02);
+			}
+		}
+	}
+	.extra-text {
+		@media only screen and (max-width: 480px) {
+			display: none;
+		}
 	}
 
 
@@ -105,16 +146,26 @@
 		/* This is the slideshow of the featured photos of the shop */
 		overflow-x: scroll;
 		width: 100%;
-		padding: 0 var(--layout-05);
+		padding: 0 var(--spacing-03);
 		scrollbar-width: none; /* Hiding the scrollbar */
 		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
 		flex-wrap: nowrap;
+
+		@media only screen and (min-width: 1024px) {
+			padding: 0 var(--layout-05);
+		}
 	}
 	.slideshow__img {
 		/* These are the individual images in the slideshow */
 		scroll-snap-align: center;
 		border-radius: var(--spacing-04);
-		height: 60vh;
+		width: 96%;
+		height: auto;
+
+		@media only screen and (min-width: 1024px) {
+			height: 60vh;
+			width: auto;
+		}
 	}
 
 
@@ -122,10 +173,18 @@
 	.homepage-reviews__reviews-cont {
 		/* This is the container for the 4 review columns */
 		grid-template-columns: repeat(4, 1fr);
+		overflow-x: scroll;
+		scrollbar-width: none; /* Hiding the scrollbar */
 	}
 	.homepage-review {
 		/* This is the individual review panel itself */
 		flex-grow: 1;
+		min-width: calc( 11 * var(--sizing-factor) );
+
+		@media only screen and (max-width: 480px) {
+			width: 43vw;
+			min-width: calc( 11 * var(--sizing-factor) );
+		}
 	}
 	.homepage-review__name {
 		/* This is the review's author's name */
@@ -151,11 +210,22 @@
 	.services {
 		/* This is the container for all the services, laid out by a grid */
 		grid-template-areas: 
-			"services-support services-support services-tips services-tips"
-			"services-faqs services-directions services-shipping services-affiliate"
-			"services-blog services-blog services-blog services-blog"
+			" services-support  services-support     services-tips      services-tips      "
+			" services-faqs     services-directions  services-shipping  services-affiliate "
+			" services-blog     services-blog        services-blog      services-blog      "
 		;
 		grid-template-columns: repeat(4, 1fr);
+
+		@media only screen and (max-width: 480px) {
+			grid-template-areas: 
+				" services-support   services-support    "
+				" services-tips      services-tips       "
+				" services-faqs      services-directions "
+				" services-blog      services-blog       "
+				" services-shipping  services-affiliate  "
+			;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 	.services__service {
 		/* This is the individual service panel itself */
@@ -165,6 +235,10 @@
 	.services__service__header {
 		/* This contains the service's icon, title, and tagline text (if it contains one) */
 		align-items: center;
+
+		h4 {
+			text-align: center;
+		}
 	}
 	.services__service__header > *,
 	.services__service__content > * {
@@ -203,5 +277,14 @@
 		}
 	.services__service--support .bullets-list {
 		/* This splits the bullet points in the support service into 2 columns */
-		columns: 2;
+		@media only screen and (min-width: 480px) {
+			columns: 2;
+		}
+	}
+	.services__service--blog .services__service__content {
+		flex-direction: row;
+
+		@media only screen and (max-width: 480px) {
+			flex-direction: column;
+		}
 	}

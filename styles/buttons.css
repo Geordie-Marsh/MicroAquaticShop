@@ -125,7 +125,8 @@
 		margin: var(--spacing-02) 0 var(--spacing-02) var(--spacing-03);
 	}
 	.button__label--heading {
-		line-height: 1.8;
+		display: block;
+		margin-bottom: var(--spacing-01);
 	}
 
 	.button__logo {

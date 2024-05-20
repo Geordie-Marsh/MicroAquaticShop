@@ -17,6 +17,7 @@
 @import url(/fonts/fieldwork-900-fat-italic.otf);
 
 /* Importing the font, Poppins, as a back-up */
+@import url("https://use.typekit.net/stq2igj.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
@@ -34,7 +35,7 @@
 	--font-weight-black: 900;
 
 	/* Defining the default font */
-	font-family: "Fieldwork Geo", "Poppins", sans-serif;
+	font-family: "Fieldwork Geo", "fieldwork", "Poppins", sans-serif;
 
 	/* Defining the default font colour */
 	color: var(--clr-text);
@@ -100,6 +101,10 @@ strong,
 th {
 	/* Normal text, boldened */
 	font-weight: var(--font-weight-bold);
+}
+
+ul {
+	padding-left: calc( 1.5 * var(--font-size-factor) );
 }
 
 /* Removing the default stylings of links */

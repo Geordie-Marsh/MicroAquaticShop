@@ -47,11 +47,11 @@
 		width: 100%;
 		padding: 0 var(--spacing-03);
 		scrollbar-width: none; /* Hiding the scrollbar */
-		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
 		flex-wrap: nowrap;
 
 		@media only screen and (min-width: 1024px) {
 			padding: 0 var(--layout-05);
+			scroll-snap-type: x mandatory; /* Making the scrolling snappy */
 		}
 	}
 
