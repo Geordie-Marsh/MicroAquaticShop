@@ -9,6 +9,17 @@
 	grid-template-columns: repeat(3, 1fr);
 	gap: var(--layout-05);
 	margin: var(--layout-02);
+
+	@media only screen and (max-width: 480px) {
+		grid-template-areas: 
+			" footer-logo      "
+			" footer-links     "
+			" footer-contact   "
+			" footer-policies  "
+			" footer-copyright "
+		;
+		grid-template-columns: 1fr;
+	}
 }
 .logo--footer {
 	/* The footer's logo - same as in the header but needs slightly different positioning */
@@ -38,11 +49,15 @@
 .footer-copyright-bar {
 	/* The panel at the bottom of the footer containing copyright and payment methods */
 	grid-area: footer-copyright;
-	flex-direction: row; /* This is specified here (instead of using a utility class) since this changes depending on resolution */
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	gap: var(--spacing-06);
 	padding: var(--spacing-03);
+
+	@media only screen and (max-width: 480px) {
+		flex-direction: column;
+	}
 }
 .footer-copyright-bar__copyright {
 	/* The copyright text itself */
