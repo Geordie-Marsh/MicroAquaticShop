@@ -34,19 +34,37 @@
 		/* This includes the scrolling list as well as the buttons */
 		position: relative;
 		width: 100%;
+
+		.carousel-button-cont {
+			@media only screen and (max-width: 1024px) {
+				display: none;
+			}
+		}
 	}
 	.featured-products__list {
 		/* This is the scrolling list */
 		overflow-x: scroll;
 		width: 100%;
-		padding: 0 var(--layout-05);
+		padding: 0 var(--spacing-03);
 		scrollbar-width: none; /* Hiding the scrollbar */
 		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
 		flex-wrap: nowrap;
+
+		@media only screen and (min-width: 1024px) {
+			padding: 0 var(--layout-05);
+		}
 	}
 
 
+
 /* Shop by category section */
+	.shop-by-category__categories-cont {
+		grid-template-columns: repeat(3, 1fr);
+
+		@media only screen and (max-width: 480px) {
+			grid-template-columns: 1fr;
+		}
+	}
 	.category-type {
 		/* This is the panel for each group of 4 categories, e.g., "Animals" */
 		width: 100%;
@@ -57,11 +75,20 @@
 		width: 100%;
 		margin: var(--spacing-02) 0;
 	}
+	.category-type__buttons-cont {
+		width: 100%;
+		height: 100%;
+		grid-template: repeat(4, auto) / 1fr;
+
+		@media only screen and (max-width: 480px) {
+			grid-template: repeat(2, auto) / repeat(2, 1fr);
+		}
+	}
 	.shopping-category {
 		/* This is each individual category button */
 		width: 100%;
 	}
-	.shopping-category .button__label {
+	.shopping-category span {
 		/* This is the label of the category */
 		width: 100%;
 		text-align: left;

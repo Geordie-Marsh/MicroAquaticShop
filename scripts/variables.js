@@ -70,7 +70,7 @@ const shoppingCategories = [
 	],
 	[
 		"animals",
-		"Snails",
+		"Snails & Mussels",
 		"category-snail"
 	],
 	[
@@ -105,17 +105,17 @@ const shoppingCategories = [
 	],
 	[
 		"supplies",
-		"Accessories",
+		"Tank Care",
 		"category-accessories"
 	],
 	[
 		"supplies",
-		"Tools",
+		"Tools & Supplies",
 		"category-tools"
 	],
 	[
 		"supplies",
-		"Food",
+		"Animal Food",
 		"category-food"
 	]
 ];

@@ -48,7 +48,7 @@
 		</section>
 
 		<!-- The 'Featured products' section -->
-		<section class="featured-products inner-section no-padding">
+		<section class="featured-products inner-section no-padding--horizontal">
 			<!-- The section title -->
 			<h3>Featured Products</h3>
 			<!-- The horizontal list that contains all the featured products -->
@@ -75,26 +75,32 @@
 			<!-- The section title -->
 			<h3>Shop by Category</h3>
 			<!-- The div that holds the 3 category panels -->
-			<div class="shop-by-category__categories-cont flex--horizontal standard-spacing">
+			<div class="shop-by-category__categories-cont grid standard-spacing">
 				<!-- GRID LAYOUT -->
 				<!-- The 3 categories, each is a div with a title and 4x categories (buttons) -->
 				<div class="panel category-type category-type--animals standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h4>Animals</h4>
-					<!-- POPULATED BY JAVASCRIPT -->
-					<!-- 4x buttons -->
+					<div class="category-type__buttons-cont category-type__buttons-cont--animals grid standard-spacing">
+						<!-- POPULATED BY JAVASCRIPT -->
+						<!-- 4x buttons -->
+					</div>
 				</div>
 				<div class="panel category-type category-type--aquascaping standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h4>Aquascaping</h4>
-					<!-- POPULATED BY JAVASCRIPT -->
-					<!-- 4x buttons -->
+					<div class="category-type__buttons-cont category-type__buttons-cont--aquascaping grid standard-spacing">
+						<!-- POPULATED BY JAVASCRIPT -->
+						<!-- 4x buttons -->
+					</div>
 				</div>
 				<div class="panel category-type category-type--supplies standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h4>Supplies</h4>
-					<!-- POPULATED BY JAVASCRIPT -->
-					<!-- 4x buttons -->
+					<div class="category-type__buttons-cont category-type__buttons-cont--supplies grid standard-spacing">
+						<!-- POPULATED BY JAVASCRIPT -->
+						<!-- 4x buttons -->
+					</div>
 				</div>
 			</div>
 		</section>

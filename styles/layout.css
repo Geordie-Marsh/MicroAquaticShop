@@ -43,22 +43,29 @@
 		margin: 0;
 	}
 	section {
-		padding: var(--spacing-03);
-		gap: var(--layout-02);
+		padding: 0 var(--spacing-03);
+		gap: var(--layout-01);
 
 		@media only screen and (min-width: 1024px) {
-			padding: var(--layout-05);
+			padding: 0 var(--layout-05);
+			gap: var(--layout-02);
 		}
 	}
 	body > main {
 		/* There are some <main> tags which are within other sections, so they shouldn't necessarily adhere to these styles, hence body > main */
-		margin-bottom: var(--layout-05);
-		gap: var(--layout-05);
+		margin-bottom: var(--layout-04);
+		gap: var(--layout-04);
 		background-color: var(--clr-background);
 		border-radius: 0 0 var(--layout-06) var(--layout-06);
+
+		@media only screen and (min-width: 1024px) {
+			margin-bottom: var(--layout-05);
+			gap: var(--layout-05);
+		}
 	}
 	.section--highlighted {
 		padding: var(--spacing-03);
+		padding-top: var(--spacing-07);
 		border-radius: var(--layout-04);
 		/* background-color: var(--clr-gradients-aqua-dk); */ /* TODO make gradients */
 		background: url(/assets/backgrounds/gradient-background-desktop.svg);
@@ -96,6 +103,7 @@
 	.hero-content__image {
 		position: relative;
 		width: 95%;
+		max-width: calc( 25 * var(--sizing-factor) );
 		margin: 0 auto calc( -2.75 * var(--sizing-factor));
 		z-index: 99999;
 		

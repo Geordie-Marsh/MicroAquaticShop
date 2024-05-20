@@ -9,6 +9,10 @@
 	aspect-ratio: 1 / 1;
 	border-radius: var(--spacing-02);
 	box-shadow: var(--effect-shadow);
+
+	@media only screen and (max-width: 480px) {
+		width: calc(8 * var(--sizing-factor)); /* This image defines the width of the entire panel */
+	}
 }
 .featured-product__title {
 	/* The product's name */
@@ -18,4 +22,10 @@
 .featured-product__button--view,
 .featured-product__button--cart {
 	width: 100%;
+}
+.featured-product__button--heart,
+.featured-product__button--cart {
+	@media only screen and (max-width: 480px) {
+		display: none;
+	}
 }

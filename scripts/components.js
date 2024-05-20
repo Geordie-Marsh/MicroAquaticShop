@@ -118,7 +118,7 @@
 			classAdd(button, "shopping-category");
 
 			// Replacing the default data of the element with that specific to the category in question
-			const category = button.querySelector(".button__label"); // Editing the category
+			const category = button.querySelector("span"); // Editing the category
 			category.textContent = shoppingCategories[i][1];
 			const img = button.querySelector(".button__logo"); // Editing the logo
 			img.setAttribute("src", "assets/icons/" + shoppingCategories[i][2] + ".png");
@@ -127,7 +127,7 @@
 			shoppingCategories[i][3] ? button.setAttribute("href", "/categories/" + shoppingCategories[i][3]) : null ;
 
 			// Appending the content of the button to the div of the product type the category falls under
-			$$(".category-type--" + shoppingCategories[i][0]).appendChild(button);
+			$$(".category-type__buttons-cont--" + shoppingCategories[i][0]).appendChild(button);
 		}
 	}
 
