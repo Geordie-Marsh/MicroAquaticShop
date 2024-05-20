@@ -260,10 +260,64 @@
 				<h2 class="order-details__cont">Order Summary</h2>
 
 				<!-- The items being checked out -->
-				<div class="order-details__items-list"></div>
+				<div class="order-details__items-list flex--vertical standard-spacing">
+					<!-- Items in the cart -->
+					<article class="checkout-order-item panel panel--big-rounding flex--horizontal">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-cherry-blue.jpg">
+						<div class="checkout-order-item__info flex--vertical">
+							<h4 class="checkout-order-item__title">Cherry Shrimp</h>
+							<h2 class="checkout-order-item__total">$9.99</h2>
+						</div>
+						<!-- TODO Add in quantity -->
+					</article>
+					<article class="checkout-order-item panel panel--big-rounding flex--horizontal">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-ghost.jpg">
+						<div class="checkout-order-item__info flex--vertical">
+							<h4 class="checkout-order-item__title">Ghost Shrimp</h>
+							<h2 class="checkout-order-item__total">$4.49</h2>
+						</div>
+					</article>
+					<article class="checkout-order-item panel panel--big-rounding flex--horizontal">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-tangerine-tiger.jpg">
+						<div class="checkout-order-item__info flex--vertical">
+							<h4 class="checkout-order-item__title">Tangerine Tiger Shrimp</h>
+							<h2 class="checkout-order-item__total">$6.99</h2>
+						</div>
+					</article>
+				</div>
 
 				<!-- The order summary panel -->
-				<div class="order-summary panel standard-spacing"></div>
+				<div class="order-summary panel panel--highlighted-section standard-spacing">
+					<!-- The discount code -->
+					<div class="order-summary__discount flex--horizontal standard-spacing">
+						<form class="flex--vertical standard-spacing">
+							<!-- DISCOUNT CODE -->
+							<div class="text-form" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__discount-code">Discount code</label>
+								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+								<div><input type="text" name="checkout__discount-code" id="checkout__discount-code" onfocus="textFormClicked(this, 'input')"></div>
+							</div>
+						</form>
+						<button class="button button--secondary">
+							<span class="button__label">Apply</span>
+						</button>
+					</div>
+
+					<!-- The order price info -->
+					<div class="order-summary__info grid">
+						<strong>Subtotal</strong>
+						<p class="text-right">$21.47</p>
+						<strong>Shipping</strong>
+						<p class="text-right">Enter shipping address</p>
+						<h3>Total</h3>
+						<h3 class="text-right">$21.47</h3>
+					</div>
+
+					<!-- The checkout button -->
+					<a class="order-summary__checkout-button button button--cta" href="">
+						<span class="button__label">Pay Now</span>
+					</a>
+				</div>
 			</section>
 		</section>
 	</main>

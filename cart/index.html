@@ -29,7 +29,7 @@
 			<!-- This contains all the shopping cart elements (including the cart items and the subtotal and checkout sections) -->
 			<div class="shopping-cart__cont grid standard-spacing">
 				<!-- This contains the shopping cart items -->
-				<div class="cart-items">
+				<div class="cart-items flex--vertical standard-spacing">
 					<!-- When there are no items in the shopping cart, this info banner saying there's nothing in the cart will be displayed -->
 					<div class="cart-items__empty-cart-message">
 						<h4>Your shopping cart is currently empty.</h4>
@@ -37,6 +37,102 @@
 					</div>
 
 					<!-- Items in the cart -->
+					<article class="cart-item panel flex--horizontal">
+						<img class="cart-item__img" src="assets/images/shrimp-cherry-blue.jpg">
+						<div class="cart-item__info flex--vertical standard-spacing">
+							<div class="cart-item__top-bar flex--horizontal">
+								<h4 class="cart-item__title">Cherry Shrimp</h4>
+								<img class="cart-item__close-icon" src="assets/icons/cross.svg" alt="">
+							</div>
+							<div class="cart-item__colour flex--horizontal standard-spacing">
+								<div class="cart-item__colour__swatch colour-swatch" style="background-color: var(--clr-primitive-blue);"></div>
+								<p class="cart-item__colour__name">Blue</p>
+							</div>
+							<div>
+								<h3 class="cart-item__subtotal">$9.99</h3>
+							</div>
+							<div class="quantity-input flex--horizontal">
+								<div class="quantity-input__segment quantity-input__segment--minus flex--vertical">
+									<img src="assets/icons/minus.svg" alt="">
+								</div>
+								<div class="quantity-input__segment quantity-input__segment--number flex--vertical">
+									<form action="">
+										<input type="number" min="1" max="1000" value="1">
+									</form>
+								</div>
+								<div class="quantity-input__segment quantity-input__segment--plus flex--vertical">
+									<img src="assets/icons/plus.svg" alt="">
+								</div>
+							</div>
+							<div>
+								<h2 class="cart-item__total">$9.99</h2>
+							</div>
+						</div>
+					</article>
+					<article class="cart-item panel flex--horizontal">
+						<img class="cart-item__img" src="assets/images/shrimp-ghost.jpg">
+						<div class="cart-item__info flex--vertical standard-spacing">
+							<div class="cart-item__top-bar flex--horizontal">
+								<h4 class="cart-item__title">Ghost Shrimp</h4>
+								<img class="cart-item__close-icon" src="assets/icons/cross.svg" alt="">
+							</div>
+							<div class="cart-item__colour flex--horizontal standard-spacing">
+								<div class="cart-item__colour__swatch colour-swatch" style="background-color: var(--clr-primitive-translucent);"></div>
+								<p class="cart-item__colour__name">Translucent</p>
+							</div>
+							<div>
+								<h3 class="cart-item__subtotal">$4.49</h3>
+							</div>
+							<div class="quantity-input flex--horizontal">
+								<div class="quantity-input__segment quantity-input__segment--minus flex--vertical">
+									<img src="assets/icons/minus.svg" alt="">
+								</div>
+								<div class="quantity-input__segment quantity-input__segment--number flex--vertical">
+									<form action="">
+										<input type="number" min="1" max="1000" value="1">
+									</form>
+								</div>
+								<div class="quantity-input__segment quantity-input__segment--plus flex--vertical">
+									<img src="assets/icons/plus.svg" alt="">
+								</div>
+							</div>
+							<div>
+								<h2 class="cart-item__total">$4.49</h2>
+							</div>
+						</div>
+					</article>
+					<article class="cart-item panel flex--horizontal">
+						<img class="cart-item__img" src="assets/images/shrimp-tangerine-tiger.jpg">
+						<div class="cart-item__info flex--vertical standard-spacing">
+							<div class="cart-item__top-bar flex--horizontal">
+								<h4 class="cart-item__title">Tangerine Tiger Shrimp</h4>
+								<img class="cart-item__close-icon" src="assets/icons/cross.svg" alt="">
+							</div>
+							<div class="cart-item__colour flex--horizontal standard-spacing">
+								<div class="cart-item__colour__swatch colour-swatch" style="background-color: var(--clr-primitive-orange);"></div>
+								<p class="cart-item__colour__name">Orange</p>
+							</div>
+							<div>
+								<h3 class="cart-item__subtotal">$6.99</h3>
+							</div>
+							<div class="quantity-input flex--horizontal">
+								<div class="quantity-input__segment quantity-input__segment--minus flex--vertical">
+									<img src="assets/icons/minus.svg" alt="">
+								</div>
+								<div class="quantity-input__segment quantity-input__segment--number flex--vertical">
+									<form action="">
+										<input type="number" min="1" max="1000" value="1">
+									</form>
+								</div>
+								<div class="quantity-input__segment quantity-input__segment--plus flex--vertical">
+									<img src="assets/icons/plus.svg" alt="">
+								</div>
+							</div>
+							<div>
+								<h2 class="cart-item__total">$6.99</h2>
+							</div>
+						</div>
+					</article>
 				</div>
 
 				<!-- This contains the subtotal and checkout panels -->
