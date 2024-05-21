@@ -79,6 +79,14 @@
 		display: inherit;
 	}
 }
+.navbar__purchasing-icons {
+	align-items: center;
+
+	a {
+		display: flex;
+		align-items: center;
+	}
+}
 .navbar__drop-down {
 	/* The page headings that have dropdown menus */
 	column-gap: var(--spacing-02);

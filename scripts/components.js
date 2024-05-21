@@ -1,3 +1,4 @@
+// TODO Include a check for if the page has this section first
 // Including the header
 	// Fetching the HTML for the header from the local component
 	fetch("../components/header.html")
@@ -214,4 +215,41 @@
 	function includeFooter(html) {
 		// Setting the innerHTML of the existing footer tag to the fetched HTML
 		$$(".page-footer").innerHTML = html;
+	}
+
+
+// Including the fullscreen-mobile
+	// Fetching the HTML for the footer from the local component
+	fetch("components/fullscreen-menu.html")
+		.then(response => {
+			// Checking if the request was successful
+			if (!response.ok) {
+				throw new Error("Couldn't retrieve HTML data");
+			}
+			// Returning the HTML content as text
+			return response.text();
+		})
+		.then(html => {
+			// If successful, sending this HTML content to the function that creates the footer
+			includeFullscreenMenu(html);
+		})
+		.catch(error => {
+			// Logging any errors to the console
+			log("There was a problem with the fetch operation: ", error);
+		});
+
+	// The function for creating the footer and adding it into the DOM
+	function includeFullscreenMenu(html) {
+		// Creating a cont element
+		const cont = document.createElement("section");
+
+		// Setting the innerHTML of the cont to the fetched HTML
+		cont.innerHTML = html;
+
+		// Giving the container classes
+		classAdd(cont, "fullscreen-menu");
+		classAdd(cont, "section--highlighted");
+
+		// Appending the content of the cont to the div of the product type the category falls under
+		$$("body").appendChild(cont);
 	}

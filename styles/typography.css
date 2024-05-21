@@ -58,7 +58,8 @@ h1 {
 	}
 }
 
-h2 {
+h2,
+.h2 {
 	/* Used for section headings */
 	font-size: calc( 2 * var(--font-size-factor) );
 	font-weight: var(--font-weight-bold);
@@ -67,7 +68,8 @@ h2 {
 }
 
 h3,
-.button--cta .button__label {
+.button--cta .button__label,
+.h3 {
 	/* Used for section headings */
 	font-size: calc( 1.5 * var(--font-size-factor) );
 	font-weight: var(--font-weight-bold);

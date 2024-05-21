@@ -56,3 +56,13 @@ function countryChanged(country) {
 		classRemove($$(".text-form--region--new-zealand"), "display-none");
 	}
 }
+
+
+
+// Opening and closing the fullscreen menu
+function openFullscreenMenu() {
+	$$(".fullscreen-menu").style.display = "flex";
+}
+function closeFullscreenMenu() {
+	$$(".fullscreen-menu").style.display = "none";
+}

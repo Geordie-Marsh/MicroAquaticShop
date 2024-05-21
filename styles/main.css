@@ -13,6 +13,7 @@
 /* Component-specific stylesheets */
 @import url(header.css);
 @import url(footer.css);
+@import url(fullscreen-menu.css);
 @import url(featured-product.css);
 @import url(product-listed.css);
 

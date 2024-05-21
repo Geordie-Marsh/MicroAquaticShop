@@ -104,7 +104,7 @@
 		position: relative;
 		width: 95%;
 		max-width: calc( 25 * var(--sizing-factor) );
-		margin: 0 auto calc( -2.75 * var(--sizing-factor));
+		margin: calc( -0.7 * var(--sizing-factor)) auto calc( -2.75 * var(--sizing-factor));
 		z-index: 99999;
 		
 		@media only screen and (min-width: 1024px) {
@@ -115,7 +115,6 @@
 			top: calc(-1 * var(--layout-02));
 			right: 0;
 			margin: 0;
-			margin-bottom: 0;
 		}
 	}
 	.hero-content__image img {

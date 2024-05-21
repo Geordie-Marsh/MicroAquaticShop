@@ -1,6 +1,6 @@
 <!-- This is added into a <header> on the respective page with the classes "page-header", "flex--horizontal" and "standard-spacing" -->
 	<div class="collapsed-navbar flex--horizontal">
-		<img class="collapsed-navbar__icon" src="assets/icons/hamburger.svg" alt="Menu">
+		<img onclick="openFullscreenMenu();" class="collapsed-navbar__icon" src="assets/icons/hamburger.svg" alt="Menu">
 		<img class="collapsed-navbar__icon" src="assets/icons/search.svg" alt="Magnifying glass">
 	</div>
 	
@@ -81,7 +81,9 @@
 
 		<!-- Wishlist and cart icons -->
 		<div class="navbar__purchasing-icons flex--horizontal standard-spacing">
-			<img class="navbar__icon" src="assets/icons/heart.svg" alt="Heart">
+			<a href="">
+				<img class="navbar__icon" src="assets/icons/heart.svg" alt="Wishlist">
+			</a>
 			<a href="cart/">
 				<img class="navbar__icon" src="assets/icons/shopping-bag.svg" alt="Shopping bag">
 			</a>

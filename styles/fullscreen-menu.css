@@ -1,0 +1,46 @@
+.fullscreen-menu {
+	border-radius: 0;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: var(--layout-07);
+	display: none;
+}
+
+.daily-featured-product-cont {
+	align-items: center;
+	gap: var(--spacing-02);
+}
+.daily-featured-product {
+	gap: var(--layout-01);
+	padding-right: var(--spacing-06);
+	width: 86%;
+}
+.daily-featured-product__img {
+	width: calc(6 * var(--sizing-factor));
+	aspect-ratio: 1 / 1;
+	border-radius: var(--spacing-02);
+	box-shadow: var(--effect-shadow);
+}
+.daily-featured-product__info {
+	justify-content: space-between;
+}
+
+.fullscreen-menu__page-links-cont {
+	text-align: center;
+	gap: var(--layout-02);
+}
+.fullscreen-menu__page-links-cont__divider {
+	/* The small horizontal line separating the different sections of the pages links */
+	width: 80%;
+	height: 1px;
+	background-color: var(--clr-text);
+	border-radius: 0.5px;
+	margin: var(--spacing-01) auto; /* Making the divider vertically centred */
+}
+
