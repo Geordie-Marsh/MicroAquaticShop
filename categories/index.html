@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="categories/styles/categories-page.css">
 </head>
-<body>
+<body class="footer-in-front">
 	<!-- Contains all the sections of the homepage except the footer -->
 	<main>
 		<!-- The hero introductory section of the homepage -- GRADIENT section -->
@@ -32,29 +32,36 @@
 			</div>
 		</section>
 
+		<!-- TODO add in discover section -->
 		<!-- The 'Shop by category' section -->
 		<section class="shop-by-category" id="shop-by-category">
 			<!-- The div that holds the 3 category panels -->
-			<div class="shop-by-category__categories-cont flex--horizontal standard-spacing">
+			<div class="shop-by-category__categories-cont grid standard-spacing">
 				<!-- GRID LAYOUT -->
 				<!-- The 3 categories, each is a div with a title and 4x categories (buttons) -->
 				<div class="panel category-type category-type--animals standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h4>Animals</h4>
-					<!-- POPULATED BY JAVASCRIPT -->
-					<!-- 4x buttons -->
+					<div class="category-type__buttons-cont category-type__buttons-cont--animals grid standard-spacing">
+						<!-- POPULATED BY JAVASCRIPT -->
+						<!-- 4x buttons -->
+					</div>
 				</div>
 				<div class="panel category-type category-type--aquascaping standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h4>Aquascaping</h4>
-					<!-- POPULATED BY JAVASCRIPT -->
-					<!-- 4x buttons -->
+					<div class="category-type__buttons-cont category-type__buttons-cont--aquascaping grid standard-spacing">
+						<!-- POPULATED BY JAVASCRIPT -->
+						<!-- 4x buttons -->
+					</div>
 				</div>
 				<div class="panel category-type category-type--supplies standard-spacing">
 					<!-- BLOCK LAYOUT -->
 					<h4>Supplies</h4>
-					<!-- POPULATED BY JAVASCRIPT -->
-					<!-- 4x buttons -->
+					<div class="category-type__buttons-cont category-type__buttons-cont--supplies grid standard-spacing">
+						<!-- POPULATED BY JAVASCRIPT -->
+						<!-- 4x buttons -->
+					</div>
 				</div>
 			</div>
 		</section>

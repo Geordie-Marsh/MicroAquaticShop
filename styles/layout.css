@@ -53,13 +53,11 @@
 	}
 	body > main {
 		/* There are some <main> tags which are within other sections, so they shouldn't necessarily adhere to these styles, hence body > main */
-		margin-bottom: var(--layout-04);
 		gap: var(--layout-04);
 		background-color: var(--clr-background);
 		border-radius: 0 0 var(--layout-06) var(--layout-06);
 
 		@media only screen and (min-width: 1024px) {
-			margin-bottom: var(--layout-05);
 			gap: var(--layout-05);
 		}
 	}
@@ -100,17 +98,47 @@
 		width: 100%;
 		overflow: visible;
 	}
+	.hero-content__info {
+		width: 100%;
+
+		@media only screen and (max-width: 480px) {
+			align-items: center;
+			
+			* {
+				text-align: center;
+			}
+		}
+
+		@media only screen and (min-width: 1024px) {
+			/* The hero section's panel's width is relative to the viewport width */
+			width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
+		}
+	}
+	.page-title {
+		gap: var(--spacing-06);
+
+		@media only screen and (max-width: 480px) {
+			margin-top: var(--layout-02);
+			gap: var(--spacing-02);
+			width: 100%;
+		}
+	}
+	.page-title__title {
+		margin: 0;
+		line-height: 83%;
+	}
 	.hero-content__image {
 		position: relative;
 		width: 95%;
 		max-width: calc( 25 * var(--sizing-factor) );
 		margin: calc( -0.7 * var(--sizing-factor)) auto calc( -2.75 * var(--sizing-factor));
-		z-index: 99999;
+		z-index: 99;
 		
 		@media only screen and (min-width: 1024px) {
 			/* The hero image has special positioning in relation to the panel as it slightly overlaps in desktop resolution */
 			position: absolute;
 			width: 44%;
+			max-width: none;
 			height: 100%;
 			top: calc(-1 * var(--layout-02));
 			right: 0;

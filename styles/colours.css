@@ -26,6 +26,9 @@
 	/* Star rating colour - yellow */
 	--clr-rating: #E2BC36;
 
+	/* Overlay/dialogue box background colour */
+	--clr-overlay-background: #001c25a3;
+
 	/* Primitives - the colours used for swatches (and other uses of a specific colour) */
 	--clr-primitive-red:         #D6593E;
 	--clr-primitive-orange:      #D6903E;

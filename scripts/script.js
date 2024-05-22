@@ -66,3 +66,10 @@ function openFullscreenMenu() {
 function closeFullscreenMenu() {
 	$$(".fullscreen-menu").style.display = "none";
 }
+
+
+// Opening and closing the filters panel
+function toggleFilters() {
+	classToggle($$(".products-finder-cont"), "filters-toggled-off");
+	classToggle($$(".product-display-buttons__filters"), "button--cta");
+}

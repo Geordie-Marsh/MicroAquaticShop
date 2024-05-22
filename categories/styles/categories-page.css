@@ -3,10 +3,9 @@
 		padding-bottom: var(--layout-06);
 	}
 
-
 /* Hero section */
 	.hero-content__info {
-		gap: var(--layout-03);
+		gap: var(--layout-01);
 
 		p {
 			margin: 0;

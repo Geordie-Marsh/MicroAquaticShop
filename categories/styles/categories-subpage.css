@@ -1,18 +1,17 @@
 /* Hero content */
 	.hero-content__info {
-		/* The hero section's panel's width is relative to the viewport width */
-		width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
+		@media only screen and (min-width: 1024px) {
+			/* The hero section's panel's width is relative to the viewport width */
+			width: clamp(calc(34.5 * var(--sizing-factor--spacing)), 60%, calc(50 * var(--sizing-factor--spacing)));
+		}
 	}
 	.hero-content__image {
-		/* The hero image has special positioning in relation to the panel as it slightly overlaps */
-		width: clamp(calc(24.9 * var(--sizing-factor)), 48%, calc(39 * var(--sizing-factor)));
-		top: var(--layout-02);
-	}
-	.hero-content__info {
-		gap: var(--layout-03);
+		margin-top: var(--layout-01);
 
-		p {
-			margin: 0;
+		@media only screen and (min-width: 1024px) {
+			/* The hero image has special positioning in relation to the panel as it slightly overlaps */
+			width: clamp(calc(24.9 * var(--sizing-factor)), 48%, calc(39 * var(--sizing-factor)));
+			top: var(--layout-02);
 		}
 	}
 
@@ -21,35 +20,111 @@
 /* Main content */
 	.products-finder-cont {
 		/* The section that contains all the stuff for finding products, including the filters and products listing */
-		grid-template-columns: auto 1fr;
-		grid-template-rows: auto 1fr;
-		grid-template-areas: 
-			" product-filters  product-display-buttons "
-			" product-filters  product-listing         "
+		grid-template: 
+			" product-display-buttons " auto
+			" product-filters         " auto
+			" product-listing         " 1fr /
+			  1fr
 		;
 		padding-bottom: var(--layout-05);
+
+		@media only screen and (min-width: 480px) and (max-width: 1024px) {
+			grid-template: 
+				" product-display-buttons  product-display-buttons " auto
+				" product-filters          product-listing         " 1fr /
+				  auto                     1fr
+			;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			grid-template: 
+				" product-filters  product-display-buttons " auto
+				" product-filters  product-listing         " 1fr /
+				  auto             1fr
+			;
+			column-gap: inherit;
+		}
+
+		&.filters-toggled-off {
+			grid-template: 
+				" product-display-buttons " auto
+				" product-listing         " 1fr /
+				1fr
+			;
+			@media only screen and (min-width: 480px) and (max-width: 1024px) {
+				grid-template: 
+					" product-display-buttons " auto
+					" product-listing         " 1fr /
+					  1fr
+				;
+			}
+		}
 	}
 	.product-filters {
 		grid-area: product-filters;
-		width: calc(23 * var(--sizing-factor));
+		width: 100%;
 		gap: var(--spacing-06);
 		text-align: center;
 		
 		h4 {
 			width: 100%;
 		}
+
+		@media only screen and (min-width: 480px) and (max-width: 1024px) {
+			width: calc(18 * var(--sizing-factor));
+		}
+
+		@media only screen and (min-width: 1024px) {
+			width: calc(23 * var(--sizing-factor));
+		}
+	}
+	.products-finder-cont.filters-toggled-off .product-filters {
+		display: none;
 	}
 	.product-filters__filter-type {
+		display: flex;
+		flex-direction: row;
 		flex-wrap: wrap;
+
+		@media only screen and (min-width: 1024px) {
+			flex-direction: row;
+		}
+	}
+	.button--filter {
+		padding: var(--spacing-02) var(--spacing-03);
+
+		.colour-swatch {
+			margin-left: calc(-0.25 * var(--sizing-factor));
+		}
 	}
 	.product-filters__button {
-		margin-top: var(--layout-03);
+		margin-top: var(--layout-02);
+
+		@media only screen and (max-width: 480px) {
+			margin-bottom: var(--layout-05);
+		}
 	}
 	.product-display-buttons {
 		grid-area: product-display-buttons;
-		justify-content: right;
+		justify-content: space-between;
+	}
+	.product-display-buttons__filters {
+		@media only screen and (min-width: 1024px) {
+			visibility: hidden;
+		}
 	}
 	.product-listing {
 		grid-area: product-listing;
-		grid-template-columns: repeat(4, 1fr);
+		width: 100%;
+		grid-template-columns: repeat(auto-fit, minmax(
+			calc( 10.5 * var(--sizing-factor) ),
+			1fr
+		));
+
+		@media only screen and (min-width: 1024px) {
+			grid-template-columns: repeat(auto-fit, minmax(
+			calc( 12 * var(--sizing-factor) ),
+			1fr
+		));
+		}
 	}

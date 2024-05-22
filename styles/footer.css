@@ -8,7 +8,8 @@
 	;
 	grid-template-columns: repeat(3, 1fr);
 	gap: var(--layout-05);
-	margin: var(--layout-02);
+	padding: var(--layout-02);
+	padding-top: var(--layout-06);
 
 	@media only screen and (max-width: 480px) {
 		grid-template-areas: 
@@ -19,6 +20,16 @@
 			" footer-copyright "
 		;
 		grid-template-columns: 1fr;
+	}
+}
+body.footer-in-front .page-footer {
+	background-color: var(--clr-background-lt);
+	border-top-left-radius:  var(--layout-04);
+	border-top-right-radius: var(--layout-04);
+
+	@media only screen and (min-width: 1024px) {
+		border-top-left-radius:  var(--layout-06);
+		border-top-right-radius: var(--layout-06);
 	}
 }
 .logo--footer {

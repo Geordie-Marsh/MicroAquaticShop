@@ -39,3 +39,6 @@ body {
 	margin: 0;
 	background-color: var(--clr-background-lt);
 }
+body.footer-in-front {
+	background-color: var(--clr-background);
+}

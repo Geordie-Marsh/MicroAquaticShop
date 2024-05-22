@@ -22,10 +22,15 @@
 
 			<!-- The div containing the content and image of the hero page -->
 			<div class="hero-content">
+				<!-- The image on the hero page (this overlaps with the content div) -->
+				<figure class="hero-content__image flex--vertical">
+					<img src="assets/images/hero-shrimp.png" alt="A white, green and blue betta fish">
+				</figure>
+
 				<!-- The textual and CTA content of the hero page-->
 				<div class="hero-content__info panel panel--highlighted-section">
 					<!-- The div that holds the title -->
-					<div class="page-title">
+					<div class="page-title flex--vertical">
 						<!-- There is a bit of text above the main part of the title which is smaller -->
 						<h3 class="page-title__pre-title">Let's Shop</h3>
 						<!-- The main, large part of the title -->
@@ -34,38 +39,33 @@
 					<!-- The small textline on the hero section which sells the basic premise of the brand -->
 					<p>Explore our large range of freshwater - their hardiness and stunning bright colours make these essential for your aquarium.</p>
 				</div>
-
-				<!-- The image on the hero page (this overlaps with the content div) -->
-				<figure class="hero-content__image flex--vertical">
-					<img src="assets/images/hero-shrimp.png" alt="A white, green and blue betta fish">
-				</figure>
 			</div>
 		</section>
 
 		<!-- Contains everything to do with finding the product -->
-		<section class="products-finder-cont grid">
+		<section class="products-finder-cont grid filters-toggled-off">
 			<!-- Contains the filters -->
 			<div class="product-filters flex--vertical">
 				<!-- The title for the filters div -->
 				<h2>Filters</h2>
 
 				<!-- The sub-category filters -->
-				<article class="product-filters__filter-type flex--horizontal standard-spacing" id="product-filters__filter-type--sub-category">
+				<article class="product-filters__filter-type standard-spacing" id="product-filters__filter-type--sub-category">
 					<h4>Sub-category</h4>
 					<!-- POPULATED BY JAVASCRIPT -->
 				</article>
 				<!-- The price filters -->
-				<article class="product-filters__filter-type flex--horizontal standard-spacing" id="product-filters__filter-type--price">
+				<article class="product-filters__filter-type standard-spacing" id="product-filters__filter-type--price">
 					<h4>Price range</h4>
 					<!-- POPULATED BY JAVASCRIPT -->
 				</article>
 				<!-- The availability filters -->
-				<article class="product-filters__filter-type flex--horizontal standard-spacing" id="product-filters__filter-type--availability">
+				<article class="product-filters__filter-type standard-spacing" id="product-filters__filter-type--availability">
 					<h4>Availability</h4>
 					<!-- POPULATED BY JAVASCRIPT -->
 				</article>
 				<!-- The colour filters -->
-				<article class="product-filters__filter-type flex--horizontal standard-spacing" id="product-filters__filter-type--colour">
+				<article class="product-filters__filter-type standard-spacing" id="product-filters__filter-type--colour">
 					<h4>Colour</h4>
 					<!-- POPULATED BY JAVASCRIPT -->
 				</article>
@@ -73,19 +73,26 @@
 				<!-- The button to clear all filters -->
 				<button class="button button--secondary product-filters__button" aria-label="Clear all filters">
 					<span class="button__label">Clear all filters</span>
+					<img class="button__action-symbol" src="assets/icons/cross--dark.svg">
 				</button>
 			</div>
 
 			<!-- Contains the product display buttons (ie, sort, grid, etc.) -->
-			<div class="product-display-buttons flex--horizontal standard-spacing">
-				<!-- The button to change the layout (grid vs list) -->
-				<button class="button button--tertiary button--icon-only" aria-label="Left">
-					<img class="button__icon" src="assets/icons/grid-2x2.svg">
+			<div class="product-display-buttons flex--horizontal">
+				<!-- The button to open the filters list (not on larger resolutions) -->
+				<button class="product-display-buttons__filters button button--tertiary button--icon-only" onclick="toggleFilters();" aria-label="Open filters menu">
+					<img class="button__icon" src="assets/icons/filter.svg">
 				</button>
-				<!-- The button to change the sorting -->
-				<button class="button button--tertiary button--icon-only" aria-label="Left">
-					<img class="button__icon" src="assets/icons/sort.svg">
-				</button>
+				<div class="flex--horizontal standard-spacing">
+					<!-- The button to change the layout (grid vs list) -->
+					<button class="button button--tertiary button--icon-only" aria-label="Change layout">
+						<img class="button__icon" src="assets/icons/grid-2x2.svg">
+					</button>
+					<!-- The button to change the sorting -->
+					<button class="button button--tertiary button--icon-only" aria-label="Sort">
+						<img class="button__icon" src="assets/icons/sort.svg">
+					</button>
+				</div>
 			</div>
 
 			<!-- Contains all the products -->

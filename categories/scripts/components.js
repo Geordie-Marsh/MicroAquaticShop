@@ -102,6 +102,7 @@
 				classAdd(button, "button");
 				classAdd(button, "button--tertiary");
 				classAdd(button, "button--glass");
+				classAdd(button, "button--filter");
 
 				// Replacing the default data of the element with that specific to the product in question
 					const label = button.querySelector(".button__label--text"); // Editing the title
