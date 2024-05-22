@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="checkout/styles/checkout.css">
 </head>
-<body>
+<body class="footer-in-front">
 	<!-- Contains all the sections of the homepage except the footer -->
 	<main>
 		<!-- The hero introductory section of the homepage -- GRADIENT section -->
@@ -71,15 +71,15 @@
 						</div>
 
 						<!-- The name -->
-						<div class="horizontal-text-forms flex--horizontal standard-spacing">
+						<div class="horizontal-text-form horizontal-text-form--name standard-spacing">
 							<!-- GIVEN NAME -->
-							<div class="text-form" onclick="textFormClicked(this, 'div');">
+							<div class="text-form text-form--given-name" onclick="textFormClicked(this, 'div');">
 								<label for="checkout__given-name">Given name</label>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 								<div><input type="text" name="checkout__given-name" id="checkout__given-name" onfocus="textFormClicked(this, 'input')"></div>
 							</div>
 							<!-- FAMILY NAME -->
-							<div class="text-form" onclick="textFormClicked(this, 'div');">
+							<div class="text-form text-form--family-name" onclick="textFormClicked(this, 'div');">
 								<label for="checkout__family-name">Family name</label>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 								<div><input type="text" name="checkout__family-name" id="checkout__family-name" onfocus="textFormClicked(this, 'input')"></div>
@@ -110,63 +110,51 @@
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 							<div><input type="text" name="checkout__address" id="checkout__address" onfocus="textFormClicked(this, 'input')"></div>
 						</div>
-
-						<!-- APARTMENT -->
-						<div class="text-form" onclick="textFormClicked(this, 'div');">
+						
+						<!-- APARTMENT - AUSTRALIA ONLY -->
+						<div class="text-form text-form--aus--apartment" onclick="textFormClicked(this, 'div');">
 							<label for="checkout__apartment">Apartment, suice, etc. (optional)</label>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 							<div><input type="text" name="checkout__apartment" id="checkout__apartment" onfocus="textFormClicked(this, 'input')"></div>
 						</div>
 
+						<!-- SUBURB - NZ ONLY -->
+						<div class="text-form text-form--nz--suburb display-none" onclick="textFormClicked(this, 'div');">
+							<label for="checkout__nz--suburb">Suburb or rural delivery number</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="checkout__nz--suburb" id="checkout__nz--suburb" onfocus="textFormClicked(this, 'input')"></div>
+						</div>
+
+						<!-- CITY - AUSTRALIA ONLY -->
+						<div class="text-form text-form--aus--city" onclick="textFormClicked(this, 'div');">
+							<label for="checkout__aus--city">City</label>
+							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+							<div><input type="text" name="checkout__aus--city" id="checkout__aus--city" onfocus="textFormClicked(this, 'input')"></div>
+						</div>
+						
 						<!-- Extra address details -->
-						<div class="horizontal-text-forms flex--horizontal standard-spacing">
-							<!-- CITY -->
-							<div class="text-form text-form--city" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__city">City</label>
+						<div class="horizontal-text-form horizontal-text-form--address-extras flex--horizontal standard-spacing">
+							<!-- CITY - NZ ONLY -->
+							<div class="text-form text-form--nz--city display-none" onclick="textFormClicked(this, 'div');">
+								<label for="checkout__nz--city">City/Town</label>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="text" name="checkout__city" id="checkout__city" onfocus="textFormClicked(this, 'input')"></div>
+								<div><input type="text" name="checkout__nz--city" id="checkout__nz--city" onfocus="textFormClicked(this, 'input')"></div>
 							</div>
 
-							<!-- REGION - AUSTRALIAN VERSION -->
-							<div class="text-form text-form--select text-form--region text-form--region--australia" onclick="textFormClicked(this, 'div');">
-								<label class="text-form--select input--not-blank" for="checkout__region">State/Territory</label>
+							<!-- STATE/TERRITORY - AUSTRALIA ONLY -->
+							<div class="text-form text-form--select text-form--aus--state" onclick="textFormClicked(this, 'div');">
+								<label class="text-form--select input--not-blank" for="checkout__aus--state">State/Territory</label>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><select class="input--not-blank" name="checkout__region" id="checkout__region" onfocus="textFormClicked(this, 'select')">
-									<option hidden disabled selected>select an option</option>
-									<option value="act">Australian Capital Territory</option>
-									<option value="nsw">New South Wales</option>
-									<option value="nt">Northern Territory</option>
-									<option value="qld">Queensland</option>
-									<option value="sa">South Australia</option>
-									<option value="tas">Tasmania</option>
-									<option value="vic">Victoria</option>
-									<option value="wa">Western Australia</option>
-								</select>
-								</div>
-							</div>
-
-							<!-- REGION - KIWI VERSION -->
-							<div class="text-form text-form--select text-form--region text-form--region--new-zealand display-none" onclick="textFormClicked(this, 'div');">
-								<label class="text-form--select input--not-blank" for="checkout__region">Region</label>
-								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><select class="input--not-blank" name="checkout__region" id="checkout__region" onfocus="textFormClicked(this, 'select')">
-									<option hidden disabled selected>select an option</option>
-									<option value="auckland">Auckland</option>
-									<option value="bay-of-plenty">Bay of Plenty</option>
-									<option value="canterbury">Canterbury</option>
-									<option value="gisborne">Gisborne</option>
-									<option value="hawkes-bay">Hawke's Bay</option>
-									<option value="manawatu-whanganui">Manawatū-Whanganui</option>
-									<option value="marlborough">Marlborough</option>
-									<option value="nelson">Nelson</option>
-									<option value="northland">Northland</option>
-									<option value="otago">Otago</option>
-									<option value="southland">Southland</option>
-									<option value="taranaki">Taranaki</option>
-									<option value="tasman">Tasman</option>
-									<option value="walkato">Walkato</option>
-									<option value="wellington">Wellington</option>
-									<option value="west-coast">West Coast</option>
+								<div><select class="input--not-blank" name="checkout__aus--state" id="checkout__aus--state" onfocus="textFormClicked(this, 'select')">
+									<option hidden disabled selected>Select and option</option>
+									<option value="act">ACT</option>
+									<option value="nsw">NSW</option>
+									<option value="nt">NT</option>
+									<option value="qld">QLD</option>
+									<option value="sa">SA</option>
+									<option value="tas">TA</option>
+									<option value="vic">VIC</option>
+									<option value="wa">WA</option>
 								</select>
 								</div>
 							</div>
@@ -202,7 +190,7 @@
 						</div>
 
 						<!-- Card security -->
-						<div class="horizontal-text-forms flex--horizontal standard-spacing">
+						<div class="horizontal-text-form horizontal-text-form--card-security standard-spacing">
 							<!-- CARD MONTH -->
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
 								<label for="checkout__card-month">MM</label>
@@ -217,9 +205,9 @@
 							</div>
 							<!-- FAMILY NAME -->
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__family-name">Security Code</label>
+								<label for="checkout__security-code">Security&nbsp;Code</label>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="number" name="checkout__family-name" id="checkout__family-name" onfocus="textFormClicked(this, 'input')"></div>
+								<div><input type="number" name="checkout__security-code" id="checkout__security-code" onfocus="textFormClicked(this, 'input')"></div>
 							</div>
 						</div>
 
@@ -255,7 +243,7 @@
 			</section>
 
 			<!-- The order details column -->
-			<section class="order-details-cont flex--vertical no-padding">
+			<section class="order-details-cont flex--vertical section--highlighted">
 				<!-- The title -->
 				<h2 class="order-details__cont">Order Summary</h2>
 

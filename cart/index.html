@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="cart/styles/cart.css">
 </head>
-<body>
+<body class="footer-in-front">
 	<!-- Contains all the sections of the homepage except the footer -->
 	<main>
 		<!-- The hero introductory section of the homepage -- GRADIENT section -->
@@ -22,14 +22,14 @@
 		</section>
 
 		<!-- The 'Shopping Cart' section -->
-		<section class="shopping-cart inner-section no-padding">
+		<section class="shopping-cart">
 			<!-- The section title -->
 			<h2 class="shopping-cart__heading">Shopping Cart</h2>
 			
 			<!-- This contains all the shopping cart elements (including the cart items and the subtotal and checkout sections) -->
 			<div class="shopping-cart__cont grid standard-spacing">
 				<!-- This contains the shopping cart items -->
-				<div class="cart-items flex--vertical standard-spacing">
+				<div class="cart-items grid standard-spacing">
 					<!-- When there are no items in the shopping cart, this info banner saying there's nothing in the cart will be displayed -->
 					<div class="cart-items__empty-cart-message">
 						<h4>Your shopping cart is currently empty.</h4>

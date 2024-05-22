@@ -1,18 +1,32 @@
 .checkout-cont {
-	grid-template-columns: 7fr 5fr;
-	padding-bottom: var(--layout-05);
+	grid-template-columns: 100%;
+	padding: 0;
 	align-items: end;
+	
+	@media only screen and (min-width: 768px) {
+		grid-template-columns: 7fr 5fr;
+		padding: 0 var(--spacing-03) var(--layout-05);
+	}
 }
 
 /* The payment details column */
 	/* Express checkout */
 		.payment-details-cont {
 			gap: var(--layout-02);
+			padding: var(--spacing-03);
+
+			@media only screen and (min-width: 768px) {
+				padding: 0;
+			}
 		}
 		.express-checkout__services {
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 1fr);
+			/* grid-template-columns: repeat(2, 1fr); */
+			grid-template-columns: repeat(auto-fit, minmax(
+				calc( 11 * var(--sizing-factor) ),
+				1fr
+			));
 			width: 100%;
+
 		}
 		.express-checkout__services__button {
 			width: 100%;
@@ -31,13 +45,33 @@
 			background: #ffffff;
 		}
 		
-		.horizontal-text-forms {
+		.horizontal-text-form {
 			width: 100%;
+			display: grid;
 		}
+		.horizontal-text-form--name {
+			grid-template-columns: repeat(auto-fit, minmax(
+				calc( 13 * var(--sizing-factor) ),
+				1fr
+			));
+		}
+		.horizontal-text-form--address-extras {
+			grid-template-columns: repeat(auto-fit, minmax(
+				calc( 11 * var(--sizing-factor) ),
+				1fr
+			));
+		}
+		.horizontal-text-form--card-security {
+			grid-template-columns: repeat(2, 22%) 1fr;
+		}
+		/* .text-form--given-name,
+		.text-form--family-name {
+			min-width: calc(6 * var(--sizing-factor));
+		} */
 		.text-form--city {
 			flex: 2;
 		}
-		.text-form--region {
+		.text-form--aus--state {
 			flex: 3;
 		}
 		.text-form--postcode {
@@ -72,8 +106,17 @@
 		}
 
 		.order-details-cont {
-			position: sticky;
-			bottom: var(--layout-05);
+			padding-top: var(--layout-02);
+
+			@media only screen and (min-width: 768px) {
+				position: sticky;
+				bottom: var(--layout-05);
+				border-radius: 0;
+				background: none;
+				box-shadow: none;
+				backdrop-filter: none;
+				padding: 0;
+			}
 		}
 		.order-summary__discount {
 			width: 100%;

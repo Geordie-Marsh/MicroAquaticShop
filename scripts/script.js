@@ -49,11 +49,17 @@ function textFormClicked(clickedElement, clickedElementType) {
 // When the user changes which country in the checkout
 function countryChanged(country) {
 	if (country == "australia") {
-		classRemove($$(".text-form--region--australia"), "display-none");
-		classAdd($$(".text-form--region--new-zealand"), "display-none");
+		classRemove($$(".text-form--aus--apartment"), "display-none");
+		classRemove($$(".text-form--aus--state"), "display-none");
+		classRemove($$(".text-form--aus--city"), "display-none");
+		classAdd($$(".text-form--nz--suburb"), "display-none");
+		classAdd($$(".text-form--nz--city"), "display-none");
 	} else {
-		classAdd($$(".text-form--region--australia"), "display-none");
-		classRemove($$(".text-form--region--new-zealand"), "display-none");
+		classAdd($$(".text-form--aus--apartment"), "display-none");
+		classAdd($$(".text-form--aus--state"), "display-none");
+		classAdd($$(".text-form--aus--city"), "display-none");
+		classRemove($$(".text-form--nz--suburb"), "display-none");
+		classRemove($$(".text-form--nz--city"), "display-none");
 	}
 }
 

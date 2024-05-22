@@ -3,9 +3,9 @@
 	/* NOTE: Cannot use these variables in media queries as CSS cannot process them, so these are just guides */
 
 	/* Small devices  - phones, 480px and below (site is designed mobile-up, so there's no need for a mobile breakpoint) */
-	
+	--breakpoint-s  : 480px;
 	/* Medium devices - tablets, 480px and up */
-	--breakpoint-m  : 480px;
+	--breakpoint-n  : 768px;
 	/* Large devices - laptops/desktops, 1024px and up */
 	--breakpoint-l  : 1024px;
 	/* Extra large devices  - large laptops/desktops, 1600px and up */
