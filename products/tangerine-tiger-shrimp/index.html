@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="products/styles/product-page.css">
 </head>
-<body>
+<body class="footer-in-front">
 	<!-- Contains all the sections of the homepage except the footer -->
 	<main>
 		<!-- This contains any elements which may appear absolutely positioned, such as dropdown menus in the header -->
@@ -24,7 +24,7 @@
 		</section>
 
 		<!-- The topmost section containing the product image, basic info and buying elements -->
-		<section class="product-showcase flex--horizontal">
+		<section class="product-showcase flex">
 			<!-- The div containing the images slideshow -->
 			<div class="product-images flex--horizontal">
 				<img src="assets/images/shrimp-tangerine-tiger.jpg" alt="A side shot of the tangerine tiger shrimp">
@@ -44,7 +44,7 @@
 					
 
 					<!-- The div containing the rating -->
-					<div class="product-summary__rating-cont flex--horizontal">
+					<a class="product-summary__rating-cont flex--horizontal" onclick="location.href='products/tangerine-tiger-shrimp/#reviews'">
 						<!-- The div containing the stars -->
 						<div class="product-summary__rating-cont__stars-cont stars-cont flex--horizontal">
 							<img src="assets/icons/star.svg" class="product-page__star">
@@ -54,7 +54,7 @@
 							<img src="assets/icons/star-empty.svg" class="product-page__star">
 						</div>
 						<p class="product-summary__rating-cont__no-of-reviews">(32 reviews)</p>
-					</div>
+					</a>
 
 					<!-- The basic desc of the product -->
 					<p class="product-summary__desc">Tangerine tigers look fantastic and are easy to keep. They are a brilliant orange colour with thin black stripes.</p>
@@ -123,7 +123,7 @@
 				</section>
 
 				<!-- The section containing the user actions, like adding to cart, wishlist and sharing -->
-				<section class="product-user-actions panel panel--big-rounding panel--big-padding flex--horizontal standard-spacing">
+				<section class="product-user-actions panel panel--big-rounding panel--big-padding grid standard-spacing">
 					<button class="product-user-actions__cart button button--cta" aria-label="Add to cart">
 						<span class="button__label">Add to Cart</span>
 					</button>
@@ -139,7 +139,7 @@
 
 		<!-- The highlighted section containing more detailed info about the product -->
 		<section class="product-detail section--highlighted">
-			<h3>About the product</h3>
+			<h3 class="product-detail-heading">About the product</h3>
 			<!-- Quick factoids about the product -->
 			<div class="quick-facts standard-spacing grid">
 				<article class="quick-facts__factoid panel panel--big-rounding flex--horizontal standard-spacing">
@@ -185,7 +185,7 @@
 			</section>
 
 
-			<h3 class="reviews-heading">Reviews</h3>
+			<h3 class="reviews-heading" id="reviews">Reviews</h3>
 			<div class="reviews-cont grid standard-spacing">
 				<div class="review-panel panel panel--highlighted-section">
 					<div class="review-panel__total-rating flex--vertical standard-spacing">
@@ -245,7 +245,8 @@
 						<img src="assets/icons/arrow-right.svg" class="button__action-symbol" alt="Right arrow icon">
 					</button>
 				</div>
-				<div class="review-column flex--vertical">
+
+				<div class="review-column review-column1 flex--vertical">
 					<div class="review panel panel--highlighted-section standard-spacing">
 						<h4 class="review__name">Eleanor Shellstrop</h4>
 						<div class="review__stars-cont flex--horizontal">
@@ -274,9 +275,9 @@
 						<p class="review__text">omg these tangerine tiger shrimp are the best!! so tiny and cute  they came in super healthy and the orange colour is amazing  def recommend for anyone looking for some awesome shrimp for their tank!!</p>
 					</div>
 				</div>
-				<div class="review-column flex--vertical">
-					<div class="review-row flex--horizontal">
-						<div class="review-column flex--vertical">
+				<div class="review-column review-column2 flex--vertical">
+					<div class="review-group review-group__small-reviews flex">
+						<div class="review-group review-group__small-reviews__comments flex">
 							<div class="review panel panel--highlighted-section standard-spacing">
 								<h4 class="review__name">Jason Mendoza</h4>
 								<div class="review__stars-cont flex--horizontal">
@@ -300,8 +301,8 @@
 								<p class="review__text">Arrived DEAD!! Very disappointing. I expected a lot more given the dead on arrival policy the site keep touting but APPARENTLY NOT! DO NOT BUY FROM THIS STORE</p>
 							</div>
 						</div>
-						<div class="review-column flex--vertical">
-							<div class="review panel panel--highlighted-section standard-spacing">
+						<div class="review-group review-group__small-reviews__only-ratings flex">
+							<div class="review review--only-rating panel panel--highlighted-section standard-spacing">
 								<h4 class="review__name">Michael</h4>
 								<div class="review__stars-cont flex--horizontal">
 									<img src="assets/icons/star.svg" class="review__stars-cont__star">
@@ -311,7 +312,7 @@
 									<img src="assets/icons/star.svg" class="review__stars-cont__star">
 								</div>
 							</div>
-							<div class="review panel panel--highlighted-section standard-spacing">
+							<div class="review review--only-rating panel panel--highlighted-section standard-spacing">
 								<h4 class="review__name">Mindy St. Claire</h4>
 								<div class="review__stars-cont flex--horizontal">
 									<img src="assets/icons/star.svg" class="review__stars-cont__star">
@@ -321,7 +322,7 @@
 									<img src="assets/icons/star-empty.svg" class="review__stars-cont__star">
 								</div>
 							</div>
-							<div class="review panel panel--highlighted-section standard-spacing">
+							<div class="review review--only-ratings panel panel--highlighted-section standard-spacing">
 								<h4 class="review__name">Janet</h4>
 								<div class="review__stars-cont flex--horizontal">
 									<img src="assets/icons/star.svg" class="review__stars-cont__star">

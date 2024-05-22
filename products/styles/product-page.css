@@ -1,4 +1,11 @@
 /* Product Showcase */
+	.product-showcase {
+		flex-direction: column;
+
+		@media only screen and (min-width: 480px) {
+			flex-direction: row;
+		}
+	}
 	.product-images {
 		/* The container for the product images and the slideshow controls */
 		border-radius: var(--spacing-07);
@@ -7,15 +14,22 @@
 		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
 		overflow: hidden;
 		margin: 0;
-		width: calc(100vh - 6rem);
-		height: calc(100vh - 6rem);
-		top: var(--layout-05);
-		position: sticky;
+		aspect-ratio: 1 / 1;
+		
 
 		img {
 			/* The images themselves within the div */
 			
 			aspect-ratio: 1 / 1;
+		}
+
+		@media only screen and (min-width: 480px) {
+			width: calc(100vh - 6rem);
+			max-width: 60vw;
+			height: calc(100vh - 6rem);
+			max-height: 60vw;
+			top: var(--layout-05);
+			position: sticky;
 		}
 	}
 
@@ -63,7 +77,6 @@
 			width: var(--spacing-06);
 		}
 	}
-
 	
 	.product-bulk-buy-table {
 		text-align: left;
@@ -78,18 +91,39 @@
 	}
 
 	.product-user-actions {
-		
+		grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 		
 		button {
 			height: 100%;
 		}
+		
+		@media only screen and (min-width: 1024px) {
+			grid-template: 1fr / 1fr repeat(2, auto);
+		}
 	}
 	.product-user-actions__cart {
 		width: 100%;
+
+		@media only screen and (max-width: 480px) {
+			grid-column: 1 / 3;
+		}
 	}
 
+	.product-detail-heading {
+		@media only screen and (max-width: 1024px) {
+			margin-top: var(--layout-02);
+		}
+	}
 	.quick-facts {
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		
+		@media only screen and (min-width: 480px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		
+		@media only screen and (min-width: 1024px) {
+			grid-template-columns: repeat(6, 1fr);
+		}
 	}
 	.quick-facts__factoid {
 		padding: var(--spacing-03) var(--spacing-04) var(--spacing-03) var(--spacing-06);
@@ -110,19 +144,76 @@
 		margin-top: var(--spacing-04);
 	}
 	.reviews-cont {
-		grid-template-columns: auto repeat(2, 1fr);
-		grid-template-rows: repeat(2, auto);
+		width: 100%;
 		row-gap: var(--layout-02);
+		grid-template: 
+			" review-panel         " auto
+			" review-column1       " auto
+			" review-column2       " auto
+			" review-page-selector " auto /
+			  100%
+		;
+
+		@media only screen and (min-width: 480px) and (max-width: 1024px) {
+			grid-template: 
+				" review-panel         review-panel         " auto
+				" review-column1       review-column2       " auto
+				" review-page-selector review-page-selector " auto /
+				  55%                  auto
+			;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			grid-template: 
+				" review-panel review-column1       review-column2 " auto
+				" .            review-page-selector review-page-selector " auto /
+				  auto         minmax(20% ,1fr)                  1fr
+			;
+		}
 	}
 	.review-column,
-	.review-row {
+	.review-group {
+		width: 100%;
 		gap: var(--spacing-03);
+	}
+	.review-column1 {
+		grid-area: review-column1;
+	}
+	.review-column2 {
+		grid-area: review-column2;
+
+		@media only screen and (max-width: 480px) {
+			margin-top: calc(-1 * var(--spacing-03));
+		}
+	}
+	.review-group__small-reviews {
+		flex-direction: column;
+
+		@media only screen and (min-width: 1024px) {
+			flex-direction: row;
+		}
+	}
+	.review-group__small-reviews__comments {
+		flex-direction: column;
+
+		@media only screen and (min-width: 1024px) {
+			flex-direction: column;
+		}
+	}
+	.review-group__small-reviews__only-ratings {
+		flex-direction: column;
+
+		@media only screen and (min-width: 1024px) {
+			flex-direction: column;
+			width: min-content;
+		}
 	}
 	.review-panel {
 		align-items: center;
 		align-self: flex-start;
 		gap: var(--spacing-05);
 		padding: var(--spacing-09);
+		grid-area: review-panel;
 	}
 	.review-panel__total-rating {
 		align-items: center;
@@ -143,6 +234,10 @@
 	.review {
 		/* This is the individual review panel itself */
 		flex-grow: 1;
+		width: 100%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: start;
 	}
 	.review__name {
 		/* This is the review's author's name */
@@ -176,6 +271,10 @@
 		scroll-snap-type: x mandatory; /* Making the scrolling snappy */
 		height: fit-content;
 		max-width: calc(30 * var(--sizing-factor));
+		
+		@media only screen and (max-width: 480px) {
+			max-width: 100%;
+		}
 	}
 	.review__images__image {
 		scroll-snap-align: center;
@@ -187,7 +286,7 @@
 	}
 
 	.reviews-page-selector {
-		grid-column: 2 / 4;
+		grid-area: review-page-selector;
 		width: 100%;
 		align-items: center;
 		justify-content: center;
@@ -206,5 +305,5 @@
 
 
 	.featured-products {
-		margin-bottom: var(--layout-07);
+		margin-bottom: var(--layout-05);
 	}

@@ -65,6 +65,7 @@
 .button--secondary {	
 	.button__icon {
 		height: 100%;
+		max-height: calc(2.5 * var(--sizing-factor));
 		aspect-ratio: 1 / 1;
 	}
 
