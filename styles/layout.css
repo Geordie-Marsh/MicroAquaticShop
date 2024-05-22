@@ -100,12 +100,17 @@
 	}
 	.hero-content__info {
 		width: 100%;
+		align-items: center;
+		
+		* {
+			text-align: center;
+		}
 
-		@media only screen and (max-width: 480px) {
-			align-items: center;
-			
+		@media only screen and (min-width: 480px) {
+			align-items: start;
+
 			* {
-				text-align: center;
+				text-align: left;
 			}
 		}
 
@@ -115,12 +120,13 @@
 		}
 	}
 	.page-title {
-		gap: var(--spacing-06);
-
-		@media only screen and (max-width: 480px) {
-			margin-top: var(--layout-02);
-			gap: var(--spacing-02);
-			width: 100%;
+		gap: var(--spacing-02);
+		width: 100%;
+		margin-top: var(--layout-02);
+		
+		@media only screen and (min-width: 480px) {
+			gap: var(--spacing-06);
+			margin-top: 0;
 		}
 	}
 	.page-title__title {

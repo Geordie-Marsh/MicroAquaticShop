@@ -2,24 +2,24 @@
 	/* The entire footer itself */
 	display: grid;
 	grid-template-areas: 
-		" footer-logo       footer-logo       footer-logo      "
-		" footer-policies   footer-links      footer-contact   "
-		" footer-copyright  footer-copyright  footer-copyright "
+		" footer-logo      "
+		" footer-links     "
+		" footer-contact   "
+		" footer-policies  "
+		" footer-copyright "
 	;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: 1fr;
 	gap: var(--layout-05);
 	padding: var(--layout-02);
 	padding-top: var(--layout-06);
-
-	@media only screen and (max-width: 480px) {
+	
+	@media only screen and (min-width: 480px) {
 		grid-template-areas: 
-			" footer-logo      "
-			" footer-links     "
-			" footer-contact   "
-			" footer-policies  "
-			" footer-copyright "
+			" footer-logo       footer-logo       footer-logo      "
+			" footer-policies   footer-links      footer-contact   "
+			" footer-copyright  footer-copyright  footer-copyright "
 		;
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(3, 1fr);
 	}
 }
 body.footer-in-front .page-footer {
@@ -60,16 +60,16 @@ body.footer-in-front .page-footer {
 .footer-copyright-bar {
 	/* The panel at the bottom of the footer containing copyright and payment methods */
 	grid-area: footer-copyright;
-	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	gap: var(--spacing-06);
-	padding: var(--spacing-03);
-
-	@media only screen and (max-width: 480px) {
-		flex-direction: column;
-		gap: var(--spacing-03);
-		padding-top: var(--spacing-05);
+	flex-direction: column;
+	gap: var(--spacing-03);
+	padding-top: var(--spacing-05);
+	
+	@media only screen and (min-width: 480px) {
+		flex-direction: row;
+		gap: var(--spacing-06);
+		padding: var(--spacing-03);
 	}
 }
 .footer-copyright-bar__copyright {

@@ -99,9 +99,10 @@
 	}
 	.product-filters__button {
 		margin-top: var(--layout-02);
+		margin-bottom: var(--layout-05);
 
-		@media only screen and (max-width: 480px) {
-			margin-bottom: var(--layout-05);
+		@media only screen and (min-width: 480px) {
+			margin-bottom: 0;
 		}
 	}
 	.product-display-buttons {

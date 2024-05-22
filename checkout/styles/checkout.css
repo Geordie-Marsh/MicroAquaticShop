@@ -64,10 +64,6 @@
 		.horizontal-text-form--card-security {
 			grid-template-columns: repeat(2, 22%) 1fr;
 		}
-		/* .text-form--given-name,
-		.text-form--family-name {
-			min-width: calc(6 * var(--sizing-factor));
-		} */
 		.text-form--city {
 			flex: 2;
 		}

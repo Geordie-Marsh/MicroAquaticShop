@@ -23,9 +23,10 @@
 /* The brand logo */
 .logo {
 	grid-template-columns: auto 1fr;
+	gap: 0;
 
-	@media only screen and (max-width: 480px) {
-		gap: 0;
+	@media only screen and (min-width: 480px) {
+		gap: inherit;
 	}
 }
 .logo img {
@@ -34,9 +35,10 @@
 .logo h4 {
 	/* Vertically aligning the logo's text to the icon */
 	margin-top: 6px;
+	display: none;
 
-	@media only screen and (max-width: 480px) {
-		display: none;
+	@media only screen and (min-width: 480px) {
+		display: inherit;
 	}
 }
 
@@ -55,10 +57,10 @@
 }
 .collapsed-navbar {
 	gap: var(--spacing-03);
-	display: none;
-
-	@media only screen and (max-width: 1024px) {
-		display: inherit;
+	display: inherit;
+	
+	@media only screen and (min-width: 1024px) {
+		display: none;
 	}
 }
 .collapsed-navbar__icon,
