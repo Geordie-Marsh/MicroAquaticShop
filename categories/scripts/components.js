@@ -124,9 +124,9 @@
 				// Replacing the default data of the element with that specific to the product in question
 					const label = button.querySelector(".button__label--text"); // Editing the title
 					label.textContent = filterList[i][0];
-					// Removing the colour swatch if it's not a colour filter
+					// Removing the colour swatch if it's not a colour filter (the colour swatch is on the filter by default so it is removed if it's not needed)
 					const colourSwatch = button.querySelector(".colour-swatch");
-					filterList !== filterColour
+					(filterList != filterColour)
 						? colourSwatch.remove()
 						: changeColourFilterSwatch() ;
 				
