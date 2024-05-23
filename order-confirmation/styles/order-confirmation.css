@@ -1,16 +1,28 @@
 /* Hero */
 	.hero-content {
-		gap: var(--layout-02);
-		grid-template-columns: 1fr auto;
+		grid-template-columns: 100%;
+		gap: var(--spacing-03);
+		
+		@media only screen and (min-width: 768px) {
+			gap: var(--layout-02);
+			grid-template-columns: 1fr min-content;
+		}
 	}
-
+	
 	.hero-content__info {
 		align-items: center;
 		gap: var(--layout-01);
-		grid-column: 1 / 3;
+		width: 100%;
+		max-width: none;
+
+		@media only screen and (min-width: 768px) {
+			grid-column: 1 / 3;
+		}
 	}
 	.hero-title-y-kerning {
-		letter-spacing: -0.36rem;
+		@media only screen and (min-width: 768px) {
+			letter-spacing: -0.36rem;
+		}
 	}
 	
 	.hero-content__order-info {
@@ -29,17 +41,22 @@
 
 	.hero-content__sign-up {
 		gap: var(--spacing-03);
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 	.hero-content__sign-up__form {
 		width: 100%;
+		flex-direction: column;
 
 		form {
-			min-width: calc( 20 * var(--sizing-factor) );
+			min-width: calc( 16 * var(--sizing-factor) );
 		}
 
 		button {
 			border-radius: var(--spacing-04);
-			min-width: calc( 10 * var(--sizing-factor) );
+			min-width: calc( 5 * var(--sizing-factor) );
+		}
+
+		@media only screen and (min-width: 480px) {
+			flex-direction: row;
 		}
 	}
