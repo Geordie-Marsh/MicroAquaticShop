@@ -36,7 +36,6 @@
 			
 			// Giving the container an ID if there's a product code attached to the product
 			if (listedProductsShrimp[i][4]) {
-				log("yep");
 				container.setAttribute("id", listedProductsShrimp[i][4]);
 			}
 
@@ -55,10 +54,22 @@
 				const colourSwatch = container.querySelector(".product--listed__colour__swatch"); // Editing the colour name
 				colourSwatch.style.background = "var(--clr-primitive-" + listedProductsShrimp[i][3][1] + ")";
 
-				// If this product has a page to direct to, make the view button direct to this
+				// If this product is an interactive product, make it interactive
 				if(listedProductsShrimp[i][4]) {
+					// Make the view button direct to the product's page
 					const viewButton = container.querySelector(".product--listed__button--view");
 					viewButton.setAttribute("href", "products/" + listedProductsShrimp[i][4] + "/");
+
+					// Make clicking anywhere on the product direct to the product's page
+					container.setAttribute("onclick", "location.href = 'products/" + listedProductsShrimp[i][4] + "/';");
+
+					// Making the add to cart button add 1 of this product to the cart\
+					const cartButton = container.querySelector(".product--listed__button--cart");
+					cartButton.setAttribute("onclick", "addToCart('" + listedProductsShrimp[i][4] + "');");
+					// Stopping any propagation from happening since the container has an onclick event and we don't want bubbling to occur
+					on(cartButton, "click", (event) => {
+						event.stopPropagation();
+					})
 				}
 
 
