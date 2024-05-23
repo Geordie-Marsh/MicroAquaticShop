@@ -221,8 +221,41 @@ const colourSwatches = [
 
 
 
+
+
+// Not all the products are interactable, only a few; this is the array that contains and deals with them
+const interactiveProducts = [
+	[
+		"shrimp--tangerine-tiger", // The product code
+		"Tangerine tiger shrimp", // The product name
+		[ // The prices
+			6.99, // The base price
+			[ // A bulk-buy offer
+				10, // Min. quantity for this bulk-buy offer to take effect
+				6.29 // Bulk-buy price (p/ea)
+			],
+			[ // A bulk-buy offer
+				20, // Min. quantity for this bulk-buy offer to take effect
+				5.59 // Bulk-buy price (p/ea)
+			],
+			[ // A bulk-buy offer
+				50, // Min. quantity for this bulk-buy offer to take effect
+				4.89 // Bulk-buy price (p/ea)
+			],
+			[ // A bulk-buy offer
+				100, // Min. quantity for this bulk-buy offer to take effect
+				4.19 // Bulk-buy price (p/ea)
+			]
+		],
+		"tangerine-tiger-shrimp", // The main product image
+		[colourSwatches][1] // The product colour
+	]
+]
+
+
+
 // This is the array used to generate the products list in the shrimp category page (would be generated from a proper database in the real website)
-// Each element in the outer array is a product, and the inner array has the name, the price, the product image's filename, the colour, and the product page it directs to (optional) in that order
+// Each element in the outer array is a product, and the inner array has the name, the price, the product image's filename, the colour, and the product's code (optional) in that order
 const listedProductsShrimp = [
 	[
 		"Cherry Shrimp", 
@@ -235,7 +268,7 @@ const listedProductsShrimp = [
 		"$6.99",
 		"shrimp-tangerine-tiger",
 		colourSwatches[1],
-		"tangerine-tiger-shrimp"
+		interactiveProducts[0][0]
 	],
 	[
 		"Ghost Shrimp", 
@@ -431,3 +464,5 @@ const filterColour = [
 		"translucent"
 	]
 ];
+
+

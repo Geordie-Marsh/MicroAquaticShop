@@ -33,6 +33,12 @@
 			classAdd(container, "panel");
 			classAdd(container, "flex--vertical");
 			classAdd(container, "standard-spacing");
+			
+			// Giving the container an ID if there's a product code attached to the product
+			if (listedProductsShrimp[i][4]) {
+				log("yep");
+				container.setAttribute("id", listedProductsShrimp[i][4]);
+			}
 
 			// Replacing the default data of the element with that specific to the product in question
 				const title = container.querySelector(".product--listed__title"); // Editing the title

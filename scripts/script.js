@@ -46,6 +46,7 @@ function textFormClicked(clickedElement, clickedElementType) {
 	});
 }
 
+
 // When the user changes which country in the checkout
 function countryChanged(country) {
 	if (country == "australia") {
@@ -64,7 +65,6 @@ function countryChanged(country) {
 }
 
 
-
 // Opening and closing the fullscreen menu
 function openFullscreenMenu() {
 	$$(".fullscreen-menu").style.display = "flex";
@@ -79,3 +79,8 @@ function toggleFilters() {
 	classToggle($$(".products-finder-cont"), "filters-toggled-off");
 	classToggle($$(".product-display-buttons__filters"), "button--cta");
 }
+
+
+
+
+
