@@ -6,6 +6,11 @@ function cartPageOnLoad() {
 	// If there's nothing in the cart, hide all the cart elements and display the empty cart message
 	if (cart == null || cart == undefined || cart == "") {
 		classRemove($$(".cart-items__empty-cart-message"), "display-none");
+		
+		// Hiding all the items in the cart
+		for (let i = 0; i < interactiveProducts.length; i++) {
+			classAdd($$("#cart-item--" + i), "display-none");
+		}
 	}
 
 	// Getting the current data of the cart
@@ -18,6 +23,7 @@ function cartPageOnLoad() {
 		// Searching through the  cart to see if there's  an instance (or multiple) of the product in there
 		let productCartIndex = checkCartForItem(cartArray, i);
 
+		// If the product is in the cart, update its quantity and price. If it's not, remove it from the list
 		if (productCartIndex !== false) {
 			log("in cart:", interactiveProducts[i][0])
 			// Updating the cart item price
@@ -25,6 +31,9 @@ function cartPageOnLoad() {
 
 			// Updating the cart item quantity value
 			$$("#product-quantity-value--" + i).value = cartArray[productCartIndex][1];
+		} else {
+			// Hiding the item
+			classAdd($$("#cart-item--" + i), "display-none");
 		}
 	}
 
