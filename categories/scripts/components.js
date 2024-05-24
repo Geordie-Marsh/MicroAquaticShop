@@ -54,6 +54,8 @@
 				const colourSwatch = container.querySelector(".product--listed__colour__swatch"); // Editing the colour name
 				colourSwatch.style.background = "var(--clr-primitive-" + listedProductsShrimp[i][3][1] + ")";
 
+				const cartButton = container.querySelector(".product--listed__button--cart");
+
 				// If this product is an interactive product, make it interactive
 				if(listedProductsShrimp[i][4]) {
 					// Make the view button direct to the product's page
@@ -63,15 +65,19 @@
 					// Make clicking anywhere on the product direct to the product's page
 					container.setAttribute("onclick", "location.href = 'products/" + listedProductsShrimp[i][4] + "/';");
 
-					// Making the add to cart button add 1 of this product to the cart\
-					const cartButton = container.querySelector(".product--listed__button--cart");
+					// Making the add to cart button add 1 of this product to the cart
 					cartButton.setAttribute("onclick", "addToCart('" + listedProductsShrimp[i][4] + "');");
-					// Stopping any propagation from happening since the container has an onclick event and we don't want bubbling to occur
-					on(cartButton, "click", (event) => {
-						event.stopPropagation();
+				} else {
+					// Making the add to cart button display an alert that lists the product which are interactive
+					on(cartButton, "click", () => {
+						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
 					})
 				}
 
+				// Stopping any propagation from happening on the add to cart button since its ancestor container has an onclick event and we don't want bubbling to occur
+				on(cartButton, "click", (event) => {
+					event.stopPropagation();
+				})
 
 			// Appending the content of the container to the featured products div
 			$$(".product-listing").appendChild(container);

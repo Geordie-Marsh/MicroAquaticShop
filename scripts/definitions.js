@@ -20,7 +20,8 @@ const log = console.log;
 // Min and max
 const min = (number) => Math.min(number);
 const max = (number) => Math.max(number);
-// Round up and down
+// Round to the nearest, up and down
+const round = (number) => Math.round(number);
 const roundUp = (number) => Math.ceil(number);
 const roundDown = (number) => Math.floor(number);
 

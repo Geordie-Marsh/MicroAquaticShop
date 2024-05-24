@@ -230,6 +230,7 @@ const interactiveProducts = [
 		"Tangerine tiger shrimp", // The product name
 		[ // The prices
 			6.99, // The base price
+			// Any bulk-buy offers go here:
 			[ // A bulk-buy offer
 				10, // Min. quantity for this bulk-buy offer to take effect
 				6.29 // Bulk-buy price (p/ea)
@@ -247,10 +248,68 @@ const interactiveProducts = [
 				4.19 // Bulk-buy price (p/ea)
 			]
 		],
-		"tangerine-tiger-shrimp", // The main product image
+		[
+			"tangerine-tiger-shrimp" // The main product image
+			// Any additional product images go here:
+		],
 		[colourSwatches][1] // The product colour
+	],
+	[
+		"shrimp--cherry--blue", // The product code
+		"Cherry Shrimp", // The product name
+		[ // The prices
+			9.99, // The base price
+			// Any bulk-buy offers go here:
+			[ // A bulk-buy offer
+				10, // Min. quantity for this bulk-buy offer to take effect
+				9.49 // Bulk-buy price (p/ea)
+			],
+			[ // A bulk-buy offer
+				20, // Min. quantity for this bulk-buy offer to take effect
+				8.99 // Bulk-buy price (p/ea)
+			]
+		],
+		[
+			"shrimp-cherry-blue" // The main product image
+			// Any additional product images go here:
+		],
+		[colourSwatches][4] // The product colour
+	],
+	[
+		"shrimp--cherry--red", // The product code
+		"Cherry Shrimp", // The product name
+		[ // The prices
+			3.49, // The base price
+			// Any bulk-buy offers go here:
+			[ // A bulk-buy offer
+				10, // Min. quantity for this bulk-buy offer to take effect
+				3.29 // Bulk-buy price (p/ea)
+			],
+			[ // A bulk-buy offer
+				25, // Min. quantity for this bulk-buy offer to take effect
+				3.09 // Bulk-buy price (p/ea)
+			]
+		],
+		[
+			"shrimp-cherry-red" // The main product image
+			// Any additional product images go here:
+		],
+		[colourSwatches][0] // The product colour
+	],
+	[
+		"shrimp--ghost", // The product code
+		"Ghost Shrimp", // The product name
+		[ // The prices
+			4.49, // The base price
+			// Any bulk-buy offers go here:
+		],
+		[
+			"shrimp-ghost" // The main product image
+			// Any additional product images go here:
+		],
+		[colourSwatches][12] // The product colour
 	]
-]
+];
 
 
 
@@ -310,7 +369,8 @@ const listedProductsShrimp = [
 		"Cherry Shrimp", 
 		"$9.99",
 		"shrimp-cherry-blue",
-		colourSwatches[4]
+		colourSwatches[4],
+		interactiveProducts[1][0]
 	],
 	[
 		"Wild Form Cherry Shrimp", 

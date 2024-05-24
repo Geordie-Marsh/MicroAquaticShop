@@ -187,8 +187,17 @@
 		border-radius: 100%;
 		box-shadow: var(--effect-shadow);
 	}
+	.colour-swatch--red {
+		background: var(--clr-primitive-red);
+	}
 	.colour-swatch--orange {
 		background: var(--clr-primitive-orange);
+	}
+	.colour-swatch--blue {
+		background: var(--clr-primitive-blue);
+	}
+	.colour-swatch--translucent {
+		background: var(--clr-primitive-translucent);
 	}
 	.colour-name {
 		margin: 0;
@@ -365,7 +374,7 @@
 		outline: none;
 		background: none;
 		border: none;
-		width: var(--spacing-07);
+		width: var(--spacing-09);
 		text-align: center;
 		font-family: inherit;
 		font-size: calc( 1.25 * var(--font-size-factor) );

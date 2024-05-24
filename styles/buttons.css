@@ -1,5 +1,5 @@
 /* Universal styles for buttons */
-.button {
+.button:not(.button--only-functionality) {
 	/* Default button component */
 	padding: var(--spacing-03) var(--spacing-06);
 	border-radius: var(--spacing-03);
@@ -13,6 +13,8 @@
 	gap: var(--spacing-02);
 	background-blend-mode: luminosity, normal;
 	box-shadow: var(--effect-shadow);
+}
+.button {
 	transition: 
 		transform var(--effect-transition-duration),
 		filter var(--effect-transition-duration);
@@ -44,93 +46,95 @@
 		-ms-transform: scale(0.95);
 		-o-transform: scale(0.95);
 	}
-}
 
 
-/* Call-to-action (cta) buttons */
-.button--cta {
-	background: var(--clr-button-gradient--accent);
+	/* Call-to-action (cta) buttons */
+	&.button--cta {
+		background: var(--clr-button-gradient--accent);
 
-	.button__label {
-		margin-top: 3px;
-	}
-}
-
-/* Primary buttons */
-.button--primary {
-	background: var(--clr-button-gradient--accent);
-}
-
-/* Secondary buttons */
-.button--secondary {	
-	.button__icon {
-		height: 100%;
-		max-height: calc(2.5 * var(--sizing-factor));
-		aspect-ratio: 1 / 1;
+		.button__label {
+			margin-top: 3px;
+		}
 	}
 
-	.button__logo {
-		height: var(--spacing-07);
-		margin-left: calc(-1 * var(--spacing-03));
-		margin-right: var(--spacing-01);
-	}
-}
-
-/* Tertiary buttons */
-.button--tertiary {
-	border-radius: var(--spacing-09);
-	
-	.button__icon {
-		height: var(--spacing-06);
-		aspect-ratio: 1 / 1;
+	/* Primary buttons */
+	&.button--primary {
+		background: var(--clr-button-gradient--accent);
 	}
 
-	.button__icon--colour {
-		width: var(--spacing-06);
-		aspect-ratio: 1 / 1;
-		margin-left: calc(-1 * var(--spacing-03));
+	/* Secondary buttons */
+	&.button--secondary {	
+		.button__icon {
+			height: 100%;
+			max-height: calc(2.5 * var(--sizing-factor));
+			aspect-ratio: 1 / 1;
+		}
+
+		.button__logo {
+			height: var(--spacing-07);
+			margin-left: calc(-1 * var(--spacing-03));
+			margin-right: var(--spacing-01);
+		}
 	}
-}
 
-/* Buttons with glass styling */
-.button--glass {
-	background: var(--clr-button-gradient--glass);
-	backdrop-filter: blur(5px);
-	border: 0.3px solid #00000040;
-	background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+	/* Tertiary buttons */
+	&.button--tertiary {
+		border-radius: var(--spacing-09);
+		
+		.button__icon {
+			height: var(--spacing-06);
+			aspect-ratio: 1 / 1;
+		}
 
-	* {
+		.button__icon--colour {
+			width: var(--spacing-06);
+			aspect-ratio: 1 / 1;
+			margin-left: calc(-1 * var(--spacing-03));
+		}
+	}
+
+	/* Buttons with glass styling */
+	&.button--glass {
+		background: var(--clr-button-gradient--glass);
+		backdrop-filter: blur(5px);
+		border: 0.3px solid #00000040;
+		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+
+		* {
+			color: var(--clr-text);
+		}
+	}
+
+	/* Information buttons */
+	&.button--info {
 		color: var(--clr-text);
-	}
-}
-
-/* Information buttons */
-.button--info {
-	color: var(--clr-text);
-	padding: var(--spacing-04);
-	background: var(--clr-glass-gradient--button);
-	border: 0.6px solid #00000040;
-	justify-content: space-between;
-	text-align: left;
-	width: 100%;
-
-	.button__label {
+		padding: var(--spacing-04);
+		background: var(--clr-glass-gradient--button);
+		border: 0.6px solid #00000040;
+		justify-content: space-between;
+		text-align: left;
 		width: 100%;
-	}
-	.button__label--stack {
-		margin: var(--spacing-02) 0 var(--spacing-02) var(--spacing-03);
-	}
-	.button__label--heading {
-		display: block;
-		margin-bottom: var(--spacing-01);
-	}
 
-	.button__logo {
-		height: var(--spacing-07);
-		aspect-ratio: 1 / 1;
-		margin-right: var(--spacing-01);
+		.button__label {
+			width: 100%;
+		}
+		.button__label--stack {
+			margin: var(--spacing-02) 0 var(--spacing-02) var(--spacing-03);
+		}
+		.button__label--heading {
+			display: block;
+			margin-bottom: var(--spacing-01);
+		}
+
+		.button__logo {
+			height: var(--spacing-07);
+			aspect-ratio: 1 / 1;
+			margin-right: var(--spacing-01);
+		}
 	}
 }
+
+
 
 /* Buttons that only have an icon in them */
 .button--icon-only {
