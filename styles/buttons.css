@@ -3,7 +3,6 @@
 	/* Default button component */
 	padding: var(--spacing-03) var(--spacing-06);
 	border-radius: var(--spacing-03);
-	background: var(--clr-button-gradient);
 	border: none;	/*Disabling the default styling*/
 	font-family: inherit;
 	color: var(--clr-text-opposite);
@@ -64,6 +63,8 @@
 
 	/* Secondary buttons */
 	&.button--secondary {	
+		background: var(--clr-button-gradient); /* Default background */
+
 		.button__icon {
 			height: 100%;
 			max-height: calc(2.5 * var(--sizing-factor));
@@ -79,6 +80,7 @@
 
 	/* Tertiary buttons */
 	&.button--tertiary {
+		background: var(--clr-button-gradient); /* Default background */
 		border-radius: var(--spacing-09);
 		
 		.button__icon {

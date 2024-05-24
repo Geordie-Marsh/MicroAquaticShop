@@ -250,26 +250,34 @@
 				<!-- The items being checked out -->
 				<div class="order-details__items-list flex--vertical standard-spacing">
 					<!-- Items in the cart -->
-					<article class="checkout-order-item panel panel--big-rounding flex--horizontal">
+					<article id="checkout-order-item--1" class="checkout-order-item panel panel--big-rounding flex--horizontal">
 						<img class="checkout-order-item__img" src="assets/images/shrimp-cherry-blue.jpg">
 						<div class="checkout-order-item__info flex--vertical">
 							<h4 class="checkout-order-item__title">Cherry Shrimp</h4>
-							<h2 class="checkout-order-item__total">$9.99</h2>
+							<h2 id="checkout-order-item__total--1" class="checkout-order-item__total">$9.99</h2>
 						</div>
 						<!-- TODO Add in quantity -->
 					</article>
-					<article class="checkout-order-item panel panel--big-rounding flex--horizontal">
+					<article id="checkout-order-item--2" class="checkout-order-item panel panel--big-rounding flex--horizontal">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-cherry-blue.jpg">
+						<div class="checkout-order-item__info flex--vertical">
+							<h4 class="checkout-order-item__title">Cherry Shrimp</h4>
+							<h2 id="checkout-order-item__total--2" class="checkout-order-item__total">$3.49</h2>
+						</div>
+						<!-- TODO Add in quantity -->
+					</article>
+					<article id="checkout-order-item--3" class="checkout-order-item panel panel--big-rounding flex--horizontal">
 						<img class="checkout-order-item__img" src="assets/images/shrimp-ghost.jpg">
 						<div class="checkout-order-item__info flex--vertical">
 							<h4 class="checkout-order-item__title">Ghost Shrimp</h4>
-							<h2 class="checkout-order-item__total">$4.49</h2>
+							<h2 id="checkout-order-item__total--3" class="checkout-order-item__total">$4.49</h2>
 						</div>
 					</article>
-					<article class="checkout-order-item panel panel--big-rounding flex--horizontal">
+					<article id="checkout-order-item--0" class="checkout-order-item panel panel--big-rounding flex--horizontal">
 						<img class="checkout-order-item__img" src="assets/images/shrimp-tangerine-tiger.jpg">
 						<div class="checkout-order-item__info flex--vertical">
 							<h4 class="checkout-order-item__title">Tangerine Tiger Shrimp</h4>
-							<h2 class="checkout-order-item__total">$6.99</h2>
+							<h2 id="checkout-order-item__total--0" class="checkout-order-item__total">$6.99</h2>
 						</div>
 					</article>
 				</div>
@@ -294,11 +302,11 @@
 					<!-- The order price info -->
 					<div class="order-summary__info grid">
 						<strong>Subtotal</strong>
-						<p class="text-right">$21.47</p>
+						<p class="text-right order-summary__subtotal">$21.47</p>
 						<strong>Shipping</strong>
 						<p class="text-right">Enter shipping address</p>
 						<h3>Total</h3>
-						<h3 class="text-right">$21.47</h3>
+						<h3 class="text-right order-summary__total">$21.47</h3>
 					</div>
 
 					<!-- The checkout button -->
@@ -321,5 +329,6 @@
 	<script src="scripts/variables.js"></script>
 	<script src="scripts/components.js"></script>
 	<script src="scripts/script.js"></script>
+	<script src="checkout/scripts/script.js"></script>
 </body>
 </html>
