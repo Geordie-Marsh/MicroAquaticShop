@@ -81,15 +81,15 @@
 				<section class="product-quantity panel panel--big-rounding panel--big-padding">
 					<h4>Quantity</h4>
 					<div class="quantity-input flex--horizontal">
-						<button class="quantity-input__segment quantity-input__segment--minus button button--only-functionality flex--vertical" onclick="productQuantityDecrease();">
+						<button class="quantity-input__segment quantity-input__segment--minus button button--only-functionality flex--vertical" onclick="productQuantityDecrease(0, $$('.product-summary__price'));">
 							<img src="assets/icons/minus.svg" alt="">
 						</button>
 						<div class="quantity-input__segment quantity-input__segment--number flex--vertical">
 							<form action="">
-								<input id="product-quantity-value" type="number" min="1" max="1000" value="1">
+								<input id="product-quantity-value--0" type="number" min="1" max="1000" value="1" onkeydown="if(event.key==='.'){event.preventDefault();}" onchange="refreshProductTotalPrice($$('.product-summary__price'), 0, this.value);">
 							</form>
 						</div>
-						<button class="quantity-input__segment quantity-input__segment--plus button button--only-functionality flex--vertical" onclick="productQuantityIncrease();">
+						<button class="quantity-input__segment quantity-input__segment--plus button button--only-functionality flex--vertical" onclick="productQuantityIncrease(0, $$('.product-summary__price'));">
 							<img src="assets/icons/plus.svg" alt="">
 						</button>
 					</div>

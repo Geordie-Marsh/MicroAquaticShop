@@ -60,7 +60,7 @@ function generateBulkBuy() {
 		log(tdQuantity.innerHTML);//TEMP
 
 		// The price is the price per unit in this format: $ + price + ea
-		tdPrice.innerHTML = "$" + offer[1] + "ea";
+		tdPrice.innerHTML = "$" + offer[1].toFixed(2) + "ea";
 		log(tdPrice.innerHTML);//TEMP
 
 		// The discount amount is calculated and displayed rounded to the closest 5%
@@ -105,27 +105,10 @@ if (pageProduct[2][1] != undefined) {
 }
 
 
-// Making the minus and plus buttons on the quantity input functional
-function productQuantityDecrease() {
-	let minQuantity = parseInt($$("#product-quantity-value").min);
-	let currentQuantity = parseInt($$("#product-quantity-value").value);
-	if (currentQuantity > minQuantity) {
-		let newQuantity = currentQuantity - 1;
-		$$("#product-quantity-value").value = newQuantity;
-	}
-}
-function productQuantityIncrease() {
-	let maxQuantity = parseInt($$("#product-quantity-value").max);
-	let currentQuantity = parseInt($$("#product-quantity-value").value);
-	if (currentQuantity < maxQuantity) {
-		let newQuantity = currentQuantity + 1;
-		$$("#product-quantity-value").value = newQuantity;
-	}
-}
 
 // Making the add to cart button add however many of the quantity given to the cart
 on($$(".product-user-actions__cart"), "click", () => {
-	let quantity = $$("#product-quantity-value").value;
+	let quantity = $$("#product-quantity-value--" + pageProductIndex).value;
 	log(quantity);
-	cartProductQuantityIncrease(pageProduct[0], quantity);
+	cartProductQuantityIncrease(pageProductIndex, quantity);
 });

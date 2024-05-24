@@ -83,7 +83,7 @@ function toggleFilters() {
 
 
 // Getting the current cart data
-function getCartString() {
+function getCartArray() {
 	let cartData = localStorage.getItem("cart");
 	// ? "productA,3;productB,5;productC,4"
 	log(cartData); //TEMP
@@ -107,13 +107,13 @@ function getCartString() {
 }
 
 // Checking if an item is already in the cart
-function checkCartForItem(cartArray, product) {
+function checkCartForItem(cartArray, interactiveProductsIndex) {
 	for (let i = 0; i < cartArray.length; i++) {
 		// Getting the name of the existing product in the cart
 		const existingProduct = cartArray[i][0];
 		// Checking if the names of the new and existing product match
-		if (existingProduct == product) {
-			// If the product is already in the cart, return a truthy result
+		if (existingProduct == interactiveProductsIndex) {
+			// If the product is already in the cart, return the cart index
 			return i;
 		}
 	}
@@ -124,9 +124,9 @@ function checkCartForItem(cartArray, product) {
 
 
 // Adding a product to the cart
-function addToCart(product, quantity = 1) {
-	// If no product name is provided, this function will break
-	if (!product) {
+function addToCart(interactiveProductsIndex, quantity = 1) {
+	// If no product is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
 		console.error("No product specified");
 		return;
 	}
@@ -144,7 +144,7 @@ function addToCart(product, quantity = 1) {
 	let newProductSubarray, originalCart, productAlreadyInCart, newCart;
 
 	// Creating an array (which will be used as a subarray element) with the product's name and the quantity
-	newProductSubarray = [product, quantity.toString()];
+	newProductSubarray = [interactiveProductsIndex, quantity.toString()];
 
 	// Checking to see if there's already a cart LS variable
 	if (localStorage.getItem("cart") == null) {
@@ -156,13 +156,13 @@ function addToCart(product, quantity = 1) {
 		localStorage.setItem("cart", newCart);
 	} else {
 		// Getting the current data of the cart
-		originalCart = getCartString();
+		originalCart = getCartArray();
 		
 		// Searching through the existing cart to see if there's already an instance (or multiple) of the product in there
-		productAlreadyInCart = checkCartForItem(originalCart, product);
+		productAlreadyInCart = checkCartForItem(originalCart, interactiveProductsIndex);
 		// If the product is already in the cart, do a quantity increase instead of adding another instance
 		if (productAlreadyInCart !== false) {
-			cartProductQuantityIncrease(product, quantity);
+			cartProductQuantityIncrease(interactiveProductsIndex, quantity);
 			console.log("sent to increase") //TEMP
 			return;
 		}
@@ -173,7 +173,7 @@ function addToCart(product, quantity = 1) {
 		newCart = originalCart;
 		// Pushing the new subarray element to the new cart
 		newCart.push(newProductSubarray);
-		// ? [["productA", "3"], ["product" , "5"], ["productC", "4"], [product, "1"]]
+		// ? [["productA", "3"], ["productB" , "5"], ["productC", "4"], [product, "1"]]
 		log(newCart) //TEMP
 		
 		// Reconcatenating the cart string
@@ -189,9 +189,9 @@ function addToCart(product, quantity = 1) {
 
 
 // Increasing the quantity of a product in the cart
-function cartProductQuantityIncrease(product, increaseNo = 1) {
-	// If no product name is provided, this function will break
-	if (!product) {
+function cartProductQuantityIncrease(interactiveProductsIndex, increaseNo = 1) {
+	// If no product is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
 		console.error("No product specified");
 		return;
 	}
@@ -212,20 +212,20 @@ function cartProductQuantityIncrease(product, increaseNo = 1) {
 	if (localStorage.getItem("cart") == null) {
 		log("cart empty in increase") //TEMP
 		// If the original cart is empty, create a subarray for the element and directly assign that as the cart itself
-		newProductSubarray = [product, increaseNo.toString()];
+		newProductSubarray = [interactiveProductsIndex, increaseNo.toString()];
 		// Converting the newProductSubarray to a string
 		newCart = newProductSubarray.join(",");
 		// Setting the newCart as the cart
 		localStorage.setItem("cart", newCart);
 	} else {
 		// Getting the current data of the cart
-		originalCart = getCartString();
+		originalCart = getCartArray();
 		
 		// Searching through the existing cart to check that there's already an instance (or multiple) of the product in there and getting the index of it in the cart array
-		productInCartIndex = checkCartForItem(originalCart, product);
+		productInCartIndex = checkCartForItem(originalCart, interactiveProductsIndex);
 		// If the product is NOT already in the cart, add a new instance instead of doing a quantity increase
 		if (productInCartIndex === false) {
-			addToCart(product, increaseNo);
+			addToCart(interactiveProductsIndex, increaseNo);
 			console.log("sent to add") //TEMP
 			return;
 		}
@@ -264,9 +264,9 @@ function cartProductQuantityIncrease(product, increaseNo = 1) {
 
 
 // Decreasing the quantity of a product in the cart
-function cartProductQuantityDecrease(product, decreaseNo = 1) {
-	// If no product name is provided, this function will break
-	if (!product) {
+function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
+	// If no product is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
 		console.error("No product specified");
 		return;
 	}
@@ -289,10 +289,10 @@ function cartProductQuantityDecrease(product, decreaseNo = 1) {
 		console.warn("Trying to decrease the quantity of an item which is not in the cart (cart is empty)")
 	} else {
 		// Getting the current data of the cart
-		originalCart = getCartString();
+		originalCart = getCartArray();
 		
 		// Searching through the existing cart to check that there's already an instance (or multiple) of the product in there
-		productInCartIndex = checkCartForItem(originalCart, product);
+		productInCartIndex = checkCartForItem(originalCart, interactiveProductsIndex);
 		// If the product is NOT already in the cart, nothing will happen (but a warning message will be sent to the console)
 		if (productInCartIndex === false) {
 			console.warn("Trying to decrease the quantity of an item which is not in the cart")
@@ -314,7 +314,7 @@ function cartProductQuantityDecrease(product, decreaseNo = 1) {
 
 		// If the new quantity is <=0 (ie, the decrease was greater than the existing quantity), just remove the product from the cart
 		if (newQuantity <= 0) {
-			removeFromCart(product);
+			removeFromCart(interactiveProductsIndex);
 			return;
 		}
 
@@ -339,9 +339,9 @@ function cartProductQuantityDecrease(product, decreaseNo = 1) {
 
 
 // Removing a product from the cart
-function removeFromCart(product) {
+function removeFromCart(interactiveProductsIndex) {
 	// If no product name is provided, this function will break
-	if (!product) {
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
 		console.error("No product specified");
 		return;
 	}
@@ -355,10 +355,10 @@ function removeFromCart(product) {
 		console.warn("Trying to remove a product which is not in the cart (cart is empty)")
 	} else {
 		// Getting the current data of the cart
-		originalCart = getCartString();
+		originalCart = getCartArray();
 		
 		// Searching through the existing cart to check that there's already an instance (or multiple) of the product in there
-		productInCartIndex = checkCartForItem(originalCart, product);
+		productInCartIndex = checkCartForItem(originalCart, interactiveProductsIndex);
 		// If the product is NOT already in the cart, nothing will happen (but a warning message will be sent to the console)
 		if (productInCartIndex === false) {
 			console.warn("Trying to remove a product which is not in the cart")
@@ -377,7 +377,133 @@ function removeFromCart(product) {
 		newCart = newCart.join(";");
 		log(newCart); //TEMP
 		
-		// Updating the cart to be the new cart
-		localStorage.setItem("cart", newCart);
+		// If the new cart is empty, remove the cart variable instead of updating it
+		if (newCart == "") {
+			localStorage.removeItem("cart");
+		} else {
+			// Otherwise, updating the cart to be the new cart
+			localStorage.setItem("cart", newCart);
+		}
 	}
+}
+
+
+
+// Getting which price per unit will be used for the calculation (it depends on bulk-buying)
+function getPerItemCost(priceList, quantity) {
+	if (priceList[1] == undefined) {
+		// If there are no bulk-buy options, just use the base price
+		return priceList[0];
+	} else {
+		// Going through from the highest offer down to see if the quantity fits in it
+		for (let i = priceList.length - 1; i > 0; i--) {
+			const offer = priceList[i];
+			let offerMinQuantity = priceList[i][0];
+			log(offerMinQuantity)//TEMP
+			if (quantity >= offerMinQuantity) {
+				log(priceList[i][1])//TEMP
+				return priceList[i][1];
+			}	
+		}
+
+		// If the quantity isn't high enough for a bulk-buy offer, it'll just use the regular price
+		return priceList[0];
+	}
+}
+
+
+
+// Calculating the total price of a product
+function calcProductTotalPrice(interactiveProductsIndex, quantity = 1) {
+	// If no product name is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
+		console.error("No product index specified");
+		return;
+	}
+	if (quantity < 1) {
+		console.error("Product quantity cannot be less than 1");
+		return;
+	}
+	if (!(Number.isInteger(quantity))) {
+		console.warn("A non-integer quantity was provided, so it has been rounded up");
+		quantity = roundUp(quantity);
+	}
+
+	const prices = interactiveProducts[interactiveProductsIndex][2];
+
+	// Getting the amount that each item will cost when factoring in bulk-buy offers
+	let perItemCost = getPerItemCost(prices, quantity);
+
+	// Calculating the total cost
+	let totalPrice = quantity * perItemCost;
+	log(totalPrice);//TEMP
+	return totalPrice;
+}
+
+
+
+// Refreshing the total of the product after the quantity has been updated
+function refreshProductTotalPrice(priceElement, interactiveProductsIndex, quantity, pricePerItemElement) {
+	// If no element is provided, this function will break
+	if (!priceElement) {
+		console.error("No element specified");
+		return;
+	}
+	// If no product name is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
+		console.error("No product index specified");
+		return;
+	}
+	if (quantity < 1) {
+		console.error("Product quantity cannot be less than 1");
+		return;
+	}
+	if (!(Number.isInteger(quantity))) {
+		console.warn("A non-integer quantity was provided, so it has been rounded up");
+		quantity = roundUp(quantity);
+	}
+
+	// Getting the new price
+	let newPrice = calcProductTotalPrice(interactiveProductsIndex, quantity);
+	
+	// Updating the price shown
+	priceElement.innerHTML = "$" + newPrice.toFixed(2);
+
+	// If also updating the price per item 
+	if (pricePerItemElement) {
+		// Getting the new price
+		let perItemPrice = getPerItemCost(interactiveProducts[interactiveProductsIndex][2], quantity);
+		
+		// Updating the price shown
+		pricePerItemElement.innerHTML = "$" + perItemPrice.toFixed(2);
+	}
+}
+
+
+
+// Getting the current total price of the cart
+function calcCartTotalPrice() {
+	let cartArray, runningTotal = 0;
+
+	// Checking to see if there's already a cart LS variable
+	if (localStorage.getItem("cart") == null) {
+		// If the cart is empty, the total value is $0.00
+		return 0;
+	} 
+
+	// Getting the current data of the cart
+	cartArray = getCartArray();
+
+	// Going through each cart item and getting its total price
+	for (let i = 0; i < cartArray.length; i++) {
+		// Getting the total price of this product
+		let thisProductTotal = calcProductTotalPrice(cartArray[i][0], cartArray[i][1]);
+		log(thisProductTotal)
+
+		// Updating the running total to include the price of this product
+		runningTotal += thisProductTotal;
+		log("running total:", runningTotal);
+	}
+
+	return runningTotal;
 }

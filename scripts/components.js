@@ -253,3 +253,51 @@
 		// Appending the content of the cont to the div of the product type the category falls under
 		$$("body").appendChild(cont);
 	}
+
+
+
+// Making the minus and plus buttons on the quantity input functional
+	function productQuantityDecrease(interactiveProductsIndex, affectsWhichPriceElement, affectsWhichPricePerItemElement) {
+		// This is the number input that's being affected
+		const numberInput = $$("#product-quantity-value--" + interactiveProductsIndex);
+		let minQuantity, currentQuantity, newQuantity;
+
+		if (numberInput.value == "") {
+			numberInput.value = 1;
+			newQuantity = 1;
+		} else {
+			minQuantity = parseInt(numberInput.min);
+			currentQuantity = parseInt(numberInput.value);
+			if (currentQuantity > minQuantity) {
+				newQuantity = currentQuantity - 1;
+				numberInput.value = newQuantity;
+			} else {
+				newQuantity = currentQuantity;
+			}
+		}
+
+		// Updating the price shown
+		refreshProductTotalPrice(affectsWhichPriceElement, interactiveProductsIndex, newQuantity, affectsWhichPricePerItemElement);
+	}
+	function productQuantityIncrease(interactiveProductsIndex, affectsWhichPriceElement, affectsWhichPricePerItemElement) {
+		// This is the number input that's being affected
+		const numberInput = $$("#product-quantity-value--" + interactiveProductsIndex);
+		let maxQuantity, currentQuantity, newQuantity;
+
+		if (numberInput.value == "") {
+			numberInput.value = 1;
+			newQuantity = 1;
+		} else {
+			maxQuantity = parseInt(numberInput.max);
+			currentQuantity = parseInt(numberInput.value);
+			if (currentQuantity < maxQuantity) {
+				newQuantity = currentQuantity + 1;
+				numberInput.value = newQuantity;
+			} else {
+				newQuantity = currentQuantity;
+			}
+		}
+
+		// Updating the price shown
+		refreshProductTotalPrice(affectsWhichPriceElement, interactiveProductsIndex, newQuantity, affectsWhichPricePerItemElement);
+	}

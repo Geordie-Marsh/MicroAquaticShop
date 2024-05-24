@@ -131,15 +131,17 @@
 			aspect-ratio: 1 / 1;
 			margin-right: var(--spacing-01);
 		}
+	
+	}
+
+	/* Buttons that only have an icon in them */
+	&.button--icon-only {
+		padding: var(--spacing-03);
 	}
 }
 
 
 
-/* Buttons that only have an icon in them */
-.button--icon-only {
-	padding: var(--spacing-03);
-}
 
 
 .button__action-symbol {
