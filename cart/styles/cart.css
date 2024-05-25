@@ -23,14 +23,21 @@
 	}
 
 	.cart-summary {
-		position: sticky;
-		top: var(--layout-05);
+		@media only screen and (min-width: 768px) {
+			position: sticky;
+			top: var(--spacing-03);
+		}
+		
+		@media only screen and (min-width: 1024px) {
+			top: var(--layout-05);
+		}
 	}
 	.cart-summary__subtotal {
 		align-items: center;
 	}
 	.cart-summary__checkout .button {
 		width: 100%;
+		text-align: center;
 	}
 
 
@@ -41,17 +48,17 @@
 	}
 	.cart-item__img {
 		/* The product's image */
-		height: calc(8 * var(--sizing-factor)); /* This image defines the width of the entire panel */
+		height: calc(7 * var(--sizing-factor)); /* This image defines the width of the entire panel */
 		object-fit: cover;
 		aspect-ratio: 1 / 1;
 		border-radius: var(--spacing-02);
 		box-shadow: var(--effect-shadow);
 		
-		@media only screen and (min-width: 480px) and (max-width: 1024px) {
+		@media only screen and (min-width: 480px) and (max-width: 768px) {
 			height: calc(12 * var(--sizing-factor)); /* This image defines the width of the entire panel */
 		}
 		
-		@media only screen and (min-width: 1024px) {
+		@media only screen and (min-width: 768px) {
 			height: calc(16 * var(--sizing-factor)); /* This image defines the width of the entire panel */
 		}
 	}

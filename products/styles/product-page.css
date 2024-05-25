@@ -2,7 +2,7 @@
 	.product-showcase {
 		flex-direction: column;
 
-		@media only screen and (min-width: 480px) {
+		@media only screen and (min-width: 768px) {
 			flex-direction: row;
 		}
 	}
@@ -23,13 +23,21 @@
 			aspect-ratio: 1 / 1;
 		}
 
-		@media only screen and (min-width: 480px) {
+		@media only screen and (min-width: 768px) {
 			width: calc(100vh - 6rem);
-			max-width: 60vw;
+			max-width: 50vw;
 			height: calc(100vh - 6rem);
-			max-height: 60vw;
-			top: var(--layout-05);
+			max-height: 50vw;
+			top: var(--spacing-03);
 			position: sticky;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			width: calc(100vh - 6rem);
+			max-width: 55vw;
+			height: calc(100vh - 6rem);
+			max-height: 55vw;
+			top: var(--layout-05);
 		}
 	}
 
