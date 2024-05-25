@@ -343,6 +343,7 @@
 		}
 
 		label {
+			width: 100%;
 			font-weight: var(--font-weight-normal);
 			margin-left: var(--spacing-01);
 			margin-top: 4px;
