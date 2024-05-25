@@ -74,6 +74,31 @@
 			const img = container.querySelector(".featured-product__img"); // Editing the image
 			img.setAttribute("src", "assets/images/" + featuredProducts[i][2] + ".jpg");
 
+			const cartButton = container.querySelector(".featured-product__button--cart");
+
+			// If the product is the tangerine tiger shrimp (the only one that's interactive), make it interactive
+			if (i == 0) {
+				// Make the view button direct to the product's page
+				const viewButton = container.querySelector(".featured-product__button--view");
+				viewButton.setAttribute("href", "products/" + interactiveProducts[0][0] + "/");
+	
+				// Make clicking anywhere on the product direct to the product's page
+				container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[0][0] + "/';");
+	
+				// Making the add to cart button add 1 of this product to the cart
+				cartButton.setAttribute("onclick", "addToCart(0);");
+			} else {
+				// Making the add to cart button display an alert that lists the product which are interactive
+				on(cartButton, "click", () => {
+					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+				})
+			}
+
+			// Stopping any propagation from happening on the add to cart button since its ancestor container has an onclick event and we don't want bubbling to occur
+			on(cartButton, "click", (event) => {
+				event.stopPropagation();
+			})
+
 			// Appending the content of the container to the featured products div
 			$$(".featured-products__list").appendChild(container);
 		}
