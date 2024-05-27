@@ -102,7 +102,9 @@
 		}
 
 		.order-details-cont {
-			padding-top: var(--layout-02);
+			gap: var(--layout-02);
+			padding-top: var(--layout-03);
+			margin-top: var(--layout-03);
 
 			@media only screen and (min-width: 768px) {
 				position: sticky;
@@ -112,6 +114,7 @@
 				box-shadow: none;
 				backdrop-filter: none;
 				padding: 0;
+				margin-top: 0;
 			}
 		}
 		.order-summary__discount {
@@ -132,4 +135,10 @@
 		}
 		.order-summary__checkout-button {
 			width: 100%;
+		}
+
+		body.footer-in-front {
+			@media only screen and (width < 768px) {
+				background-color: var(--clr-background-lt);
+			}
 		}
