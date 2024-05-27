@@ -41,3 +41,6 @@ function toStartCase(str) {
 	// Returning the joined string
 	return newStr; 
 }
+
+// Shortcut for adding a CSS rule (to the global scope)
+const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML = css;

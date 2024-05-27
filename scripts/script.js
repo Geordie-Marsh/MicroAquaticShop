@@ -19,19 +19,20 @@ function textFormClicked(clickedElement, clickedElementType) {
 
 	// Creating variables for the various elements of the form
 	const label = div.querySelector("label");
+	const img = div.querySelector("img.invalid-message");
+	const strong = div.querySelector("strong.invalid-message");
 	const input = (inputType == "select") ? 
 		div.querySelector("select") : 
 		div.querySelector("input");
 	
-	// Assigning style classes to the label and input to resize them and bring the input into view
+	// Assigning style classes to the label, input, and warning elements to resize them and bring the input into view
 	classAdd( label , "input--not-blank" );
+	classAdd( img , "input--not-blank" );
+	classAdd( strong , "input--not-blank" );
 	classAdd( input , "input--not-blank" );
 
 	// Putting the user's cursor and focus into the input so they can automatically start typing
 	input.focus();
-	if (inputType == "select") {
-		input.open();
-	}
 
 	// Adding an event listener for when the user clicks off/unfocuses this form
 	on(input, "focusout", () => {
@@ -39,10 +40,15 @@ function textFormClicked(clickedElement, clickedElementType) {
 		let inputValue = input.value;
 		
 		// If the input is currently empty, revert the entire div to its original state by removing the added classes
-		if (inputValue == "") {
-			classRemove( label, "input--not-blank" );
-			classRemove( input, "input--not-blank" );
-		}	
+		if (inputValue == "" && inputType !== "select") {
+			classRemove( label , "input--not-blank" );
+			classRemove( img , "input--not-blank" );
+			classRemove( strong , "input--not-blank" );
+			classRemove( input , "input--not-blank" );
+		} else {
+			// If the input isn't empty, check the form's validity and update the formatting accordingly
+			showInputValidity(input);
+		}
 	});
 }
 
@@ -52,17 +58,51 @@ function countryChanged(country) {
 	if (country == "australia") {
 		classRemove($$(".text-form--aus--apartment"), "display-none");
 		classRemove($$(".text-form--aus--state"), "display-none");
+		$$("#checkout__aus--state").required = true;
 		classRemove($$(".text-form--aus--city"), "display-none");
+		$$("#checkout__aus--city").required = true;
 		classAdd($$(".text-form--nz--suburb"), "display-none");
+		$$("#checkout__nz--suburb").required = false;
 		classAdd($$(".text-form--nz--city"), "display-none");
+		$$("#checkout__nz--city").required = false;
 	} else {
 		classAdd($$(".text-form--aus--apartment"), "display-none");
 		classAdd($$(".text-form--aus--state"), "display-none");
+		$$("#checkout__aus--state").required = false;
 		classAdd($$(".text-form--aus--city"), "display-none");
+		$$("#checkout__aus--city").required = false;
 		classRemove($$(".text-form--nz--suburb"), "display-none");
+		$$("#checkout__nz--suburb").required = true;
 		classRemove($$(".text-form--nz--city"), "display-none");
+		$$("#checkout__nz--city").required = true;
 	}
 }
+
+function showInputValidity(certainElement) {
+	if(certainElement) {
+		// If it's just checking validity for a certain element
+		// Finding the ancestor of the invalid input that contains the full input field
+		let parentDiv = certainElement.closest(".text-form");
+
+		// Assign the class to the respective field to show that it's invalid
+		classAdd(parentDiv, "text-form--checking");
+	} else {
+		// If it's checking validity for all fields
+		let allInputs = $$all(".text-form select, .text-form input");
+		log(allInputs)//TEMP
+
+		for (let i = 0; i < allInputs.length; i++) {
+			// Finding the ancestor of the invalid input that contains the full input field
+			const parentDiv = allInputs[i].closest(".text-form");
+			
+			// Assign the class to the respective field to show that it's invalid
+			classAdd(parentDiv, "text-form--checking");
+		}
+	}
+}
+
+
+
 
 
 // Opening and closing the fullscreen menu

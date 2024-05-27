@@ -24,7 +24,7 @@
 		<!-- The 'Shopping Cart' section -->
 		<section class="checkout-cont grid">
 			<!-- The payment details column -->
-			<section class="payment-details-cont flex--vertical no-padding">
+			<section class="payment-details-cont flex--vertical">
 				<!-- The title -->
 				<h2 class="payment-details__title">Payment</h2>
 
@@ -56,12 +56,18 @@
 					<h3 class="panel__title">Delivery</h3>
 
 					<!-- The delivery info collected -->
-					<form class="flex--vertical standard-spacing">
+					<form id="checkout-form" class="flex--vertical standard-spacing">
 						<!-- EMAIL -->
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__email">Email</label>
+							<div class="label-cont">
+								<label for="checkout__email">Email</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__email" id="checkout__email" onfocus="textFormClicked(this, 'input')"></div>
+							<div>
+								<input type="email" name="checkout__email" id="checkout__email" onfocus="textFormClicked(this, 'input')" required>
+							</div>
 						</div>
 
 						<!-- NEWSLETTER CHECKBOX -->
@@ -74,96 +80,158 @@
 						<div class="horizontal-text-form horizontal-text-form--name standard-spacing">
 							<!-- GIVEN NAME -->
 							<div class="text-form text-form--given-name" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__given-name">Given name</label>
+								<div class="label-cont">
+									<label for="checkout__given-name">Given name</label>
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="text" name="checkout__given-name" id="checkout__given-name" onfocus="textFormClicked(this, 'input')"></div>
+								<div>
+									<input type="text" name="checkout__given-name" id="checkout__given-name" onfocus="textFormClicked(this, 'input')" required>
+								</div>
 							</div>
 							<!-- FAMILY NAME -->
 							<div class="text-form text-form--family-name" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__family-name">Family name</label>
+								<div class="label-cont">
+									<label for="checkout__family-name">Family name</label>
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="text" name="checkout__family-name" id="checkout__family-name" onfocus="textFormClicked(this, 'input')"></div>
+								<div>
+									<input type="text" name="checkout__family-name" id="checkout__family-name" onfocus="textFormClicked(this, 'input')" required>
+								</div>
 							</div>
 						</div>
 
 						<!-- PHONE -->
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__phone">Phone number</label>
+							<div class="label-cont">
+								<label for="checkout__phone">Phone number</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__phone" id="checkout__phone" onfocus="textFormClicked(this, 'input')"></div>
+							<div><input type="tel" name="checkout__phone" id="checkout__phone" onfocus="textFormClicked(this, 'input')" minlength="8" maxlength="15" pattern="[0-9]+" required></div>
 						</div>
 
 						<!-- COUNTRY -->
 						<div class="text-form text-form--select" onclick="textFormClicked(this, 'div');">
-							<label class="text-form--select input--not-blank" for="checkout__country">Country</label>
+							<div class="label-cont">
+								<label class="text-form--select input--not-blank" for="checkout__country">Country</label>
+								<img class="invalid-message input--not-blank" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message input--not-blank">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><select class="input--not-blank" name="checkout__country" id="checkout__country" onfocus="textFormClicked(this, 'select')" value="australia" onchange="countryChanged(this.value);">
-								<option value="australia" selected>Australia</option>
-								<option value="new-zealand">New Zealand</option>
-							</select>
+							<div>
+								<select class="input--not-blank" name="checkout__country" id="checkout__country" onfocus="textFormClicked(this, 'select')" value="australia" onchange="countryChanged(this.value);" required>
+									<option value="australia" selected>Australia</option>
+									<option value="new-zealand">New Zealand</option>
+								</select>
 							</div>
 						</div>
 
 						<!-- ADDRESS -->
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__address">Address</label>
+							<div class="label-cont">
+								<label for="checkout__address">Address</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__address" id="checkout__address" onfocus="textFormClicked(this, 'input')"></div>
+							<div>
+								<input type="text" name="checkout__address" id="checkout__address" onfocus="textFormClicked(this, 'input')" required>
+							</div>
 						</div>
 						
 						<!-- APARTMENT - AUSTRALIA ONLY -->
 						<div class="text-form text-form--aus--apartment" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__apartment">Apartment, suice, etc. (optional)</label>
+							<div class="label-cont">
+								<label for="checkout__apartment">Apartment, suice, etc. (optional)</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__apartment" id="checkout__apartment" onfocus="textFormClicked(this, 'input')"></div>
+							<div>
+								<input type="text" name="checkout__apartment" id="checkout__apartment" onfocus="textFormClicked(this, 'input')">
+							</div>
 						</div>
 
 						<!-- SUBURB - NZ ONLY -->
 						<div class="text-form text-form--nz--suburb display-none" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__nz--suburb">Suburb or rural delivery number</label>
+							<div class="label-cont">
+								<label for="checkout__nz--suburb">Suburb</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__nz--suburb" id="checkout__nz--suburb" onfocus="textFormClicked(this, 'input')"></div>
+							<div>
+								<input type="text" name="checkout__nz--suburb" id="checkout__nz--suburb" onfocus="textFormClicked(this, 'input')">
+							</div>
 						</div>
 
 						<!-- CITY - AUSTRALIA ONLY -->
 						<div class="text-form text-form--aus--city" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__aus--city">City</label>
+							<div class="label-cont">
+								<label for="checkout__aus--city">City</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__aus--city" id="checkout__aus--city" onfocus="textFormClicked(this, 'input')"></div>
+							<div>
+								<input type="text" name="checkout__aus--city" id="checkout__aus--city" onfocus="textFormClicked(this, 'input')" required>
+							</div>
 						</div>
 						
 						<!-- Extra address details -->
 						<div class="horizontal-text-form horizontal-text-form--address-extras flex--horizontal standard-spacing">
 							<!-- CITY - NZ ONLY -->
 							<div class="text-form text-form--nz--city display-none" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__nz--city">City/Town</label>
+								<div class="label-cont">
+									<label for="checkout__nz--city">City/Town</label>
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="text" name="checkout__nz--city" id="checkout__nz--city" onfocus="textFormClicked(this, 'input')"></div>
+								<div>
+									<input type="text" name="checkout__nz--city" id="checkout__nz--city" onfocus="textFormClicked(this, 'input')">
+								</div>
 							</div>
 
 							<!-- STATE/TERRITORY - AUSTRALIA ONLY -->
 							<div class="text-form text-form--select text-form--aus--state" onclick="textFormClicked(this, 'div');">
-								<label class="text-form--select input--not-blank" for="checkout__aus--state">State/Territory</label>
+								<div class="label-cont">
+									<label class="text-form--select input--not-blank" for="checkout__aus--state">State/Territory</label>
+									<img class="invalid-message input--not-blank" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message input--not-blank">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><select class="input--not-blank" name="checkout__aus--state" id="checkout__aus--state" onfocus="textFormClicked(this, 'select')">
-									<option hidden disabled selected>Select and option</option>
-									<option value="act">ACT</option>
-									<option value="nsw">NSW</option>
-									<option value="nt">NT</option>
-									<option value="qld">QLD</option>
-									<option value="sa">SA</option>
-									<option value="tas">TA</option>
-									<option value="vic">VIC</option>
-									<option value="wa">WA</option>
-								</select>
+								<div>
+									<select class="input--not-blank" name="checkout__aus--state" id="checkout__aus--state" onfocus="textFormClicked(this, 'select')" required>
+										<option hidden readonly selected value="">Select and option</option>
+										<option value="act">ACT</option>
+										<option value="nsw">NSW</option>
+										<option value="nt">NT</option>
+										<option value="qld">QLD</option>
+										<option value="sa">SA</option>
+										<option value="tas">TA</option>
+										<option value="vic">VIC</option>
+										<option value="wa">WA</option>
+									</select>
 								</div>
 							</div>
 
 							<!-- POSTCODE -->
 							<div class="text-form text-form--postcode" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__postcode">Postcode</label>
+								<div class="label-cont">
+									<label for="checkout__postcode">Postcode</label>
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="text" name="checkout__postcode" id="checkout__postcode" onfocus="textFormClicked(this, 'input')"></div>
+								<div>
+									<input type="number" name="checkout__postcode" id="checkout__postcode" onfocus="textFormClicked(this, 'input')" min="1000" max="9999" required>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -181,49 +249,79 @@
 					<h3 class="panel__title">Payment</h3>
 
 					<!-- The delivery info collected -->
-					<form class="flex--vertical standard-spacing">
+					<fieldset form="checkout-form" class="card-details-cont flex--vertical standard-spacing">
 						<!-- CARD NUMBER -->
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__card-no">Card number</label>
+							<div class="label-cont">
+								<label for="checkout__card-no">Card number</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__card-no" id="checkout__card-no" onfocus="textFormClicked(this, 'input')"></div>
+							<div>
+								<input form="checkout-form" type="number" name="checkout__card-no" id="checkout__card-no" onfocus="textFormClicked(this, 'input')" min="1000000000000000" max="99999999999999999" step="1" required>
+							</div>
 						</div>
 
 						<!-- Card security -->
 						<div class="horizontal-text-form horizontal-text-form--card-security standard-spacing">
 							<!-- CARD MONTH -->
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__card-month">MM</label>
+								<div class="label-cont">
+									<label for="checkout__card-month">MM</label>
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="number" name="checkout__card-month" id="checkout__card-month" onfocus="textFormClicked(this, 'input')"></div>
+								<div>
+									<input form="checkout-form" type="text" name="checkout__card-month" id="checkout__card-month" onfocus="textFormClicked(this, 'input')" minlength="2" maxlength="2" pattern="[0][1-9]|[1][0-2]" required>
+								</div>
 							</div>
 							<!-- CARD YEAR -->
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__card-year">YY</label>
+								<div class="label-cont">
+									<label for="checkout__card-year">YY</label>
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="number" name="checkout__card-year" id="checkout__card-year" onfocus="textFormClicked(this, 'input')"></div>
+								<div>
+									<input form="checkout-form" type="number" name="checkout__card-year" id="checkout__card-year" onfocus="textFormClicked(this, 'input')" min="24" max="34" required>
+								</div>
 							</div>
 							<!-- FAMILY NAME -->
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__security-code">Security&nbsp;Code</label>
+								<div class="label-cont">
+									<label for="checkout__security-code">Security&nbsp;Code</label>
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<strong class="invalid-message">Invalid</strong>
+								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="number" name="checkout__security-code" id="checkout__security-code" onfocus="textFormClicked(this, 'input')"></div>
+								<div>
+									<input form="checkout-form" type="number" name="checkout__security-code" id="checkout__security-code" onfocus="textFormClicked(this, 'input')" min="100" max="9999" required>
+								</div>
 							</div>
 						</div>
 
 						<!-- CARD NAME -->
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
-							<label for="checkout__card-name">Name on card</label>
+							<div class="label-cont">
+								<label for="checkout__card-name">Name on card</label>
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<strong class="invalid-message">Invalid</strong>
+							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-							<div><input type="text" name="checkout__card-name" id="checkout__card-name" onfocus="textFormClicked(this, 'input')"></div>
+							<div>
+								<input form="checkout-form" type="text" name="checkout__card-name" id="checkout__card-name" onfocus="textFormClicked(this, 'input')" required>
+							</div>
 						</div>
 
 						<!-- BILLING ADDRESS CHECKBOX -->
 						<div class="checkbox-form">
-							<input type="checkbox" name="checkout__billing-address" id="checkout__billing-address" checked="true">
+							<input form="checkout-form" type="checkbox" name="checkout__billing-address" id="checkout__billing-address" checked="true">
 							<label for="checkout__billing-address">Use shipping address as billing address</label>
 						</div>
-					</form>
+					</fieldset>
 				</div>
 
 				<!-- The remember me panel -->
@@ -235,7 +333,7 @@
 					<form class="flex--vertical standard-spacing">
 						<!-- REMEMBER ME CHECKBOX -->
 						<div class="checkbox-form">
-							<input type="checkbox" name="checkout__remember" id="checkout__remember" checked="true">
+							<input form="checkout-form" type="checkbox" name="checkout__remember" id="checkout__remember" checked="true">
 							<label for="checkout__remember">Save my information for a faster checkout next time</label>
 						</div>
 					</form>
@@ -310,9 +408,9 @@
 					</div>
 
 					<!-- The checkout button -->
-					<a class="order-summary__checkout-button button button--cta" href="order-confirmation/">
+					<button form="checkout-form" class="order-summary__checkout-button button button--cta" onclick="showInputValidity();">
 						<span class="button__label">Pay Now</span>
-					</a>
+					</button>
 				</div>
 			</section>
 		</section>

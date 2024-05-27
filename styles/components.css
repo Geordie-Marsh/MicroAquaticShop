@@ -250,6 +250,28 @@
 			}
 		}
 
+		.label-cont {
+			display: flex;
+			flex-direction: row;
+			gap: var(--spacing-02);
+			transition: gap var(--effect-transition-duration) ease-in-out;
+
+			.invalid-message {
+				display: none;
+				margin-top: 4px;
+				transition: all var(--effect-transition-duration) ease-in-out;
+			}
+
+			img.invalid-message {
+				height: var(--spacing-05);
+			}
+
+			strong.invalid-message {
+				margin-top: 4px;
+				height: var(--spacing-03);
+			}
+		}
+
 		input,
 		select {
 			/* The input - this is hidden by default and becomes visible when in focus or there is text in it */
@@ -300,15 +322,40 @@
 			text-decoration: underline;
 		}
 	}
+	.text-form--checking:has(div input:invalid),
+	.text-form--checking:has(div select:invalid) {
+		/* The container of a fillable text field with an invalid value */
+		background: var(--clr-glass-gradient--button--invalid);
+		
+		label {
+			color: var(--clr-text--invalid);
+		}
+
+		.invalid-message {
+			display: block !important;
+		}
+	}
+	
+	.label-cont:has(.input--not-blank) {
+		gap: var(--spacing-01);
+	}
 	label.input--not-blank {
 		font-size: calc(0.7 * var(--font-size-factor));
 		margin-top: 0px;
 		filter: brightness(0.8);
 	}
+	img.input--not-blank {
+		height: calc(0.7 * var(--font-size-factor)) !important;
+		margin-top: 0 !important;
+	}
+	strong.input--not-blank {
+		font-size: calc(0.7 * var(--font-size-factor)) !important;
+		margin-top: 0px !important;
+	}
 	input.input--not-blank,
 	select.input--not-blank {
 		/* Used for when an input is currently focussed or has text in it */
-		transform: scaleY(1) translateY(0);
+		transform: scaleY(1) translateY(0) !important;
 	}
 
 	.checkbox-form {

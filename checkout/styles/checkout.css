@@ -81,12 +81,18 @@
 			margin-top: var(--layout-01);
 			padding: 0 var(--spacing-02);
 		}
+		.card-details-cont {
+			appearance: none;
+			border: none;
+			padding: 0;
+			width: 100%;
+			margin: 0;
+		}
 
 		.checkout-order-item {
 			/* The panel itself */
 			gap: var(--spacing-05);
 			align-items: center;
-			
 		}
 		.checkout-order-item__img {
 			/* The product's image */

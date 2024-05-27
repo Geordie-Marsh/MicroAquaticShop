@@ -8,6 +8,7 @@
 	--clr-text-dk:       #D3F0FD;
 	--clr-text-dkr:      #8CA7B2;
 	--clr-text-opposite: var(--clr-background-lt);
+	--clr-text--invalid: #fff1f1;
 
 	/* Background colour - deep navy */
 	--clr-background: #000f13;
@@ -48,6 +49,7 @@
 	--clr-glass-stroke: linear-gradient(to bottom right, #87b6cb, #00151C);
 	--clr-glass-gradient: linear-gradient(to bottom right, #4DA5C380, #153F4D40);
 	--clr-glass-gradient--button: linear-gradient(to bottom right, #c9fffc52, #c9fffc1f);
+	--clr-glass-gradient--button--invalid: linear-gradient(to bottom right, #ff8789a6, #6532389a);
 	--clr-glass-dk: linear-gradient(to bottom right, #366777, #081c23);
 
 	/* Gradients for buttons */
