@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wishlist | Micro Aquatic Shop</title>
+	<base href="../">
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="wishlist/styles/wishlist.css">
+</head>
+<body class="footer-in-front">
+	<!-- Contains all the sections of the homepage except the footer -->
+	<main>
+		<!-- The hero introductory section of the homepage -- GRADIENT section -->
+		<section class="hero section--highlighted section--hero">
+			<!-- The navbar header on the hero section -- when the user scrolls past this, it's replaced with one that is fixed (introduced with JS) -->
+			<header class="page-header flex--horizontal standard-spacing">
+				<!-- WEB COMPONENT INCLUDE -->
+			</header>
+		</section>
+
+		<!-- The 'Wishlist' section -->
+		<section class="wishlist">
+			<!-- The section title -->
+			<h2 class="wishlist__heading">Wishlist</h2>
+			
+			<!-- This contains all the wishlist elements (including the wishlist items and actions panel) -->
+			<div class="wishlist__cont grid standard-spacing">
+				<!-- This contains the wishlist items -->
+				<div class="wishlist-items grid standard-spacing">
+					<!-- When there are no items in the wishlist, this info banner saying there's nothing in the wishlist will be displayed -->
+					<div class="wishlist-items__empty-wishlist-message display-none">
+						<h4>Your wishlist is currently empty.</h4>
+						<p>Explore our diverse selection of fish and supplies to create your ideal underwater world.</p>
+					</div>
+
+					<!-- Items in the wishlist -->
+					<article id="wishlist-item--1" class="wishlist-item panel flex--horizontal">
+						<img class="wishlist-item__img" src="assets/images/shrimp-cherry-blue.jpg">
+						<div class="wishlist-item__info flex--vertical standard-spacing">
+							<div class="wishlist-item__top-bar flex--horizontal">
+								<h4 class="wishlist-item__title">Cherry Shrimp</h4>
+								<a onclick="removeFromWishlist('1');">
+									<img class="wishlist-item__close-icon" src="assets/icons/cross.svg" alt="">
+								</a>
+							</div>
+							<div class="wishlist-item__colour flex--horizontal standard-spacing">
+								<div class="wishlist-item__colour__swatch colour-swatch colour-swatch--blue"></div>
+								<p class="wishlist-item__colour__name">Blue</p>
+							</div>
+							<button class="wishlist-item__cart-button button button--secondary" onclick="wishlistToCart(1);">
+								<span class="button__label">Move to Cart</span>
+								<!-- TODO Add plus icons to add to cart buttons -->
+							</button>
+						</div>
+					</article>
+					<article id="wishlist-item--2" class="wishlist-item panel flex--horizontal">
+						<img class="wishlist-item__img" src="assets/images/shrimp-cherry-red.jpg">
+						<div class="wishlist-item__info flex--vertical standard-spacing">
+							<div class="wishlist-item__top-bar flex--horizontal">
+								<h4 class="wishlist-item__title">Cherry Shrimp</h4>
+								<a onclick="removeFromWishlist('2');">
+									<img class="wishlist-item__close-icon" src="assets/icons/cross.svg" alt="">
+								</a>
+							</div>
+							<div class="wishlist-item__colour flex--horizontal standard-spacing">
+								<div class="wishlist-item__colour__swatch colour-swatch colour-swatch--red"></div>
+								<p class="wishlist-item__colour__name">Red</p>
+							</div>
+							<button class="wishlist-item__cart-button button button--secondary" onclick="wishlistToCart(2);">
+								<span class="button__label">Move to Cart</span>
+								<!-- TODO Add plus icons to add to cart buttons -->
+							</button>
+						</div>
+					</article>
+					<article id="wishlist-item--3" class="wishlist-item panel flex--horizontal">
+						<img class="wishlist-item__img" src="assets/images/shrimp-ghost.jpg">
+						<div class="wishlist-item__info flex--vertical standard-spacing">
+							<div class="wishlist-item__top-bar flex--horizontal">
+								<h4 class="wishlist-item__title">Ghost Shrimp</h4>
+								<a onclick="removeFromWishlist('3');">
+									<img class="wishlist-item__close-icon" src="assets/icons/cross.svg" alt="">
+								</a>
+							</div>
+							<div class="wishlist-item__colour flex--horizontal standard-spacing">
+								<div class="wishlist-item__colour__swatch colour-swatch colour-swatch--translucent"></div>
+								<p class="wishlist-item__colour__name">Translucent</p>
+							</div>
+							<button class="wishlist-item__cart-button button button--secondary" onclick="wishlistToCart(3);">
+								<span class="button__label">Move to Cart</span>
+								<!-- TODO Add plus icons to add to cart buttons -->
+							</button>
+						</div>
+					</article>
+					<article id="wishlist-item--0" class="wishlist-item panel flex--horizontal">
+						<img class="wishlist-item__img" src="assets/images/shrimp-tangerine-tiger.jpg">
+						<div class="wishlist-item__info flex--vertical standard-spacing">
+							<div class="wishlist-item__top-bar flex--horizontal">
+								<h4 class="wishlist-item__title">Tangerine Tiger Shrimp</h4>
+								<a onclick="removeFromWishlist('0');">
+									<img class="wishlist-item__close-icon" src="assets/icons/cross.svg" alt="">
+								</a>
+							</div>
+							<div class="wishlist-item__colour flex--horizontal standard-spacing">
+								<div class="wishlist-item__colour__swatch colour-swatch colour-swatch--orange"></div>
+								<p class="wishlist-item__colour__name">Orange</p>
+							</div>
+							<button class="wishlist-item__cart-button button button--secondary" onclick="wishlistToCart(0);">
+								<span class="button__label">Move to Cart</span>
+								<!-- TODO Add plus icons to add to cart buttons -->
+							</button>
+						</div>
+					</article>
+				</div>
+
+				<!-- This contains the major actions and share panels -->
+				<div class="wishlist-summary flex--vertical standard-spacing">
+					<!-- The major action panel -->
+					<div class="wishlist-summary__major-actions panel panel--big-padding standard-spacing">
+						<a class="wishlist-summary__major-actions__move-all-button button button--cta" href="checkout/">
+							<span class="button__label">Move All to Cart</span>
+						</a>
+						<a class="wishlist-summary__major-actions__remove-all-button button button--secondary" href="categories/">
+							<span class="button__label">Remove All from Wishlist</span>
+						</a>
+					</div>
+					<!-- The share panel -->
+					<div class="wishlist-summary__share panel panel--big-padding standard-spacing">
+						<a class="wishlist-summary__share__button button button--secondary" href="checkout/">
+							<span class="button__label">Share Wishlist</span>
+							<img class="button__action-symbol--lg" src="assets/icons/share.svg" alt="Share">
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- TODO Add in recently viewed -->
+		
+		<!-- The 'Featured products' section -->
+		<section class="featured-products inner-section no-padding">
+			<!-- The section title -->
+			<h3>Featured Products</h3>
+			<!-- The horizontal list that contains all the featured products -->
+			<div class="featured-products-content">
+				<div class="featured-products__list flex--horizontal standard-spacing">
+					<!-- POPULATED BY JAVASCRIPT -->
+				</div>
+				<!-- TODO Make these buttons functional -->
+				<div class="carousel-button-cont carousel-button-cont--left">
+					<button class="button button--tertiary button--icon-only" aria-label="Left">
+						<img class="button__icon" src="assets/icons/arrow-left.svg">
+					</button>
+				</div>
+				<div class="carousel-button-cont carousel-button-cont--right">
+					<button class="button button--tertiary button--icon-only" aria-label="Right">
+						<img class="button__icon" src="assets/icons/arrow-right.svg">
+					</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	
+	<!-- The footer -->
+	<footer class="page-footer">
+		<!-- WEB COMPONENT INCLUDE -->
+	</footer>
+
+	<!-- Scripts -->
+	<script src="scripts/definitions.js"></script>
+	<script src="scripts/variables.js"></script>
+	<script src="scripts/components.js"></script>
+	<script src="scripts/script.js"></script>
+	<script src="wishlist/scripts/script.js"></script>
+</body>
+</html>

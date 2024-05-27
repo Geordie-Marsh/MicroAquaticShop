@@ -20,30 +20,30 @@
 
 .standard-spacing {
 	/* The normal spacing (gap) used by most flexboxes and grids */
-	gap: var(--spacing-03);
+	gap: var(--spacing-03) !important;
 }
 
 
 .no-padding{
 	/* Removes all padding from an element */
-	padding: 0;
+	padding: 0 !important;
 }
 .no-padding--horizontal {
 	/* Removes the horizontal padding from an element */
-	padding-left: 0;
-	padding-right: 0;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 
 .visibility-none {
-	visibility: hidden;
+	visibility: hidden !important;
 }
 .display-none {
-	display: none;
+	display: none !important;
 }
 
 .text-right {
-	text-align: right;
+	text-align: right !important;
 }
 
 

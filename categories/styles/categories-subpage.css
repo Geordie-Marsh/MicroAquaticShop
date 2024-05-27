@@ -102,7 +102,7 @@
 			flex-direction: row;
 		}
 	}
-	.button--filter {
+	.button.button--filter {
 		padding: var(--spacing-02) var(--spacing-03);
 
 		.colour-swatch {

@@ -54,26 +54,51 @@
 				const colourSwatch = container.querySelector(".product--listed__colour__swatch"); // Editing the colour name
 				colourSwatch.style.background = "var(--clr-primitive-" + listedProductsShrimp[i][3][1] + ")";
 
+				const wishlistButton = container.querySelector(".product--listed__button--heart");
 				const cartButton = container.querySelector(".product--listed__button--cart");
 
+
 				// If this product is an interactive product, make it interactive
-				if(listedProductsShrimp[i][4]) {
+				if(listedProductsShrimp[i][4] != null) {
 					// Make the view button direct to the product's page
 					const viewButton = container.querySelector(".product--listed__button--view");
 					viewButton.setAttribute("href", "products/" + listedProductsShrimp[i][4] + "/");
 
 					// Make clicking anywhere on the product direct to the product's page
-					container.setAttribute("onclick", "location.href = 'products/" + listedProductsShrimp[i][4] + "/';");
+					container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[listedProductsShrimp[i][4]][0] + "/';");
+
+					// Making the wishlist button toggle whether this product is in the wishlist
+					wishlistButton.setAttribute("onclick", "toggleWishlist(" + listedProductsShrimp[i][4] + ", this);");
+
+					// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
+					// Getting the current data of the wishlist
+					let wishlist = getWishlistArray();
+					// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
+					productInWishlistIndex = checkWishlistForItem(wishlist, listedProductsShrimp[i][4]);
+					// If in wishlist, change the heart symbol to be filled
+					if (productInWishlistIndex !== false) {
+						wishlistButton.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
+					}
 
 					// Making the add to cart button add 1 of this product to the cart
-					cartButton.setAttribute("onclick", "addToCart('" + listedProductsShrimp[i][4] + "');");
+					cartButton.setAttribute("onclick", "addToCart(" + listedProductsShrimp[i][4] + ");");
 				} else {
+					// Making the wishlist button display an alert that lists the product which are interactive
+					on(wishlistButton, "click", () => {
+						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+					});
+					
 					// Making the add to cart button display an alert that lists the product which are interactive
 					on(cartButton, "click", () => {
 						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
-					})
+					});
 				}
 
+
+				// Stopping any propagation from happening on the wishlist button since its ancestor container has an onclick event and we don't want bubbling to occur
+				on(wishlistButton, "click", (event) => {
+					event.stopPropagation();
+				})
 				// Stopping any propagation from happening on the add to cart button since its ancestor container has an onclick event and we don't want bubbling to occur
 				on(cartButton, "click", (event) => {
 					event.stopPropagation();

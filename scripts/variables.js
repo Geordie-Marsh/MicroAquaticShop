@@ -320,20 +320,22 @@ const listedProductsShrimp = [
 		"Cherry Shrimp", 
 		"$3.49",
 		"shrimp-cherry-red",
-		colourSwatches[0]
+		colourSwatches[0],
+		2
 	],
 	[
 		"Tangerine Tiger Shrimp", 
 		"$6.99",
 		"shrimp-tangerine-tiger",
 		colourSwatches[1],
-		interactiveProducts[0][0]
+		0
 	],
 	[
 		"Ghost Shrimp", 
 		"$4.49",
 		"shrimp-ghost",
-		colourSwatches[12]
+		colourSwatches[12],
+		3
 	],
 	[
 		"Cherry Shrimp", 
@@ -370,7 +372,7 @@ const listedProductsShrimp = [
 		"$9.99",
 		"shrimp-cherry-blue",
 		colourSwatches[4],
-		interactiveProducts[1][0]
+		1
 	],
 	[
 		"Wild Form Cherry Shrimp", 

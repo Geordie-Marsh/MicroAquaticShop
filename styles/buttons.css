@@ -151,6 +151,11 @@
 	height: var(--spacing-04);
 	margin-right: -4px;
 }
+.button__action-symbol--lg {
+	/* This is the large version of the icon that appears on the right side of the button, usually to aid in legibility and user flow, such as a right arrow */
+	height: var(--spacing-06);
+	margin-right: -4px;
+}
 
 /* Carousel buttons (left and right buttons for horizontal scrolling) */
 .carousel-button-cont {

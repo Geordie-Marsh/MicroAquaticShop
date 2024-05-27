@@ -25,9 +25,9 @@
 }
 .featured-product__button--heart,
 .featured-product__button--cart {
-	display: none;
+	display: none !important;
 
 	@media only screen and (min-width: 480px) {
-		display: inherit;
+		display: inherit !important;
 	}
 }

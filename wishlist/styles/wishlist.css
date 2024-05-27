@@ -1,0 +1,100 @@
+/* The wishlist section */
+	.wishlist__cont {
+		grid-template-columns: 100%;
+		align-items: start;
+		
+		/* @media only screen and (min-width: 480px) and (max-width: 1024px) {
+			grid-template-columns: 100%;
+		} */
+
+		@media only screen and (min-width: 768px) {
+			grid-template-columns: repeat(2, auto);
+		}
+	}
+
+	.wishlist-items__empty-wishlist-message {
+		width: 100%;
+		padding: var(--spacing-06);
+
+		* {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.wishlist-summary {
+		@media only screen and (min-width: 768px) {
+			position: sticky;
+			top: var(--spacing-03);
+		}
+		
+		@media only screen and (min-width: 1024px) {
+			top: var(--layout-05);
+		}
+	}
+	.wishlist-summary__subtotal {
+		align-items: center;
+	}
+	.wishlist-summary .button {
+		width: 100%;
+		text-align: center;
+	}
+
+
+	.wishlist-item {
+		/* The panel itself */
+		gap: var(--spacing-05);
+
+	}
+	.wishlist-item__img {
+		/* The product's image */
+		height: calc(10 * var(--sizing-factor)); /* This image defines the width of the entire panel */
+		object-fit: cover;
+		aspect-ratio: 1 / 1;
+		border-radius: var(--spacing-02);
+		box-shadow: var(--effect-shadow);
+		
+		@media only screen and (min-width: 480px) and (max-width: 768px) {
+			height: calc(12 * var(--sizing-factor)); /* This image defines the width of the entire panel */
+		}
+		
+		@media only screen and (min-width: 768px) {
+			height: calc(16 * var(--sizing-factor)); /* This image defines the width of the entire panel */
+		}
+	}
+	.wishlist-item__info {
+		width: 100%;
+		justify-content: space-between;
+		align-self: stretch;
+	}
+	.wishlist-item__top-bar {
+		justify-content: space-between;
+	}
+	.wishlist-item__title {
+		/* The product's name */
+		height: 100%;
+		margin-top: 3px;
+	}
+	.wishlist-item__close-icon {
+		height: var(--spacing-06);
+	}
+	.wishlist-item__buttons,
+	.wishlist-item__button--view,
+	.wishlist-item__button--wishlist {
+		width: 100%;
+	}
+	.wishlist-item__colour {
+		margin-bottom: var(--spacing-03);
+	}
+	.wishlist-item__colour__name {
+		margin: 0;
+		margin-top: 3px;
+	}
+	.wishlist-item__total {
+		margin-bottom: 5px;
+	}
+
+
+	.featured-products {
+		margin-bottom: var(--layout-05);
+	}	

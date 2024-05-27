@@ -82,6 +82,10 @@ function toggleFilters() {
 
 
 
+
+
+
+
 // Getting the current cart data
 function getCartArray() {
 	let cartData = localStorage.getItem("cart");
@@ -384,6 +388,9 @@ function removeFromCart(interactiveProductsIndex) {
 			// Otherwise, updating the cart to be the new cart
 			localStorage.setItem("cart", newCart);
 		}
+
+		// Refreshing the page
+		window.location.reload();
 	}
 }
 
@@ -449,7 +456,7 @@ function refreshProductTotalPrice(priceElement, interactiveProductsIndex, quanti
 		console.error("No element specified");
 		return;
 	}
-	// If no product name is provided, this function will break
+	// If no product is provided, this function will break
 	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
 		console.error("No product index specified");
 		return;
@@ -506,4 +513,185 @@ function calcCartTotalPrice() {
 	}
 
 	return runningTotal;
+}
+
+
+
+
+
+// Getting the current wishlist data
+function getWishlistArray() {
+	let wishlistData = localStorage.getItem("wishlist");
+	// ? "productA;productB;productC"
+	log(wishlistData); //TEMP
+
+
+	// Turning the wishlistData string into an array
+	wishlistData = wishlistData.split(";");
+	// ? ["productA", "product", "productC"]
+	log(wishlistData); //TEMP
+
+	return wishlistData;
+}
+
+// Checking if an item is already in the wishlist
+function checkWishlistForItem(wishlistArray, interactiveProductsIndex) {
+	for (let i = 0; i < wishlistArray.length; i++) {
+		// Getting the name of the existing product in the wishlist
+		const existingProduct = wishlistArray[i];
+		// Checking if the names of the new and existing product match
+		if (existingProduct == interactiveProductsIndex) {
+			// If the product is already in the wishlist, return the wishlist index
+			return i;
+		}
+	}
+	// If the product isn't already in the wishlist, return a falsey result
+	return false;
+}
+
+// Toggle whether an item is in the wishlist
+function toggleWishlist(interactiveProductsIndex, heartIconToChange) {
+	// If no product is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
+		console.error("No product index specified");
+		return;
+	}
+
+	// Setting up variables
+	let originalWishlist, productAlreadyInWishlist, newWishlist;
+
+	// Checking to see if there's already a wishlist LS variable
+	if (localStorage.getItem("wishlist") == null) {
+		log("wishlist empty in add") //TEMP
+		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
+		newWishlist = interactiveProductsIndex;
+		// Setting the newWishlist as the wishlist
+		localStorage.setItem("wishlist", newWishlist);
+
+		// Changing the heart icon to be filled
+		if (heartIconToChange) {
+			heartIconToChange.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
+		}
+	} else {
+		// Getting the current data of the wishlist
+		originalWishlist = getWishlistArray();
+		
+		// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
+		productAlreadyInWishlist = checkWishlistForItem(originalWishlist, interactiveProductsIndex);
+
+		// If the product is not already in the wishlist, add it; if it is, remove it
+		if (productAlreadyInWishlist === false) {
+			log("adding to wishlist from toggle");//TEMP
+			// Adding to wishlist
+			addToWishlist(interactiveProductsIndex);
+
+			// Changing the heart icon to be filled
+			if (heartIconToChange) {
+				heartIconToChange.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
+			}
+		} else {
+			log("removing from wishlist from toggle");//TEMP
+			// Removing from wishlist
+			removeFromWishlist(interactiveProductsIndex);
+
+			// Changing the heart icon to be unfilled
+			if (heartIconToChange) {
+				heartIconToChange.querySelector("img").setAttribute("src", "assets/icons/heart--dark.svg");
+			}
+		}
+	}
+}
+
+function addToWishlist(interactiveProductsIndex) {
+	// If no product is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
+		console.error("No product index specified");
+		return;
+	}
+	
+	// Setting up variables
+	let newProductSubarray, originalWishlist, productAlreadyInWishlist, newWishlist;
+	
+	// Checking to see if there's already a wishlist LS variable
+	if (localStorage.getItem("wishlist") == null) {
+		log("wishlist empty in add") //TEMP
+		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
+		newWishlist = interactiveProductsIndex;
+		// Setting the newWishlist as the wishlist
+		localStorage.setItem("wishlist", newWishlist);
+	} else {
+		// Getting the current data of the wishlist
+		originalWishlist = getWishlistArray();
+		log(originalWishlist);//TEMP
+
+		// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
+		productAlreadyInWishlist = checkWishlistForItem(originalWishlist, interactiveProductsIndex);
+
+		// If the product is already in the wishlist, send a warning and break this function
+		if (productAlreadyInWishlist !== false) {
+			console.warn("Item is already in the wishlist");//TEMP
+			return;
+		}
+
+		// Setting the new wishlist as the old one
+		newWishlist = originalWishlist;
+
+		// Pushing the new product as a new element in the wishlist array
+		newWishlist.push(interactiveProductsIndex);
+		log(newWishlist);//TEMP
+
+		// Converting the wishlist array back to a string
+		newWishlist = newWishlist.join(";");
+
+		// Setting the wishlist as newWishlist
+		localStorage.setItem("wishlist", newWishlist);
+	}
+}
+
+function removeFromWishlist(interactiveProductsIndex) {
+	// If no product is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
+		console.error("No product index specified");
+		return;
+	}
+
+	// Setting up variables
+	let newProductSubarray, originalWishlist, productInWishlistIndex, newWishlist;
+
+	// Checking to see if there's already a wishlist LS variable
+	if (localStorage.getItem("wishlist") == null) {
+		log("wishlist empty in add") //TEMP
+		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
+		newWishlist = interactiveProductsIndex;
+		// Setting the newWishlist as the wishlist
+		localStorage.setItem("wishlist", newWishlist);
+	} else {
+		// Getting the current data of the wishlist
+		originalWishlist = getWishlistArray();
+		log(originalWishlist);//TEMP
+
+		// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
+		productInWishlistIndex = checkWishlistForItem(originalWishlist, interactiveProductsIndex);
+
+		// If the product isn't already in the wishlist, send a warning and break this function
+		if (productInWishlistIndex === false) {
+			console.warn("Cannot remove an item not in the wishlist");//TEMP
+			return;
+		}
+
+		// Setting the new wishlist as the old one
+		newWishlist = originalWishlist;
+
+		// Removing the product in question from the array
+		newWishlist.splice(productInWishlistIndex, 1);
+		log(newWishlist) //TEMP
+
+		// Converting the wishlist array back to a string
+		newWishlist = newWishlist.join(";");
+
+		// Setting the wishlist as newWishlist
+		localStorage.setItem("wishlist", newWishlist);
+
+
+	}
 }

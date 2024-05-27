@@ -74,6 +74,7 @@
 			const img = container.querySelector(".featured-product__img"); // Editing the image
 			img.setAttribute("src", "assets/images/" + featuredProducts[i][2] + ".jpg");
 
+			const wishlistButton = container.querySelector(".featured-product__button--heart");
 			const cartButton = container.querySelector(".featured-product__button--cart");
 
 			// If the product is the tangerine tiger shrimp (the only one that's interactive), make it interactive
@@ -84,6 +85,19 @@
 	
 				// Make clicking anywhere on the product direct to the product's page
 				container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[0][0] + "/';");
+
+				// Making the wishlist button toggle whether this product is in the wishlist
+				wishlistButton.setAttribute("onclick", "toggleWishlist(0, this);");
+
+				// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
+				// Getting the current data of the wishlist
+				let wishlist = getWishlistArray();
+				// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
+				productInWishlistIndex = checkWishlistForItem(wishlist, 0);
+				// If in wishlist, change the heart symbol to be filled
+				if (productInWishlistIndex !== false) {
+					wishlistButton.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
+				}
 	
 				// Making the add to cart button add 1 of this product to the cart
 				cartButton.setAttribute("onclick", "addToCart(0);");
