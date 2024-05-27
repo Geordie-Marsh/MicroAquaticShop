@@ -98,3 +98,6 @@
 	.featured-products {
 		margin-bottom: var(--layout-05);
 	}	
+	.featured-product--hide {
+		display: none !important;
+	}

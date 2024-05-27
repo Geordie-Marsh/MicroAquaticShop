@@ -71,13 +71,19 @@
 					wishlistButton.setAttribute("onclick", "toggleWishlist(" + listedProductsShrimp[i][4] + ", this);");
 
 					// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
-					// Getting the current data of the wishlist
-					let wishlist = getWishlistArray();
-					// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
-					productInWishlistIndex = checkWishlistForItem(wishlist, listedProductsShrimp[i][4]);
-					// If in wishlist, change the heart symbol to be filled
-					if (productInWishlistIndex !== false) {
-						wishlistButton.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
+					// If the wishlist is empty, ignore this
+					if (localStorage.getItem("wishlist") != null && localStorage.getItem("cart") != undefined && localStorage.getItem("cart") != "") {
+						log("wishlist not empty")//TEMP
+						log(localStorage.getItem("wishlist"))
+						// Getting the current data of the wishlist
+						let wishlist = getWishlistArray();
+						// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
+						productInWishlistIndex = checkWishlistForItem(wishlist, listedProductsShrimp[i][4]);
+						// If in wishlist, change the heart symbol to be filled
+						if (productInWishlistIndex !== false) {
+							log(productInWishlistIndex, "made filled")
+							wishlistButton.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
+						}
 					}
 
 					// Making the add to cart button add 1 of this product to the cart

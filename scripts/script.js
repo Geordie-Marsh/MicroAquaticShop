@@ -151,7 +151,7 @@ function addToCart(interactiveProductsIndex, quantity = 1) {
 	newProductSubarray = [interactiveProductsIndex, quantity.toString()];
 
 	// Checking to see if there's already a cart LS variable
-	if (localStorage.getItem("cart") == null) {
+	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
 		log("cart empty in add") //TEMP
 		// If the original cart is empty, the newProductSubarray data can just be set as the cart itself
 		// Converting the newProductSubarray to a string
@@ -213,7 +213,7 @@ function cartProductQuantityIncrease(interactiveProductsIndex, increaseNo = 1) {
 	let newProductSubarray, originalCart, productInCartIndex, newCart, existingQuantity, newQuantity;
 	
 	// Checking to see if there's already a cart LS variable
-	if (localStorage.getItem("cart") == null) {
+	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
 		log("cart empty in increase") //TEMP
 		// If the original cart is empty, create a subarray for the element and directly assign that as the cart itself
 		newProductSubarray = [interactiveProductsIndex, increaseNo.toString()];
@@ -288,7 +288,7 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 	let originalCart, productInCartIndex, newCart, existingQuantity, newQuantity;
 	
 	// Checking to see if there's already a cart LS variable
-	if (localStorage.getItem("cart") == null) {
+	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
 		// If the cart is empty, nothing will happen (but a warning message will be sent to the console)
 		console.warn("Trying to decrease the quantity of an item which is not in the cart (cart is empty)")
 	} else {
@@ -354,7 +354,7 @@ function removeFromCart(interactiveProductsIndex) {
 	let originalCart, productInCartIndex, newCart;
 
 	// Checking to see if there's already a cart LS variable
-	if (localStorage.getItem("cart") == null) {
+	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
 		// If the cart is empty, nothing will happen (but a warning message will be sent to the console)
 		console.warn("Trying to remove a product which is not in the cart (cart is empty)")
 	} else {
@@ -493,7 +493,7 @@ function calcCartTotalPrice() {
 	let cartArray, runningTotal = 0;
 
 	// Checking to see if there's already a cart LS variable
-	if (localStorage.getItem("cart") == null) {
+	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
 		// If the cart is empty, the total value is $0.00
 		return 0;
 	} 
@@ -561,7 +561,7 @@ function toggleWishlist(interactiveProductsIndex, heartIconToChange) {
 	let originalWishlist, productAlreadyInWishlist, newWishlist;
 
 	// Checking to see if there's already a wishlist LS variable
-	if (localStorage.getItem("wishlist") == null) {
+	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
 		log("wishlist empty in add") //TEMP
 		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
 		newWishlist = interactiveProductsIndex;
@@ -613,7 +613,7 @@ function addToWishlist(interactiveProductsIndex) {
 	let newProductSubarray, originalWishlist, productAlreadyInWishlist, newWishlist;
 	
 	// Checking to see if there's already a wishlist LS variable
-	if (localStorage.getItem("wishlist") == null) {
+	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
 		log("wishlist empty in add") //TEMP
 		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
 		newWishlist = interactiveProductsIndex;
@@ -656,11 +656,11 @@ function removeFromWishlist(interactiveProductsIndex) {
 	}
 
 	// Setting up variables
-	let newProductSubarray, originalWishlist, productInWishlistIndex, newWishlist;
+	let originalWishlist, productInWishlistIndex, newWishlist;
 
 	// Checking to see if there's already a wishlist LS variable
-	if (localStorage.getItem("wishlist") == null) {
-		log("wishlist empty in add") //TEMP
+	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
+		log("wishlist empty in remove") //TEMP
 		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
 		newWishlist = interactiveProductsIndex;
 		// Setting the newWishlist as the wishlist
@@ -689,9 +689,47 @@ function removeFromWishlist(interactiveProductsIndex) {
 		// Converting the wishlist array back to a string
 		newWishlist = newWishlist.join(";");
 
-		// Setting the wishlist as newWishlist
-		localStorage.setItem("wishlist", newWishlist);
-
-
+		// If the new wishlist is empty, remove the wishlist variable instead of updating it
+		if (newWishlist == "") {
+			localStorage.removeItem("wishlist");
+		} else {
+			// Otherwise, updating the wishlist to be the new wishlist
+			localStorage.setItem("wishlist", newWishlist);
+		}
 	}
+}
+
+function removeAllFromWishlist() {
+	// Removing the wishlist variable
+	localStorage.removeItem("wishlist");
+
+	// Refreshing the page to update it
+	window.location.reload();
+}
+
+function moveAllFromWishlistToCart() {
+	// Checking to see that there's a wishlist LS variable
+	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
+		log("wishlist empty in move all") //TEMP
+		return;
+	}
+
+	// Setting up variables
+	let wishlist;
+
+	// Getting the current data of the wishlist
+	wishlist = getWishlistArray();
+	log(wishlist);//TEMP
+
+	// Going through the wishlist for each item 
+	for (let i = 0; i < wishlist.length; i++) {
+		// let interactiveProductsIndex = checkWishlistForItem(wishlist, i);
+		let interactiveProductsIndex = wishlist[i];
+		
+		// Adding this product to the cart
+		addToCart(interactiveProductsIndex);
+	}
+
+	// Removing all items from the wishlist
+	removeAllFromWishlist();
 }

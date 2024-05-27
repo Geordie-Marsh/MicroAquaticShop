@@ -119,19 +119,19 @@
 				<div class="wishlist-summary flex--vertical standard-spacing">
 					<!-- The major action panel -->
 					<div class="wishlist-summary__major-actions panel panel--big-padding standard-spacing">
-						<a class="wishlist-summary__major-actions__move-all-button button button--cta" href="checkout/">
+						<a class="wishlist-summary__major-actions__move-all-button button button--cta" href="cart/" onclick="moveAllFromWishlistToCart();">
 							<span class="button__label">Move All to Cart</span>
 						</a>
-						<a class="wishlist-summary__major-actions__remove-all-button button button--secondary" href="categories/">
+						<button class="wishlist-summary__major-actions__remove-all-button button button--secondary" onclick="removeAllFromWishlist();">
 							<span class="button__label">Remove All from Wishlist</span>
-						</a>
+						</button>
 					</div>
 					<!-- The share panel -->
 					<div class="wishlist-summary__share panel panel--big-padding standard-spacing">
-						<a class="wishlist-summary__share__button button button--secondary" href="checkout/">
+						<button class="wishlist-summary__share__button button button--secondary">
 							<span class="button__label">Share Wishlist</span>
 							<img class="button__action-symbol--lg" src="assets/icons/share.svg" alt="Share">
-						</a>
+						</button>
 					</div>
 				</div>
 			</div>
