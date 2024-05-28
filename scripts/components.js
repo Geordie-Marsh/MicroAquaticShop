@@ -74,13 +74,13 @@
 			const img = container.querySelector(".featured-product__img"); // Editing the image
 			img.setAttribute("src", "assets/images/" + featuredProducts[i][2] + ".jpg");
 
+			const viewButton = container.querySelector(".featured-product__button--view");
 			const wishlistButton = container.querySelector(".featured-product__button--heart");
 			const cartButton = container.querySelector(".featured-product__button--cart");
 
 			// If the product is the tangerine tiger shrimp (the only one that's interactive), make it interactive
 			if (i == 0) {
 				// Make the view button direct to the product's page
-				const viewButton = container.querySelector(".featured-product__button--view");
 				viewButton.setAttribute("href", "products/" + interactiveProducts[0][0] + "/");
 	
 				// Make clicking anywhere on the product direct to the product's page
@@ -95,8 +95,10 @@
 					log("wishlist not empty")//TEMP
 					// Getting the current data of the wishlist
 					let wishlist = getWishlistArray();
+
 					// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
 					productInWishlistIndex = checkWishlistForItem(wishlist, 0);
+					
 					// If in wishlist, change the heart symbol to be filled
 					if (productInWishlistIndex !== false) {
 						log(productInWishlistIndex, "made filled")
@@ -110,8 +112,12 @@
 				// Making the add to cart button add 1 of this product to the cart
 				cartButton.setAttribute("onclick", "addToCart(0);");
 			} else {
+				// Making the view button display an alert that lists the product which are interactive
+				on(viewButton, "click", () => {
+					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+				})
 				// Making the wishlist button display an alert that lists the product which are interactive
-				on(cartButton, "click", () => {
+				on(wishlistButton, "click", () => {
 					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
 				})
 				// Making the add to cart button display an alert that lists the product which are interactive
@@ -121,6 +127,9 @@
 			}
 
 			// Stopping any propagation from happening on the wishlist button since its ancestor container has an onclick event and we don't want bubbling to occur
+			on(viewButton, "click", (event) => {
+				event.stopPropagation();
+			})
 			on(wishlistButton, "click", (event) => {
 				event.stopPropagation();
 			})

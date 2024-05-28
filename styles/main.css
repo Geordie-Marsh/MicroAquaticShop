@@ -29,9 +29,9 @@
 	-webkit-user-drag: none;
 }
 
-/* Making the webpage not scroll horizontally */
 html {
-	overflow-x: hidden;
+	overflow-x: hidden; /* Making the webpage not scroll horizontally */
+	scroll-behavior: smooth; /* Making the webpage scroll smoothly to an element when required */
 }
 
 /* Making the body not have a margin by default */
@@ -39,6 +39,7 @@ body {
 	margin: 0;
 	background-color: var(--clr-background-lt);
 }
+/* If the page has a footer underneath a normal section (not a highlighted section), make the page background a different colour to give the illusion of switching which elements the border radius is on */
 body.footer-in-front {
 	background-color: var(--clr-background);
 }
