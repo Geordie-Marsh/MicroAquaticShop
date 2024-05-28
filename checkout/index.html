@@ -56,7 +56,7 @@
 					<h3 class="panel__title">Delivery</h3>
 
 					<!-- The delivery info collected -->
-					<form id="checkout-form" class="flex--vertical standard-spacing">
+					<form action="order-confirmation/" id="checkout-form" class="flex--vertical standard-spacing">
 						<!-- EMAIL -->
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
@@ -408,7 +408,7 @@
 					</div>
 
 					<!-- The checkout button -->
-					<button form="checkout-form" class="order-summary__checkout-button button button--cta" onclick="showInputValidity();">
+					<button type="submit" form="checkout-form" class="order-summary__checkout-button button button--cta" onclick="showInputValidity();" value="submit">
 						<span class="button__label">Pay Now</span>
 					</button>
 				</div>
