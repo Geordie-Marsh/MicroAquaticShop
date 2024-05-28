@@ -55,6 +55,7 @@
 				const colourSwatch = container.querySelector(".product--listed__colour__swatch"); // Editing the colour name
 				colourSwatch.style.background = "var(--clr-primitive-" + listedProductsShrimp[i][3][1] + ")";
 
+				const viewButton = container.querySelector(".product--listed__button--view");
 				const wishlistButton = container.querySelector(".product--listed__button--heart");
 				const cartButton = container.querySelector(".product--listed__button--cart");
 
@@ -62,7 +63,6 @@
 				// If this product is an interactive product, make it interactive
 				if(listedProductsShrimp[i][4] != null) {
 					// Make the view button direct to the product's page
-					const viewButton = container.querySelector(".product--listed__button--view");
 					viewButton.setAttribute("href", "products/" + listedProductsShrimp[i][4] + "/");
 
 					// Make clicking anywhere on the product direct to the product's page
@@ -90,14 +90,21 @@
 					// Making the add to cart button add 1 of this product to the cart
 					cartButton.setAttribute("onclick", "addToCart(" + listedProductsShrimp[i][4] + ");");
 				} else {
-					// Making the wishlist button display an alert that lists the product which are interactive
-					on(wishlistButton, "click", () => {
+					// Making clicking on the product itself display an alert that lists the product which are interactive
+					on(container, "click", () => {
 						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
 					});
-					
+					// Making the view button display an alert that lists the product which are interactive
+					on(viewButton, "click", () => {
+						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+					});
+					// Making the wishlist button display an alert that lists the product which are interactive
+					on(wishlistButton, "click", () => {
+						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
+					});
 					// Making the add to cart button display an alert that lists the product which are interactive
 					on(cartButton, "click", () => {
-						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
 					});
 				}
 

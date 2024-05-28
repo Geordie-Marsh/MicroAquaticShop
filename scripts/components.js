@@ -136,18 +136,22 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				// Making the add to cart button add 1 of this product to the cart
 				cartButton.setAttribute("onclick", "addToCart(0);");
 			} else {
+				// Making clicking on the product itself display an alert that lists the product which are interactive
+				on(container, "click", () => {
+					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+				});
 				// Making the view button display an alert that lists the product which are interactive
 				on(viewButton, "click", () => {
 					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
-				})
+				});
 				// Making the wishlist button display an alert that lists the product which are interactive
 				on(wishlistButton, "click", () => {
 					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
-				})
+				});
 				// Making the add to cart button display an alert that lists the product which are interactive
 				on(cartButton, "click", () => {
 					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
-				})
+				});
 			}
 
 			// Stopping any propagation from happening on the wishlist button since its ancestor container has an onclick event and we don't want bubbling to occur
@@ -222,7 +226,15 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 			img.setAttribute("src", "assets/icons/" + shoppingCategories[i][2] + ".png");
 
 			// Setting the href of the button if the category has a page
-			shoppingCategories[i][3] ? button.setAttribute("href", "/categories/" + shoppingCategories[i][3]) : null ;
+			shoppingCategories[i][3] ? 
+				button.setAttribute(
+					"href", 
+					"/categories/" + shoppingCategories[i][3]
+				) : 
+				button.setAttribute(
+					"onclick", 
+					`alert("Sorry, this category doesn't have functionality. The only category you can interact with is Shrimp");`
+				);
 
 			// Appending the content of the button to the div of the product type the category falls under
 			$$(".category-type__buttons-cont--" + shoppingCategories[i][0]).appendChild(button);
