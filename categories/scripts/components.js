@@ -15,7 +15,8 @@
 		})
 		.catch(error => {
 			// Logging any errors to the console
-			log("There was a problem with the fetch operation: ", error);
+			// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
+			console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
 		});
 
 	// The function for creating each element and adding it into the DOM
@@ -136,7 +137,8 @@
 		})
 		.catch(error => {
 			// Logging any errors to the console
-			log("There was a problem with the fetch operation: ", error);
+			// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
+			console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
 		});
 
 	// The function for creating each element and adding it into the DOM
