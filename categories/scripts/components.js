@@ -112,6 +112,9 @@
 
 			// Appending the content of the container to the featured products div
 			$$(".product-listing").appendChild(container);
+
+			// Sending a success message
+			log("Successfully generated the listed products");
 		}
 	}
 
@@ -159,13 +162,13 @@
 				classAdd(button, "button--filter");
 
 				// Replacing the default data of the element with that specific to the product in question
-					const label = button.querySelector(".button__label--text"); // Editing the title
-					label.textContent = filterList[i][0];
-					// Removing the colour swatch if it's not a colour filter (the colour swatch is on the filter by default so it is removed if it's not needed)
-					const colourSwatch = button.querySelector(".colour-swatch");
-					(filterList != filterColour)
-						? colourSwatch.remove()
-						: changeColourFilterSwatch() ;
+				const label = button.querySelector(".button__label--text"); // Editing the title
+				label.textContent = filterList[i][0];
+				// Removing the colour swatch if it's not a colour filter (the colour swatch is on the filter by default so it is removed if it's not needed)
+				const colourSwatch = button.querySelector(".colour-swatch");
+				(filterList != filterColour)
+					? colourSwatch.remove()
+					: changeColourFilterSwatch() ;
 				
 				// If it's a colour filter, change the colour swatch to the right colour
 				function changeColourFilterSwatch() {
@@ -173,14 +176,17 @@
 				}
 
 				// Appending the content of the button to the div
-					// Getting the ID specifier for the category div
-					let filterDivID = 
-						filterList == filterSubcategoryShrimp ? "sub-category" 
-							: filterList == filterPrice ? "price"
-							: filterList == filterAvailability ? "availability"
-							: "colour";
-					// Appending the content to the div this has just specified
-					$$("#product-filters__filter-type--" + filterDivID).appendChild(button);
+				// Getting the ID specifier for the category div
+				let filterDivID = 
+					filterList == filterSubcategoryShrimp ? "sub-category" 
+						: filterList == filterPrice ? "price"
+						: filterList == filterAvailability ? "availability"
+						: "colour";
+				// Appending the content to the div this has just specified
+				$$("#product-filters__filter-type--" + filterDivID).appendChild(button);
+
+				// Sending a success message
+				log("Successfully generated the filter buttons")
 			}
 		}
 	}
