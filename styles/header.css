@@ -95,8 +95,8 @@
 	padding: var(--spacing-02) 0;
 
 	&:hover .header__dropdown-menu {
-		visibility: visible;
-		opacity: 1;
+		display: flex;
+		/* opacity: 1; */
 	}
 }
 .navbar__drop-down__arrow {
@@ -108,6 +108,7 @@
 
 /* The dropdown menu */
 .header__dropdown-menu {
+	display: none;
 	/* This is the  */
 	position: absolute;
 	background: var(--clr-glass-dk);
@@ -120,13 +121,13 @@
 	padding: var(--spacing-07);
 	width: auto;
 	box-shadow: var(--effect-shadow-lg);
-	transition: opacity var(--effect-transition-duration), visibility var(--effect-transition-duration) cubic-bezier(1,.01,1,-0.1); /* This makes the fade-in and -out work  */
-	opacity: 0;
+	/* transition: opacity var(--effect-transition-duration), display var(--effect-transition-duration) cubic-bezier(1,.01,1,-0.1); This makes the fade-in and -out work  */
+	/* opacity: 0; */
 	z-index: 1000;
 	
 	&:hover {
-		visibility: visible;
-		opacity: 1;
+		display: flex;
+		/* opacity: 1; */
 	}
 }
 .header__dropdown-menu__list {
