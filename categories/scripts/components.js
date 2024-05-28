@@ -63,7 +63,7 @@
 				// If this product is an interactive product, make it interactive
 				if(listedProductsShrimp[i][4] != null) {
 					// Make the view button direct to the product's page
-					viewButton.setAttribute("href", "products/" + listedProductsShrimp[i][4] + "/");
+					viewButton.setAttribute("href", "products/" + interactiveProducts[listedProductsShrimp[i][4]][0] + "/");
 
 					// Make clicking anywhere on the product direct to the product's page
 					container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[listedProductsShrimp[i][4]][0] + "/';");
