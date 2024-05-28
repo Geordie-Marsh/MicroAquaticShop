@@ -54,7 +54,7 @@
 				<div class="delivery-details panel panel--highlighted-section standard-spacing">
 					<!-- The title -->
 					<h3 class="panel__title">Delivery</h3>
-
+					
 					<!-- The delivery info collected -->
 					<form action="order-confirmation/" id="checkout-form" class="flex--vertical standard-spacing">
 						<!-- EMAIL -->
@@ -145,15 +145,15 @@
 						</div>
 						
 						<!-- APARTMENT - AUSTRALIA ONLY -->
-						<div class="text-form text-form--aus--apartment" onclick="textFormClicked(this, 'div');">
+						<div class="text-form text-form--aus--address2" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
-								<label for="checkout__apartment">Apartment, suice, etc. (optional)</label>
+								<label for="checkout__aus--address2">Address line 2 (optional)</label>
 								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 							<div>
-								<input type="text" name="checkout__apartment" id="checkout__apartment" onfocus="textFormClicked(this, 'input')">
+								<input type="text" name="checkout__address2" id="checkout__address2" onfocus="textFormClicked(this, 'input')">
 							</div>
 						</div>
 

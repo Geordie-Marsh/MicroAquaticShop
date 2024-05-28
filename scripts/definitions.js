@@ -44,3 +44,6 @@ function toStartCase(str) {
 
 // Shortcut for adding a CSS rule (to the global scope)
 const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML = css;
+
+// Get a URL param
+const searchParams = new URLSearchParams(window.location.search);
