@@ -350,9 +350,9 @@
 			</section>
 
 			<!-- The order details column -->
-			<section class="order-details-cont flex--vertical section--highlighted">
+			<section class="order-details-cont section--highlighted">
 				<!-- The title -->
-				<h2 class="order-details__cont">Order Summary</h2>
+				<h2 class="order-details__heading">Order Summary</h2>
 
 				<!-- The items being checked out -->
 				<div class="order-details__items-list flex--vertical standard-spacing">
@@ -390,36 +390,38 @@
 				</div>
 
 				<!-- The order summary panel -->
-				<div class="order-summary panel panel--highlighted-section standard-spacing">
-					<!-- The discount code -->
-					<div class="order-summary__discount flex--horizontal standard-spacing">
-						<form class="flex--vertical standard-spacing">
-							<!-- DISCOUNT CODE -->
-							<div class="text-form" onclick="textFormClicked(this, 'div');">
-								<label for="checkout__discount-code">Discount code</label>
-								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-								<div><input type="text" name="checkout__discount-code" id="checkout__discount-code" onfocus="textFormClicked(this, 'input')"></div>
-							</div>
-						</form>
-						<button class="order-summary__discount__button button button--secondary">
-							<span class="button__label">Apply</span>
+				<div class="order-summary-cont flex--vertical">
+					<div class="order-summary panel panel--highlighted-section standard-spacing">
+						<!-- The discount code -->
+						<div class="order-summary__discount flex--horizontal standard-spacing">
+							<form class="flex--vertical standard-spacing">
+								<!-- DISCOUNT CODE -->
+								<div class="text-form" onclick="textFormClicked(this, 'div');">
+									<label for="checkout__discount-code">Discount code</label>
+									<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
+									<div><input type="text" name="checkout__discount-code" id="checkout__discount-code" onfocus="textFormClicked(this, 'input')"></div>
+								</div>
+							</form>
+							<button class="order-summary__discount__button button button--secondary">
+								<span class="button__label">Apply</span>
+							</button>
+						</div>
+	
+						<!-- The order price info -->
+						<div class="order-summary__info grid">
+							<strong>Subtotal</strong>
+							<p class="text-right order-summary__subtotal">$21.47</p>
+							<strong>Shipping</strong>
+							<p class="text-right">Enter shipping address</p>
+							<h3>Total</h3>
+							<h3 class="text-right order-summary__total">$21.47</h3>
+						</div>
+	
+						<!-- The checkout button -->
+						<button type="submit" form="checkout-form" class="order-summary__checkout-button button button--cta" onclick="showInputValidity();" value="submit">
+							<span class="button__label">Pay Now</span>
 						</button>
 					</div>
-
-					<!-- The order price info -->
-					<div class="order-summary__info grid">
-						<strong>Subtotal</strong>
-						<p class="text-right order-summary__subtotal">$21.47</p>
-						<strong>Shipping</strong>
-						<p class="text-right">Enter shipping address</p>
-						<h3>Total</h3>
-						<h3 class="text-right order-summary__total">$21.47</h3>
-					</div>
-
-					<!-- The checkout button -->
-					<button type="submit" form="checkout-form" class="order-summary__checkout-button button button--cta" onclick="showInputValidity();" value="submit">
-						<span class="button__label">Pay Now</span>
-					</button>
 				</div>
 			</section>
 		</section>

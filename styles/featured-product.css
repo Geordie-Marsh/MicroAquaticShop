@@ -13,6 +13,10 @@
 	@media only screen and (min-width: 480px) {
 		width: calc(11 * var(--sizing-factor)); /* This image defines the width of the entire panel */
 	}
+
+	@media only screen and (min-width: 1440px) {
+		width: 12vw;
+	}
 }
 .featured-product__title {
 	/* The product's name */

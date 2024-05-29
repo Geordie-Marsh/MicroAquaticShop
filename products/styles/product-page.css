@@ -1,6 +1,9 @@
 /* Product Showcase */
 	.product-showcase {
 		flex-direction: column;
+		max-width: var(--breakpoint-xl);
+		margin-left: auto;
+		margin-right: auto;
 
 		@media only screen and (min-width: 768px) {
 			flex-direction: row;
@@ -38,6 +41,10 @@
 			height: calc(100vh - 6rem);
 			max-height: 55vw;
 			top: var(--layout-05);
+		}
+		@media only screen and (min-width: 1440px) {
+			max-width: calc(50 * var(--sizing-factor));
+			max-height: calc(50 * var(--sizing-factor));
 		}
 	}
 
@@ -127,6 +134,7 @@
 	}
 	.quick-facts {
 		grid-template-columns: repeat(2, 1fr);
+		width: 100%;
 		
 		@media only screen and (min-width: 480px) {
 			grid-template-columns: repeat(3, 1fr);
@@ -150,6 +158,13 @@
 		width: var(--spacing-05);
 		aspect-ratio: 1 / 1;
 	}
+	.quick-facts,
+	.product-full-desc,
+	.product-shipping {
+		max-width: var(--breakpoint-xl-size);
+		margin-left: auto;
+		margin-right: auto;
+	}
 
 	.reviews-heading {
 		margin-top: var(--spacing-04);
@@ -164,6 +179,9 @@
 			" review-page-selector " auto /
 			  100%
 		;
+		max-width: var(--breakpoint-xl-size);
+		margin-left: auto;
+		margin-right: auto;
 
 		@media only screen and (min-width: 480px) and (max-width: 1024px) {
 			grid-template: 

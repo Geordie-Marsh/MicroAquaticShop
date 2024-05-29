@@ -2,6 +2,10 @@
 	.shopping-cart__cont {
 		grid-template-columns: 100%;
 		align-items: start;
+		width: 100%;
+		max-width: var(--breakpoint-xl-size);
+		margin-left: auto;
+		margin-right: auto;
 		
 		/* @media only screen and (min-width: 480px) and (max-width: 1024px) {
 			grid-template-columns: 100%;

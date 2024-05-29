@@ -6,8 +6,25 @@
 /* Hero section */
 	.hero-content__info {
 		gap: var(--layout-01);
+		margin-left: auto;
+		margin-right: auto;
 
 		p {
 			margin: 0;
+		}
+		
+		@media only screen and (min-width: 768px) {
+			/* The hero section's panel's width is relative to the viewport width */
+			width: 100%;
+			align-items: stretch;
+			
+			* {
+				text-align: center;
+			}
+		}
+		
+		@media only screen and (min-width: 1024px) {
+			width: 100%;
+			max-width: var(--breakpoint-xl-size);
 		}
 	}

@@ -36,6 +36,9 @@
 	.hero-content {
 		position: relative;
 		width: 100%;
+		max-width: var(--breakpoint-xl-size);
+		margin-left: auto;
+		margin-right: auto;
 	}
 	.hero-content__info {
 		width: 100%;
@@ -49,8 +52,8 @@
 			/* The hero section's panel's width is relative to the viewport width */
 			width: 70%;
 			padding-right: var(--layout-06);
-			
 			align-items: start;
+			padding-top: var(--layout-03);
 			
 			* {
 				text-align: left;
@@ -114,11 +117,17 @@
 
 /* Breadcrumb navigation */
 	.breadcrumbs-cont {
-		padding-top: 0;
-		padding-bottom: 0;
+		padding: 0 var(--layout-02);
 		margin-top: calc( -1 * var(--layout-01) );
 		margin-bottom: calc( -1 * var(--layout-01) );
 		gap: var(--spacing-02);
+		max-width: var(--breakpoint-xl);
+		margin-left: auto;
+		margin-right: auto;
+		
+		@media only screen and (min-width: 1024px) {
+			padding: 0 var(--layout-05);
+		}
 	}
 	.breadcrumb {
 		margin-top: 1px;
@@ -163,6 +172,11 @@
 
 
 /* Shop by category section */
+	.shop-by-category {
+		max-width: var(--breakpoint-xl);
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.shop-by-category__categories-cont {
 		grid-template-columns: 1fr;
 		

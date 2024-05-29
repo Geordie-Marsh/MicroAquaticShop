@@ -20,6 +20,10 @@
 /* Main content */
 	.products-finder-cont {
 		/* The section that contains all the stuff for finding products, including the filters and products listing */
+		max-width: var(--breakpoint-xl);
+		margin-left: auto;
+		margin-right: auto;
+
 		grid-template: 
 			" product-display-buttons " auto
 			" product-filters         " auto
@@ -84,6 +88,9 @@
 
 		@media only screen and (min-width: 1024px) {
 			width: calc(23 * var(--sizing-factor));
+			align-self: flex-start;
+			position: sticky;
+			top: var(--layout-05);
 		}
 	}
 	.products-finder-cont.filters-toggled-off .product-filters {

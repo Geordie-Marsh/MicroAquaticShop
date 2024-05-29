@@ -21,6 +21,11 @@
 		;
 		grid-template-columns: repeat(3, 1fr);
 	}
+
+	@media only screen and (min-width: 1440px) {
+		padding-left: calc((100vw - var(--breakpoint-xl-size)) / 2);
+		padding-right: calc((100vw - var(--breakpoint-xl-size)) / 2);
+	}
 }
 body.footer-in-front .page-footer {
 	background-color: var(--clr-background-lt);

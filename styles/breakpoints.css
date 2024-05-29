@@ -8,6 +8,8 @@
 	--breakpoint-n  : 768px;
 	/* Large devices - laptops/desktops, 1024px and up */
 	--breakpoint-l  : 1024px;
-	/* Extra large devices  - large laptops/desktops, 1600px and up */
-	--breakpoint-xl : 1600px;
+	/* Extra large devices  - large laptops/desktops, 1440px and up */
+	--breakpoint-xl : 1440px;
+		/* XL minus the standard padding either side */
+		--breakpoint-xl-size : calc(var(--breakpoint-xl) - 2 * var(--layout-05));
 }
