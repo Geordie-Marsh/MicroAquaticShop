@@ -31,6 +31,8 @@ function wishlistPageOnLoad() {
 		for (let i = 0; i < interactiveProducts.length; i++) {
 			classAdd($$("#wishlist-item--" + i), "display-none");
 		}
+
+		return;
 	}
 
 	// Getting the current data of the wishlist

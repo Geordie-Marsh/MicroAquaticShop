@@ -736,6 +736,9 @@ function removeFromWishlist(interactiveProductsIndex) {
 			// Otherwise, updating the wishlist to be the new wishlist
 			localStorage.setItem("wishlist", newWishlist);
 		}
+
+		// Refresh the page to update it
+		window.location.reload();
 	}
 }
 
