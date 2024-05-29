@@ -397,9 +397,15 @@
 							<form class="flex--vertical standard-spacing">
 								<!-- DISCOUNT CODE -->
 								<div class="text-form" onclick="textFormClicked(this, 'div');">
-									<label for="checkout__discount-code">Discount code</label>
+									<div class="label-cont">
+										<label for="checkout__discount-code">Discount code</label>
+										<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+										<strong class="invalid-message">Invalid</strong>
+									</div>
 									<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
-									<div><input type="text" name="checkout__discount-code" id="checkout__discount-code" onfocus="textFormClicked(this, 'input')"></div>
+									<div>
+										<input form="checkout-form" type="text" name="checkout__discount-code" id="checkout__discount-code" onfocus="textFormClicked(this, 'input')">
+									</div>
 								</div>
 							</form>
 							<button class="order-summary__discount__button button button--secondary">

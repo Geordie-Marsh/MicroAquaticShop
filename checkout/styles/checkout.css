@@ -30,7 +30,7 @@
 		.express-checkout__services {
 			/* grid-template-columns: repeat(2, 1fr); */
 			grid-template-columns: repeat(auto-fit, minmax(
-				calc( 14 * var(--sizing-factor) ),
+				calc( 14.6 * var(--sizing-factor) ),
 				1fr
 			));
 			width: 100%;
