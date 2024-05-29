@@ -112,6 +112,25 @@
 
 
 
+/* Breadcrumb navigation */
+	.breadcrumbs-cont {
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-top: calc( -1 * var(--layout-01) );
+		margin-bottom: calc( -1 * var(--layout-01) );
+		gap: var(--spacing-02);
+	}
+	.breadcrumb {
+		margin-top: 1px;
+	}
+	.breadcrumb-arrow {
+		height: var(--spacing-03);
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+
+
 
 /* Featured products section (not the featured products cards themselves as they're components) */
 	.featured-products-content {

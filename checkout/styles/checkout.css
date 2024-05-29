@@ -7,6 +7,10 @@
 		grid-template-columns: 7fr 5fr;
 		padding: 0 var(--spacing-03) var(--layout-05);
 	}
+	
+	@media only screen and (min-width: 1024px) {
+		padding: 0 var(--layout-05) var(--layout-05);
+	}
 }
 
 /* The payment details column */
@@ -22,7 +26,7 @@
 		.express-checkout__services {
 			/* grid-template-columns: repeat(2, 1fr); */
 			grid-template-columns: repeat(auto-fit, minmax(
-				calc( 11 * var(--sizing-factor) ),
+				calc( 14 * var(--sizing-factor) ),
 				1fr
 			));
 			width: 100%;
