@@ -245,8 +245,14 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 					}
 				}
 				
+
 				// Making the add to cart button add 1 of this product to the cart
-				cartButton.setAttribute("onclick", "addToCart(0);");
+				on(cartButton, "click", () => {
+					// Adding to cart
+					addToCart(0);
+					// Updating the button to confirm the user's action
+					updateAddToCartButton(cartButton, false);
+				});
 			} else {
 				// Making clicking on the product itself display an alert that lists the product which are interactive
 				on(container, "click", () => {
@@ -266,10 +272,11 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				});
 			}
 
-			// Stopping any propagation from happening on the wishlist button since its ancestor container has an onclick event and we don't want bubbling to occur
+			// Stopping any propagation from happening on the view button since its ancestor container has an onclick event and we don't want bubbling to occur
 			on(viewButton, "click", (event) => {
 				event.stopPropagation();
 			})
+			// Stopping any propagation from happening on the wishlist button since its ancestor container has an onclick event and we don't want bubbling to occur
 			on(wishlistButton, "click", (event) => {
 				event.stopPropagation();
 			})

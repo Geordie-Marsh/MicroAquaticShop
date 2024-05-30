@@ -114,7 +114,12 @@
 					}
 
 					// Making the add to cart button add 1 of this product to the cart
-					cartButton.setAttribute("onclick", "addToCart(" + listedProductsShrimp[i][4] + ");");
+					on(cartButton, "click", () => {
+						// Adding to cart
+						addToCart(listedProductsShrimp[i][4]);
+						// Updating the button to confirm the user's action
+						updateAddToCartButton(cartButton, false);
+					});
 				} else {
 					// Making clicking on the product itself display an alert that lists the product which are interactive
 					on(container, "click", () => {

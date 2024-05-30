@@ -160,6 +160,30 @@ function carouselScrolling(list, carouselButtons) {
 
 
 
+// Updating the add to cart button to confirm adding to the cart
+function updateAddToCartButton(button, revertButton = true) {
+	log("Changing add to cart button");//TEMP
+	// Saving the existing icon of the button
+	let oldIcon = button.querySelector("img").getAttribute("src");
+
+	// Updating the text
+	button.querySelector("span").innerHTML = "Added to Cart!";
+	// Updating the icon
+	button.querySelector("img").setAttribute("src", "assets/icons/tick--dark.svg");
+
+	// After a little bit of time, revert the button to its original state to indicate to the user that they can continue adding more to the cart (unless specific not to)
+	if (revertButton) {
+		setTimeout(() => {
+			// Updating the text
+			button.querySelector("span").innerHTML = "Add More to Cart";
+			// Updating the icon
+			button.querySelector("img").setAttribute("src", oldIcon);
+		}, 2500);
+	}
+	
+}
+
+
 
 
 
