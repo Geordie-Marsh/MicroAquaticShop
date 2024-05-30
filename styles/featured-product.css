@@ -1,6 +1,7 @@
 .featured-product {
 	/* The product panel itself */
 	scroll-snap-align: center; /* Making the featured products have snapped scrolling */
+	cursor: pointer;
 }
 .featured-product__img {
 	/* The product's image */
