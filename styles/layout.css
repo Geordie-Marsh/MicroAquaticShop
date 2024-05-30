@@ -63,9 +63,7 @@
 	}
 	.section--highlighted {
 		padding: var(--spacing-03);
-		/* padding-top: var(--spacing-07); */
 		border-radius: var(--layout-04);
-		/* background-color: var(--clr-gradients-aqua-dk); */ /* TODO make gradients */
 		background: url(/assets/backgrounds/gradient-background-desktop.svg);
 		background-size: cover;
 		box-shadow: var(--effect-highlighted-panel-shadow);

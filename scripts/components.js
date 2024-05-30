@@ -6,7 +6,7 @@ log("———————————————————————");
 // Providing a header for generating the components
 log("%cComponent generation statuses:", "font-weight: bold;");
 
-// TODO Include a check for if the page has this section first
+
 // Including the header
 	// If the page doesn't have a header section, don't run this function
 	if (!$$(".page-header")) {
