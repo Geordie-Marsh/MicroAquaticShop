@@ -99,9 +99,7 @@
 							<img src="assets/icons/minus.svg" alt="">
 						</button>
 						<div class="quantity-input__segment quantity-input__segment--number flex--vertical">
-							<form action="">
-								<input id="product-quantity-value--3" type="number" min="1" max="1000" value="1" onkeydown="if(event.key==='.'){event.preventDefault();}" onchange="refreshProductTotalPrice($$('.product-summary__price'), 3, this.value);">
-							</form>
+							<input id="product-quantity-value--3" type="number" min="1" max="1000" value="1" onkeydown="if(event.key==='.'){event.preventDefault();}" onchange="refreshProductTotalPrice($$('.product-summary__price'), 3, this.value);">
 						</div>
 						<button class="quantity-input__segment quantity-input__segment--plus button button--only-functionality flex--vertical" onclick="productQuantityIncrease(3, $$('.product-summary__price'));">
 							<img src="assets/icons/plus.svg" alt="">
