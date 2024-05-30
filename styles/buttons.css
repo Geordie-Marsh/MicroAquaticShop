@@ -164,6 +164,7 @@
 	top: 0;
 	display: flex;
 	align-items: center;
+	transition: opacity var(--effect-transition-duration) linear;
 }
 .carousel-button-cont--left {
 	left: var(--layout-05);

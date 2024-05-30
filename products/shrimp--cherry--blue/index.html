@@ -355,17 +355,17 @@
 			<h3>Featured Products</h3>
 			<!-- The horizontal list that contains all the featured products -->
 			<div class="featured-products-content">
-				<div class="featured-products__list flex--horizontal standard-spacing">
+				<div class="featured-products__list flex--horizontal standard-spacing" onscroll="featuredProductsScrolling()">
 					<!-- POPULATED BY JAVASCRIPT -->
 				</div>
 				<!-- TODO Make these buttons functional -->
 				<div class="carousel-button-cont carousel-button-cont--left">
-					<button class="button button--tertiary button--icon-only" aria-label="Left">
+					<button class="button button--tertiary button--icon-only" aria-label="Left" onclick="featuredProductsScrollLeft();">
 						<img class="button__icon" src="assets/icons/arrow-left.svg">
 					</button>
 				</div>
 				<div class="carousel-button-cont carousel-button-cont--right">
-					<button class="button button--tertiary button--icon-only" aria-label="Right">
+					<button class="button button--tertiary button--icon-only" aria-label="Right" onclick="featuredProductsScrollRight();">
 						<img class="button__icon" src="assets/icons/arrow-right.svg">
 					</button>
 				</div>

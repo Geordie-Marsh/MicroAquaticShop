@@ -41,6 +41,9 @@
 .display-none {
 	display: none !important;
 }
+.opacity-none {
+	opacity: 0 !important;
+}
 
 .text-right {
 	text-align: right !important;

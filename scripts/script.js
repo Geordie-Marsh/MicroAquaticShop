@@ -122,6 +122,33 @@ function toggleFilters() {
 
 
 
+function featuredProductsScrollLeft() {
+	log("scrolling left")//TEMP
+	$$(".featured-products__list").scrollLeft -= 250;
+}
+function featuredProductsScrollRight() {
+	log("scrolling right")//TEMP
+	$$(".featured-products__list").scrollLeft += 250;
+}
+
+function featuredProductsScrolling() {
+	let list = $$(".featured-products__list")
+	log(list.scrollLeft)
+	if (list.scrollLeft < 50) {
+		classAdd($$(".carousel-button-cont--left"), "opacity-none");
+	} else {
+		classRemove($$(".carousel-button-cont--left"), "opacity-none");
+	}
+	let maxScrollLeft = list.scrollWidth - list.clientWidth;
+	if (list.scrollLeft > (maxScrollLeft - 50)) {
+		classAdd($$(".carousel-button-cont--right"), "opacity-none");
+	} else {
+		classRemove($$(".carousel-button-cont--right"), "opacity-none");
+	}
+}
+
+
+
 
 
 
