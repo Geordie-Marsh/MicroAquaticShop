@@ -17,6 +17,32 @@
 			// Logging any errors to the console
 			// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
 			console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+			let html = `
+				<!-- This is added into an <article> with the classes "product--listed", "flex--vertical" and "standard-spacing" -->
+				<img class="product--listed__img">
+				<h4 class="product--listed__title"></h4>
+				<div class="product--listed__colour flex--horizontal standard-spacing">
+					<div class="product--listed__colour__swatch colour-swatch"></div>
+					<p class="product--listed__colour__name"></p>
+				</div>
+				<div>
+					<h3 class="product--listed__price"></h3>
+				</div>
+				<div class="product--listed__buttons flex--horizontal standard-spacing">
+					<a class="product--listed__button--view button button--secondary no-padding--horizontal" aria-label="View">
+						<span class="button__label">View</span>
+						<img src="assets/icons/arrow-right.svg" class="button__action-symbol" alt="Right arrow icon">
+					</a>
+					<button class="product--listed__button--heart button button--secondary button--icon-only" aria-label="Toggle Wishlist">
+						<img class="button__icon" src="assets/icons/heart--dark.svg" alt="Heart">
+					</button>
+				</div>
+				<button class="product--listed__button--cart button button--primary no-padding--horizontal stop-propagation" aria-label="Add to Cart">
+					<span class="button__label">Add to Cart</span>
+					<img src="assets/icons/arrow-right.svg" class="button__action-symbol" alt="Right arrow icon">
+				</button>
+			`;
+			includeListedProducts(html);
 		});
 
 	// The function for creating each element and adding it into the DOM
@@ -146,6 +172,12 @@
 			// Logging any errors to the console
 			// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
 			console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+			let html = `
+				<!-- This is added into <button> with the classes "filter", "flex", "flex--vertical" and "flex--justify-between" -->
+				<div class="colour-swatch button__icon--colour"></div>
+				<span class="button__label--text"></span>
+			`;
+			includeFilters(html);
 		});
 
 	// The function for creating each element and adding it into the DOM

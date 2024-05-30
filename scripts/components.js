@@ -31,6 +31,96 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				// Logging any errors to the console
 				// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
 				console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+				let html = `
+					<!-- This is added into a <header> on the respective page with the classes "page-header", "flex--horizontal" and "standard-spacing" -->
+					<div class="collapsed-navbar flex--horizontal">
+						<img onclick="openFullscreenMenu();" class="collapsed-navbar__icon" src="assets/icons/hamburger.svg" alt="Menu">
+						<img class="collapsed-navbar__icon" src="assets/icons/search.svg" alt="Magnifying glass">
+					</div>
+					
+					<!-- The logo and brand name -->
+					<a class="logo grid standard-spacing" href="">
+						<img src="assets/icons/logo.svg" alt="The brand logo">
+						<h4>Micro Aquatic Shop</h4>
+					</a>
+					
+
+					<!-- The navbar -->
+					<div class="navbar flex--horizontal">
+						<!-- Search icon -->
+						<img class="navbar__icon" src="assets/icons/search.svg" alt="Magnifying glass">
+
+						<!-- Divider -->
+						<!-- TODO replace dividers with SVGs -->
+						<div class="header-divider"></div>
+
+						<!-- Pages -->
+						<!-- Home page -->
+						<a class="link" href="">Home</a>
+						<!-- Shop page/dropdown -->
+						<div class="navbar__drop-down flex--horizontal">
+							<a class="link" href="categories/">Shop</a>
+							<img class="navbar__drop-down__arrow" src="assets/icons/arrow-down.svg" alt="Down arrow">
+							<div class="header__dropdown-menu panel flex--horizontal">
+								<div class="header__dropdown-menu__list flex--vertical">
+									<h4>Discover</h4>
+									<a class="link">Featured products</a>
+									<a class="link">New arrivals</a>
+									<a class="link">Best sellers</a>
+									<a class="link"><strong>ON SALE</strong></a>
+								</div>
+								<div class="header__dropdown-menu__list flex--vertical">
+									<h4>Animals</h4>
+									<a class="link" href="categories/shrimp/">Shrimp</a>
+									<a class="link">Fish</a>
+									<a class="link">Snails</a>
+									<a class="link">Algae Eaters</a>
+								</div>
+								<div class="header__dropdown-menu__list flex--vertical">
+									<h4>Aquascaping</h4>
+									<a class="link">Plants</a>
+									<a class="link">Bonsai</a>
+									<a class="link">Décor</a>
+									<a class="link">Flooring</a>
+								</div>
+								<div class="header__dropdown-menu__list flex--vertical">
+									<h4>Supplies</h4>
+									<a class="link">Tanks</a>
+									<a class="link">Accessories</a>
+									<a class="link">Tools</a>
+									<a class="link">Food</a>
+								</div>
+							</div>
+						</div>
+						<!-- Blog page -->
+						<a class="link">Blog</a>
+						<!-- About page/dropdown -->
+						<div class="navbar__drop-down flex--horizontal">
+							<a class="link">About</a>
+							<img class="navbar__drop-down__arrow" src="assets/icons/arrow-down.svg" alt="Down arrow">
+						</div>
+
+						<!-- Divider -->
+						<div class="header-divider"></div>
+						
+						<!-- Link to login or account page -->
+						<a class="link">Login &#47; Sign up</a>
+
+						<!-- Divider -->
+						<div class="header-divider"></div>
+
+						<!-- Wishlist and cart icons -->
+						<div class="navbar__purchasing-icons flex--horizontal standard-spacing">
+							<a href="wishlist/">
+								<img class="navbar__icon" src="assets/icons/heart.svg" alt="Wishlist">
+							</a>
+							<a href="cart/">
+								<img class="navbar__icon" src="assets/icons/shopping-bag.svg" alt="Shopping bag">
+							</a>
+						</div>
+					</div>
+				`;
+				includeHeader(html);
 			});
 	}
 	// The function for creating the header and adding it into the DOM
@@ -71,6 +161,28 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				// Logging any errors to the console
 				// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
 				console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+				let html = `
+					<!-- This is added into an <article> with the classes "featured-product", "flex--vertical" and "standard-spacing" -->
+					<img class="featured-product__img">
+					<strong class="featured-product__title"></strong>
+					<div>
+						<h4 class="featured-product__price"></h4>
+					</div>
+					<div class="featured-product__buttons flex--horizontal standard-spacing">
+						<a class="featured-product__button--view button button--secondary no-padding--horizontal" aria-label="View">
+							<span class="button__label">View</span>
+							<img src="assets/icons/arrow-right.svg" class="button__action-symbol" alt="Right arrow icon">
+						</a>
+						<button class="featured-product__button--heart button button--secondary button--icon-only" aria-label="Toggle Wishlist">
+							<img class="button__icon" src="assets/icons/heart--dark.svg" alt="Heart">
+						</button>
+					</div>
+					<button class="featured-product__button--cart button button--primary no-padding--horizontal" aria-label="Add to Cart">
+						<span class="button__label">Add to Cart</span>
+						<img src="assets/icons/arrow-right.svg" class="button__action-symbol" alt="Right arrow icon">
+					</button>
+				`;
+				includeFeaturedProducts(html);
 			});
 	}
 
@@ -202,6 +314,13 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				// Logging any errors to the console
 				// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
 				console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+				let html = `
+					<!-- This is added into <button> with the classes "featured-product", "flex", "flex--vertical" and "flex--justify-between" -->
+					<img class="button__logo">
+					<span class="button__label--text strong"></span>
+					<img src="assets/icons/arrow-right.svg" class="button__action-symbol">
+				`;
+				includeShoppingCategories(html);
 			});
 	}
 	// The function for creating each element and adding it into the DOM
@@ -272,6 +391,19 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				// Logging any errors to the console
 				// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
 				console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+				let html = `
+					<!-- This is added into an <article> with the classes "homepage-review", "flex--vertical" and "standard-spacing" -->
+					<h4 class="homepage-review__name"></h4>
+					<div class="homepage-review__stars-cont flex--horizontal">
+						<img src="assets/icons/star.svg" class="homepage-review__stars-cont__star">
+						<img src="assets/icons/star.svg" class="homepage-review__stars-cont__star">
+						<img src="assets/icons/star.svg" class="homepage-review__stars-cont__star">
+						<img src="assets/icons/star.svg" class="homepage-review__stars-cont__star">
+						<img src="assets/icons/star.svg" class="homepage-review__stars-cont__star">
+					</div>
+					<p class="homepage-review__text"></p>
+				`;
+				includeHomepageReviews(html);
 			});
 	}
 	// The function for creating each element and adding it into the DOM
@@ -336,6 +468,55 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				// Logging any errors to the console
 				// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
 				console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+				let html = `
+					<!-- This is added into a <footer> on the respective page with the classes "page-footer" and "grid" -->
+					<!-- The logo and brand name -->
+					<a class="logo logo--footer grid standard-spacing" href="">
+						<img src="assets/icons/logo.svg" alt="The brand logo">
+						<h2>Micro Aquatic Shop</h2>
+					</a>
+				
+					<div class="footer-list footer-list--policies flex--vertical">
+						<h4>Our Policies</h4>
+						<a class="link">Privacy Policy</a>
+						<a class="link">Shipping Policy</a>
+						<a class="link">Refund & Return Policy</a>
+						<a class="link">Terms & Conditions</a>
+						<a class="link">Billing Terms & Conditions</a>
+						<a class="link">Data Protection Policy</a>
+						<a class="link">Stock Control Policy</a>
+						<a class="link">RSPCA Policy</a>
+					</div>
+					<div class="footer-list footer-list--links flex--vertical">
+						<h4>Useful Links</h4>
+						<a class="link">FAQs</a>
+						<a class="link">Contact Us</a>
+						<a class="link">Support Services</a>
+						<a class="link">Affiliate Program</a>
+						<a class="link">About Us</a>
+					</div>
+					<div class="footer-list footer-list--contact flex--vertical">
+						<h4>Contact Details</h4>
+						<p><strong>Address:</strong> <a class="link">Unit 15, 2-8 Daniel St,<br>Wetherill Park NSW 2164</a></p>
+						<p><strong>Phone:</strong> <a class="link">(02) 8320 3037</a></p>
+						<p><strong>Email:</strong> <a class="link">support@&#8203;microaquaticshop&#8203;.com.au</a></p>
+					</div>
+				
+					<div class="footer-copyright-bar panel">
+						<p class="footer-copyright-bar__copyright">© 2024 Micro Aquatic Shop. All rights reserved.</p>
+						<div class="footer-copyright-bar__cards grid standard-spacing">
+							<img src="assets/icons/card-visa.svg">
+							<img src="assets/icons/card-mastercard.svg">
+							<img src="assets/icons/card-maestro.svg">
+							<img src="assets/icons/card-amex.svg">
+							<img src="assets/icons/card-shop.svg">
+							<img src="assets/icons/card-paypal.svg">
+							<img src="assets/icons/card-apple.svg">
+							<img src="assets/icons/card-google.svg">
+						</div>
+					</div>
+				`;
+				includeFooter(html);
 			});
 	}
 
@@ -366,8 +547,57 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 		})
 		.catch(error => {
 			// Logging any errors to the console
-				// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
-				console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+			// Since the website needs to be openable in a local file instead of being hosted on a server, CORS issues arise. So, for the purposes of this assignment, the website will first try to fetch the HTML from the local component file like it would normally, but if it's unsuccessful (because of a CORS issue), it will just use the exact same HTML as that file but copy-pasted into here
+			console.warn("There was a problem with the fetch operation, so the html loaded directly into the JavaScript will be used instead ", error);
+			let html = `
+				<!-- This is added into a <section> on the respective page with the classes "fullscreen-menu" and "flex--horizontal" -->
+				<header class="page-header flex--horizontal standard-spacing">
+					<!-- Close and search icons -->
+					<div class="collapsed-navbar flex--horizontal">
+						<img onclick="closeFullscreenMenu();" class="collapsed-navbar__icon" src="assets/icons/cross.svg" alt="Close">
+						<img class="collapsed-navbar__icon" src="assets/icons/search.svg" alt="Magnifying glass">
+					</div>
+			
+					<!-- Wishlist and cart icons -->
+					<div class="navbar__purchasing-icons flex--horizontal standard-spacing">
+						<a href="wishlist/">
+							<img class="navbar__icon" src="assets/icons/heart.svg" alt="Wishlist">
+						</a>
+						<a href="cart/">
+							<img class="navbar__icon" src="assets/icons/shopping-bag.svg" alt="Shopping bag">
+						</a>
+					</div>
+				</header>
+			
+				<div class="daily-featured-product-cont flex--vertical">
+					<h3>Today's Featured Product</h3>
+					<article class="daily-featured-product panel flex--horizontal">
+						<img class="daily-featured-product__img" src="assets/images/featured-guppy.jpg">
+						<div class="daily-featured-product__info flex--vertical">
+							<h4 class="daily-featured-product__title">Dumbo Mosaic Guppy</h4>
+							<h2 class="daily-featured-product__total">$4.99</h2>
+						</div>
+					</article>
+				</div>
+			
+				<div class="fullscreen-menu__page-links-cont flex--vertical">
+					<!-- Account page -->
+					<a class="link h2">My Account</a>
+			
+					<!-- Divider -->
+					<div class="fullscreen-menu__page-links-cont__divider"></div>
+			
+					<!-- Home page -->
+					<a class="link h2" href="">Home</a>
+					<!-- Shop page -->
+					<a class="link h2" href="categories/">Shop</a>
+					<!-- Blog page -->
+					<a class="link h2">Blog</a>
+					<!-- About page -->
+					<a class="link h2">About</a>
+				</div>
+			`;
+			includeFullscreenMenu(html);
 		});
 
 	// The function for creating the footer and adding it into the DOM
