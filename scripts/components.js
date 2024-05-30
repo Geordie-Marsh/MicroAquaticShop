@@ -229,7 +229,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 			shoppingCategories[i][3] ? 
 				button.setAttribute(
 					"href", 
-					"/categories/" + shoppingCategories[i][3]
+					"categories/" + shoppingCategories[i][3]
 				) : 
 				button.setAttribute(
 					"onclick", 
