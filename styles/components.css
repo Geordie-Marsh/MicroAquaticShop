@@ -146,14 +146,6 @@
 		/* This includes the scrolling list as well as the buttons */
 		position: relative;
 		width: 100%;
-
-		.carousel-button-cont {
-			display: none;
-
-			@media only screen and (min-width: 1024px) {
-				display: flex;
-			}
-		}
 	}
 	.featured-products__list {
 		/* This is the scrolling list */

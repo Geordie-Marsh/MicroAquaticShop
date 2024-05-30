@@ -122,22 +122,34 @@ function toggleFilters() {
 
 
 
-function featuredProductsScrollLeft(scrollingList) {
-	$$(scrollingList).scrollLeft -= 250;
+function carouselScrollLeft(scrollingList, scrollPercentage) {
+	let list = $$(scrollingList)
+	let scrollAmount = 250;
+	let maxScrollLeft = list.scrollWidth - list.clientWidth;
+	if (scrollPercentage) {
+		scrollAmount = scrollPercentage * maxScrollLeft;
+	}
+	log(scrollAmount)//TEMP
+	$$(scrollingList).scrollLeft -= scrollAmount;
 }
-function featuredProductsScrollRight(scrollingList) {
-	$$(scrollingList).scrollLeft += 250;
+function carouselScrollRight(scrollingList, scrollPercentage) {
+	let list = $$(scrollingList)
+	let scrollAmount = 250;
+	let maxScrollLeft = list.scrollWidth - list.clientWidth;
+	if (scrollPercentage) {
+		scrollAmount = scrollPercentage * maxScrollLeft;
+	}
+	log(scrollAmount)//TEMP
+	$$(scrollingList).scrollLeft += scrollAmount;
 }
 
-function carouselScrolling(carouselButtons) {
-	let list = $$(".featured-products__list")
-	log(list.scrollLeft)
+function carouselScrolling(list, carouselButtons) {
+	let maxScrollLeft = list.scrollWidth - list.clientWidth;
 	if (list.scrollLeft < 50) {
 		classAdd($$(carouselButtons + "left"), "opacity-none");
 	} else {
 		classRemove($$(carouselButtons + "left"), "opacity-none");
 	}
-	let maxScrollLeft = list.scrollWidth - list.clientWidth;
 	if (list.scrollLeft > (maxScrollLeft - 50)) {
 		classAdd($$(carouselButtons + "right"), "opacity-none");
 	} else {

@@ -56,16 +56,16 @@
 			<h3>Featured Products</h3>
 			<!-- The horizontal list that contains all the featured products -->
 			<div class="featured-products-content">
-				<div class="featured-products__list flex--horizontal standard-spacing" onscroll="carouselScrolling('.featured-products__carousel-button--')">
+				<div class="featured-products__list flex--horizontal standard-spacing" onscroll="carouselScrolling(this, '.featured-products__carousel-button--')">
 					<!-- POPULATED BY JAVASCRIPT -->
 				</div>
 				<div class="carousel-button-cont carousel-button-cont--left featured-products__carousel-button--left opacity-none">
-					<button class="button button--tertiary button--icon-only" aria-label="Left" onclick="featuredProductsScrollLeft('.featured-products__list');">
+					<button class="button button--tertiary button--icon-only" aria-label="Left" onclick="carouselScrollLeft('.featured-products__list');">
 						<img class="button__icon" src="assets/icons/arrow-left.svg">
 					</button>
 				</div>
 				<div class="carousel-button-cont carousel-button-cont--right featured-products__carousel-button--right ">
-					<button class="button button--tertiary button--icon-only" aria-label="Right" onclick="featuredProductsScrollRight('.featured-products__list');">
+					<button class="button button--tertiary button--icon-only" aria-label="Right" onclick="carouselScrollRight('.featured-products__list');">
 						<img class="button__icon" src="assets/icons/arrow-right.svg">
 					</button>
 				</div>
@@ -184,12 +184,24 @@
 		</section>
 
 		<!-- The shop images slideshow -->
-		<figure class="slideshow flex--horizontal standard-spacing">
-			<!-- These images move horizontally from right to left and are looped-->
-			<img class="slideshow__img" src="assets/images/shop-photo-001.jpg" alt="A shot of some tanks">
-			<img class="slideshow__img" src="assets/images/shop-photo-002.jpg" alt="A wide shot of the store with rows of tanks and some customers">
-			<img class="slideshow__img" src="assets/images/shop-photo-003.jpg" alt="A shot of a rack of tanks">
-		</figure>
+		<section class="slideshow-cont inner-section no-padding--horizontal">
+			<figure class="slideshow flex--horizontal standard-spacing"  onscroll="carouselScrolling(this, '.slideshow__carousel-button--')">
+				<!-- These images move horizontally from right to left and are looped-->
+				<img class="slideshow__img" src="assets/images/shop-photo-001.jpg" alt="A shot of some tanks">
+				<img class="slideshow__img" src="assets/images/shop-photo-002.jpg" alt="A wide shot of the store with rows of tanks and some customers">
+				<img class="slideshow__img" src="assets/images/shop-photo-003.jpg" alt="A shot of a rack of tanks">
+			</figure>
+			<div class="carousel-button-cont carousel-button-cont--left slideshow__carousel-button--left opacity-none">
+				<button class="button button--tertiary button--icon-only" aria-label="Left" onclick="carouselScrollLeft('.slideshow', 0.4);">
+					<img class="button__icon" src="assets/icons/arrow-left.svg">
+				</button>
+			</div>
+			<div class="carousel-button-cont carousel-button-cont--right slideshow__carousel-button--right ">
+				<button class="button button--tertiary button--icon-only" aria-label="Right" onclick="carouselScrollRight('.slideshow', 0.4);">
+					<img class="button__icon" src="assets/icons/arrow-right.svg">
+				</button>
+			</div>
+		</section>
 
 		<!-- The GRADIENT section containing the brand's services and common questions -->
 		<section class="services section--highlighted grid standard-spacing">
