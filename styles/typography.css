@@ -1,23 +1,24 @@
 /* Importing the brand font, Fieldwork */
 /* @import url(/fonts/fieldwork-100-hair.otf);
 @import url(/fonts/fieldwork-100-hair-italic.otf); */
-@import url(/fonts/fieldwork-200-thin.otf);
-@import url(/fonts/fieldwork-200-thin-italic.otf);
+@import url(../fonts/fieldwork-200-thin.otf);
+@import url(../fonts/fieldwork-200-thin-italic.otf);
 /* @import url(/fonts/fieldwork-300-light.otf);
 @import url(/fonts/fieldwork-300-light-italic.otf);
 @import url(/fonts/fieldwork-400-regular.otf);
 @import url(/fonts/fieldwork-400-regular-italic.otf); */
-@import url(/fonts/fieldwork-600-demibold.otf);
-@import url(/fonts/fieldwork-600-demibold-italic.otf);
+@import url(../fonts/fieldwork-600-demibold.otf);
+@import url(../fonts/fieldwork-600-demibold-italic.otf);
 /* @import url(/fonts/fieldwork-700-bold.otf);
 @import url(/fonts/fieldwork-700-bold-italic.otf);
 @import url(/fonts/fieldwork-800-black.otf);
 @import url(/fonts/fieldwork-800-black-italic.otf); */
-@import url(/fonts/fieldwork-900-fat.otf);
-@import url(/fonts/fieldwork-900-fat-italic.otf);
+@import url(../fonts/fieldwork-900-fat.otf);
+@import url(../fonts/fieldwork-900-fat-italic.otf);
 
-/* Importing the font, Poppins, as a back-up */
+/* Importing the font from online as a back-up */
 @import url("https://use.typekit.net/stq2igj.css");
+/* Importing the font, Poppins, as a back-up */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 

@@ -64,7 +64,7 @@
 	.section--highlighted {
 		padding: var(--spacing-03);
 		border-radius: var(--layout-04);
-		background: url(/assets/backgrounds/gradient-background-desktop.svg);
+		background: url(../assets/backgrounds/gradient-background-desktop.svg);
 		background-size: cover;
 		box-shadow: var(--effect-highlighted-panel-shadow);
 		backdrop-filter: blur(var(--effect-highlighted-panel-blur));
