@@ -127,6 +127,12 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 	function includeHeader(html) {
 		// Setting the innerHTML of the existing header tag to the fetched HTML
 		$$(".page-header").innerHTML = html;
+
+		// Updating the wishlist icon number
+		updateWishlistIconNumber();
+		
+		// Updating the cart icon number
+		updateCartIconNumber();
 		
 		// Sending a success message
 		log("Successfully generated the header");

@@ -93,7 +93,22 @@
 	a {
 		display: flex;
 		align-items: center;
+		position: relative;
 	}
+}
+.navbar__purchasing-icons__number {
+	position: absolute;
+	background: var(--clr-accent);
+	color: var(--clr-text-opposite);
+	font-size: calc(0.75 * var(--sizing-factor));
+	height: var(--spacing-04);
+	width: var(--spacing-04);
+	text-align: center;
+	padding-top: 1.5px;
+	border-radius: calc(0.5 * var(--spacing-04));
+	bottom: calc(-1 * var(--spacing-01));
+	right: calc(-1 * var(--spacing-01));
+	box-shadow: var(--effect-shadow);
 }
 .navbar__drop-down {
 	/* The page headings that have dropdown menus */

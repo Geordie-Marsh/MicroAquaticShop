@@ -180,8 +180,58 @@ function updateAddToCartButton(button, revertButton = true) {
 			button.querySelector("img").setAttribute("src", oldIcon);
 		}, 2500);
 	}
-	
 }
+
+
+
+
+
+// Updating the wishlist icon number
+function updateWishlistIconNumber() {
+	log("updating wishlist icon number")//TEMP
+	// The wishlist icon number
+	let wishlistIconNumber = $$(".navbar__purchasing-icons__number--wishlist");
+
+	let wishlistLength;
+
+	// Getting the number of items in the wishlist
+	if (getWishlistArray()) {
+		wishlistLength = getWishlistArray().length;
+	} else {
+		// If there's no wishlist, break this function
+		return;
+	}
+
+	// Updating the wishlist icon number
+	wishlistIconNumber.innerHTML = wishlistLength;
+
+	// Making the wishlist icon number visible
+	classRemove(wishlistIconNumber, "display-none");
+}
+
+// Updating the cart icon number
+function updateCartIconNumber() {
+	log("updating cart icon number")//TEMP
+	// The cart icon number
+	let cartIconNumber = $$(".navbar__purchasing-icons__number--cart");
+
+	let cartLength;
+
+	// Getting the number of items in the cart
+	if (getCartArray()) {
+		cartLength = getCartArray().length;
+	} else {
+		// If there's no cart, break this function
+		return;
+	}
+
+	// Updating the cart icon number
+	cartIconNumber.innerHTML = cartLength;
+
+	// Making the cart icon number visible
+	classRemove(cartIconNumber, "display-none");
+}
+
 
 
 
@@ -189,6 +239,11 @@ function updateAddToCartButton(button, revertButton = true) {
 
 // Getting the current cart data
 function getCartArray() {
+	// If there's no cart, return a falsey value
+	if (!localStorage.getItem("cart")) {
+		return false;
+	}
+
 	let cartData = localStorage.getItem("cart");
 	// ? "productA,3;productB,5;productC,4"
 	log(cartData); //TEMP
@@ -289,6 +344,9 @@ function addToCart(interactiveProductsIndex, quantity = 1) {
 		// Updating the cart to be the new cart
 		localStorage.setItem("cart", newCart);
 	}
+
+	// Updating the cart icon number
+	updateCartIconNumber();
 }
 
 
@@ -363,7 +421,10 @@ function cartProductQuantityIncrease(interactiveProductsIndex, increaseNo = 1) {
 		
 		// Updating the cart to be the new cart
 		localStorage.setItem("cart", newCart);
-	}	
+	}
+
+	// Updating the cart icon number
+	updateCartIconNumber();
 }
 
 
@@ -438,7 +499,10 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 		
 		// Updating the cart to be the new cart
 		localStorage.setItem("cart", newCart);
-	}	
+	}
+
+	// Updating the cart icon number
+	updateCartIconNumber();
 }
 
 
@@ -701,6 +765,9 @@ function toggleWishlist(interactiveProductsIndex, heartIconToChange) {
 			}
 		}
 	}
+
+	// Updating the wishlist icon number
+	updateWishlistIconNumber();
 }
 
 function addToWishlist(interactiveProductsIndex) {
@@ -747,9 +814,12 @@ function addToWishlist(interactiveProductsIndex) {
 		// Setting the wishlist as newWishlist
 		localStorage.setItem("wishlist", newWishlist);
 	}
+
+	// Updating the wishlist icon number
+	updateWishlistIconNumber();
 }
 
-function removeFromWishlist(interactiveProductsIndex) {
+function removeFromWishlist(interactiveProductsIndex, refresh = false) {
 	// If no product is provided, this function will break
 	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
 		console.error("No product index specified");
@@ -798,9 +868,14 @@ function removeFromWishlist(interactiveProductsIndex) {
 			localStorage.setItem("wishlist", newWishlist);
 		}
 
-		// Refresh the page to update it
-		window.location.reload();
+		if (refresh) {
+			// Refresh the page to update it
+			window.location.reload();
+		}
 	}
+
+	// Updating the wishlist icon number
+	updateWishlistIconNumber();
 }
 
 function removeAllFromWishlist() {
