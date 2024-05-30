@@ -14,7 +14,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 		log("Cannot find a header container, so it won't be generated");
 	} else {
 		// Fetching the HTML for the header from the local component
-		fetch("../components/header.html")
+		fetch("components/header.html")
 			.then(response => {
 				// Checking if the request was successful
 				if (!response.ok) {
@@ -185,7 +185,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 		log("Cannot find a shop by category container, so they won't be generated");
 	} else {	
 		// Fetching the HTML for each element from the local component
-		fetch("./components/shop-category.html")
+		fetch("components/shop-category.html")
 			.then(response => {
 				// Checking if the request was successful
 				if (!response.ok) {
