@@ -26,7 +26,7 @@
 *::before,
 *::after {
 	box-sizing: inherit;
-	-webkit-user-drag: none;
+	-webkit-user-drag: none; /* This won't work in firefox, but it's not really that big a deal */
 }
 
 html {
