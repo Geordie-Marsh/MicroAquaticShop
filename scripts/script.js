@@ -971,6 +971,20 @@ function removeAllFromWishlist() {
 	window.location.reload();
 }
 
+function wishlistToCart(interactiveProductsIndex) {
+	// If no product is provided, this function will break
+	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
+		console.error("No product index specified");
+		return;
+	}
+
+	// Adding the product to the cart
+	addToCart(interactiveProductsIndex);
+
+	// Removing the product from the wishlist and refreshing the page
+	removeFromWishlist(interactiveProductsIndex, true);
+}
+
 function moveAllFromWishlistToCart() {
 	// Checking to see that there's a wishlist LS variable
 	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
