@@ -657,7 +657,7 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 
 
 // Removing a product from the cart
-function removeFromCart(interactiveProductsIndex) {
+function removeFromCart(interactiveProductsIndex, refresh = true) {
 	// If no product name is provided, this function will break
 	if (!interactiveProductsIndex && (interactiveProductsIndex !== 0)) {
 		console.error("No product specified");
@@ -704,7 +704,9 @@ function removeFromCart(interactiveProductsIndex) {
 		}
 
 		// Refreshing the page
-		window.location.reload();
+		if (refresh) {
+			window.location.reload();
+		}
 	}
 }
 
@@ -764,7 +766,7 @@ function calcProductTotalPrice(interactiveProductsIndex, quantity = 1) {
 
 
 // Refreshing the total of the product after the quantity has been updated
-function refreshProductTotalPrice(priceElement, interactiveProductsIndex, quantity, pricePerItemElement) {
+function refreshProductTotalPrice(priceElement, interactiveProductsIndex, quantity, pricePerItemElement, affectsCart) {
 	// If no element is provided, this function will break
 	if (!priceElement) {
 		console.error("No element specified");
@@ -797,6 +799,17 @@ function refreshProductTotalPrice(priceElement, interactiveProductsIndex, quanti
 		
 		// Updating the price shown
 		pricePerItemElement.innerHTML = "$" + perItemPrice.toFixed(2);
+	}
+
+	if (affectsCart && quantity > 0) {
+		removeFromCart(interactiveProductsIndex, false)
+		addToCart(interactiveProductsIndex, quantity);
+		
+		// Updating the cart subtotal
+		// Getting the current cart subtotal
+		let cartSubtotal = calcCartTotalPrice();
+		// Updating the subtotal
+		$$(".cart-summary__subtotal__price").innerHTML = "$" + cartSubtotal.toFixed(2);
 	}
 }
 

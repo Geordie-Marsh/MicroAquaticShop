@@ -635,7 +635,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 
 
 // Making the minus and plus buttons on the quantity input functional
-	function productQuantityDecrease(interactiveProductsIndex, affectsWhichPriceElement, affectsWhichPricePerItemElement) {
+	function productQuantityDecrease(interactiveProductsIndex, affectsWhichPriceElement, affectsWhichPricePerItemElement, affectsCart = false) {
 		// This is the number input that's being affected
 		const numberInput = $$("#product-quantity-value--" + interactiveProductsIndex);
 		let minQuantity, currentQuantity, newQuantity;
@@ -656,8 +656,18 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 
 		// Updating the price shown
 		refreshProductTotalPrice(affectsWhichPriceElement, interactiveProductsIndex, newQuantity, affectsWhichPricePerItemElement);
+
+		if (affectsCart && newQuantity > 0) {
+			cartProductQuantityDecrease(interactiveProductsIndex, 1);
+			
+			// Updating the cart subtotal
+			// Getting the current cart subtotal
+			let cartSubtotal = calcCartTotalPrice();
+			// Updating the subtotal
+			$$(".cart-summary__subtotal__price").innerHTML = "$" + cartSubtotal.toFixed(2);
+		}
 	}
-	function productQuantityIncrease(interactiveProductsIndex, affectsWhichPriceElement, affectsWhichPricePerItemElement) {
+	function productQuantityIncrease(interactiveProductsIndex, affectsWhichPriceElement, affectsWhichPricePerItemElement, affectsCart = false) {
 		// This is the number input that's being affected
 		const numberInput = $$("#product-quantity-value--" + interactiveProductsIndex);
 		let maxQuantity, currentQuantity, newQuantity;
@@ -678,4 +688,14 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 
 		// Updating the price shown
 		refreshProductTotalPrice(affectsWhichPriceElement, interactiveProductsIndex, newQuantity, affectsWhichPricePerItemElement);
+
+		if (affectsCart) {
+			cartProductQuantityIncrease(interactiveProductsIndex, 1);
+
+			// Updating the cart subtotal
+			// Getting the current cart subtotal
+			let cartSubtotal = calcCartTotalPrice();
+			// Updating the subtotal
+			$$(".cart-summary__subtotal__price").innerHTML = "$" + cartSubtotal.toFixed(2);
+		}
 	}
