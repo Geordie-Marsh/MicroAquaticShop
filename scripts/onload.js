@@ -270,7 +270,7 @@ function checkoutPageOnLoad() {
 			let prices = interactiveProducts[i][2];
 			// Getting the amount that each item will cost when factoring in bulk-buy offers
 			let perItemCost = getPerItemCost(prices, cartArray[productCartIndex][1]);
-			$$("#checkout-order-item__info__pricePerItem--" + i).innerHTML = perItemCost;
+			$$("#checkout-order-item__info__price-per-item--" + i).innerHTML = perItemCost;
 		} else {
 			// Hiding the item
 			classAdd($$("#checkout-order-item--" + i), "display-none");

@@ -49,6 +49,9 @@ function textFormClicked(clickedElement, clickedElementType) {
 			// If the input isn't empty, check the form's validity and update the formatting accordingly
 			showInputValidity(input);
 		}
+
+		// Invoking the calculate shipping cost function
+		calcShipping();
 	});
 }
 
@@ -100,6 +103,67 @@ function showInputValidity(certainElement) {
 		}
 	}
 }
+
+
+
+
+// Calculating the shipping cost
+function calcShipping() {
+	// Checking the validity of all the necessary inputs
+	let allValid = true
+	if (!$$("#checkout__country").checkValidity()) {
+		allValid = false;
+	}
+	if (!$$("#checkout__address").checkValidity()) {
+		allValid = false;
+	}
+	if (!$$("#checkout__postcode").checkValidity()) {
+		allValid = false;
+	}
+	if ($$("#checkout__country").value == "new-zealand") {
+		if (!$$("#checkout__nz--suburb").checkValidity()) {
+			allValid = false;
+		}
+		if (!$$("#checkout__nz--city").checkValidity()) {
+			allValid = false;
+		}
+	} else {
+		if (!$$("#checkout__aus--city").checkValidity()) {
+			allValid = false;
+		}
+		if (!$$("#checkout__aus--state").checkValidity()) {
+			allValid = false;
+		}
+	}
+
+	if (allValid) {
+		// If all the required forms are valid, update the cost
+		$$(".delivery-details__shipping-total__cost").innerHTML = "$14.99"
+		$$(".order-summary__shipping-cost").innerHTML = "$14.99"
+
+		// Updating the cost of the shipping in the localStorage
+		localStorage.setItem("shipping", "14.99");
+
+		// Updating the cart subtotal to include the shipping
+		// Getting the current cart subtotal
+		let cartTotal = calcCartTotalPrice() + 14.99 ;
+		// Updating the subtotal
+		$$(".order-summary__total").innerHTML = "$" + cartTotal.toFixed(2);
+	} else {
+		$$(".delivery-details__shipping-total__cost").innerHTML = "Enter shipping address"
+		$$(".order-summary__shipping-cost").innerHTML = "Enter shipping address"
+		
+		// Updating the cost of the shipping in the localStorage
+		localStorage.removeItem("shipping");
+
+		// Updating the cart subtotal to include the shipping
+		// Getting the current cart subtotal
+		let cartTotal = calcCartTotalPrice();
+		// Updating the subtotal
+		$$(".order-summary__total").innerHTML = "$" + cartTotal.toFixed(2);
+	}
+}
+
 
 
 
@@ -681,8 +745,8 @@ function calcProductTotalPrice(interactiveProductsIndex, quantity = 1) {
 		console.error("Product quantity cannot be less than 1");
 		return;
 	}
-	if (!(Number.isInteger(quantity))) {
-		console.warn("A non-integer quantity was provided, so it has been rounded up");
+	if (!(Number.isInteger(quantity)) && typeof quantity !== "string") {
+		console.warn(`A non-integer quantity (${quantity}) was provided, so it has been rounded up`);
 		quantity = roundUp(quantity);
 	}
 
