@@ -389,7 +389,7 @@ function confirmationPageOnLoad() {
 			$$("#loaded-address").innerHTML = deliveryAddress;
 
 			// Updating the delivery date
-			$$("#loaded-date").innerHTML = expectedDeliveryDate
+			$$("#loaded-date").innerHTML = expectedDeliveryDate;
 		}
 	}, 1500);
 }
