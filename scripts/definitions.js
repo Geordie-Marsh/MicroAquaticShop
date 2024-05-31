@@ -9,6 +9,8 @@ const classAdd = (element, className) => element.classList.add(className);
 const classRemove = (element, className) => element.classList.remove(className);
 // Shortcut for toggling CSS classes - i.e., if the element doesn't have this class it'll be given it, and if it already does it'll be removed from it
 const classToggle = (element, className) => element.classList.toggle(className);
+// Shortcut for checking if an element has a certain CSS class
+const classHas = (element, className) => element.classList.contains(className);
 
 // Shortcut for adding event listeners
 const on = (element, event, callback) => element.addEventListener(event, callback);

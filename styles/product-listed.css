@@ -1,6 +1,9 @@
 .product--listed {
 	/* The panel itself */
 	align-items: center;
+	@media only screen and (min-width: 768px) {
+		max-width: calc(18 * var(--sizing-factor));
+	}
 }
 .product--listed__img {
 	/* The product's image */

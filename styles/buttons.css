@@ -47,11 +47,6 @@
 	}
 
 
-	/* Call-to-action (cta) buttons */
-	&.button--cta {
-		background: var(--clr-button-gradient--accent);
-	}
-
 	/* Primary buttons */
 	&.button--primary {
 		background: var(--clr-button-gradient--accent);
@@ -136,6 +131,11 @@
 	/* Buttons that only have an icon in them */
 	&.button--icon-only {
 		padding: var(--spacing-03);
+	}
+
+	/* Call-to-action (cta) buttons */
+	&.button--cta {
+		background: var(--clr-button-gradient--accent);
 	}
 }
 

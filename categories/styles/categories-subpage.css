@@ -88,9 +88,9 @@
 
 		@media only screen and (min-width: 1024px) {
 			width: calc(23 * var(--sizing-factor));
-			align-self: flex-start;
+			align-self: flex-end;
 			position: sticky;
-			top: var(--layout-05);
+			bottom: var(--layout-05);
 		}
 	}
 	.products-finder-cont.filters-toggled-off .product-filters {
@@ -140,11 +140,23 @@
 			calc( 10.5 * var(--sizing-factor) ),
 			1fr
 		));
+		align-items: stretch;
+		align-content: start;
 
 		@media only screen and (min-width: 1024px) {
 			grid-template-columns: repeat(auto-fit, minmax(
 				calc( 12 * var(--sizing-factor) ),
 				1fr
 			));
+		}
+	}
+
+	.product-listing__no-products {
+		width: 100%;
+		padding: var(--spacing-06);
+
+		* {
+			width: 100%;
+			text-align: center;
 		}
 	}

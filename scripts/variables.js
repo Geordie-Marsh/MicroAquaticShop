@@ -314,83 +314,175 @@ const interactiveProducts = [
 
 
 // This is the array used to generate the products list in the shrimp category page (would be generated from a proper database in the real website)
-// Each element in the outer array is a product, and the inner array has the name, the price, the product image's filename, the colour, and the product's code (optional) in that order
+// Each element in the outer array is a product, and the inner array has the name, the price, the product image's filename, the colour, the product's code (optional), and the filters in that order
 const listedProductsShrimp = [
 	[
-		"Cherry Shrimp", 
+		"Cherry Shrimp",
 		"$3.49",
 		"shrimp-cherry-red",
 		colourSwatches[0],
-		2
+		2,
+		[
+			"shrimp-cherry",
+			"shrimp-neocaridina",
+			"0-10",
+			"in-stock",
+			colourSwatches[0][1]
+		]
 	],
 	[
-		"Tangerine Tiger Shrimp", 
+		"Tangerine Tiger Shrimp",
 		"$6.99",
 		"shrimp-tangerine-tiger",
 		colourSwatches[1],
-		0
+		0,
+		[
+			"shrimp-tiger",
+			"shrimp-caridina",
+			"0-10",
+			"in-stock",
+			colourSwatches[1][1]
+		]
 	],
 	[
-		"Ghost Shrimp", 
+		"Ghost Shrimp",
 		"$4.49",
 		"shrimp-ghost",
 		colourSwatches[12],
-		3
+		3,
+		[
+			"shrimp-ghost",
+			"0-10",
+			"in-stock",
+			colourSwatches[12][1]
+		]
 	],
 	[
-		"Cherry Shrimp", 
+		"Cherry Shrimp",
 		"$6.99",
 		"shrimp-cherry-yellow",
-		colourSwatches[2]
+		colourSwatches[2],
+		null,
+		[
+			"shrimp-cherry",
+			"shrimp-neocaridina",
+			"0-10",
+			"in-stock",
+			colourSwatches[2][1]
+		]
 	],
 	[
-		"King Kong Shrimp", 
+		"King Kong Shrimp",
 		"$17.99",
 		"shrimp-king-kong-red",
-		colourSwatches[0]
+		colourSwatches[0],
+		null,
+		[
+			"shrimp-bee",
+			"shrimp-caridina",
+			"10-20",
+			"in-stock",
+			colourSwatches[0][1]
+		]
 	],
 	[
-		"Medium-High Grade Rili Shrimp", 
+		"Medium-High Grade Rili Shrimp",
 		"$6.99",
 		"shrimp-rili-red-high-grade",
-		colourSwatches[0]
+		colourSwatches[0],
+		null,
+		[
+			"shrimp-rili",
+			"shrimp-neocaridina",
+			"0-10",
+			"in-stock",
+			colourSwatches[0][1]
+		]
 	],
 	[
-		"Yellow Devil's Shrimp", 
+		"Yellow Devil's Shrimp",
 		"$17.99",
 		"shrimp-yellow-devil",
-		colourSwatches[2]
+		colourSwatches[2],
+		null,
+		[
+			"shrimp-bee",
+			"shrimp-caridina",
+			"10-20",
+			"in-stock",
+			colourSwatches[2][1]
+		]
 	],
 	[
-		"Bundle - Mixed Cherry Shrimp", 
+		"Bundle - Mixed Cherry Shrimp",
 		"From $6.99ea",
 		"shrimp-cherry-mixed",
-		colourSwatches[11]
+		colourSwatches[11],
+		null,
+		[
+			"shrimp-cherry",
+			"shrimp-neocaridina",
+			"bundles",
+			"0-10",
+			"in-stock",
+			colourSwatches[11][1]
+		]
 	],
 	[
-		"Cherry Shrimp", 
+		"Cherry Shrimp",
 		"$9.99",
 		"shrimp-cherry-blue",
 		colourSwatches[4],
-		1
+		1,
+		[
+			"shrimp-cherry",
+			"shrimp-neocaridina",
+			"0-10",
+			"in-stock",
+			colourSwatches[4][1]
+		]
 	],
 	[
-		"Wild Form Cherry Shrimp", 
+		"Wild Form Cherry Shrimp",
 		"$9.99",
 		"shrimp-cherry-wild",
-		colourSwatches[12]
+		colourSwatches[12],
+		null,
+		[
+			"shrimp-cherry",
+			"shrimp-neocaridina",
+			"0-10",
+			"in-stock",
+			colourSwatches[12][1]
+		]
 	],
 	[
-		"Crazy Blue Shrimp", 
+		"Crazy Blue Shrimp",
 		"$19.99",
 		"shrimp-crazy-blue",
-		colourSwatches[4]
+		colourSwatches[4],
+		null,
+		[
+			"shrimp-crystal",
+			"shrimp-caridina",
+			"10-20",
+			"in-stock",
+			colourSwatches[4][1]
+		]
 	],
 	[
-		"Tiger Shrimp", 
+		"Tiger Shrimp",
 		"$17.99",
 		"shrimp-tiger",
-		colourSwatches[0]
+		colourSwatches[0],
+		null,
+		[
+			"shrimp-tiger",
+			"shrimp-caridina",
+			"10-20",
+			"in-stock",
+			colourSwatches[0][1]
+		]
 	]
 ];
 
@@ -459,17 +551,17 @@ const filterPrice = [
 	],
 	[
 		">$100",
-		"100-Infinity"
+		"100-infinity"
 	]
 ];
 const filterAvailability = [
 	[
 		"In stock",
-		true
+		"in-stock"
 	],
 	[
 		"Coming soon",
-		false
+		"coming-soon"
 	]
 ];
 const filterColour = [

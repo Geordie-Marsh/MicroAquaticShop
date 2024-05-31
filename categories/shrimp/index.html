@@ -83,7 +83,7 @@
 				</article>
 
 				<!-- The button to clear all filters -->
-				<button class="button button--secondary product-filters__button" aria-label="Clear all filters">
+				<button class="button button--secondary product-filters__button" aria-label="Clear all filters" onclick="disableAllFilters();">
 					<span class="button__label">Clear all filters</span>
 					<img class="button__action-symbol" src="assets/icons/cross--dark.svg">
 				</button>
@@ -109,6 +109,11 @@
 
 			<!-- Contains all the products -->
 			<div class="product-listing grid standard-spacing">
+				<!-- When there are no items that can be shown because of filters, this info banner saying there's nothing with this filter combo will be displayed -->
+				<div class="product-listing__no-products display-none">
+					<h4>Sorry, there are no products with this combination of filters.</h4>
+					<p>Try a different combination of filters to find the product you're looking for.</p>
+				</div>
 				<!-- POPULATED BY JAVASCRIPT -->
 			</div>
 		</section>

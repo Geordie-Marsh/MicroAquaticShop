@@ -160,6 +160,91 @@ function carouselScrolling(list, carouselButtons) {
 
 
 
+// Filter functionality
+function toggleFilter(filter, filterButton) {
+	// The classname used for the filter (eg, filter--shrimp-cherry)
+	let classFilter = "filter--" + filter;
+
+	// Toggling the filter
+	let productsCont = $$(".product-listing")
+	classToggle(productsCont, classFilter);
+
+	// Toggling whether this filter button is highlighted
+	classToggle(filterButton, "button--glass");
+
+	// Getting all the products on the page
+	let allProducts = $$all(".product--listed");
+	// Checking if there's no products displayed
+	let displayedProductsExists = false;
+	for (let i = 0; i < allProducts.length; i++) {
+		// The product element being examined
+		const product = allProducts[i];
+		// Getting the current display value of the product
+		let productIsHidden = window.getComputedStyle(product).getPropertyValue("display");
+		if (productIsHidden !== "none") {
+			// If there's a product that's not hidden, make sure the no available products message is hidden and exit
+			classAdd($$(".product-listing__no-products"), "display-none");
+			// Updating the variable on whether there's a shown product
+			displayedProductsExists = true
+			break;
+		}
+	}
+	if (!displayedProductsExists) {
+		// If all products are hidden, show the no available products messasge
+		classRemove($$(".product-listing__no-products"), "display-none");
+	}
+}
+
+function disableAllFilters() {
+	for (let i = 0; i < filterSubcategoryShrimp.length; i++) {
+		const filter = filterSubcategoryShrimp[i][1];
+		let classFilter = "filter--" + filter;
+
+		// Removing the filter
+		let productsCont = $$(".product-listing")
+		classRemove(productsCont, classFilter);
+	}
+	for (let i = 0; i < filterPrice.length; i++) {
+		const filter = filterPrice[i][1];
+		let classFilter = "filter--" + filter;
+
+		// Removing the filter
+		let productsCont = $$(".product-listing")
+		classRemove(productsCont, classFilter);
+	}
+	for (let i = 0; i < filterAvailability.length; i++) {
+		const filter = filterAvailability[i][1];
+		let classFilter = "filter--" + filter;
+
+		// Removing the filter
+		let productsCont = $$(".product-listing")
+		classRemove(productsCont, classFilter);
+	}
+	for (let i = 0; i < filterColour.length; i++) {
+		const filter = filterColour[i][1];
+		let classFilter = "filter--" + filter;
+
+		// Removing the filter
+		let productsCont = $$(".product-listing")
+		classRemove(productsCont, classFilter);
+	}
+
+	// Making all the fitler buttons unhighlighted
+	// Getting all the filter buttons
+	let allFilterButtons = $$all(".button--filter");
+	allFilterButtons.forEach(element => {
+		classAdd(element, "button--glass");
+	});
+
+	// Making sure the no available products message is hidden
+	classAdd($$(".product-listing__no-products"), "display-none");
+}
+
+
+
+
+
+
 // Updating the add to cart button to confirm adding to the cart
 function updateAddToCartButton(button, revertButton = true) {
 	log("Changing add to cart button");//TEMP

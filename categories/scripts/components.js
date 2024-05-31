@@ -60,6 +60,16 @@
 			classAdd(container, "panel");
 			classAdd(container, "flex--vertical");
 			classAdd(container, "standard-spacing");
+
+			log(listedProductsShrimp[i][5])//TEMP
+			// Giving the container classes associated with which filters it applies to
+			for (let j = 0; j < listedProductsShrimp[i][5].length; j++) {
+				const filter = listedProductsShrimp[i][5][j];
+				// The classname used for the filter (eg, filter--shrimp-cherry)
+				let classFilter = "filter--" + filter;
+				
+				classAdd(container, classFilter);
+			}
 			
 			// Giving the container an ID if there's a product code attached to the product
 			if (listedProductsShrimp[i][4]) {
@@ -206,6 +216,7 @@
 				classAdd(button, "button--tertiary");
 				classAdd(button, "button--glass");
 				classAdd(button, "button--filter");
+				classAdd(button, "button--filter--" + filterList[i][1]);
 
 				// Replacing the default data of the element with that specific to the product in question
 				const label = button.querySelector(".button__label--text"); // Editing the title
@@ -230,6 +241,18 @@
 						: "colour";
 				// Appending the content to the div this has just specified
 				$$("#product-filters__filter-type--" + filterDivID).appendChild(button);
+
+				// Making the filter buttons functional
+				on(button, "click", () => {
+					toggleFilter(filterList[i][1], $$(".button--filter--" + filterList[i][1]));
+				});
+
+				// Adding the CSS to the document to make elements not appear when the filter is active
+				addCSS(`
+					.product-listing.filter--${filterList[i][1]} .product--listed:not(.filter--${filterList[i][1]}) {
+						display: none;
+					}
+				`);
 
 				// Sending a success message
 				log("Successfully generated the filter buttons")
