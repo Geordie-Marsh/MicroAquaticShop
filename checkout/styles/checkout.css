@@ -104,7 +104,7 @@
 		}
 		.checkout-order-item__img {
 			/* The product's image */
-			height: calc(5 * var(--sizing-factor)); /* This image defines the width of the entire panel */
+			height: calc(6.5 * var(--sizing-factor)); /* This image defines the width of the entire panel */
 			object-fit: cover;
 			aspect-ratio: 1 / 1;
 			border-radius: var(--spacing-05);

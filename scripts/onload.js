@@ -264,7 +264,13 @@ function checkoutPageOnLoad() {
 			refreshProductTotalPrice($$("#checkout-order-item__total--" + i), i, cartArray[productCartIndex][1])
 
 			// Updating the cart item quantity value
-			// $$("#product-quantity-value--" + i).value = cartArray[productCartIndex][1];
+			$$("#checkout-order-item__info__quantity--" + i).innerHTML = cartArray[productCartIndex][1];
+
+			// Updating the cart item price per item value
+			let prices = interactiveProducts[i][2];
+			// Getting the amount that each item will cost when factoring in bulk-buy offers
+			let perItemCost = getPerItemCost(prices, cartArray[productCartIndex][1]);
+			$$("#checkout-order-item__info__pricePerItem--" + i).innerHTML = perItemCost;
 		} else {
 			// Hiding the item
 			classAdd($$("#checkout-order-item--" + i), "display-none");

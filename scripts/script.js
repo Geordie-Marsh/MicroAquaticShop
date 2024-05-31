@@ -773,13 +773,15 @@ function calcCartTotalPrice() {
 function getWishlistArray() {
 	let wishlistData = localStorage.getItem("wishlist");
 	// ? "productA;productB;productC"
-	log(wishlistData); //TEMP
-
+	
+	// If there's no wishlist, return a falsey value and break this function
+	if (!wishlistData) {
+		return false;
+	}
 
 	// Turning the wishlistData string into an array
 	wishlistData = wishlistData.split(";");
 	// ? ["productA", "product", "productC"]
-	log(wishlistData); //TEMP
 
 	return wishlistData;
 }
