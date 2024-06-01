@@ -168,6 +168,32 @@ function calcShipping() {
 
 
 
+// Making the discount code apply button function
+function submitDiscount() {
+	$$("#checkout__discount-code").value = "";
+}
+
+// Making the discount list join button function
+function submitJoin() {
+	let emailField = $$("#confirmation__sign-up");
+
+	// Checking that the email is valid
+	if (!emailField.checkValidity()) {
+		// If it's invalid, show that it's invalid and exit the function
+		showInputValidity(emailField);
+
+		return;
+	}
+
+	// Clearing the email field
+	$$("#confirmation__sign-up").value = "";
+}
+
+
+
+
+
+
 
 // Opening and closing the fullscreen menu
 function openFullscreenMenu() {
