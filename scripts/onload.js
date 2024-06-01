@@ -11,7 +11,7 @@ function productPageOnLoad(interactiveProductsIndex) {
 	// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
 	// If the wishlist is empty, ignore this
 	if (localStorage.getItem("wishlist") != null && localStorage.getItem("cart") != undefined && localStorage.getItem("cart") != "") {
-		log(localStorage.getItem("wishlist"))
+		log(localStorage.getItem("wishlist"));
 		// Getting the current data of the wishlist
 		let wishlist = getWishlistArray();
 		// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
@@ -155,7 +155,7 @@ function wishlistPageOnLoad() {
 
 	// Getting the current data of the wishlist
 	let wishlistArray = getWishlistArray();
-	log(wishlistArray)
+	log(wishlistArray);
 		
 	
 	// Going through the list of products and checking which are in the wishlist - the ones in the wishlist will be shown in the wishlist
@@ -190,7 +190,7 @@ function cartPageOnLoad() {
 
 	// Getting the current data of the cart
 	let cartArray = getCartArray();
-	log(cartArray)
+	log(cartArray);
 		
 	
 	// Going through the list of products and checking which are in the cart - the ones in the cart will be shown in the cart
@@ -200,9 +200,9 @@ function cartPageOnLoad() {
 
 		// If the product is in the cart, update its quantity and price. If it's not, remove it from the list
 		if (productCartIndex !== false) {
-			log("in cart:", interactiveProducts[i][0])
+			log("in cart:", interactiveProducts[i][0]);
 			// Updating the cart item price
-			refreshProductTotalPrice($$("#cart-item__total--" + i), i, cartArray[productCartIndex][1], $$("#cart-item__subtotal--" + i))
+			refreshProductTotalPrice($$("#cart-item__total--" + i), i, cartArray[productCartIndex][1], $$("#cart-item__subtotal--" + i));
 
 			// Updating the cart item quantity value
 			$$("#product-quantity-value--" + i).value = cartArray[productCartIndex][1];
@@ -228,7 +228,7 @@ function checkoutPageOnLoad() {
 	
 	// If there's nothing in the cart (which is an error), alert the user with an error message and redirect to the cart page
 	if (cart == null || cart == undefined || cart == "") {
-		alert("You cannot checkout with an emtpy cart.\nRedirecting you to the cart page...")
+		alert("You cannot checkout with an emtpy cart.\nRedirecting you to the cart page...");
 		
 		// Redirecting to the cart page
 		window.location.href = "cart/";
@@ -237,7 +237,7 @@ function checkoutPageOnLoad() {
 
 	// Getting the current data of the cart
 	let cartArray = getCartArray();
-	log(cartArray)
+	log(cartArray);
 		
 	
 	// Going through the list of products and checking which are in the cart - the ones in the cart will be shown in the order summary
@@ -247,9 +247,9 @@ function checkoutPageOnLoad() {
 
 		// If the product is in the cart, update its quantity and price. If it's not, remove it from the list
 		if (productCartIndex !== false) {
-			log("in cart:", interactiveProducts[i][0])
+			log("in cart:", interactiveProducts[i][0]);
 			// Updating the cart item price
-			refreshProductTotalPrice($$("#checkout-order-item__total--" + i), i, cartArray[productCartIndex][1])
+			refreshProductTotalPrice($$("#checkout-order-item__total--" + i), i, cartArray[productCartIndex][1]);
 
 			// Updating the cart item quantity value
 			$$("#checkout-order-item__info__quantity--" + i).innerHTML = cartArray[productCartIndex][1];
@@ -301,7 +301,7 @@ function confirmationPageOnLoad() {
 	checkout__billing-address=on&
 	checkout__remember=on */
 
-	let cartSubtotal
+	let cartSubtotal;
 	let deliveryAddress;
 	let expectedDeliveryDate;
 
@@ -343,7 +343,7 @@ function confirmationPageOnLoad() {
 			year: "numeric",
 			month: "long",
 			day: "numeric",
-		}
+		};
 		// Formatting the expected delivery date in the locale of the computer (ie, according to region-specific ordering, names, languages, etc.)
 		expectedDeliveryDate = nextWedDate.toLocaleString("default", dateOptions);
 	}

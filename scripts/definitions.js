@@ -38,7 +38,7 @@ function toStartCase(str) {
 	}
 
 	// Rejoining the words together back into one string
-	let newStr = splitStr.join(" ")
+	let newStr = splitStr.join(" ");
 
 	// Returning the joined string
 	return newStr; 

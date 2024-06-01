@@ -109,14 +109,14 @@
 					// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
 					// If the wishlist is empty, ignore this
 					if (localStorage.getItem("wishlist") != null && localStorage.getItem("cart") != undefined && localStorage.getItem("cart") != "") {
-						log(localStorage.getItem("wishlist"))
+						log(localStorage.getItem("wishlist"));
 						// Getting the current data of the wishlist
 						let wishlist = getWishlistArray();
 						// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
 						productInWishlistIndex = checkWishlistForItem(wishlist, listedProductsShrimp[i][4]);
 						// If in wishlist, change the heart symbol to be filled
 						if (productInWishlistIndex !== false) {
-							log(productInWishlistIndex, "made filled")
+							log(productInWishlistIndex, "made filled");
 							wishlistButton.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
 						}
 					}
@@ -131,11 +131,11 @@
 				} else {
 					// Making clicking on the product itself display an alert that lists the product which are interactive
 					on(container, "click", () => {
-						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
 					});
 					// Making the view button display an alert that lists the product which are interactive
 					on(viewButton, "click", () => {
-						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+						alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
 					});
 					// Making the wishlist button display an alert that lists the product which are interactive
 					on(wishlistButton, "click", () => {
@@ -151,11 +151,11 @@
 				// Stopping any propagation from happening on the wishlist button since its ancestor container has an onclick event and we don't want bubbling to occur
 				on(wishlistButton, "click", (event) => {
 					event.stopPropagation();
-				})
+				});
 				// Stopping any propagation from happening on the add to cart button since its ancestor container has an onclick event and we don't want bubbling to occur
 				on(cartButton, "click", (event) => {
 					event.stopPropagation();
-				})
+				});
 
 			// Appending the content of the container to the featured products div
 			$$(".product-listing").appendChild(container);
@@ -221,14 +221,10 @@
 				label.textContent = filterList[i][0];
 				// Removing the colour swatch if it's not a colour filter (the colour swatch is on the filter by default so it is removed if it's not needed)
 				const colourSwatch = button.querySelector(".colour-swatch");
-				(filterList != filterColour)
-					? colourSwatch.remove()
-					: changeColourFilterSwatch() ;
-				
 				// If it's a colour filter, change the colour swatch to the right colour
-				function changeColourFilterSwatch() {
+				(filterList != filterColour) ?
+					colourSwatch.remove() :
 					colourSwatch.style.background = "var(--clr-primitive-" + filterList[i][1] + ")";
-				}
 
 				// Appending the content of the button to the div
 				// Getting the ID specifier for the category div
@@ -253,7 +249,7 @@
 				`);
 
 				// Sending a success message
-				log("Successfully generated the filter buttons")
+				log("Successfully generated the filter buttons");
 			}
 		}
 	}

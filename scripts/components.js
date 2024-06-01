@@ -264,34 +264,34 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 			} else {
 				// Making clicking on the product itself display an alert that lists the product which are interactive
 				on(container, "click", () => {
-					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
 				});
 				// Making the view button display an alert that lists the product which are interactive
 				on(viewButton, "click", () => {
-					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
 				});
 				// Making the wishlist button display an alert that lists the product which are interactive
 				on(wishlistButton, "click", () => {
-					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
 				});
 				// Making the add to cart button display an alert that lists the product which are interactive
 				on(cartButton, "click", () => {
-					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp")
+					alert("Sorry, this product doesn't have functionality. The products you can interact with are:\n- Red cherry shrimp\n- Tangerine tiger shrimp\n- Ghost shrimp\n- Blue cherry shrimp");
 				});
 			}
 
 			// Stopping any propagation from happening on the view button since its ancestor container has an onclick event and we don't want bubbling to occur
 			on(viewButton, "click", (event) => {
 				event.stopPropagation();
-			})
+			});
 			// Stopping any propagation from happening on the wishlist button since its ancestor container has an onclick event and we don't want bubbling to occur
 			on(wishlistButton, "click", (event) => {
 				event.stopPropagation();
-			})
+			});
 			// Stopping any propagation from happening on the add to cart button since its ancestor container has an onclick event and we don't want bubbling to occur
 			on(cartButton, "click", (event) => {
 				event.stopPropagation();
-			})
+			});
 
 			// Appending the content of the container to the featured products div
 			$$(".featured-products__list").appendChild(container);

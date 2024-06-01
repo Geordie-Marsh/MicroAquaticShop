@@ -10,13 +10,6 @@ function textFormClicked(clickedElement, clickedElementType) {
 		div = clickedElement.parentNode.parentNode;
 	}
 
-	// Working out what kind of input this field has
-	if (div.querySelector("select")) {
-		var inputType = "select";
-	} else {
-		var inputType = "input";
-	}
-
 	// Creating variables for the various elements of the form
 	const label = div.querySelector("label");
 	const img = div.querySelector("img.invalid-message");
@@ -117,7 +110,7 @@ function showInputValidity(certainElement) {
 // Calculating the shipping cost
 function calcShipping() {
 	// Checking the validity of all the necessary inputs
-	let allValid = true
+	let allValid = true;
 	if (!$$("#checkout__country").checkValidity()) {
 		allValid = false;
 	}
@@ -147,8 +140,8 @@ function calcShipping() {
 
 	if (allValid) {
 		// If all the required forms are valid, update the cost
-		$$(".delivery-details__shipping-total__cost").innerHTML = "$14.99"
-		$$(".order-summary__shipping-cost").innerHTML = "$14.99"
+		$$(".delivery-details__shipping-total__cost").innerHTML = "$14.99";
+		$$(".order-summary__shipping-cost").innerHTML = "$14.99";
 
 		// Updating the cost of the shipping in the localStorage
 		localStorage.setItem("shipping", "14.99");
@@ -159,8 +152,8 @@ function calcShipping() {
 		// Updating the subtotal
 		$$(".order-summary__total").innerHTML = "$" + cartTotal.toFixed(2);
 	} else {
-		$$(".delivery-details__shipping-total__cost").innerHTML = "Enter shipping address"
-		$$(".order-summary__shipping-cost").innerHTML = "Enter shipping address"
+		$$(".delivery-details__shipping-total__cost").innerHTML = "Enter shipping address";
+		$$(".order-summary__shipping-cost").innerHTML = "Enter shipping address";
 		
 		// Updating the cost of the shipping in the localStorage
 		localStorage.removeItem("shipping");
@@ -239,7 +232,7 @@ function carouselScrollLeft(scrollingList, scrollPercentage) {
 }
 function carouselScrollRight(scrollingList, scrollPercentage) {
 	// Getting the list being scrolled
-	let list = $$(scrollingList)
+	let list = $$(scrollingList);
 	// Defining the amount (px) of scrolling to be done
 	let scrollAmount = 250;
 	// Establishing what the max scroll amount possible is
@@ -283,7 +276,7 @@ function toggleFilter(filter, filterButton) {
 	let classFilter = "filter--" + filter;
 
 	// Toggling the filter
-	let productsCont = $$(".product-listing")
+	let productsCont = $$(".product-listing");
 	classToggle(productsCont, classFilter);
 
 	// Toggling whether this filter button is highlighted
@@ -302,7 +295,7 @@ function toggleFilter(filter, filterButton) {
 			// If there's a product that's not hidden, make sure the no available products message is hidden and exit
 			classAdd($$(".product-listing__no-products"), "display-none");
 			// Updating the variable on whether there's a shown product
-			displayedProductsExists = true
+			displayedProductsExists = true;
 			break;
 		}
 	}
@@ -318,7 +311,7 @@ function disableAllFilters() {
 		let classFilter = "filter--" + filter;
 
 		// Removing the filter
-		let productsCont = $$(".product-listing")
+		let productsCont = $$(".product-listing");
 		classRemove(productsCont, classFilter);
 	}
 	for (let i = 0; i < filterPrice.length; i++) {
@@ -326,7 +319,7 @@ function disableAllFilters() {
 		let classFilter = "filter--" + filter;
 
 		// Removing the filter
-		let productsCont = $$(".product-listing")
+		let productsCont = $$(".product-listing");
 		classRemove(productsCont, classFilter);
 	}
 	for (let i = 0; i < filterAvailability.length; i++) {
@@ -334,7 +327,7 @@ function disableAllFilters() {
 		let classFilter = "filter--" + filter;
 
 		// Removing the filter
-		let productsCont = $$(".product-listing")
+		let productsCont = $$(".product-listing");
 		classRemove(productsCont, classFilter);
 	}
 	for (let i = 0; i < filterColour.length; i++) {
@@ -342,7 +335,7 @@ function disableAllFilters() {
 		let classFilter = "filter--" + filter;
 
 		// Removing the filter
-		let productsCont = $$(".product-listing")
+		let productsCont = $$(".product-listing");
 		classRemove(productsCont, classFilter);
 	}
 
@@ -634,7 +627,7 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 	// Checking to see if there's already a cart LS variable
 	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
 		// If the cart is empty, nothing will happen (but a warning message will be sent to the console)
-		console.warn("Trying to decrease the quantity of an item which is not in the cart (cart is empty)")
+		console.warn("Trying to decrease the quantity of an item which is not in the cart (cart is empty)");
 	} else {
 		// Getting the current data of the cart
 		originalCart = getCartArray();
@@ -643,7 +636,7 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 		productInCartIndex = checkCartForItem(originalCart, interactiveProductsIndex);
 		// If the product is NOT already in the cart, nothing will happen (but a warning message will be sent to the console)
 		if (productInCartIndex === false) {
-			console.warn("Trying to decrease the quantity of an item which is not in the cart")
+			console.warn("Trying to decrease the quantity of an item which is not in the cart");
 			return;
 		}
 
@@ -698,7 +691,7 @@ function removeFromCart(interactiveProductsIndex, refresh = true) {
 	// Checking to see if there's already a cart LS variable
 	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
 		// If the cart is empty, nothing will happen (but a warning message will be sent to the console)
-		console.warn("Trying to remove a product which is not in the cart (cart is empty)")
+		console.warn("Trying to remove a product which is not in the cart (cart is empty)");
 	} else {
 		// Getting the current data of the cart
 		originalCart = getCartArray();
@@ -707,7 +700,7 @@ function removeFromCart(interactiveProductsIndex, refresh = true) {
 		productInCartIndex = checkCartForItem(originalCart, interactiveProductsIndex);
 		// If the product is NOT already in the cart, nothing will happen (but a warning message will be sent to the console)
 		if (productInCartIndex === false) {
-			console.warn("Trying to remove a product which is not in the cart")
+			console.warn("Trying to remove a product which is not in the cart");
 			return;
 		}
 		
@@ -824,7 +817,7 @@ function refreshProductTotalPrice(priceElement, interactiveProductsIndex, quanti
 	}
 
 	if (affectsCart && quantity > 0) {
-		removeFromCart(interactiveProductsIndex, false)
+		removeFromCart(interactiveProductsIndex, false);
 		addToCart(interactiveProductsIndex, quantity);
 		
 		// Updating the cart subtotal
@@ -854,7 +847,7 @@ function calcCartTotalPrice() {
 	for (let i = 0; i < cartArray.length; i++) {
 		// Getting the total price of this product
 		let thisProductTotal = calcProductTotalPrice(cartArray[i][0], cartArray[i][1]);
-		log(thisProductTotal)
+		log(thisProductTotal);
 
 		// Updating the running total to include the price of this product
 		runningTotal += thisProductTotal;
