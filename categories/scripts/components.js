@@ -61,7 +61,6 @@
 			classAdd(container, "flex--vertical");
 			classAdd(container, "standard-spacing");
 
-			log(listedProductsShrimp[i][5])//TEMP
 			// Giving the container classes associated with which filters it applies to
 			for (let j = 0; j < listedProductsShrimp[i][5].length; j++) {
 				const filter = listedProductsShrimp[i][5][j];
@@ -110,7 +109,6 @@
 					// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
 					// If the wishlist is empty, ignore this
 					if (localStorage.getItem("wishlist") != null && localStorage.getItem("cart") != undefined && localStorage.getItem("cart") != "") {
-						log("wishlist not empty")//TEMP
 						log(localStorage.getItem("wishlist"))
 						// Getting the current data of the wishlist
 						let wishlist = getWishlistArray();

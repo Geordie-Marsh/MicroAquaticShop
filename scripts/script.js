@@ -59,28 +59,35 @@ function textFormClicked(clickedElement, clickedElementType) {
 // When the user changes which country in the checkout
 function countryChanged(country) {
 	if (country == "australia") {
-		classRemove($$(".text-form--aus--apartment"), "display-none");
+		// Showing the Australia-specific fields and making them required
+		classRemove($$(".text-form--aus--address2"), "display-none");
 		classRemove($$(".text-form--aus--state"), "display-none");
 		$$("#checkout__aus--state").required = true;
 		classRemove($$(".text-form--aus--city"), "display-none");
 		$$("#checkout__aus--city").required = true;
+		
+		// Hiding the NZ-specific fields and making them not required
 		classAdd($$(".text-form--nz--suburb"), "display-none");
 		$$("#checkout__nz--suburb").required = false;
 		classAdd($$(".text-form--nz--city"), "display-none");
 		$$("#checkout__nz--city").required = false;
 	} else {
-		classAdd($$(".text-form--aus--apartment"), "display-none");
-		classAdd($$(".text-form--aus--state"), "display-none");
-		$$("#checkout__aus--state").required = false;
-		classAdd($$(".text-form--aus--city"), "display-none");
-		$$("#checkout__aus--city").required = false;
+		// Showing the NZ-specific fields and making them required
 		classRemove($$(".text-form--nz--suburb"), "display-none");
 		$$("#checkout__nz--suburb").required = true;
 		classRemove($$(".text-form--nz--city"), "display-none");
 		$$("#checkout__nz--city").required = true;
+		
+		// Showing the Australia-specific fields and making them required
+		classAdd($$(".text-form--aus--address2"), "display-none");
+		classAdd($$(".text-form--aus--state"), "display-none");
+		$$("#checkout__aus--state").required = false;
+		classAdd($$(".text-form--aus--city"), "display-none");
+		$$("#checkout__aus--city").required = false;
 	}
 }
 
+// This function displays whether a form input is current valid
 function showInputValidity(certainElement) {
 	if(certainElement) {
 		// If it's just checking validity for a certain element
@@ -92,8 +99,8 @@ function showInputValidity(certainElement) {
 	} else {
 		// If it's checking validity for all fields
 		let allInputs = $$all(".text-form select, .text-form input");
-		log(allInputs)//TEMP
 
+		// Going through all the input fields
 		for (let i = 0; i < allInputs.length; i++) {
 			// Finding the ancestor of the invalid input that contains the full input field
 			const parentDiv = allInputs[i].closest(".text-form");
@@ -121,6 +128,7 @@ function calcShipping() {
 		allValid = false;
 	}
 	if ($$("#checkout__country").value == "new-zealand") {
+		// NZ-specific fields
 		if (!$$("#checkout__nz--suburb").checkValidity()) {
 			allValid = false;
 		}
@@ -128,6 +136,7 @@ function calcShipping() {
 			allValid = false;
 		}
 	} else {
+		// Australia-specific fields
 		if (!$$("#checkout__aus--city").checkValidity()) {
 			allValid = false;
 		}
@@ -211,35 +220,53 @@ function toggleFilters() {
 }
 
 
-
+// The functions for scrolling carousels using the left or right button
 function carouselScrollLeft(scrollingList, scrollPercentage) {
-	let list = $$(scrollingList)
+	// Getting the list being scrolled
+	let list = $$(scrollingList);
+	// Defining the amount (px) of scrolling to be done
 	let scrollAmount = 250;
+	// Establishing what the max scroll amount possible is
 	let maxScrollLeft = list.scrollWidth - list.clientWidth;
+	
+	// If a scroll amount in the form of a percentage has been provided, calculate the scroll amount based on that
 	if (scrollPercentage) {
 		scrollAmount = scrollPercentage * maxScrollLeft;
 	}
-	log(scrollAmount)//TEMP
-	$$(scrollingList).scrollLeft -= scrollAmount;
+	
+	// Scroll the list this amount
+	list.scrollLeft -= scrollAmount;
 }
 function carouselScrollRight(scrollingList, scrollPercentage) {
+	// Getting the list being scrolled
 	let list = $$(scrollingList)
+	// Defining the amount (px) of scrolling to be done
 	let scrollAmount = 250;
+	// Establishing what the max scroll amount possible is
 	let maxScrollLeft = list.scrollWidth - list.clientWidth;
+	
+	// If a scroll amount in the form of a percentage has been provided, calculate the scroll amount based on that
 	if (scrollPercentage) {
 		scrollAmount = scrollPercentage * maxScrollLeft;
 	}
-	log(scrollAmount)//TEMP
-	$$(scrollingList).scrollLeft += scrollAmount;
+	
+	// Scroll the list this amount
+	list.scrollLeft += scrollAmount;
 }
 
+// When the carousel is scrolled, this function is invoked
 function carouselScrolling(list, carouselButtons) {
+	// Establishing what the max scroll amount possible is
 	let maxScrollLeft = list.scrollWidth - list.clientWidth;
+
+	// If the carousel is scrolled within 50px of the left, hide the scroll left button
 	if (list.scrollLeft < 50) {
 		classAdd($$(carouselButtons + "left"), "opacity-none");
 	} else {
 		classRemove($$(carouselButtons + "left"), "opacity-none");
 	}
+	
+	// If the carousel is scrolled within 50px of the right, hide the scroll right button
 	if (list.scrollLeft > (maxScrollLeft - 50)) {
 		classAdd($$(carouselButtons + "right"), "opacity-none");
 	} else {
@@ -337,7 +364,6 @@ function disableAllFilters() {
 
 // Updating the add to cart button to confirm adding to the cart
 function updateAddToCartButton(button, revertButton = true) {
-	log("Changing add to cart button");//TEMP
 	// Saving the existing icon of the button
 	let oldIcon = button.querySelector("img").getAttribute("src");
 
@@ -363,7 +389,6 @@ function updateAddToCartButton(button, revertButton = true) {
 
 // Updating the wishlist icon number
 function updateWishlistIconNumber() {
-	log("updating wishlist icon number")//TEMP
 	// The wishlist icon number
 	let wishlistIconNumber = $$(".navbar__purchasing-icons__number--wishlist");
 
@@ -386,7 +411,6 @@ function updateWishlistIconNumber() {
 
 // Updating the cart icon number
 function updateCartIconNumber() {
-	log("updating cart icon number")//TEMP
 	// The cart icon number
 	let cartIconNumber = $$(".navbar__purchasing-icons__number--cart");
 
@@ -421,14 +445,10 @@ function getCartArray() {
 
 	let cartData = localStorage.getItem("cart");
 	// ? "productA,3;productB,5;productC,4"
-	log(cartData); //TEMP
-
 
 	// Turning the cartData string into an array with each element being both the product name and quantity
 	cartData = cartData.split(";");
 	// ? ["productA,3", "product,5", "productC,4"]
-	log(cartData); //TEMP
-
 
 	// Turning each element of the cartData array into a subarray with the product name and quantity
 	for (let i = 0; i < cartData.length; i++) {
@@ -436,7 +456,6 @@ function getCartArray() {
 		cartData[i] = splitElement;
 	}
 	// ? [["productA", "3"], ["product" , "5"], ["productC", "4"]]
-	log(cartData); //TEMP
 	
 	return cartData;
 }
@@ -483,7 +502,6 @@ function addToCart(interactiveProductsIndex, quantity = 1) {
 
 	// Checking to see if there's already a cart LS variable
 	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
-		log("cart empty in add") //TEMP
 		// If the original cart is empty, the newProductSubarray data can just be set as the cart itself
 		// Converting the newProductSubarray to a string
 		newCart = newProductSubarray.join(",");
@@ -498,10 +516,8 @@ function addToCart(interactiveProductsIndex, quantity = 1) {
 		// If the product is already in the cart, do a quantity increase instead of adding another instance
 		if (productAlreadyInCart !== false) {
 			cartProductQuantityIncrease(interactiveProductsIndex, quantity);
-			console.log("sent to increase") //TEMP
 			return;
 		}
-		log("past checks in add") //TEMP
 		
 		// So, if the product's NOT already in the cart, add an instance of it to the cart
 		// Assigning the data of the original cart to the new cart variable
@@ -509,12 +525,10 @@ function addToCart(interactiveProductsIndex, quantity = 1) {
 		// Pushing the new subarray element to the new cart
 		newCart.push(newProductSubarray);
 		// ? [["productA", "3"], ["productB" , "5"], ["productC", "4"], [product, "1"]]
-		log(newCart) //TEMP
 		
 		// Reconcatenating the cart string
 		newCart = newCart.join(";");
 		// ? "productA,3;productB,5;productC,4;product,1"
-		log(newCart); //TEMP
 		
 		// Updating the cart to be the new cart
 		localStorage.setItem("cart", newCart);
@@ -548,7 +562,6 @@ function cartProductQuantityIncrease(interactiveProductsIndex, increaseNo = 1) {
 	
 	// Checking to see if there's already a cart LS variable
 	if (localStorage.getItem("cart") == null || localStorage.getItem("cart") == undefined || localStorage.getItem("cart") == "") {
-		log("cart empty in increase") //TEMP
 		// If the original cart is empty, create a subarray for the element and directly assign that as the cart itself
 		newProductSubarray = [interactiveProductsIndex, increaseNo.toString()];
 		// Converting the newProductSubarray to a string
@@ -564,22 +577,17 @@ function cartProductQuantityIncrease(interactiveProductsIndex, increaseNo = 1) {
 		// If the product is NOT already in the cart, add a new instance instead of doing a quantity increase
 		if (productInCartIndex === false) {
 			addToCart(interactiveProductsIndex, increaseNo);
-			console.log("sent to add") //TEMP
 			return;
 		}
-		log("past checks in increase") //TEMP
 
 		// Getting the current quantity of the product in the cart (as a string)
 		existingQuantity = originalCart[productInCartIndex][1];
-		log(existingQuantity); //TEMP
 		
 		// Converting the current quantity string into an int
 		existingQuantity = parseInt(existingQuantity);
-		log(existingQuantity); //TEMP
 
 		// Adding the amount to increase to the existing quantity
 		newQuantity = existingQuantity + increaseNo;
-		log(newQuantity); //TEMP
 
 		// Converting the new quantity to a string
 		newQuantity = newQuantity.toString();
@@ -592,7 +600,6 @@ function cartProductQuantityIncrease(interactiveProductsIndex, increaseNo = 1) {
 
 		// Reconcatenating the cart string
 		newCart = newCart.join(";");
-		log(newCart); //TEMP
 		
 		// Updating the cart to be the new cart
 		localStorage.setItem("cart", newCart);
@@ -639,19 +646,15 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 			console.warn("Trying to decrease the quantity of an item which is not in the cart")
 			return;
 		}
-		log("past checks in decrease") //TEMP
 
 		// Getting the current quantity of the product in the cart (as a string)
 		existingQuantity = originalCart[productInCartIndex][1];
-		log(existingQuantity); //TEMP
 		
 		// Converting the current quantity string into an int
 		existingQuantity = parseInt(existingQuantity);
-		log(existingQuantity); //TEMP
 
 		// Adding the amount to increase to the existing quantity
 		newQuantity = existingQuantity - decreaseNo;
-		log(newQuantity); //TEMP
 
 		// If the new quantity is <=0 (ie, the decrease was greater than the existing quantity), just remove the product from the cart
 		if (newQuantity <= 0) {
@@ -670,7 +673,6 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 
 		// Reconcatenating the cart string
 		newCart = newCart.join(";");
-		log(newCart); //TEMP
 		
 		// Updating the cart to be the new cart
 		localStorage.setItem("cart", newCart);
@@ -708,18 +710,15 @@ function removeFromCart(interactiveProductsIndex, refresh = true) {
 			console.warn("Trying to remove a product which is not in the cart")
 			return;
 		}
-		log("past checks in remove") //TEMP
 		
 		// So, if the product is in the cart, remove it
 		// Assigning the data of the original cart to the new cart variable
 		newCart = originalCart;
 		// Removing the product in question from the array
 		newCart.splice(productInCartIndex, 1);
-		log(newCart) //TEMP
 		
 		// Reconcatenating the cart string
 		newCart = newCart.join(";");
-		log(newCart); //TEMP
 		
 		// If the new cart is empty, remove the cart variable instead of updating it
 		if (newCart == "") {
@@ -748,9 +747,7 @@ function getPerItemCost(priceList, quantity) {
 		for (let i = priceList.length - 1; i > 0; i--) {
 			const offer = priceList[i];
 			let offerMinQuantity = priceList[i][0];
-			log(offerMinQuantity)//TEMP
 			if (quantity >= offerMinQuantity) {
-				log(priceList[i][1])//TEMP
 				return priceList[i][1];
 			}	
 		}
@@ -785,7 +782,6 @@ function calcProductTotalPrice(interactiveProductsIndex, quantity = 1) {
 
 	// Calculating the total cost
 	let totalPrice = quantity * perItemCost;
-	log(totalPrice);//TEMP
 	return totalPrice;
 }
 
@@ -917,7 +913,6 @@ function toggleWishlist(interactiveProductsIndex, heartIconToChange) {
 
 	// Checking to see if there's already a wishlist LS variable
 	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
-		log("wishlist empty in add") //TEMP
 		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
 		newWishlist = interactiveProductsIndex;
 		// Setting the newWishlist as the wishlist
@@ -936,7 +931,6 @@ function toggleWishlist(interactiveProductsIndex, heartIconToChange) {
 
 		// If the product is not already in the wishlist, add it; if it is, remove it
 		if (productAlreadyInWishlist === false) {
-			log("adding to wishlist from toggle");//TEMP
 			// Adding to wishlist
 			addToWishlist(interactiveProductsIndex);
 
@@ -945,7 +939,6 @@ function toggleWishlist(interactiveProductsIndex, heartIconToChange) {
 				heartIconToChange.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
 			}
 		} else {
-			log("removing from wishlist from toggle");//TEMP
 			// Removing from wishlist
 			removeFromWishlist(interactiveProductsIndex);
 
@@ -972,7 +965,6 @@ function addToWishlist(interactiveProductsIndex) {
 	
 	// Checking to see if there's already a wishlist LS variable
 	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
-		log("wishlist empty in add") //TEMP
 		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
 		newWishlist = interactiveProductsIndex;
 		// Setting the newWishlist as the wishlist
@@ -980,14 +972,12 @@ function addToWishlist(interactiveProductsIndex) {
 	} else {
 		// Getting the current data of the wishlist
 		originalWishlist = getWishlistArray();
-		log(originalWishlist);//TEMP
 
 		// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
 		productAlreadyInWishlist = checkWishlistForItem(originalWishlist, interactiveProductsIndex);
 
 		// If the product is already in the wishlist, send a warning and break this function
 		if (productAlreadyInWishlist !== false) {
-			console.warn("Item is already in the wishlist");//TEMP
 			return;
 		}
 
@@ -996,7 +986,6 @@ function addToWishlist(interactiveProductsIndex) {
 
 		// Pushing the new product as a new element in the wishlist array
 		newWishlist.push(interactiveProductsIndex);
-		log(newWishlist);//TEMP
 
 		// Converting the wishlist array back to a string
 		newWishlist = newWishlist.join(";");
@@ -1021,7 +1010,6 @@ function removeFromWishlist(interactiveProductsIndex, refresh = false) {
 
 	// Checking to see if there's already a wishlist LS variable
 	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
-		log("wishlist empty in remove") //TEMP
 		// If the original wishlist is empty, the interactiveProductsIndex data can just be set as the wishlist itself
 		newWishlist = interactiveProductsIndex;
 		// Setting the newWishlist as the wishlist
@@ -1029,14 +1017,12 @@ function removeFromWishlist(interactiveProductsIndex, refresh = false) {
 	} else {
 		// Getting the current data of the wishlist
 		originalWishlist = getWishlistArray();
-		log(originalWishlist);//TEMP
 
 		// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
 		productInWishlistIndex = checkWishlistForItem(originalWishlist, interactiveProductsIndex);
 
 		// If the product isn't already in the wishlist, send a warning and break this function
 		if (productInWishlistIndex === false) {
-			console.warn("Cannot remove an item not in the wishlist");//TEMP
 			return;
 		}
 
@@ -1045,7 +1031,6 @@ function removeFromWishlist(interactiveProductsIndex, refresh = false) {
 
 		// Removing the product in question from the array
 		newWishlist.splice(productInWishlistIndex, 1);
-		log(newWishlist) //TEMP
 
 		// Converting the wishlist array back to a string
 		newWishlist = newWishlist.join(";");
@@ -1093,7 +1078,6 @@ function wishlistToCart(interactiveProductsIndex) {
 function moveAllFromWishlistToCart() {
 	// Checking to see that there's a wishlist LS variable
 	if (localStorage.getItem("wishlist") == null || localStorage.getItem("wishlist") == undefined || localStorage.getItem("wishlist") == "") {
-		log("wishlist empty in move all") //TEMP
 		return;
 	}
 
@@ -1102,7 +1086,6 @@ function moveAllFromWishlistToCart() {
 
 	// Getting the current data of the wishlist
 	wishlist = getWishlistArray();
-	log(wishlist);//TEMP
 
 	// Going through the wishlist for each item 
 	for (let i = 0; i < wishlist.length; i++) {

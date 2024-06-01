@@ -209,13 +209,17 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 			classAdd(container, "standard-spacing");
 
 			// Replacing the default data of the element with that specific to the product in question
-			const title = container.querySelector(".featured-product__title"); // Editing the title
+			// Editing the title
+			const title = container.querySelector(".featured-product__title");
 			title.textContent = featuredProducts[i][0];
-			const price = container.querySelector(".featured-product__price"); // Editing the price
+			// Editing the price
+			const price = container.querySelector(".featured-product__price");
 			price.textContent = featuredProducts[i][1];
-			const img = container.querySelector(".featured-product__img"); // Editing the image
+			// Editing the image
+			const img = container.querySelector(".featured-product__img");
 			img.setAttribute("src", "assets/images/" + featuredProducts[i][2] + ".jpg");
 
+			// Establishing variables the elements in the featured product
 			const viewButton = container.querySelector(".featured-product__button--view");
 			const wishlistButton = container.querySelector(".featured-product__button--heart");
 			const cartButton = container.querySelector(".featured-product__button--cart");
@@ -234,7 +238,6 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
 				// If the wishlist is empty, ignore this
 				if (localStorage.getItem("wishlist") != null && localStorage.getItem("cart") != undefined && localStorage.getItem("cart") != "") {
-					log("wishlist not empty")//TEMP
 					// Getting the current data of the wishlist
 					let wishlist = getWishlistArray();
 
@@ -243,7 +246,6 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 
 					// If in wishlist, change the heart symbol to be filled
 					if (productInWishlistIndex !== false) {
-						log(productInWishlistIndex, "made filled")
 						wishlistButton.querySelector("img").setAttribute("src", "assets/icons/heart-filled--red.svg");
 
 						// Giving the container a specific class which will hide it so the user won't see a duplicate product
