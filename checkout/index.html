@@ -27,9 +27,9 @@
 		<!-- Breadcrumb navigation -->
 		<section class="breadcrumbs-cont flex--horizontal">
 			<a class="breadcrumb link" href="">Home</a>
-			<img class="breadcrumb-arrow" src="assets/icons/arrow-right-white.svg">
+			<img class="breadcrumb-arrow" src="assets/icons/arrow-right-white.svg" alt="Right arrow">
 			<a class="breadcrumb link" href="cart/">Cart</a>
-			<img class="breadcrumb-arrow" src="assets/icons/arrow-right-white.svg">
+			<img class="breadcrumb-arrow" src="assets/icons/arrow-right-white.svg" alt="Right arrow">
 			<strong class="breadcrumb">Checkout</strong>
 		</section>
 
@@ -73,7 +73,7 @@
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__email">Email</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -94,7 +94,7 @@
 							<div class="text-form text-form--given-name" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label for="checkout__given-name">Given name</label>
-									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message">Invalid</strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -106,7 +106,7 @@
 							<div class="text-form text-form--family-name" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label for="checkout__family-name">Family name</label>
-									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message">Invalid</strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -120,7 +120,7 @@
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__phone">Phone number</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -131,12 +131,13 @@
 						<div class="text-form text-form--select" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label class="text-form--select input--not-blank" for="checkout__country">Country</label>
-								<img class="invalid-message input--not-blank" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message input--not-blank" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message input--not-blank">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 							<div>
-								<select class="input--not-blank" name="checkout__country" id="checkout__country" onfocus="textFormClicked(this, 'select')" value="australia" onchange="countryChanged(this.value);" required>
+								<select class="input--not-blank" name="checkout__country" id="checkout__country" onfocus="textFormClicked(this, 'select')" onchange="countryChanged(this.value);" required>
+									<option value="" hidden disabled>Select a country</option>
 									<option value="australia" selected>Australia</option>
 									<option value="new-zealand">New Zealand</option>
 								</select>
@@ -147,7 +148,7 @@
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__address">Address</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -160,12 +161,12 @@
 						<div class="text-form text-form--aus--address2" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__aus--address2">Address line 2 (optional)</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 							<div>
-								<input type="text" name="checkout__address2" id="checkout__address2" onfocus="textFormClicked(this, 'input')">
+								<input type="text" name="checkout__aus--address2" id="checkout__aus--address2" onfocus="textFormClicked(this, 'input')">
 							</div>
 						</div>
 
@@ -173,7 +174,7 @@
 						<div class="text-form text-form--nz--suburb display-none" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__nz--suburb">Suburb</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -186,7 +187,7 @@
 						<div class="text-form text-form--aus--city" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__aus--city">City</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -201,7 +202,7 @@
 							<div class="text-form text-form--nz--city display-none" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label for="checkout__nz--city">City/Town</label>
-									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message">Invalid</strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -214,13 +215,13 @@
 							<div class="text-form text-form--select text-form--aus--state" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label class="text-form--select input--not-blank" for="checkout__aus--state">State/Territory</label>
-									<img class="invalid-message input--not-blank" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message input--not-blank" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message input--not-blank">Invalid</strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 								<div>
 									<select class="input--not-blank" name="checkout__aus--state" id="checkout__aus--state" onfocus="textFormClicked(this, 'select')" required>
-										<option hidden readonly selected value="">Select an option</option>
+										<option hidden disabled selected value="">Select an option</option>
 										<option value="act">ACT</option>
 										<option value="nsw">NSW</option>
 										<option value="nt">NT</option>
@@ -237,7 +238,7 @@
 							<div class="text-form text-form--postcode" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label for="checkout__postcode">Postcode</label>
-									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message">Invalid</strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -266,7 +267,7 @@
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__card-no">Card number</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -281,7 +282,7 @@
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label for="checkout__card-month">MM</label>
-									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message"></strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -293,7 +294,7 @@
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label for="checkout__card-year">YY</label>
-									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message"></strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -305,7 +306,7 @@
 							<div class="text-form" onclick="textFormClicked(this, 'div');">
 								<div class="label-cont">
 									<label for="checkout__security-code">CVC</label>
-									<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+									<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 									<strong class="invalid-message"></strong>
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -319,7 +320,7 @@
 						<div class="text-form" onclick="textFormClicked(this, 'div');">
 							<div class="label-cont">
 								<label for="checkout__card-name">Name on card</label>
-								<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+								<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 								<strong class="invalid-message">Invalid</strong>
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
@@ -330,7 +331,7 @@
 
 						<!-- BILLING ADDRESS CHECKBOX -->
 						<div class="checkbox-form">
-							<input form="checkout-form" type="checkbox" name="checkout__billing-address" id="checkout__billing-address" checked="true">
+							<input form="checkout-form" type="checkbox" name="checkout__billing-address" id="checkout__billing-address" checked="checked">
 							<label for="checkout__billing-address">Use shipping address as billing address</label>
 						</div>
 					</fieldset>
@@ -345,7 +346,7 @@
 					<form class="flex--vertical standard-spacing">
 						<!-- REMEMBER ME CHECKBOX -->
 						<div class="checkbox-form">
-							<input form="checkout-form" type="checkbox" name="checkout__remember" id="checkout__remember" checked="true">
+							<input form="checkout-form" type="checkbox" name="checkout__remember" id="checkout__remember" checked="checked">
 							<label for="checkout__remember">Save my information for a faster checkout next time</label>
 						</div>
 					</form>
@@ -361,7 +362,7 @@
 				<div class="order-details__items-list flex--vertical standard-spacing">
 					<!-- Items in the cart -->
 					<article id="checkout-order-item--1" class="checkout-order-item panel panel--big-rounding flex--horizontal">
-						<img class="checkout-order-item__img" src="assets/images/shrimp-cherry-blue.jpg">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-cherry-blue.jpg" alt="A photo of the blue cherry shrimp">
 						<div class="checkout-order-item__info flex--vertical">
 							<h4 class="checkout-order-item__title">Cherry Shrimp &#40;Blue&#41;</h4>
 							<strong class="checkout-order-item__info">
@@ -372,7 +373,7 @@
 						<!-- TODO Add in quantity -->
 					</article>
 					<article id="checkout-order-item--2" class="checkout-order-item panel panel--big-rounding flex--horizontal">
-						<img class="checkout-order-item__img" src="assets/images/shrimp-cherry-red.jpg">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-cherry-red.jpg" alt="A photo of the red cherry shrimp">
 						<div class="checkout-order-item__info flex--vertical">
 							<h4 class="checkout-order-item__title">Cherry Shrimp &#40;Red&#41;</h4>
 							<strong class="checkout-order-item__info">
@@ -383,7 +384,7 @@
 						<!-- TODO Add in quantity -->
 					</article>
 					<article id="checkout-order-item--3" class="checkout-order-item panel panel--big-rounding flex--horizontal">
-						<img class="checkout-order-item__img" src="assets/images/shrimp-ghost.jpg">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-ghost.jpg" alt="A photo of the ghost shrimp">
 						<div class="checkout-order-item__info flex--vertical">
 							<h4 class="checkout-order-item__title">Ghost Shrimp</h4>
 							<strong class="checkout-order-item__info">
@@ -393,7 +394,7 @@
 						</div>
 					</article>
 					<article id="checkout-order-item--0" class="checkout-order-item panel panel--big-rounding flex--horizontal">
-						<img class="checkout-order-item__img" src="assets/images/shrimp-tangerine-tiger.jpg">
+						<img class="checkout-order-item__img" src="assets/images/shrimp-tangerine-tiger.jpg" alt="A photo of the tangerine tiger shrimp">
 						<div class="checkout-order-item__info flex--vertical">
 							<h4 class="checkout-order-item__title">Tangerine Tiger Shrimp</h4>
 							<strong class="checkout-order-item__info">
@@ -414,7 +415,7 @@
 								<div class="text-form" onclick="textFormClicked(this, 'div');">
 									<div class="label-cont">
 										<label for="checkout__discount-code">Discount code</label>
-										<img class="invalid-message" src="assets/icons/warning.svg" alt="">
+										<img class="invalid-message" src="assets/icons/warning.svg" alt="⚠">
 										<strong class="invalid-message">Invalid</strong>
 									</div>
 									<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
