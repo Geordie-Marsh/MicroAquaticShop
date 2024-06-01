@@ -10,8 +10,10 @@
 		flex-wrap: nowrap;
 		justify-content: space-between;
 		align-items: flex-start;
-		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
-		backdrop-filter: blur(30px);
+		        background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+		-webkit-background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+		        backdrop-filter: blur(30px);
+		-webkit-backdrop-filter: blur(30px);
 	}
 	.panel--big-rounding,
 	.panel--highlighted-section {
@@ -371,7 +373,8 @@
 	label.input--not-blank {
 		font-size: calc(0.7 * var(--font-size-factor));
 		margin-top: 0px;
-		filter: brightness(0.8);
+		        filter: brightness(0.8);
+		-webkit-filter: brightness(0.8);
 	}
 	img.input--not-blank {
 		height: calc(0.7 * var(--font-size-factor)) !important;
@@ -431,8 +434,10 @@
 		padding: var(--spacing-03);
 		background: var(--clr-glass-gradient);
 		border: 0.3px solid #00000040;
-		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
-		backdrop-filter: blur(30px);
+		        background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+		-webkit-background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
+		        backdrop-filter: blur(30px);
+		-webkit-backdrop-filter: blur(30px);
 		align-items: center;
 
 		img {

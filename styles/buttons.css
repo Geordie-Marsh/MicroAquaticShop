@@ -16,7 +16,8 @@
 .button {
 	transition: 
 		transform var(--effect-transition-duration),
-		filter var(--effect-transition-duration);
+		        filter var(--effect-transition-duration),
+		-webkit-filter var(--effect-transition-duration);
 	
 	.button__label {
 		/* The label inside a button - due to the font, by default it appears slightly vertically misaligned, so this fixes that by offsetting it down */
@@ -31,19 +32,15 @@
 	
 	&:hover:not(.button--only-styling) {
 		cursor: pointer;
-		filter:brightness(0.8);
+		        filter:brightness(0.8);
 		-webkit-filter:brightness(0.8);
 	}
 
 	&:active:not(.button--only-styling) {
 		cursor: pointer;
-		filter: brightness(0.8);
+		        filter: brightness(0.8);
 		-webkit-filter: brightness(0.8);
 		transform: scale(0.95);
-		-webkit-transform: scale(0.95);
-		-moz-transform: scale(0.95);
-		-ms-transform: scale(0.95);
-		-o-transform: scale(0.95);
 	}
 
 
@@ -90,7 +87,8 @@
 	/* Buttons with glass styling */
 	&.button--glass {
 		background: var(--clr-button-gradient--glass);
-		backdrop-filter: blur(5px);
+		        backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
 		border: 0.3px solid #00000040;
 		background-clip: padding-box; /* Without this the border doesn't display properly on the rounded corners */
 

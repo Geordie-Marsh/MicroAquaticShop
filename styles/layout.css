@@ -67,7 +67,8 @@
 		background: url(../assets/backgrounds/gradient-background-desktop.svg);
 		background-size: cover;
 		box-shadow: var(--effect-highlighted-panel-shadow);
-		backdrop-filter: blur(var(--effect-highlighted-panel-blur));
+		        backdrop-filter: blur(var(--effect-highlighted-panel-blur));
+		-webkit-backdrop-filter: blur(var(--effect-highlighted-panel-blur));
 
 		@media only screen and (min-width: 1024px) {
 			padding: var(--layout-05);

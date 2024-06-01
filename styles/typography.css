@@ -1,18 +1,8 @@
-/* Importing the brand font, Fieldwork */
-/* @import url(/fonts/fieldwork-100-hair.otf);
-@import url(/fonts/fieldwork-100-hair-italic.otf); */
+/* Import the font from locally */
 @import url(../fonts/fieldwork-200-thin.otf);
 @import url(../fonts/fieldwork-200-thin-italic.otf);
-/* @import url(/fonts/fieldwork-300-light.otf);
-@import url(/fonts/fieldwork-300-light-italic.otf);
-@import url(/fonts/fieldwork-400-regular.otf);
-@import url(/fonts/fieldwork-400-regular-italic.otf); */
 @import url(../fonts/fieldwork-600-demibold.otf);
 @import url(../fonts/fieldwork-600-demibold-italic.otf);
-/* @import url(/fonts/fieldwork-700-bold.otf);
-@import url(/fonts/fieldwork-700-bold-italic.otf);
-@import url(/fonts/fieldwork-800-black.otf);
-@import url(/fonts/fieldwork-800-black-italic.otf); */
 @import url(../fonts/fieldwork-900-fat.otf);
 @import url(../fonts/fieldwork-900-fat-italic.otf);
 
