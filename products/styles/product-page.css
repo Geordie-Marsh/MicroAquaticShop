@@ -210,7 +210,6 @@
 	}
 	.review-column2 {
 		grid-area: review-column2;
-		margin-top: calc(-1 * var(--spacing-03));
 		
 		@media only screen and (min-width: 480px) {
 			margin-top: 0;

@@ -158,7 +158,7 @@
 		/* These are the individual images in the slideshow */
 		scroll-snap-align: center;
 		border-radius: var(--spacing-04);
-		width: 96%;
+		width: 96vw;
 		height: auto;
 		object-fit: cover;
 
