@@ -70,7 +70,7 @@
 			));
 		}
 		.horizontal-text-form--card-security {
-			grid-template-columns: repeat(2, 22%) 1fr;
+			grid-template-columns: repeat(2, 26%) 1fr;
 		}
 		.text-form--city {
 			flex: 2;
