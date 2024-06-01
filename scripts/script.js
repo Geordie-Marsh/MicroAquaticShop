@@ -14,7 +14,7 @@ function textFormClicked(clickedElement, clickedElementType) {
 	const label = div.querySelector("label");
 	const img = div.querySelector("img.invalid-message");
 	const strong = div.querySelector("strong.invalid-message");
-	const input = (inputType == "select") ? 
+	const input = (div.querySelector("select")) ? 
 		div.querySelector("select") : 
 		div.querySelector("input");
 	
@@ -484,7 +484,6 @@ function addToCart(interactiveProductsIndex, quantity = 1) {
 	if (!(Number.isInteger(quantity))) {
 		console.warn("A non-integer increase was provided, so it has been rounded up");
 		quantity = roundUp(quantity);
-		log("new quantity: " + quantity);
 	}
 
 	// Setting up variables
@@ -589,7 +588,6 @@ function cartProductQuantityIncrease(interactiveProductsIndex, increaseNo = 1) {
 		newCart = originalCart;
 		// Changing the quantity of the product in question in the new cart
 		newCart[productInCartIndex][1] = newQuantity;
-		log(newCart);
 
 		// Reconcatenating the cart string
 		newCart = newCart.join(";");
@@ -662,7 +660,6 @@ function cartProductQuantityDecrease(interactiveProductsIndex, decreaseNo = 1) {
 		newCart = originalCart;
 		// Changing the quantity of the product in question in the new cart
 		newCart[productInCartIndex][1] = newQuantity;
-		log(newCart);
 
 		// Reconcatenating the cart string
 		newCart = newCart.join(";");
@@ -796,7 +793,7 @@ function refreshProductTotalPrice(priceElement, interactiveProductsIndex, quanti
 		console.error("Product quantity cannot be less than 1");
 		return;
 	}
-	if (!(Number.isInteger(quantity))) {
+	if (!(Number.isInteger(quantity)) && typeof quantity !== "string") {
 		console.warn("A non-integer quantity was provided, so it has been rounded up");
 		quantity = roundUp(quantity);
 	}
@@ -847,11 +844,9 @@ function calcCartTotalPrice() {
 	for (let i = 0; i < cartArray.length; i++) {
 		// Getting the total price of this product
 		let thisProductTotal = calcProductTotalPrice(cartArray[i][0], cartArray[i][1]);
-		log(thisProductTotal);
 
 		// Updating the running total to include the price of this product
 		runningTotal += thisProductTotal;
-		log("running total:", runningTotal);
 	}
 
 	return runningTotal;

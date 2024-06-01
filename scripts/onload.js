@@ -11,14 +11,12 @@ function productPageOnLoad(interactiveProductsIndex) {
 	// Checking to see if this product is already in the wishlist and updating the heart symbol accordingly
 	// If the wishlist is empty, ignore this
 	if (localStorage.getItem("wishlist") != null && localStorage.getItem("cart") != undefined && localStorage.getItem("cart") != "") {
-		log(localStorage.getItem("wishlist"));
 		// Getting the current data of the wishlist
 		let wishlist = getWishlistArray();
 		// Searching through the existing wishlist to see if there's already an instance (or multiple) of the product in there
 		productInWishlist = checkWishlistForItem(wishlist, pageProductIndex);
 		// If in wishlist, change the heart symbol to be filled
 		if (productInWishlist !== false) {
-			log(productInWishlist, "made filled");
 			$$(".product-user-actions__wishlist img").setAttribute("src", "assets/icons/heart-filled--red.svg");
 		}
 	}
@@ -113,14 +111,12 @@ function productPageOnLoad(interactiveProductsIndex) {
 
 	// If this product is already in the cart, change the add to cart button to be "add MORE to cart"
 	if (checkCartForItem(getCartArray(), pageProductIndex) !== false) {
-		log("product already in cart");
 		$$(".product-user-actions__cart").querySelector("span").innerHTML = "Add More to Cart";
 	}
 
 	// Making the add to cart button add however many of the quantity given to the cart
 	on($$(".product-user-actions__cart"), "click", () => {
 		let quantity = $$("#product-quantity-value--" + pageProductIndex).value;
-		log(quantity);
 		// Increasing by that quantity
 		cartProductQuantityIncrease(pageProductIndex, quantity);
 		// Updating the button to confirm the user's action
@@ -155,7 +151,6 @@ function wishlistPageOnLoad() {
 
 	// Getting the current data of the wishlist
 	let wishlistArray = getWishlistArray();
-	log(wishlistArray);
 		
 	
 	// Going through the list of products and checking which are in the wishlist - the ones in the wishlist will be shown in the wishlist
@@ -190,7 +185,6 @@ function cartPageOnLoad() {
 
 	// Getting the current data of the cart
 	let cartArray = getCartArray();
-	log(cartArray);
 		
 	
 	// Going through the list of products and checking which are in the cart - the ones in the cart will be shown in the cart
@@ -200,7 +194,6 @@ function cartPageOnLoad() {
 
 		// If the product is in the cart, update its quantity and price. If it's not, remove it from the list
 		if (productCartIndex !== false) {
-			log("in cart:", interactiveProducts[i][0]);
 			// Updating the cart item price
 			refreshProductTotalPrice($$("#cart-item__total--" + i), i, cartArray[productCartIndex][1], $$("#cart-item__subtotal--" + i));
 
@@ -237,7 +230,6 @@ function checkoutPageOnLoad() {
 
 	// Getting the current data of the cart
 	let cartArray = getCartArray();
-	log(cartArray);
 		
 	
 	// Going through the list of products and checking which are in the cart - the ones in the cart will be shown in the order summary
@@ -331,7 +323,6 @@ function confirmationPageOnLoad() {
 		}
 		// Adding the postcode
 		deliveryAddress += " " + searchParams.get("checkout__postcode");
-		log(deliveryAddress);
 
 		// Making up an expected delivery date (if loading from a real server, it would come back with a real estimate)
 		// Finding the date of the next Wednesday, even if the current date is a Wednesday
