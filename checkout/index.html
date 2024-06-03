@@ -272,7 +272,7 @@
 							</div>
 							<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 							<div>
-								<input form="checkout-form" type="number" name="checkout__card-no" id="checkout__card-no" onfocus="textFormClicked(this, 'input')" min="1000000000000000" max="9999999999999999" step="1" required>
+								<input form="checkout-form" type="text" name="checkout__card-no" id="checkout__card-no" onfocus="textFormClicked(this, 'input') "pattern="[0-9]{16}" required>
 							</div>
 						</div>
 
@@ -311,7 +311,7 @@
 								</div>
 								<!-- Some auto-fill password extensions add a logo next to the input, which screws up the formatting unless the input is contained in a div -->
 								<div>
-									<input form="checkout-form" type="number" name="checkout__security-code" id="checkout__security-code" onfocus="textFormClicked(this, 'input')" min="100" max="9999" required>
+									<input form="checkout-form" type="text" name="checkout__security-code" id="checkout__security-code" onfocus="textFormClicked(this, 'input')" pattern="[0-9]{3}" required>
 								</div>
 							</div>
 						</div>
