@@ -39,7 +39,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 					</div>
 					
 					<!-- The logo and brand name -->
-					<a class="logo grid standard-spacing" href="">
+					<a class="logo grid standard-spacing" href="index.html">
 						<img src="assets/icons/logo.svg" alt="The brand logo">
 						<h4>Micro Aquatic Shop</h4>
 					</a>
@@ -56,10 +56,10 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 
 						<!-- Pages -->
 						<!-- Home page -->
-						<a class="link" href="">Home</a>
+						<a class="link" href="index.html">Home</a>
 						<!-- Shop page/dropdown -->
 						<div class="navbar__drop-down flex--horizontal">
-							<a class="link" href="categories/">Shop</a>
+							<a class="link" href="categories/index.html">Shop</a>
 							<img class="navbar__drop-down__arrow" src="assets/icons/arrow-down.svg" alt="Down arrow">
 							<div class="header__dropdown-menu panel flex--horizontal">
 								<div class="header__dropdown-menu__list flex--vertical">
@@ -71,7 +71,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 								</div>
 								<div class="header__dropdown-menu__list flex--vertical">
 									<h4>Animals</h4>
-									<a class="link" href="categories/shrimp/">Shrimp</a>
+									<a class="link" href="categories/shrimp/index.html">Shrimp</a>
 									<a class="link">Fish</a>
 									<a class="link">Snails</a>
 									<a class="link">Algae Eaters</a>
@@ -111,10 +111,10 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 
 						<!-- Wishlist and cart icons -->
 						<div class="navbar__purchasing-icons flex--horizontal standard-spacing">
-							<a href="wishlist/">
+							<a href="wishlist/index.html">
 								<img class="navbar__icon" src="assets/icons/heart.svg" alt="Wishlist">
 							</a>
-							<a href="cart/">
+							<a href="cart/index.html">
 								<img class="navbar__icon" src="assets/icons/shopping-bag.svg" alt="Shopping bag">
 							</a>
 						</div>
@@ -227,10 +227,10 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 			// If the product is the tangerine tiger shrimp (the only one that's interactive), make it interactive
 			if (i == 0) {
 				// Make the view button direct to the product's page
-				viewButton.setAttribute("href", "products/" + interactiveProducts[0][0] + "/");
+				viewButton.setAttribute("href", "products/" + interactiveProducts[0][0] + "/index.html");
 	
 				// Make clicking anywhere on the product direct to the product's page
-				container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[0][0] + "/';");
+				container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[0][0] + "/index.html';");
 
 				// Making the wishlist button toggle whether this product is in the wishlist
 				wishlistButton.setAttribute("onclick", "toggleWishlist(0, this);");
@@ -363,7 +363,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 			shoppingCategories[i][3] ? 
 				button.setAttribute(
 					"href", 
-					"categories/" + shoppingCategories[i][3]
+					"categories/" + shoppingCategories[i][3] + "/index.html"
 				) : 
 				button.setAttribute(
 					"onclick", 
@@ -486,7 +486,7 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 				let html = `
 					<!-- This is added into a <footer> on the respective page with the classes "page-footer" and "grid" -->
 					<!-- The logo and brand name -->
-					<a class="logo logo--footer grid standard-spacing" href="">
+					<a class="logo logo--footer grid standard-spacing" href="index.html">
 						<img src="assets/icons/logo.svg" alt="The brand logo">
 						<h2>Micro Aquatic Shop</h2>
 					</a>
@@ -575,10 +575,10 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 			
 					<!-- Wishlist and cart icons -->
 					<div class="navbar__purchasing-icons flex--horizontal standard-spacing">
-						<a href="wishlist/">
+						<a href="wishlist/index.html">
 							<img class="navbar__icon" src="assets/icons/heart.svg" alt="Wishlist">
 						</a>
-						<a href="cart/">
+						<a href="cart/index.html">
 							<img class="navbar__icon" src="assets/icons/shopping-bag.svg" alt="Shopping bag">
 						</a>
 					</div>
@@ -603,9 +603,9 @@ log("%cComponent generation statuses:", "font-weight: bold;");
 					<div class="fullscreen-menu__page-links-cont__divider"></div>
 			
 					<!-- Home page -->
-					<a class="link h2" href="">Home</a>
+					<a class="link h2" href="index.html">Home</a>
 					<!-- Shop page -->
-					<a class="link h2" href="categories/">Shop</a>
+					<a class="link h2" href="categories/index.html">Shop</a>
 					<!-- Blog page -->
 					<a class="link h2">Blog</a>
 					<!-- About page -->

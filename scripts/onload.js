@@ -224,7 +224,7 @@ function checkoutPageOnLoad() {
 		alert("You cannot checkout with an emtpy cart.\nRedirecting you to the cart page...");
 		
 		// Redirecting to the cart page
-		window.location.href = "cart/";
+		window.location.href = "cart/index.html";
 		return;
 	}
 

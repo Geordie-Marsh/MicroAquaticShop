@@ -98,10 +98,10 @@
 				// If this product is an interactive product, make it interactive
 				if(listedProductsShrimp[i][4] != null) {
 					// Make the view button direct to the product's page
-					viewButton.setAttribute("href", "products/" + interactiveProducts[listedProductsShrimp[i][4]][0] + "/");
+					viewButton.setAttribute("href", "products/" + interactiveProducts[listedProductsShrimp[i][4]][0] + "/index.html");
 
 					// Make clicking anywhere on the product direct to the product's page
-					container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[listedProductsShrimp[i][4]][0] + "/';");
+					container.setAttribute("onclick", "location.href = 'products/" + interactiveProducts[listedProductsShrimp[i][4]][0] + "/index.html';");
 
 					// Making the wishlist button toggle whether this product is in the wishlist
 					wishlistButton.setAttribute("onclick", "toggleWishlist(" + listedProductsShrimp[i][4] + ", this);");
