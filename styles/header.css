@@ -105,7 +105,7 @@
 	height: var(--spacing-04);
 	width: var(--spacing-04);
 	text-align: center;
-	padding-top: 1.5px;
+	/* padding-top: 1.5px; */
 	border-radius: calc(0.5 * var(--spacing-04));
 	bottom: calc(-1 * var(--spacing-01));
 	right: calc(-1 * var(--spacing-01));
