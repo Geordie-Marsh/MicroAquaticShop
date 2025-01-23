@@ -21,7 +21,7 @@
 	
 	.button__label {
 		/* The label inside a button - due to the font, by default it appears slightly vertically misaligned, so this fixes that by offsetting it down */
-		margin-top: 3px;
+		margin-bottom: 3px;
 	}
 
 	
